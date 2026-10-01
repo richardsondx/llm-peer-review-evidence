@@ -14,10 +14,10 @@
   ],
   "cells": 162,
   "status_counts": {
-    "not_measured": 59,
+    "not_measured": 58,
     "not_reported": 9,
     "source_unavailable": 0,
-    "verified": 94
+    "verified": 95
   },
   "source_unavailable_cells": 0,
   "all_cells_have_primary_url_and_locator": true,
@@ -37,6 +37,20 @@
   },
   "issues": [],
   "parent_audit_corrections": [
-    "#1 source Table 2: abstract-swap and informal-sentence insertion, not acceptance subgroups"
-  ]
+    "#1 source Table 2: abstract-swap and informal-sentence insertion, not acceptance subgroups",
+    "#2 baseline audit: human-comment recall verified in final NEJM AI Fig. 2E–F; counts corrected from 59 not_measured/94 verified to 58 not_measured/95 verified",
+    "#2 source metadata upgraded to final NEJM AI publication date (2024-07-17), DOI, added eLife/Nature health subset and final PDF citations",
+    "#3 synthetic detection denominator clarified as 7/13 paper-level cumulative detection across 3 prompts × 3 responses; any detection counted"
+  ],
+  "baseline_audit": {
+    "baseline_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/baseline/original-data.json",
+    "candidate_2_recall": "corrected_to_verified_human_comment_recall",
+    "candidate_2_recall_counts": {
+      "previously_not_measured": 1,
+      "now_verified": 1
+    },
+    "candidate_2_primary_version": "NEJM AI 1(8), published 2024-07-17; DOI 10.1056/AIoa2400196",
+    "synthesis_verdict": "unqualified_under_half_claim_not_supported; metrics differ by task and denominator; details in baseline-audit.md",
+    "html": "not_overwritten_as_requested; matrix.html is the pre-audit snapshot and its candidate #2 text is stale"
+  }
 }

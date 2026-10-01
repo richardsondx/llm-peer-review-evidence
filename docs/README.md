@@ -2,7 +2,7 @@
 
 **Author: [Richardson Dackam](https://richackam.com)** · Independent researcher, [Nshipyard](https://nshipyard.com) · [X: @richardsondx](https://x.com/richardsondx)
 
-[Read the publication](https://richardsondx.github.io/llm-peer-review-evidence/) · [Read the report](https://richardsondx.github.io/llm-peer-review-evidence/report.html) · [Luna matrix](https://richardsondx.github.io/llm-peer-review-evidence/luna/matrix.html) · [Sol partial matrix](https://richardsondx.github.io/llm-peer-review-evidence/sol/matrix.html)
+[Read the publication](https://richardsondx.github.io/llm-peer-review-evidence/) · [Read the report](https://richardsondx.github.io/llm-peer-review-evidence/report.html) · [Luna matrix](https://richardsondx.github.io/llm-peer-review-evidence/luna/matrix.html) · [Sol matrix](https://richardsondx.github.io/llm-peer-review-evidence/sol/matrix.html)
 
 ## Why this project exists
 
@@ -12,24 +12,30 @@ The models are evidence extractors. The project does not conduct new experiments
 
 ## Publication status
 
-Version **0.1.0**, published **1 October 2026**, is an **interim research report; not peer reviewed**. Luna contains 27 reviewed study records. Sol contains 24 of 27 and awaits completion and final QA. Candidate IDs 24, 26 and 27 and the formal comparison against the previous review remain outstanding. See [run status](RUN_STATUS.json).
+Version **0.2.0**, published **1 October 2026**, is an **research report; not peer reviewed**. Luna and Sol each contain 27 reviewed study records (162 cells each). The original baseline is preserved, and all three versions can be inspected side by side. Targeted baseline audits document source-checked corrections; exhaustive claim adjudication and a model accuracy benchmark are not claimed. See [run status](RUN_STATUS.json).
 
 ## Cite this work
 
-Dackam, R. (2026). *LLMs in Scientific Peer Review: A Source-Based Reassessment of 27 Studies* (Version 0.1.0; interim research report). Nshipyard. https://github.com/richardsondx/llm-peer-review-evidence/releases/tag/v0.1.0
+Dackam, R. (2026). *LLMs in Scientific Peer Review: A Source-Based Reassessment of 27 Studies* (Version 0.2.0; research report). Nshipyard. https://github.com/richardsondx/llm-peer-review-evidence/releases/tag/v0.2.0
 
 Use [CITATION.cff](CITATION.cff) or [BibTeX](docs/citation.bib). This release has a versioned URL but no DOI. No journal publication or Google Scholar indexing is claimed.
 
+## Original baseline
+
+The original Keenable report is preserved in `docs/baseline/original-data.json` and an unmodified report snapshot, with SHA-256 provenance. All 131 populated findings match the original embedded data exactly; its 31 blank cells remain explicit. The author describes its generating model as GPT-4; Keenable did not expose generator metadata, so this attribution is unconfirmed. GPT-4 in individual findings identifies a model tested by the original paper.
+
+[Compare baseline, Luna and Sol](https://richardsondx.github.io/llm-peer-review-evidence/comparison.html). This compares evidence extraction and interpretation, not reviewer performance.
+
 ## Reproduce the website
 
-The site is static HTML with no external runtime dependencies. The reviewed data live in `docs/luna/matrix.json` and `docs/sol/matrix.partial.json`. Serve `docs/` using any static web server. GitHub Pages publishes this folder from `main`. Simplified matrices open by default, with the detailed matrices available as Advanced views.
+The site is static HTML with no external runtime dependencies. The reviewed data live in `docs/luna/matrix.json` and `docs/sol/matrix.json`. Run `python3 research/build_advanced.py`, `python3 research/build_views.py` and `python3 research/build_comparison.py` to regenerate the interactive views from saved data. Serve `docs/` using any static web server. GitHub Pages publishes this folder from `main`. Simplified matrices open by default, with the detailed matrices available as Advanced views.
 
-`python3 research/build_views.py` reproduces the simplified matrix views in `docs/`; `research/luna/build_matrix.py` preserves the reviewed Luna extraction definitions. Downloaded third-party source caches are excluded. Primary-source URLs and locators remain in the data. The Sol directory preserves a partial record rather than pretending a completed run exists.
+`python3 research/build_views.py` reproduces the simplified matrix views in `docs/`; `research/luna/build_matrix.py` preserves the reviewed Luna extraction definitions. Downloaded third-party source caches are excluded. Primary-source URLs and locators remain in the data. The earlier partial Sol snapshot remains identifiable in release v0.1.0; the current matrix is complete.
 
 ## Methods and provenance
 
 
-Current status: Luna's 27-study matrix is complete and reviewed. Sol stopped when workspace credits were exhausted, after saving 24 independently extracted rows. Its partial HTML/Markdown/JSON are labeled explicitly. Candidate rows 24, 26, and 27, Sol's final QA and correction log, and the final model comparison remain outstanding. All saved sources and draft records are preserved for resumption.
+Current status: both Luna and Sol have completed 27-study source-based extractions with recorded QA and corrections. All three versions, including the original Keenable baseline, are available for comparison.
 
 This project rebuilds the original report's 27-study, six-dimension evidence matrix using two research agents sequentially: GPT-6-Luna with Extra High reasoning, followed by GPT-6.1-Sol. The shared verification cutoff is 1 October 2026.
 
@@ -41,7 +47,7 @@ The main matrices preserve the original 27 candidate IDs. An identity mismatch m
 
 Both runs use Extra High reasoning (`xhigh`). The common source-version policy preserves arXiv v1 for candidate IDs 9, 10, and 27; other candidates use the latest primary-source version available by the cutoff, with published proceedings preferred for candidate 13. Source versions are recorded explicitly. The overconfidence column distinguishes confidence calibration from independently measured false positives or unsupported critiques.
 
-Each model directory contains a structured JSON matrix, a Markdown version, a self-contained HTML matrix, and a correction log. Source access and version limitations are part of the evidence record. A comparison is written after both model runs finish.
+Each model directory contains a structured JSON matrix, a Markdown version, a self-contained HTML matrix, and a correction log. Source access and version limitations are part of the evidence record. The three-version viewer displays all cells; targeted baseline audits describe source-checked corrections.
 
 These are reviewed research outputs, not untouched model benchmarks. The parent agent checks structure, sampled source claims, metadata, and metric interpretation; identified draft errors are corrected within each model run. Counts of source-checked cells do not measure model accuracy, and matching findings do not prove that either extraction is correct.
 

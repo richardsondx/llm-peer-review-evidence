@@ -1,11 +1,9 @@
 {
   "luna": "complete_reviewed",
-  "sol": "interrupted_workspace_credits_exhausted",
-  "sol_saved_rows": 24,
-  "sol_missing_candidate_ids": [
-    24,
-    26,
-    27
-  ],
-  "comparison": "pending_complete_sol_run"
+  "sol": "complete_reviewed",
+  "luna_saved_rows": 27,
+  "sol_saved_rows": 27,
+  "sol_missing_candidate_ids": [],
+  "comparison": "three_version_view_and_targeted_source_audit_complete",
+  "comparison_scope": "All cells available side by side; targeted semantic audit, not exhaustive claim adjudication or model accuracy benchmark."
 }

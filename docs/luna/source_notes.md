@@ -2,6 +2,8 @@
 
 Cutoff: 2026-10-01. All 27 fixed candidate IDs were retained. Candidate title/label strings were treated as search cues only; source identity was verified against primary source records.
 
+- **#2:** verified against the final NEJM AI 1(8) article (DOI [10.1056/AIoa2400196](https://doi.org/10.1056/AIoa2400196)); a full publisher PDF copy was retrieved from the NSF Public Access Repository and cached as `source_cache/2310.01783_nejm_ai_2024.pdf` with extracted text. The recall figures are on final-version Fig. 2E–F, and the final article additionally reports eLife and Nature health-sciences subsets.
+
 - **#7:** candidate Researcher.Life URL is inaccessible (HTTP 443) and its linked work is hand surgery: Marrella et al., *Hand Surgery and Rehabilitation* 44(4):102225, DOI [10.1016/j.hansur.2025.102225](https://doi.org/10.1016/j.hansur.2025.102225). PubMed records Epub 2025-07-19 and issue date 2025 Sep; the work is not the unrelated blinded cardiology study suggested by the original label.
 - **#11:** corrected to the exact ACL Anthology proceedings title, “Is LLM a Reliable Reviewer? A Comprehensive Evaluation of LLM on Automatic Paper Reviewing Tasks.”
 - **#13:** original arXiv PDF was truncated. Full source recovered from the official ACL Anthology EMNLP 2025 proceedings entry [2025.emnlp-main.1805](https://aclanthology.org/2025.emnlp-main.1805/). This published version was used; arXiv v4 (updated 2025-11-07) was also available by cutoff.
@@ -13,6 +15,6 @@ Cutoff: 2026-10-01. All 27 fixed candidate IDs were retained. Candidate title/la
 - **#25:** candidate Ovid page returned 402; direct PMC page challenged by a browser access gate. Full journal article text and DOI/publication details were retrievable through PubMed/PMC indexed official content. The full text is used for methods/results/limitations.
 - **#27:** candidate pins v1, while arXiv later posted v2 and the work was accepted at ICML 2026. Per task instruction, findings are extracted from the pinned v1; the later publication/version is noted in metadata only.
 - False-alarm, false-positive and accuracy measures are kept distinct from model confidence. An unmatched issue is not called invalid unless the source’s verification protocol supports that interpretation; in particular #17 notes possible valid but unannotated flags, and #26 explicitly treats AI-only extra points as divergence rather than errors.
-- PDFs for arXiv #2, #9 and #13 were partially truncated by direct download; #2/#9 were read from official ar5iv HTML and #13 from ACL Anthology final proceedings PDF/text.
+- PDFs for arXiv #9 and #13 were partially truncated by direct download; #9 was read from official ar5iv HTML and #13 from ACL Anthology final proceedings PDF/text. Candidate #2 was checked against the final published NEJM AI PDF.
 
 Other arXiv studies use the latest version available by the cutoff unless candidate-pinned. Exact version and study status are recorded per row in `matrix.json` and the matrix.

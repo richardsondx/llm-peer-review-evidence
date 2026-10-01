@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "Please cite the specific version of this interim evidence review that you use."
+message: "Please cite the specific version of this evidence review that you use."
 type: dataset
 title: "LLMs in Scientific Peer Review: A Source-Based Reassessment of 27 Studies"
 authors:
@@ -7,12 +7,12 @@ authors:
     given-names: Richardson
     affiliation: "Nshipyard; independent researcher"
     website: "https://richackam.com"
-version: 0.1.0
+version: 0.2.0
 date-released: 2026-10-01
 url: "https://richardsondx.github.io/llm-peer-review-evidence/report.html"
 repository-code: "https://github.com/richardsondx/llm-peer-review-evidence"
 license: CC-BY-4.0
-abstract: "Interim source-based reassessment of 27 candidate studies of LLM scientific peer review. Newer models independently extract evidence across six dimensions; Luna is complete, Sol is partial, and the final replication comparison is pending."
+abstract: "Source-based reassessment of 27 candidate studies of LLM scientific peer review. Newer models independently extract evidence across six dimensions; Both 27-study extractions are complete, with a preserved original baseline, side-by-side comparison and targeted source audits."
 keywords:
   - scientific peer review
   - large language models

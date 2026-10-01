@@ -41,10 +41,10 @@ document.querySelectorAll('.cell').forEach(button=>button.addEventListener('clic
  document.querySelector('#detail-title').textContent=LABELS[DIMS.indexOf(dim)];
  document.querySelector('#detail-study').textContent=text(row.citation.title||row.citation)+' · '+row.publication_date;
  content.replaceChildren();add('div',c.status.replaceAll('_',' '),content,'status');add('p',c.finding,content,'full-finding');
- if(c.citations.length){add('h3','Sources',content);const ul=add('ul','',content,'sources');c.citations.forEach(q=>{const li=add('li','',ul),a=add('a','Primary source',li);a.href=q.url;a.target='_blank';a.rel='noopener';add('span',' — '+q.location,li);});}
+ if(c.citations.length){add('h3','Sources',content);const ul=add('ul','',content,'sources');c.citations.forEach(q=>{const li=add('li','',ul),a=add('a',c.status==='original_reported'?'Original report':'Source',li);a.href=q.url;a.target='_blank';a.rel='noopener';add('span',' — '+q.location,li);});}
  else {const a=add('a','Study source',content);a.href=row.source_url;a.target='_blank';a.rel='noopener';}
  const details=add('details','',content,'metadata');add('summary','Study context',details);const dl=add('dl','',details);
- [['Publication status',row.publication_status],['Source version',text(row.source_version)],['Design and sample',row.design_and_sample],['Evaluated models',row.evaluated_models],['Source identity note',row.identity_or_scope_note]].forEach(([k,v])=>{if(v){add('dt',k,dl);add('dd',text(v),dl);}});
+ [['Evidence extraction model',DATA.extraction_model],['Publication status',row.publication_status],['Source version',text(row.source_version)],['Design and sample',row.design_and_sample],['Models tested in this study',row.evaluated_models],['Source identity note',row.identity_or_scope_note]].forEach(([k,v])=>{if(v){add('dt',k,dl);add('dd',text(v),dl);}});
  dialog.showModal();
 }));
 document.querySelector('.close').addEventListener('click',()=>dialog.close());
@@ -75,18 +75,19 @@ def build(model):
         original=re.sub(r'<body([^>]*)>',lambda m:m.group(0)+navigation,original,count=1)
         advanced.write_text(original)
     rows=sorted(data['rows'],key=lambda r:(str(r['publication_date'])[:10],r['candidate_id']))
-    name='GPT-6-Luna' if model=='luna' else 'GPT-6.1-Sol'
+    name={'luna':'GPT-6-Luna','sol':'GPT-6.1-Sol','baseline':'Original Keenable baseline'}[model]
     n=len(rows)
     title=f'Evidence matrix: {n} studies × 6 finding dimensions'
     parts=[f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{e(title)} — {name}</title><style>{CSS}</style></head><body><main>',
-           f'<div class="top"><div class="model">{name} · Extra High · 1 October 2026</div><nav class="views" aria-label="Matrix view"><a class="active" href="matrix.html" aria-current="page">Simple</a><a href="matrix.advanced.html">Advanced</a></nav></div>',
+           f'<div class="top"><div class="model">'+('Original review · 23 September 2026' if model=='baseline' else f'Evidence extracted by {name} · Extra High · 1 October 2026')+'</div><nav class="views" aria-label="Matrix view"><a class="active" href="matrix.html" aria-current="page">Simple</a><a href="matrix.advanced.html">Advanced</a></nav></div>',
            f'<h1>{e(title)}</h1><p class="subtitle">Click any cell for the full finding and sources. Sorted by year.</p>']
+    parts.append('<div class="notice"><strong>How to read this matrix:</strong> '+('The original review is attributed to GPT-4 by the author; Keenable does not expose generator metadata, so this attribution remains unconfirmed. Original findings are preserved, including possible errors. ' if model=='baseline' else f'{name} extracted these findings from existing studies. It was not the peer reviewer tested in these experiments. ')+'GPT-4 and other model names inside cells identify the models tested in the original papers. <a href="../comparison.html">Compare baseline, Luna and Sol</a> · <a href="../index.html">Research overview</a>.</div>')
     if partial:
         parts.append('<div class="notice"><strong>Partial research draft:</strong> 24 of 27 studies available. Rows 24, 26, and 27 and the final research audit remain pending after the interrupted Sol run.</div>')
     parts.append('<div class="legend" aria-label="Finding color legend"><span class="key"><i class="swatch blue"></i>Quantified or detailed finding</span><span class="key"><i class="swatch red"></i>Unfavourable finding (bias, misses, unsupported claims)</span><span class="key"><i class="swatch green"></i>Comparable to or above a human baseline</span><span class="key"><i class="swatch missing"></i>— Not measured / not reported</span></div><div class="tools"><input id="search" type="search" placeholder="Find a study…" aria-label="Find a study"><span class="count" aria-live="polite">'+str(n)+' studies</span></div><div class="matrix-wrap" tabindex="0" role="region" aria-label="Evidence matrix; scroll for all dimensions"><table class="matrix"><colgroup><col class="study">'+''.join('<col>' for _ in DIMS)+'</colgroup><thead><tr><th scope="col">Study</th>'+''.join('<th scope="col">'+x+'</th>' for x in LABELS)+'</tr></thead><tbody>')
     for row in rows:
         cid=row['candidate_id'];year=str(row['publication_date'])[:4]
-        label=SHORT.get(cid,row.get('candidate_label',''))
+        label=row.get('candidate_label','') if model=='baseline' else SHORT.get(cid,row.get('candidate_label',''))
         if not label:
             citation=row['citation'];label=citation.get('title') if isinstance(citation,dict) else citation
         pubstatus=row['publication_status'].lower()
@@ -97,6 +98,7 @@ def build(model):
             cell=row['dimensions'][dim]
             missing=cell['status'] in {'not_measured','not_reported','source_unavailable'}
             color='missing' if missing else 'green' if (cid,dim) in GREEN else 'red' if (cid,dim) in RED or dim=='score_bias' and not cell['finding'].startswith('No ') or dim=='overconfidence' and cid in {3,4,6,8,9,18,23,24} else 'blue'
+            if model=='baseline' and not missing:color='blue'
             if model=='sol' and dim=='recall' and cid==6:color='green'
             content='—' if missing else snippet(model,row,dim,cell)
             parts.append(f'<td><button type="button" class="cell {color}" data-row="{cid}" data-dim="{dim}" aria-haspopup="dialog" aria-label="{e(label+": "+dimlabel+" — "+cell["status"].replace("_"," ")+"; open full finding")}"><span class="excerpt">{e(content)}</span></button></td>')
@@ -105,9 +107,12 @@ def build(model):
     payload=json.dumps(data,ensure_ascii=False).replace('<','\\u003c').replace('>','\\u003e').replace('&','\\u0026')
     parts.append('<script>const DATA='+payload+';const DIMS='+json.dumps(DIMS)+';const LABELS='+json.dumps(LABELS)+';'+JS+'</script></body></html>')
     result=''.join(parts)
+    if model=='baseline':
+        result=result.replace('Quantified or detailed finding','Original reported finding (not reverified)')
+        result=re.sub(r'<span class="key"><i class="swatch (red|green)"></i>.*?</span>','',result)
     (out/'matrix.html').write_text(result)
     if partial:current.write_text(result)
     print(model,n,'rows; compact default + original advanced view saved')
 
 if __name__=='__main__':
-    for model in ['luna','sol']:build(model)
+    for model in ['baseline','luna','sol']:build(model)

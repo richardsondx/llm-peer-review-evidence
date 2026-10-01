@@ -1,0 +1,383 @@
+{
+  "validation_status": "passed",
+  "validated_at_utc": "2026-10-01T16:21:13.358123+00:00",
+  "extraction_model": "gpt-6.1-sol",
+  "reasoning_effort": "xhigh",
+  "rows": 27,
+  "unique_ids": 27,
+  "expected_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+  ],
+  "dimension_count": 6,
+  "cells": 162,
+  "status_counts": {
+    "not_measured": 54,
+    "verified": 107,
+    "not_reported": 1
+  },
+  "citations": 142,
+  "numeric_cells_without_citations": [],
+  "errors": [],
+  "primary_source_version_checks": [
+    {
+      "candidate_id": 1,
+      "selected_source": "https://arxiv.org/pdf/2307.05492v1",
+      "selected_version": {
+        "version": "arXiv v1",
+        "date": "2023-06-16"
+      },
+      "validation_basis": "primary metadata and full source read",
+      "pdf_text_version": "v1",
+      "sha256_pdf": "91d063e72435c75f1b6b4b47bf784a74e4005cd9a9e0ad4374a65dacdfca2d20"
+    },
+    {
+      "candidate_id": 2,
+      "selected_source": "https://arxiv.org/pdf/2310.01783v1",
+      "selected_version": {
+        "version": "arXiv v1",
+        "date": "2023-10-03",
+        "note": "Only arXiv version; publisher full-text endpoint failed. DOI 10.1056/AIoa2400196."
+      },
+      "validation_basis": "primary metadata and full source read",
+      "pdf_text_version": "v1",
+      "sha256_pdf": "6f98dd7d318d5e08b9872e17305f5ca485bd7bbc33fcb8c1ab6542d1fc3dbd0e"
+    },
+    {
+      "candidate_id": 3,
+      "selected_source": "https://arxiv.org/pdf/2306.00622v1",
+      "selected_version": {
+        "version": "arXiv v1",
+        "date": "2023-06-01"
+      },
+      "validation_basis": "primary metadata and full source read",
+      "pdf_text_version": "v1",
+      "sha256_pdf": "cbab0f478094db7cd911fffb29ed88d3936f75dded9e6876cda8fe6047a44173"
+    },
+    {
+      "candidate_id": 4,
+      "selected_source": "https://arxiv.org/pdf/2412.01708v1",
+      "selected_version": {
+        "version": "arXiv v1",
+        "date": "2024-12-02"
+      },
+      "validation_basis": "primary metadata and full source read",
+      "pdf_text_version": "v1",
+      "sha256_pdf": "f6949bacac45b07369c4a1d4ae5d4666f9e8d479d93064ea4bfe8c64c11d8494"
+    },
+    {
+      "candidate_id": 5,
+      "selected_source": "https://www.cambridge.org/core/journals/judgment-and-decision-making/article/evaluating-science-a-comparison-of-human-and-ai-reviewers/6F69123851472B4A72DEC0BD08C13AA6",
+      "selected_version": {
+        "version": "publisher full text",
+        "date": "2024-11-21"
+      },
+      "validation_basis": "published proceedings PDF or primary publisher full-text HTML/indexed primary article text; see source_notes"
+    },
+    {
+      "candidate_id": 6,
+      "selected_source": "https://arxiv.org/pdf/2401.04259v1",
+      "selected_version": {
+        "version": "arXiv v1",
+        "date": "2024-01-08"
+      },
+      "validation_basis": "primary metadata and full source read",
+      "pdf_text_version": "v1",
+      "sha256_pdf": "a649059d68713f93581f6a837228ca1939ed96f5b9f13830de1e34b153940c48"
+    },
+    {
+      "candidate_id": 7,
+      "selected_source": "https://doi.org/10.1016/j.hansur.2025.102225",
+      "selected_version": {
+        "version": "publisher full-text HTML via DOI/web retrieval",
+        "date": "2025-07-19"
+      },
+      "validation_basis": "published proceedings PDF or primary publisher full-text HTML/indexed primary article text; see source_notes"
+    },
+    {
+      "candidate_id": 8,
+      "selected_source": "https://arxiv.org/pdf/2506.17311v1",
+      "selected_version": {
+        "version": "arXiv v1",
+        "date": "2025-06-18"
+      },
+      "validation_basis": "primary metadata and full source read",
+      "pdf_text_version": "v1",
+      "sha256_pdf": "b24a2d968b29b5b14777b8828d82d682540ff97f50d31b147a78d289b592153f"
+    },
+    {
+      "candidate_id": 9,
+      "selected_source": "https://arxiv.org/pdf/2507.02694v1",
+      "selected_version": {
+        "version": "arXiv v1, explicitly pinned",
+        "date": "2025-07-03"
+      },
+      "validation_basis": "primary metadata and full source read",
+      "pdf_text_version": "v1",
+      "sha256_pdf": "f28822ff9ce8ae3ed5a53a86ad628c10278a9cc068d524633903152a8fb775fa"
+    },
+    {
+      "candidate_id": 10,
+      "selected_source": "https://arxiv.org/pdf/2511.21843v1",
+      "selected_version": {
+        "version": "arXiv v1, explicitly pinned",
+        "date": "2025-11-26"
+      },
+      "validation_basis": "primary metadata and full source read",
+      "pdf_text_version": "v1",
+      "sha256_pdf": "22c3d421476e2b1aff7fb06df0a3a956632dd09eac46c36db9eb4a5a1eed4ebb"
+    },
+    {
+      "candidate_id": 11,
+      "selected_source": "https://aclanthology.org/2024.lrec-main.816.pdf",
+      "selected_version": {
+        "version": "published proceedings",
+        "date": "2024-05"
+      },
+      "validation_basis": "published proceedings PDF or primary publisher full-text HTML/indexed primary article text; see source_notes"
+    },
+    {
+      "candidate_id": 12,
+      "selected_source": "https://arxiv.org/pdf/2510.12367v1",
+      "selected_version": {
+        "version": "arXiv v1",
+        "date": "2025-10-14"
+      },
+      "validation_basis": "primary metadata and full source read",
+      "pdf_text_version": "v1",
+      "sha256_pdf": "0d0b7952e1ec02906482f149521263911956432407bc56052c281659a51090a0"
+    },
+    {
+      "candidate_id": 13,
+      "selected_source": "https://aclanthology.org/2025.emnlp-main.1805.pdf",
+      "selected_version": {
+        "version": "published EMNLP proceedings",
+        "date": "2025-11",
+        "note": "Preferred over arXiv v4 (2025-11-07). Main evaluation section reports 685 papers/3,689 items; abstract states 676/3,657."
+      },
+      "validation_basis": "published proceedings PDF or primary publisher full-text HTML/indexed primary article text; see source_notes"
+    },
+    {
+      "candidate_id": 14,
+      "selected_source": "https://arxiv.org/pdf/2508.14146v4",
+      "selected_version": {
+        "version": "arXiv v4, latest by cutoff",
+        "date": "2025-10-08",
+        "note": "Candidate was v3; latest v4 selected."
+      },
+      "validation_basis": "primary metadata and full source read",
+      "pdf_text_version": "v4",
+      "sha256_pdf": "4c4642c2267b5340c51769b9839086f7b927f3892169a9f0e56d8d463af3fb82"
+    },
+    {
+      "candidate_id": 15,
+      "selected_source": "https://arxiv.org/pdf/2510.08867v1",
+      "selected_version": {
+        "version": "arXiv v1",
+        "date": "2025-10-09"
+      },
+      "validation_basis": "primary metadata and full source read",
+      "pdf_text_version": "v1",
+      "sha256_pdf": "8d7682f1b3dfa1612e7ac0bfe5b6839c9d4e2bb83d257ce8f38c9d4ba6748cbb"
+    },
+    {
+      "candidate_id": 16,
+      "selected_source": "https://www.preprints.org/manuscript/202502.0058/v1",
+      "selected_version": {
+        "version": "Preprints.org v1",
+        "date": "2025-02-03"
+      },
+      "validation_basis": "published proceedings PDF or primary publisher full-text HTML/indexed primary article text; see source_notes"
+    },
+    {
+      "candidate_id": 17,
+      "selected_source": "https://arxiv.org/pdf/2505.11855v1",
+      "selected_version": {
+        "version": "arXiv v1",
+        "date": "2025-05-17"
+      },
+      "validation_basis": "primary metadata and full source read",
+      "pdf_text_version": "v1",
+      "sha256_pdf": "2ce80ef38f27fd3090c4000aca627287ca1cd7098da5fb983f21022f85d0c4d0"
+    },
+    {
+      "candidate_id": 18,
+      "selected_source": "https://arxiv.org/pdf/2512.05925v1",
+      "selected_version": {
+        "version": "arXiv v1",
+        "date": "2025-12-05"
+      },
+      "validation_basis": "primary metadata and full source read",
+      "pdf_text_version": "v1",
+      "sha256_pdf": "5f985bcd7df9f59eaf2dbe10b32d2aeea164f3be9c6a65b7c82f3be645b4733a"
+    },
+    {
+      "candidate_id": 19,
+      "selected_source": "https://arxiv.org/pdf/2509.09912v1",
+      "selected_version": {
+        "version": "arXiv v1",
+        "date": "2025-09-12"
+      },
+      "validation_basis": "primary metadata and full source read",
+      "pdf_text_version": "v1",
+      "sha256_pdf": "5430466c000a3357b60b0aa15346b2d14706a130309eddcdbc8ce0aff4397f51"
+    },
+    {
+      "candidate_id": 20,
+      "selected_source": "https://arxiv.org/pdf/2604.19502v2",
+      "selected_version": {
+        "version": "arXiv v2, latest by cutoff",
+        "date": "2026-04-22"
+      },
+      "validation_basis": "primary metadata and full source read",
+      "pdf_text_version": "v2",
+      "sha256_pdf": "076a89503dd4bda603a301d1fedc6e49be9d26175d1c00e7ed165a81ded6a17e"
+    },
+    {
+      "candidate_id": 21,
+      "selected_source": "https://arxiv.org/pdf/2605.07905v2",
+      "selected_version": {
+        "version": "arXiv v2, latest by cutoff",
+        "date": "2026-05-16"
+      },
+      "validation_basis": "primary metadata and full source read",
+      "pdf_text_version": "v2",
+      "sha256_pdf": "06c29b7879bb40be15d5611ceca4cf2cde6634e1fc9a3fa89d26ed2e34e00da5"
+    },
+    {
+      "candidate_id": 22,
+      "selected_source": "https://arxiv.org/pdf/2606.10159v1",
+      "selected_version": {
+        "version": "arXiv v1",
+        "date": "2026-06-08"
+      },
+      "validation_basis": "primary metadata and full source read",
+      "pdf_text_version": "v1",
+      "sha256_pdf": "790f6f7e021158216f4f81440947466b42e054c30b7abdafbfbf161afd887473"
+    },
+    {
+      "candidate_id": 23,
+      "selected_source": "https://arxiv.org/pdf/2608.28626v1",
+      "selected_version": {
+        "version": "arXiv v1",
+        "date": "2026-07-31"
+      },
+      "validation_basis": "primary metadata and full source read",
+      "pdf_text_version": "v1",
+      "sha256_pdf": "46af1ce1b11389f385d38a733b0972ec2eb29879d928f62a21fd917fa4818705"
+    },
+    {
+      "candidate_id": 24,
+      "selected_source": "https://arxiv.org/pdf/2605.20668v1",
+      "selected_version": {
+        "version": "arXiv v1",
+        "date": "2026-05-20"
+      },
+      "validation_basis": "primary metadata and full source read",
+      "pdf_text_version": "v1",
+      "sha256_pdf": "18ffa7bd771b31e7c47f1e153348ebe9ea5970332fb442f2dfe0bdafe9405126"
+    },
+    {
+      "candidate_id": 25,
+      "selected_source": "https://www.ovid.com/jnls/md-journal/fulltext/10.1097/md.0000000000048147~current-capabilities-of-large-language-models-as-peer",
+      "selected_version": {
+        "version": "publisher Ovid full-text HTML",
+        "date": "2026-03-27"
+      },
+      "validation_basis": "published proceedings PDF or primary publisher full-text HTML/indexed primary article text; see source_notes"
+    },
+    {
+      "candidate_id": 26,
+      "selected_source": "https://arxiv.org/pdf/2601.19916v1",
+      "selected_version": {
+        "version": "arXiv v1",
+        "date": "2026-01-07"
+      },
+      "validation_basis": "primary metadata and full source read",
+      "pdf_text_version": "v1",
+      "sha256_pdf": "86ee95697da7418adf4c1a453d4ff45ba1bfadc08639b87a5f5e59ac7a3fcdfb"
+    },
+    {
+      "candidate_id": 27,
+      "selected_source": "https://arxiv.org/pdf/2605.03202v1",
+      "selected_version": {
+        "version": "arXiv v1, explicitly pinned",
+        "date": "2026-05-04",
+        "note": "Later v2 (July5) not used, per pinned historical candidate policy."
+      },
+      "validation_basis": "primary metadata and full source read",
+      "pdf_text_version": "v1",
+      "sha256_pdf": "28249e57a82b9792f98a1b6bb4d16748f4ea847a27344e93b07eb6b4d9152c08"
+    }
+  ],
+  "html": {
+    "filename": "matrix.completed.advanced.html",
+    "rows": 27,
+    "dimension_cells": 162,
+    "columns": 7,
+    "expandable_details": 169,
+    "remote_dependencies": 0,
+    "visual_browser_inspection_performed": false,
+    "structural_accessibility_checked": true
+  },
+  "markdown_matches_json_findings": true,
+  "checks_scope": "Focused saved-artifact checks plus manually inspected primary-source version/metric consistency; no repeated broad retrieval. Link syntax/version and previously inspected access are checked, not a guarantee of future endpoint availability.",
+  "access_limitations": [
+    "ID2 publisher final text unavailable:full author preprint used.",
+    "ID7 direct publisher requests blocked;Methods/Results/Discussion from primary indexed article text.",
+    "ID16 direct requests blocked403;full Preprints.org web-tool HTML used.",
+    "ID23 abstract half-of-text-only claims lack reported denominator.",
+    "IDs13/27 contain internal sample/model-name inconsistencies, explicitly noted."
+  ],
+  "frozen_independent_snapshot_sha256": "11d8068e88a19b3fc288c5d3a35914fb1c9d5a0cd60a0e934a641cedda55b810",
+  "final_matrix_sha256": "40010b7c087d078d06083de7f243febe5add2b279eb1088455abe0ce4477444a",
+  "original_comparison_after_snapshot": true,
+  "other_model_outputs_read": false,
+  "files": {
+    "matrix.json": {
+      "bytes": 100038,
+      "sha256": "40010b7c087d078d06083de7f243febe5add2b279eb1088455abe0ce4477444a"
+    },
+    "matrix.md": {
+      "bytes": 61322,
+      "sha256": "d36ef9c98788cbf195d9344b8c25f3f843a8a656e379627c16b26fbe3f1028a5"
+    },
+    "matrix.completed.advanced.html": {
+      "bytes": 96963,
+      "sha256": "18addedd9cf2734b232c70c3ea4935b07a9b897460300e950860178d7c86a8af"
+    },
+    "source_notes.md": {
+      "bytes": 26889,
+      "sha256": "10fca1cd0085abe8e811b785f248d18953e7650abd2c94adf05f81622234af24"
+    },
+    "corrections.md": {
+      "bytes": 12848,
+      "sha256": "0465f9fd930d04379655929115f7b9ca4b73c797ca5b1b06636c6be23cb10ac3"
+    }
+  }
+}

@@ -1,0 +1,461 @@
+[
+  {
+    "study": "GPT-4 is slightly helpful (Robertson)",
+    "year": "2023",
+    "type": "direct",
+    "status": "preprint",
+    "url": "https://arxiv.org/pdf/2307.05492",
+    "host": "arxiv.org",
+    "design": "Pilot study with a controlled experimental design involving 10 participants comparing helpfulness of human and GPT4 reviews on a 1-5 scale, plus robustness experiments with inserted errors using 20 NeurIPS papers and GPT4 with 4k and 32k token context sizes",
+    "dims": {
+      "agreement": "Identical mean scores for GPT-4 and human reviews, although GPT-4's responses showed higher variance",
+      "error_detection": "",
+      "recall": "GPT4-4k: 0.7 ± 0.21 (abstract swap) and 0.6 ± 0.22 (informal sentence insertion); GPT4-32k: 0.35 ± 0.21 (abstract swap) and 0.05 ± 0.1 (informal sentence insertion)",
+      "score_bias": "Mean helpfulness rating for both human and GPT-generated reviews stood at 3 on a scale of 1 to 5; GPT reviews scored 3 ± 0.96 versus human reviews 3.1 ± 0.57 (95% confidence interval); mean number of reattempts for GPT to output a correctly formatted review was 4.8 ± 1.1",
+      "overconfidence": "",
+      "limitations": "The sample size was small (10 participants), making it challenging to generalize to other stakeholders such as area chairs or the general public, and the study wasn't designed to evaluate whether GPT would prove useful for peer-review more broadly"
+    }
+  },
+  {
+    "study": "Liang et al., useful feedback?",
+    "year": "2023",
+    "type": "direct",
+    "status": "preprint",
+    "url": "https://ar5iv.labs.arxiv.org/html/2310.01783",
+    "host": "ar5iv.labs.arxiv.org",
+    "design": "3,096 accepted papers from 15 Nature family journals (8,745 human reviewer comments) and 1,709 ICLR papers including accepted and rejected papers (6,505/6,506 human reviewer comments), spanning biomedicine, basic sciences and machine learning; plus a…",
+    "dims": {
+      "agreement": "For Nature-family journals, human-to-human content overlap was 29%; GPT-4 overlapped with at least one of two human reviews by 58% and with each individual reviewer by 31%, roughly at the human-to-human level. For ICLR papers, human-to-human overlap was 35%; GPT-4 overlapped with at least one human review by 77% and with each individual reviewer by 39%. Agreement (both AI-human and human-human) declined for papers selected for oral presentations (top 5%) and spotlights (25%) and was higher for rejected papers. When GPT-4 reviews were mixed across papers, overlap with human reviews fell from 31% to 0.43%, indicating non-generic, paper-specific feedback. In the prospective survey, 70% of respondents said the GPT-4 review had at least partial alignment with human feedback",
+      "error_detection": "LLMs are more likely to identify common issues or flaws consistently recognized by multiple human reviewers, and rejected papers' more apparent issues or flaws are consistently identified by both human reviewers and LLMs; LLM also aligns with humans on major comments, with earlier-positioned (more significant) human comments more likely to be echoed",
+      "recall": "GPT-4 recall rate of human reviewer comments increases with the number of reviewers raising a comment: in Nature family journal data, 11.39% for comments raised by a single reviewer, 20.67% for two reviewers, and 31.67% for three or more reviewers; in ICLR data, 15.39%, 26.21%, and 39.33% respectively",
+      "score_bias": "No accept/reject scores were assigned, but the LLM’s feedback recommendations were biased toward certain aspects relative to human reviewers: it commented on implications of research 7.27 times more frequently than humans, was 10.69 times less likely to comment on novelty, 2.19 times more likely to request experiments on more datasets, while humans were 6.71 times more likely to request ablation experiments",
+      "overconfidence": "Sixty-five percent of prospective-study respondents reported receiving GPT feedback on issues that had not been pointed out by human reviewers (false positive criticisms)",
+      "limitations": "GPT-4 tends to focus on certain aspects of feedback (e.g., ‘add experiments on more datasets’) and often struggles to provide in-depth critique of method design; feedback can feel generic and lacks specific, actionable detail; results are based on a single GPT-4 instantiation with one specific prompt and zero-shot learning (a lower bound); all studied papers are top venues in English; the user study has limited coverage and self-selection bias; the GPT-4 version used could not interpret visual data such as tables, graphs, and figures; LLM feedback cannot substitute specific and thoughtful human expert feedback"
+    }
+  },
+  {
+    "study": "ReviewerGPT? (Liu & Shah)",
+    "year": "2023",
+    "type": "direct",
+    "status": "preprint",
+    "url": "https://ar5iv.labs.arxiv.org/html/2306.00622",
+    "host": "ar5iv.labs.arxiv.org",
+    "design": "Exploratory study of GPT-4 on three reviewing tasks: error identification in 13 short computer science papers each with a deliberately inserted error, verification of 16 closed-ended checklist questions across 15 NeurIPS 2022 papers (119 {checklist question,…",
+    "dims": {
+      "agreement": "Across 119 {checklist question, paper} pairs, the LLM achieved 86.6% accuracy compared to the manually labeled ground truth; coincidentally, 86.6% of author responses matched the ground truth label; LLM answers disagreed with 75% of mismatched author responses; and 50% of the LLM's errors were due to questions where the answers were undeterminable with the text in the paper",
+      "error_detection": "GPT-4 identified the deliberately inserted errors in 7 of the 13 short papers, spanning mathematical and conceptual errors, a rate the authors note is comparable to that of human peer reviewers; in each of the 6 failures the paper did not contain the complete proof for the claim; none of the other piloted models (Bard, Vicuna, Koala, Alpaca, LLaMa, Dolly, OpenAssistant, StableLM) could identify any error in any of the 13 papers",
+      "recall": "",
+      "score_bias": "In the pairwise 'better paper' task, the LLM erred in 6 of the 10 cases, and the six failures encompassed a bias towards positive results, along with misinterpreting parameter ranges, misinterpreting lower bounds, falling victim to a prompt injection attack, being swayed by bombastic language in the inferior abstract, and getting influenced by the name of the algorithm",
+      "overconfidence": "The LLM occasionally outputs false positives, falsely claiming a correct part of the paper to be incorrect; Table 1 overall rows show false alarms (!) of 1 for Prompt-Direct, 1 for Prompt-OneShot, 1 for Prompt-Parts, and 2 overall",
+      "limitations": "In each of the 6 papers where GPT-4 failed to detect the error, the paper did not contain the complete proof for the claim, disallowing the LLM to detect a deductive error and requiring it to figure out the flaw based on extraneous knowledge; additionally, 8 out of 16 of GPT-4's incorrect checklist answers were due to there being no textual evidence of the correct answer (e.g., requiring access to figures, which is beyond its current capabilities)"
+    }
+  },
+  {
+    "study": "Are we there yet? (Ye et al.)",
+    "year": "2024",
+    "type": "bench",
+    "status": "preprint",
+    "url": "https://arxiv.org/html/2412.01708",
+    "host": "arxiv.org",
+    "design": "Empirical risk-assessment experiments on ICLR 2024 open-access human-generated peer reviews using three LLM-based review pipelines (LLM Review [20] as the primary system, plus AI Scientist [22] and AgentReview [23]) across multiple LLMs (GPT-4o,…",
+    "dims": {
+      "agreement": "Before manipulation, LLM-human consistency (Human-LLM-Matched / LLM's) is 53.29 overall (55.46 for not-accepted vs. 47.98 for accepted papers); after explicit manipulation it drops to 15.91 overall (a decrease of 37.38), with larger drops for weaker papers (Δ=39.45 vs. Δ=32.33); LLM-human consistency is positively correlated with LLM capability, ranked GPT-4o > Qwen-2.5-72B-Instruct > DeepSeek-V2.5 > Llama-3.1-70B-Instruct; prior studies cited report over 30% overlap with human reviews on Nature journals",
+      "error_detection": "Consistency drops by 39.45% for weaker papers (rejected or withdrawn) vs 32.33% for accepted papers, suggesting manipulated LLMs might overlook critical weaknesses",
+      "recall": "",
+      "score_bias": "Without manipulation the LLM review corresponds to a borderline score of 5.37 (5.34 on average per the rating model); explicit manipulation inflates ratings to nearly 8 (from 5.34 to 7.99 on average; LLM Review 5.33±0.60 to 7.99±0.17, AI Scientist 3.40±0.91 to 6.27±2.35, AgentReview 5.82±0.41 to 7.26±0.99); papers with title only achieve higher or comparable ratings than 42% of full papers on average; replacing author affiliations with prestigious ones raises the average positive rating from 36.8% to 40.8% (universities), 41.6% (companies), and 41.2% (renowned researchers); the proportion of positive ratings monotonically increases with paper length",
+      "overconfidence": "Hallucination: LLM Review generates fluent review content (e.g., 'the paper presents a novel methodology' and 'the paper is well-written') even for an empty paper, while AI Scientist and AgentReview detect it; all LLMs give 'introduction'-only content ratings over 95% of the 'full' content rating, and for Llama-3.1-70B-Instruct the 'introduction' rating even exceeds the 'full' rating, showing LLMs give similar ratings regardless of paper completeness; GPT-4o-0806 and DeepSeek-V2.5 are more robust against hallucination, ranked GPT-4o > DeepSeek-V2.5 > Qwen-2.5-72B-Instruct > Llama-3.1-70B-Instruct",
+      "limitations": "The rating difference for title-only content is not statistically significant due to overlapping confidence intervals; experiments are limited to ICLR 2024, with extension to other venues such as Nature journals still pending; the distinct consistency pattern between LLM reviews and disclosed limitations across paper quality tiers is not fully explained and is left for future work"
+    }
+  },
+  {
+    "study": "Evaluating science: human vs AI reviewers",
+    "year": "2024",
+    "type": "direct",
+    "status": "published",
+    "url": "https://cambridge.org/core/journals/judgment-and-decision-making/article/evaluating-science-a-comparison-of-human-and-ai-reviewers/6F69123851472B4A72DEC0BD08C13AA6",
+    "host": "cambridge.org",
+    "design": "Large-scale field experiment at the 29th Biennial Subjective Probability Utility and Decision Making conference (SPUDM) in 2023 in judgment and decision-making: 305 human-written and 20 AI-written abstracts (final sample 245 abstracts, 20 AI-generated),…",
+    "dims": {
+      "agreement": "Reviewer agreement was low but comparable between human–human and human–AI reviewer pairs: a positive small-to-medium correlation in quality scores assigned by AI and human reviewers, 22% Cohen’s Kappa agreement in quality assessments and 17.6% in AI likelihood assessments (vs. 20.8% and 16% between two human reviewers); AI reviewers were more aligned with human reviewers in classifying the very best abstracts",
+      "error_detection": "",
+      "recall": "",
+      "score_bias": "AI quality ratings were biased upward: the mean human-perceived quality was lower than AI ratings, and ChatGPT offered inflated quality evaluations of both original and generated work, significantly favoring its own output, while failing to distinguish high- and low-quality output",
+      "overconfidence": "",
+      "limitations": "Self-selection bias in the participant sample; only purely AI-generated versus human-written abstracts were compared (no data on how researchers used LLMs to improve their submissions); the same broad, subjective prompt lacking specific evaluation criteria was used for human reviewers and ChatGPT; results are limited to the then-current technology (GPT-3.5 and GPT-4) and the knowledge of the reviewer sample"
+    }
+  },
+  {
+    "study": "MARG (D'Arcy et al.)",
+    "year": "2024",
+    "type": "direct",
+    "status": "preprint",
+    "url": "https://arxiv.org/html/2401.04259",
+    "host": "arxiv.org",
+    "design": "Automated evaluation matching generated comments to real human reviews from a subset of 30 papers from the ARIES corpus, plus a user study with 9 volunteers (researchers in NLP and HCI) rating comments from MARG-S, LiZCa, and SARG-B, with a human-review…",
+    "dims": {
+      "agreement": "Human baseline: recall 9.42, precision 12.00, Jaccard 5.45 (the human baseline has lower recall than some LLM baselines but the highest precision; Human-Human agreement was slightly lower than LiZCa-Human agreement)",
+      "error_detection": "MARG-S generated 3.7 \"good\" comments per paper (rated by users), versus 1.7 for the single-agent baseline and 0.3 for Liang et al. (2023)",
+      "recall": "MARG-S 15.84 vs. human baseline 9.42 (MARG-S outperforms the strongest baseline by 6.1 recall points)",
+      "score_bias": "Participants rated MARG-S reviews an average of 1.0 points higher on the 5-point overall helpfulness scale (5 of 9 participants rated MARG-S 2-3 points higher); 71% of MARG-S comments were rated specific or very specific versus 40% for LiZCa",
+      "overconfidence": "The system fails to prune invalid comments in 47% of cases, close to the 53% of comments rated as bad in the user study; a majority of comments across all methods are rated as bad and 38-48% are rated as highly inaccurate",
+      "limitations": "MARG-S is substantially more expensive than other methods in time and API cost, and suffers internal communication errors such as failing to include key information in messages"
+    }
+  },
+  {
+    "study": "AI as a peer reviewer (blinded cardiology study)",
+    "year": "2025",
+    "type": "direct",
+    "status": "published",
+    "url": "https://discovery.researcher.life/article/comparing-ai-generated-and-human-peer-reviews-a-study-on-11-articles/511e0059228e3139a91876e5e380a59b",
+    "host": "discovery.researcher.life",
+    "design": "Eleven published articles in the field of hand surgery, initially rejected by one journal and after accepted by another",
+    "dims": {
+      "agreement": "ChatGPT 4o's decisions concorded with the journal with the highest impact factor in 32% of cases and with the journal with the lowest impact factor in 68%; ChatGPT o1's concordance was 29% with the highest-impact-factor journal and 71% with the lowest-impact-factor journal",
+      "error_detection": "",
+      "recall": "",
+      "score_bias": "AI reviews were more lenient than human reviews: ChatGPT 4o accepted 95% and ChatGPT o1 98% of articles, and their ARCADIA review quality scores were higher than human reviewers' (4.8 for ChatGPT 4o and 4.9 for ChatGPT o1 versus 2.8 for human reviews from journals that accepted the article and 3.2 for those that rejected it)",
+      "overconfidence": "ChatGPT requires precise instructions to avoid hallucinations",
+      "limitations": "ChatGPT's functionalities surpass human capabilities but its limitations must be managed rigorously, including the need for precise instructions to avoid hallucinations, to improve publication quality"
+    }
+  },
+  {
+    "study": "Can LLMs be trusted paper reviewers? (Li et al.)",
+    "year": "2025",
+    "type": "direct",
+    "status": "preprint",
+    "url": "https://doi.org/10.48550/arxiv.2506.17311",
+    "host": "doi.org",
+    "design": "Experiments on all 290 submitted papers to the WASA 2024 conference using GPT-4o in an automated review system integrating RAG, the AutoGen multi-agent system, and Chain-of-Thought prompting; the experiments were repeated five times, comparing LLM-accepted…",
+    "dims": {
+      "agreement": "38.6% average similarity between papers accepted by LLM reviewers and those accepted by human reviewers",
+      "error_detection": "",
+      "recall": "",
+      "score_bias": "Papers with inserted exaggerated statements received a higher average LLM score of 88.4 versus 85.8 for the original version",
+      "overconfidence": "When only a paper's title was provided, the LLM's response was entirely irrelevant to the actual paper because the model erroneously extracted content from the abstract of another paper in the same batch, indicating a content confusion (hallucination) problem where the LLM may conflate documents and fabricate answers",
+      "limitations": "LLMs currently lack independent judgment ability and exhibit retrieval preferences (e.g., being influenced by exaggerated language and hallucinating content), making them unsuitable as substitutes for human reviewers and better used only as assistive tools"
+    }
+  },
+  {
+    "study": "Can LLMs identify critical limitations?",
+    "year": "2025",
+    "type": "bench",
+    "status": "preprint",
+    "url": "https://arxiv.org/pdf/2507.02694v1",
+    "host": "arxiv.org",
+    "design": "LIMITGEN-Syn: 1,000 examples created by controlled perturbations (planted flaws) of high-quality arXiv NLP papers across 11 limitation subtypes under four aspects (GPT-4o perturbing 500 high-quality arXiv papers with human validation); LIMITGEN-Human:…",
+    "dims": {
+      "agreement": "Agreement with human review feedback is poor: even the best LLM (GPT-4o) identifies only about half of the limitations humans consider very obvious (52.0% automated / 45.9% human-eval accuracy vs. the 86.0% / 82.0% human baseline on LIMITGEN-Syn), and on LIMITGEN-Human all systems perform poorly, with generated feedback lacking depth compared to experienced reviewers",
+      "error_detection": "On detecting introduced (planted) limitations in LIMITGEN-Syn, GPT-4o reached 52.0% coarse-grained accuracy and 1.34 fine-grained score (45.9% human-eval accuracy), GPT-4o-mini 49.1%/1.25/37.8%, Llama-3.3-70B 45.7%/1.15/32.7%, Qwen2.5-72B 47.1%/1.20/31.5%, and MARG 68.1%/1.83/54.8%, all below the human baseline of 86.0%/3.52/82.0%; RAG improved accuracy (e.g., +12.2% for GPT-4o, +9.8% for MARG)",
+      "recall": "Overlap with ground-truth human limitations is low: on LIMITGEN-Human, evaluated using recall, precision, and Jaccard Index, Jaccard scores were 14.4%–16.3% for LLMs (GPT-4o 15.9%, GPT-4o-mini 15.5%, Llama-3.3-70B 16.3%, Qwen2.5-72B 14.4%) and 15.2% for MARG, which generates more comments but yields lower Jaccard scores; RAG gave only small Jaccard gains (+0.1% to +2.9%)",
+      "score_bias": "",
+      "overconfidence": "Generated limitations were imperfectly faithful to the papers: on LIMITGEN-Human, faithfulness scores were 2.78–3.19 for the LLMs (GPT-4o 3.19, GPT-4o-mini 3.03, Llama-3.3-70B 2.98, Qwen2.5-72B 2.86) and 3.60 for MARG on a 1–5 scale, where low faithfulness reflects misrepresenting issues that do not exist in the paper; RAG improved faithfulness (e.g., +0.49 for GPT-4o, +0.52 for MARG)",
+      "limitations": "The paper's Limitations section acknowledges inherent biases in its automated evaluation method; the referee report adds that the 82.0% human baseline comes from annotators who built and validated the synthetic perturbations (not blind, not independent), GPT-4o is both generator and judge (partially self-referential evaluation validated on only 100 examples with 0.60-0.77 correlations), and the human-evaluation results rest on small samples without uncertainty intervals"
+    }
+  },
+  {
+    "study": "FLAWS benchmark (Xi et al.)",
+    "year": "2025",
+    "type": "bench",
+    "status": "preprint",
+    "url": "https://arxiv.org/html/2511.21843v1",
+    "host": "arxiv.org",
+    "design": "713 paper-error pairs built from peer-reviewed ICML 2025 papers first posted on arXiv after January 2025 (623 papers retrieved with LaTeX sources): 448 unique papers with claim-invalidating errors inserted by Gemini 2.5 Pro and 265 unique papers with errors…",
+    "dims": {
+      "agreement": "Three human annotators, all graduate-level ML researchers, with each of the 29 validation papers independently annotated by two annotators; human labels treated as ground truth against the automated evaluation metric",
+      "error_detection": "GPT 5 is the top-performing model with 39.1% identification accuracy at k=10 (19.2% at k=3); no model surpasses 50% identification accuracy even at k=10; Claude Sonnet 4.5 and Gemini 2.5 Pro have less than 30% accuracy at k=10; at k=1 identification accuracy is only 5-10% across all evaluated models, with GPT 5 and Grok 4 strongest; overall ranking by aggregated coefficient: GPT 5 (2.10), DeepSeek Reasoner v3.1 (1.90), Grok 4 (1.68), Claude Sonnet 4.5 (1.47), Gemini 2.5 Pro (1.41)",
+      "recall": "For the automated evaluation metric against human annotations (253 agreed cases), recall was 0.98 for the Identified label (support 63) and 0.97 for the Not Identified label (support 190)",
+      "score_bias": "",
+      "overconfidence": "For the automated evaluation metric against human annotations, precision was 0.91 for the Identified label and 0.99 for the Not Identified label; the confusion matrix shows 6 cases where human annotators labeled the error not identified but the automated metric identified it, and 1 case where humans identified it but the metric did not",
+      "limitations": "1 out of 58 manually annotated errors (1.7%) was invalid because it could not be directly identified from the paper's contents alone, revealing a trade-off between scale and validity; FLAWS is static and may become outdated as newer LLMs are released and data contamination risk grows; it covers only ICML 2025 papers focused on AI and ML; the filtering pipeline is resource-intensive, with only about 5% of GPT 5-generated errors surviving; data leakage cannot be fully ruled out since vendors do not guarantee models were not post-trained on more recent data"
+    }
+  },
+  {
+    "study": "Is LLM a reliable reviewer? (Zhou et al.)",
+    "year": "2025",
+    "type": "direct",
+    "status": "published",
+    "url": "https://aclanthology.org/2024.lrec-main.816.pdf",
+    "host": "aclanthology.org",
+    "design": "PeerRead ICLR-2017 subset (1.3k manually annotated aspect scores for 427 official reviews), ASAP ICLR-2020 subset (300 randomly selected papers with 902 official peer reviews), and a proposed RR-MCQ dataset of 196 multiple-choice questions built from 55…",
+    "dims": {
+      "agreement": "Given the human review, GPT-3.5 achieves good correlation with human scores (0.651 Pearson under few-shot, above 0.5 even zero-shot, vs. baseline about 0.3); given (part of) the paper, correlation drops to at best 0.258 Pearson, lower than the baseline, and below 0.2 for GPT-3.5-16k on the whole paper; highest correlations on [Recommendation] (Pearson 0.826 given review, 0.283 given paper) but weak on [Comparison], [Substance], and [Impact]; on RR-MCQ, best micro accuracy 0.710 (GPT-4 -> GPT-4) but best macro accuracy only 0.276",
+      "error_detection": "",
+      "recall": "",
+      "score_bias": "Model-generated reviews are biased toward positive feedback: the proportion of positive feedback (excluding [Summary]) is always larger than 55% versus only 43% positive in reference labels, rising to 99% positive comments when only given the abstract; [Substance-] and [Clarity-] are always missing in all four experiment settings",
+      "overconfidence": "Persistent challenges in zero-shot score calibration",
+      "limitations": "The RR-MCQ test dataset has limited size (196 questions, capped at about 200 due to the high cost of designing high-quality questions); the possibility of data leakage cannot be excluded for the [Recommendation] score prediction on the ICLR-2017 PeerRead papers; GPT-4 review generation was evaluated on only 50 papers because generation and manual analysis are expensive; automatic similarity metrics do not align with true review generation quality"
+    }
+  },
+  {
+    "study": "LLM-REVal (Li et al.)",
+    "year": "2025",
+    "type": "direct",
+    "status": "preprint",
+    "url": "https://arxiv.org/pdf/2510.12367",
+    "host": "arxiv.org",
+    "design": "100 human-authored ICLR papers randomly sampled across ten LLM/ML research topics (reasoning, in-context learning, code generation, evaluation, fine-tuning, hallucination, continual learning, diffusion-based image generation, transformer attention,…",
+    "dims": {
+      "agreement": "Pronounced misalignment between LLM-based reviews and human judgments: in a pairwise human evaluation of the 15 most disparate human–LLM pairs, human-authored papers were chosen as superior in 56.7% of cases versus 33.3% for LLM-authored papers, while the LLM reviewer had scored the LLM papers higher; the review agent's scores correlated moderately with human review scores (Pearson r = 0.5046, p = 8.61 × 10−8) and predicted acceptance with 73.7% accuracy; human reviewers deemed consistently low-scored human papers valuable (one accepted to ICLR 2024), and 81 of 174 (46.55%) review issues showed improvements in revisions, supporting the LLM reviewer's higher revised scores",
+      "error_detection": "81 (46.55%) of the remaining 174 issues identified in LLM reviews exhibited improvements in revisions (after excluding 56 issues that could not be resolved through textual edits)",
+      "recall": "",
+      "score_bias": "LLM reviewers assigned significantly higher scores to LLM-authored papers than human-authored papers on the same topic (average 6.2142 vs 5.9371; LLM papers won 66% of pairwise comparisons vs 26% for human papers, with 78% vs 49% acceptance rates; in the 15 most-disparate pairs LLM papers scored about 0.8 higher on average), while persistently assigning low scores to certain human papers (5% remained unaccepted even after five revise–review cycles, despite one being accepted at ICLR 2024); revisions of low-scoring papers gained significant score improvements regardless of authorship (LLM papers +0.30 from 5.79 to 6.09; human papers +0.36 from 5.66 to 6.02), and LLM polishing of human papers inflated scores (5.69 to 5.94 after 40% polishing), with submissions exhibiting LLM-style linguistic features receiving inflated scores and work containing critical statements severely undervalued",
+      "overconfidence": "Systematic miscalibration of LLM reviewers relative to human judgments: human reviewers do not prefer LLM papers over human papers as LLM reviewers do, and consistently low-scored human papers are deemed valuable, indicating systematic biases in LLM reviewers",
+      "limitations": "The simulation could not scale to real experiment execution because of LLM coding capability and time-consuming experiment execution, so the research agent predicted results rather than obtaining them through experiment iteration; the initial set of human-authored papers was restricted to 100 due to cost (about 500k input tokens to generate a paper and about 200k to review each paper); and revised human papers were counted only when the ICLR LaTeX source was available"
+    }
+  },
+  {
+    "study": "Mind the blind spots",
+    "year": "2025",
+    "type": "direct",
+    "status": "preprint",
+    "url": "https://arxiv.org/pdf/2502.17086.pdf",
+    "host": "arxiv.org",
+    "design": "Focus-level evaluation pipeline comparing human and LLM reviews using a benchmark dataset of 676 papers and their review data from OpenReview for ICLR conferences spanning 2021 to 2024; 8 LLMs (4 GPT, 2 Llama, 2 DeepSeek) plus MARG and a fine-tuned gpt-4o…",
+    "dims": {
+      "agreement": "Agreement between LLM and human expert reviews was low: the highest overall F1 score among the LLMs was 0.373 when matching human reviewers on the targets and aspects in each review point; agreement varied across labels, with much higher F1 for Method (0.731), Experiment (0.671), and Validity (0.771) than other targets (0.213) and aspects (0.340), and Novelty in weaknesses was significantly lower (F1 0.126); LLMs consistently achieved higher F1 scores for weaknesses than strengths; the fine-tuned gpt-4o produced focus distributions most closely aligned with humans (KL divergence 0.022), DeepSeek-R1 achieved the best agreement on (target, aspect) labels, and Llama-405B showed the highest text similarity",
+      "error_detection": "LLMs were more effective at identifying concerns (e.g., lack of baselines or scope of evaluation) than strong points of experiments — the Experiment F1 score was consistently higher for weaknesses (0.835) than strengths (0.513) — but they exhibited a biased focus, notably overlooking novelty assessment in identifying weaknesses, which the authors call a significant drawback since paper review requires critical examination of novelty",
+      "recall": "LLMs showed higher recall (0.402) than precision (0.300) scores, mainly due to identifying a higher number of review points than human experts; LLMs identified more points on average (7.88) than human experts (5.39), and identified a relatively consistent number of points regardless of the paper's content",
+      "score_bias": "0.126 (F1 score for Novelty in weaknesses, which LLMs largely overlooked, reflecting their biased focus towards technical validity, e.g., Validity aspect F1 0.771 vs other aspects 0.340)",
+      "overconfidence": "0.300 precision (lower than the 0.402 recall), reflecting that LLMs identified a higher number of review points than human experts",
+      "limitations": "The authors report four limitations: (1) the dataset focuses solely on ICLR submissions and the coding schema is developed based on AI venues, limiting generalizability to other fields; (2) the analysis examines only the target and aspect of review items, leaving other important dimensions such as level of specificity and depth of justification unexplored; (3) despite high IRR (0.80) of the automatic annotator with human annotations, some discrepancies still exist; and (4) possible prompt engineering strategies that could mitigate the limitations of LLMs in paper review were not explored"
+    }
+  },
+  {
+    "study": "MMReview",
+    "year": "2025",
+    "type": "bench",
+    "status": "preprint",
+    "url": "https://arxiv.org/pdf/2508.14146v3",
+    "host": "arxiv.org",
+    "design": "Benchmark of multimodal content and expert-written review comments for 240 papers across 17 research domains within four disciplines (Artificial Intelligence, Natural Sciences, Engineering Sciences, Social Sciences), with 13 tasks comprising 6,724 questions;…",
+    "dims": {
+      "agreement": "Model outputs are compared with human-written reviews and ratings across tasks (BARTScore and LLM-as-a-Judge similarity for review comments; MAE against human scores for scoring tasks; accuracy against human decisions for Meta Decision and Pairwise Rank). Large-scale and closed-source models outperform others on most metrics, particularly on review-conclusion tasks (CD, CoD, MD, PR); CoT reasoning lowered MAE versus direct scoring, and conditioning on human-written reviews (CD) further reduced MAE; in a case study the model's identified weaknesses were consistent with human reviewers' concerns, indicating partial alignment with human judgment",
+      "error_detection": "Fake Strengths and Fake Weaknesses tasks test whether models can detect factually inaccurate (polarity-reversed) strengths and weaknesses; Prompt Injection tests resistance to manipulation. Findings: multimodal input improves robustness to prompt injection regardless of model size; most models show an overall score increase of typically 1–2 points after prompt injection; in a case study, under injection the model's output exhibited a strong bias toward highlighting strengths and delivered a more favorable final assessment",
+      "recall": "",
+      "score_bias": "Models show a length-induced upward score bias: they assign higher scores as context length (tokens or number of rendered pages) increases, which does not align well with human reviewer judgments across multiple intervals, indicating a tendency to overvalue longer inputs irrespective of actual content quality; prompt injection also raises average scores by a typical 1–2 points",
+      "overconfidence": "LLMs' inherent hallucination issue may lead to erroneous assessments of strengths and weaknesses, and their sycophantic tendency to align with human judgments may compromise flaw identification; an ablation found that removing the reference section improves performance on detection of hallucinated strengths and weaknesses (as well as CoT scoring and alignment with human preferences), while its removal increases MAE on Soundness and Presentation Scoring",
+      "limitations": "Dataset size and distribution: approximately 48% of papers with peer review comments are concentrated in the AI field, which may affect representativeness; and controversy surrounding human expert review comments: there is a lack of consensus on what constitutes a good or high-quality review, so the quality of expert-written reviews used cannot be guaranteed"
+    }
+  },
+  {
+    "study": "ReviewerToo",
+    "year": "2025",
+    "type": "direct",
+    "status": "preprint",
+    "url": "https://arxiv.org/pdf/2510.08867.pdf",
+    "host": "arxiv.org",
+    "design": "Large-scale empirical study validating the ReviewerToo framework on a curated stratified dataset (ICLR-2k) of 1,963 ICLR 2025 submissions from OpenReview (from a full pool of 11,672 submissions), comparing LLM reviewer personas, ensembles, and metareviewer…",
+    "dims": {
+      "agreement": "The gpt-oss-120b-based system achieves 81.8% accuracy on the binary accept/reject task compared to 83.9% for the average human reviewer (and 92.4% for top-1% human reviewers); human reviewers exhibit low to moderate agreement with LLM reviewers, consistent with known levels of disagreement in real peer review; the Meta (all) agent reaches 81.8% binary accuracy and 28.1 F1 on the 5-way task, aligning closely with the top-1% human baseline",
+      "error_detection": "AI reviewers excel at fact-checking and literature coverage but struggle at assessing methodological novelty and theoretical contributions; in a qualitative example, reviewer agents independently identified underlying weaknesses in a rejected paper that human reviewers (who all gave accept scores) overlooked, and the metareviewer includes a fact-checking module that verifies reviewer-stated claims and discards unsupported statements",
+      "recall": "On the ICLR-2k dataset, the metareviewer aggregation Meta (all) reaches 32.4 recall on the 5-way task and 80.1 recall on the 2-way task, outperforming single-agent and majority ensembles; human (avg) recall is 12.4 (5-way) and 84.1 (2-way), and human (top-1%) recall is 30.4 (5-way) and 91.9 (2-way)",
+      "score_bias": "ReviewerToo (gpt-oss-120b) reaches 81.8% binary accept/reject accuracy versus 83.9% for the average human reviewer (top-1% humans: 92.4%); extremal personas show systematic score bias — the PERMISSIVE persona over-predicts acceptance decisions while the CRITICAL persona strongly favors rejection — and single-agent personas still over-predict rejections relative to ground truth",
+      "overconfidence": "After rebuttal rounds, F1 drops for all reviewer agents due to an increase in false positives post discussion (while false negatives and true negatives decrease), which the authors attribute to sycophantic tendencies of LLMs to accept papers after reading rebuttals; the paper also notes LLM-generated reviews risk hallucinations and lack in-depth judgment",
+      "limitations": "Authors report: five-way performance remains substantially lower than binary with consistent difficulty distinguishing fine-grained acceptance tiers (oral vs. spotlight); conference-level calibration still requires human expertise; review text quality is not always aligned with human expectations; susceptibility to sycophancy during rebuttals; variable persona agreement; single-agent reviewers exhibit strong biases; LLM reviewers approximate but do not replace humans"
+    }
+  },
+  {
+    "study": "Revolutionizing peer review (Shopovski et al.)",
+    "year": "2025",
+    "type": "direct",
+    "status": "preprint",
+    "url": "https://preprints.org/manuscript/202502.0058/v1",
+    "host": "preprints.org",
+    "design": "198 manuscripts submitted to the European Scientific Journal (ESJ) between January and September 2024, in Social Sciences & Humanities or Life/Natural/Medical Sciences; each manuscript received review reports from at least two human reviewers and one…",
+    "dims": {
+      "agreement": "Cohen's kappa between the median of human raters and AI raters across 198 manuscripts was 0.008, indicating an almost negligible level of agreement, and was not statistically significant (T = 0.391, p = 0.696), suggesting the observed agreement does not significantly differ from chance",
+      "error_detection": "",
+      "recall": "",
+      "score_bias": "ChatGPT-4 consistently awarded higher grades and was less rigorous than human reviewers: AI mean ranks ranged from 405.88 to 549.15 versus human 273.85 to 329.5 across all components (Z-scores between -4.94 and -16.62, p < 0.001); AI recommended minor revision for 191 of 198 (96.5%) papers, no revision for 3 papers (1.5%), major revision for 4 papers (2.0%), and never recommended rejection, while human reviewers recommended minor revision 309 of 504 (61.3%), major revision 114 (22.6%), no revision 53 (10.5%), and rejection 28 (5.6%)",
+      "overconfidence": "",
+      "limitations": "The ability of LLM tools to uphold rigorous academic standards remains limited; the existing version of ChatGPT-4 is not trained in peer review and cannot replace human expertise, though it can serve as an assistant under human oversight; AI-based evaluation systems lack the critical judgment necessary to determine the main submissions for reworking or rejection, so editors must remain vigilant and not rely solely on LLM-generated reports"
+    }
+  },
+  {
+    "study": "SPOT benchmark (Son et al.)",
+    "year": "2025",
+    "type": "bench",
+    "status": "preprint",
+    "url": "https://doi.org/10.48550/arxiv.2505.11855",
+    "host": "doi.org",
+    "design": "83 up-to-date manuscripts spanning ten scientific fields with 91 annotated errors from 47 paper sources; errors are genuine mistakes confirmed by original authors (59 addressed via errata, 32 via retractions); 8 independent runs per paper",
+    "dims": {
+      "agreement": "Domain experts (a researcher with relevant publications or a PhD-trained postdoc in the field) who evaluated papers in the case study, verifying whether models missed benchmarked errors and whether flagged issues outside annotations were valid flaws, with original authors consulted on disputed issues; plus two-stage human annotator validation of all error annotations",
+      "error_detection": "o3 achieves the highest scores with 6.1% ± 1.3 precision, 21.1% ± 4.4 recall, and 37.8% pass@4, followed by Gemini-2.5-Pro (3.1%, 10.1%, 25.9%), Claude-3.7-Sonnet:Thinking (3.0%, 6.0%, 18.6%), and GPT-4.1 (2.8%, 6.0%, 17.8%); pass@1 scores of only 18.4% (o3) and 7.3% (Gemini 2.5 Pro); in the Equation/Proof category o3 leads with 62.6% pass@4 while GPT-4.1 achieves 44.4% in Figure Duplication",
+      "recall": "Best recall is o3 at 21.1% ± 4.4 on the full benchmark; on the 48-instance text-only/multimodal subset, proprietary systems maintain substantial recall (o3 at 34.6%, Gemini-2.5-Pro at 13.7%) while open-source models collapse to near zero; most models improve in recall when images are removed",
+      "score_bias": "",
+      "overconfidence": "Precision is very low for all models (best: o3 at 6.1% ± 1.3), and models are miscalibrated: confidence correlates only weakly with pass@4, with most models reporting very low confidence clustering near zero — across 498 model-instance evaluations only two cases (both o3) of full confidence; case studies found most flagged issues were hallucinations or misunderstandings, with only one instance of an LLM identifying an unannotated but genuine error",
+      "limitations": "SPOT remains relatively modest in size due to prioritizing copyright compliance, contamination prevention, and annotation accuracy; some true errors may be unannotated (false negatives can arise when author notes insufficiently cover affected results or when smaller unrelated errors exist), and false positives may occur when an LLM correctly points out an erroneous theorem but its response content is irrelevant; LLMs struggle to synthesize long-context information"
+    }
+  },
+  {
+    "study": "To err is human (AI checker)",
+    "year": "2025",
+    "type": "bench",
+    "status": "preprint",
+    "url": "https://arxiv.org/html/2512.05925",
+    "host": "arxiv.org",
+    "design": "Five papers accepted to NeurIPS (2021–2025) or ICLR (2018–2025); for each paper three mistake-injected copies, each containing six mistakes, yielding 15 mistake-injected papers with 90 different injected mistakes; the AI Checker pipeline was run three…",
+    "dims": {
+      "agreement": "The authors' human annotators, who manually reviewed the AI Checker's reports on the mistake-injected copies (and, in the precision validation, human annotators independently reviewed every identified issue to determine whether each issue is a real mistake or a false positive)",
+      "error_detection": "Recall differed substantially across mistake categories: the AI Checker detected Math/Formula mistakes most reliably (66.7%), followed by Table/Figure mistakes (61.9%), whereas Text (55.9%) and Cross-reference mistakes (53.8%) remained more challenging",
+      "recall": "The AI Checker achieved an overall recall of 60.0% across the 90 injected mistakes",
+      "score_bias": "",
+      "overconfidence": "In the validation set of 60 randomly selected papers, human researchers examined the 316 potential mistakes flagged by the AI Checker and confirmed 263 as genuine, corresponding to a precision of 83.2% for the AI Checker; false positives were typically due to non-standard notation or OCR errors",
+      "limitations": "The imperfect recall suggests the AI Checker might provide a conservative estimate of the number of mistakes in papers; the AI Checker has false positives, typically due to OCR issues and some due to incomplete reasoning; it can also fail to detect genuine mistakes, so estimates may be conservative and the true error rate could be higher; and the perceived significance of each issue is subjective, with disagreements between the AI Checker and human annotators and among human annotators about whether a mistake is substantive"
+    }
+  },
+  {
+    "study": "When your reviewer is an LLM (Zhu et al.)",
+    "year": "2025",
+    "type": "direct",
+    "status": "preprint",
+    "url": "https://arxiv.org/pdf/2509.09912v1",
+    "host": "arxiv.org",
+    "design": "Systematic evaluation of GPT-5-mini as an academic reviewer against human reviewers using 1,441 papers sampled from ICLR 2023 (991 papers) and NeurIPS 2022 (450 papers), constructing three review sets — human reviews, LLM-generated reviews, and LLM-generated…",
+    "dims": {
+      "agreement": "Alignment between LLM and human ratings improves for papers rated high by human reviewers: 59.6% of Accept: notable-top-5% papers have an LLM–human difference within [–1, 1) versus only 27.0% for rejected papers; LLMs correctly classify most accepted papers (89/100 notable-top-25%, 294/300 poster) but only 21/500 rejected papers fall below the 5.0 threshold; alignment is higher in tracks like “General Machine Learning”, “Reinforcement Learning”, and “Applications” (more than 50% of papers within [–1, 1)) and weaker in “Social Aspects of Machine Learning”, “Theory”, and “Optimization”; topic distributions show moderate divergence (JSD 0.031 for strengths, 0.043 for weaknesses), and individual-paper Jaccard topic overlap is moderate (69.6% of papers in 0.3–0.6 for strengths, 64.5% for weaknesses)",
+      "error_detection": "LLMs and humans diverge in the weaknesses they identify: humans frequently identify “presentation clarity” as a weakness (24% of Human-Weakness) whereas LLMs place less emphasis on it (5% for LLM-Weakness), while LLMs concentrate more on “quality of technical implementation” (31% vs. 24% in human reviews) and “quality of theoretical analysis” (19% vs. 16%); LLMs also emphasize “rigor of empirical evaluation” (40% vs. 29%) and “quality of technical implementation” (16% vs. 11%) as strengths more than humans, who highlight “novelty of study design” (29% vs. 17%) and “presentation clarity” (15% vs. 5%)",
+      "recall": "Only 21/500 rejected papers correctly identified as below threshold",
+      "score_bias": "LLMs systematically inflate ratings relative to human reviewers: the average LLM rating is 6.86 vs. the average human rating of 5.70 (a difference of 1.16 points); LLMs overestimate weaker papers (e.g., for papers with average human rating 3.5, 97.67% receive a higher LLM rating, average difference +2.48) while providing more calibrated evaluations for stronger ones (for human rating 7.5, only 65.62% receive a higher rating, average difference -0.34); if LLM ratings were used directly, 95.8% of originally rejected papers would have been considered acceptable at least at the poster level (only 21/500 rejected papers correctly identified as below threshold), while LLMs correctly classify most accepted papers (89/100 notable-top-25%, 294/300 poster) but only 62/91 notable-top-5%",
+      "overconfidence": "LLM ratings are highly sensitive to reviewer-provided instruction prompts, demonstrating inconsistency: without reference papers the LLM gives even more inflated ratings (only 2% rated 5 vs. 15% with references, roughly 66% rated 8), and under a tough-reviewer instruction about 73% are rated 6; small changes in instructions drastically alter the rating distribution; additionally, LLMs never assign extreme ratings like 10 in baseline reviews, and overarching prompt injections modestly inflate the average rating to 7.21 (+0.35 over baseline)",
+      "limitations": "The headline +1.16 inflation and 95.8% misclassification figures are conditional on one reference-calibrated prompt and lack confidence intervals or significance tests (the no-reference condition produced even more inflated ratings, and Table 2 suggests they would not persist under a differently worded prompt); the 30% weakness-suppression claim lacks a reported baseline weakness-count distribution; the claimed U-shaped injection-location effect rests on small differences with no error bars or significance tests; the analysis depends on assumptions such as human ratings being accurate quality proxies, self-reported contamination checks, the reference-calibrated prompt eliciting true review behavior, and an LLM-based labeling pipeline that could bias the topic-divergence findings"
+    }
+  },
+  {
+    "study": "Beyond rating",
+    "year": "2026",
+    "type": "direct",
+    "status": "preprint",
+    "url": "https://arxiv.org/pdf/2604.19502v1.pdf",
+    "host": "arxiv.org",
+    "design": "Holistic evaluation framework assessing AI reviewers across five dimensions (Content Faithfulness, Argumentative Alignment, Focus Consistency, Question Constructiveness, AI-Likelihood) on a curated test set of 1,000 papers sampled from over 16,000 papers from…",
+    "dims": {
+      "agreement": "Textual alignment metrics correlate strongly with agreement between AI and human ratings: Weakness Recall correlates with rating MAE at -0.781, Binoculars Score at r = -0.702, and KL divergence for Weakness and Question at -0.765 and -0.744 respectively; models with higher summary scores and higher Weakness Recall (e.g., Claude-4.5-Sonnet, DeepSeek-v3.2, DeepReviewer-14B, AgentReview-GPT-5) achieve the lowest rating MAE (e.g., DeepReviewer-14B 0.85, OpenReviewer-8B 0.86, Qwen3-8B 1.03), while Llama-3.1-8B/70B-Instruct show the lowest Recall and highest MAE (2.51 and 2.32)",
+      "error_detection": "When models identify the same strengths and weaknesses as human experts, their ratings converge with human benchmarks",
+      "recall": "Weakness Recall shows a robust correlation with rating MAE across the model spectrum: models with the lowest Recall (Llama-3.1-8B-Instruct and Llama-3.1-70B-Instruct) have significantly elevated MAE, while models with higher Recall (Claude-4.5-Sonnet, DeepSeek-v3.2, DeepReviewer-14B, AgentReview-GPT-5) achieve the minimum MAE in their groups; Strength Recall also correlates with lower MAE",
+      "score_bias": "Rating outputs are highly susceptible to prompt influence: under neutral prompts, predicted ratings for the Qwen and Llama series were overly lenient, clustering predominantly in the (8, 10) range; models may also superficially fit the human score distribution (e.g., clustering at 5 or 6) via simple prompting without achieving human-level review quality",
+      "overconfidence": "The paper targets hallucinated criticisms, noting a model that predicts the correct rating but generates non-existent errors is of little value; the summary coverage metric is interpreted as a proxy for hallucination detection, and the question Confidence metric is designed to detect and mitigate potential LLM hallucinations; leading closed-source models (GPT-5.2, Claude-4.5-Sonnet) show lower Weakness precision due to verbose, multifaceted critiques, treated as a trade-off for qualitative richness",
+      "limitations": "Question Score has limited variance across baselines and insufficient discriminative power; Precision is an insufficient metric for differentiating model performance or reflecting human evaluative preferences; the embedding-based summary metric is algorithmically biased so higher AI scores reflect verbosity and detail retention rather than superior synthesis; NeurIPS data exhibits a survival bias in the Decision field (rejected papers typically not public, approximately 95% acceptance), an acknowledged distribution shift; low Rating MAE does not inherently guarantee evaluative utility since models may superficially fit clustered human scores"
+    }
+  },
+  {
+    "study": "CoCoReviewBench",
+    "year": "2026",
+    "type": "bench",
+    "status": "preprint",
+    "url": "https://arxiv.org/html/2605.07905v2",
+    "host": "arxiv.org",
+    "design": "Benchmark of 3,900 papers curated from NeurIPS (2021-2024) and ICLR (2017-2025) with 14.1k review comments, 134.8k opinions and 108.6k correct opinions as references; 18 LLM reviewers evaluated against human references via category-level LLM-as-a-judge on a…",
+    "dims": {
+      "agreement": "On correctness (consistency with human references) and thoroughness, AI reviews remain relatively weaker overall: the strongest closed-source models can exceed human reviewers, but many other models still score lower than human reviewers, while their clarity scores are consistently higher than human reviews; reasoning models are comparable to, or even better than, human reviewers on grounding and verifiability, and AI reviews show broader category coverage than a single human review but insufficient depth",
+      "error_detection": "Incorrectness identified in 22.13% of papers and 7.63% of reviews via inter-reviewer conflicts, and in 75.72% of papers and 36.76% of reviews via reviewer–author conflicts; human verification accuracy of error detection is 81.40% (inter-reviewer) and 66.83% (reviewer-author)",
+      "recall": "over 90% recall for predicting an overall score of 6 or higher when the average score for Originality-Method, Quality-Experiment, Clarity-Writing, and Quality-Comparisons exceeds a certain threshold",
+      "score_bias": "GPT-5.2 averages +0.59 above the human baseline of 3.26 on CoCoReviewBench categorical metrics (best closed-source models exceed human reviewers on Correctness/Thoroughness while many other models score lower); category-inconsistent AI opinions are systematically scored lower, with an average drop of -0.23 across four models",
+      "overconfidence": "AI reviewers are prone to hallucinations: with text-only inputs, language models occasionally generate figure-related opinions (fewer than 0.05 opinions per paper, but occurring in every model), and AI may fit erroneous human opinions, narrowing the human–AI correctness gap",
+      "limitations": "Conflict-based filtering only detects errors that surface as explicit disagreements and can carry sentiment framing, so erroneous opinions can be missed when responses are absent or overly mild; the evaluation requires additional computation to segment and categorize AI reviews (mitigated by distilling the pipeline into 8B models); and the ability of LLMs to identify the most critical reviews remains largely unexplored"
+    }
+  },
+  {
+    "study": "Large-scale randomized study of LLM feedback",
+    "year": "2026",
+    "type": "direct",
+    "status": "preprint",
+    "url": "https://arxiv.org/pdf/2606.10159v1",
+    "host": "arxiv.org",
+    "design": "",
+    "dims": {
+      "agreement": "Researchers not only consider AI-generated reviews useful, but in some respects even prefer them to human reviews, particularly for technical accuracy and the identification of actionable improvements",
+      "error_detection": "",
+      "recall": "",
+      "score_bias": "",
+      "overconfidence": "",
+      "limitations": ""
+    }
+  },
+  {
+    "study": "Multimodal audit (Alharbi)",
+    "year": "2026",
+    "type": "bench",
+    "status": "preprint",
+    "url": "https://arxiv.org/pdf/2608.28626",
+    "host": "arxiv.org",
+    "design": "165 submissions to the 2026 International Conference on Learning Representations (a venue postdating both models' training cutoffs), presented with author identities blinded, replaced with high-prestige affiliations, or replaced with low-prestige…",
+    "dims": {
+      "agreement": "Mean LLM scores showed only weak correlations with human judgment for both models; LLM editorial decisions aligned with the venue's decisions for 60.6% of review pairs, identical to a naive score-averaging baseline, and LLM editorial decisions exactly matched those produced by simple score averaging",
+      "error_detection": "The models detected 12.1% of the 145 verified errors under natural prompting, and a one-sentence verification instruction increased detection to 22.2%, leaving 78% of errors undetected; invalid statistical claims and p-value errors were detected most frequently (Pixtral-Large 0.67 text only, 0.71 text with figures; Qwen2.5-VL 0.28 and 0.17); Qwen2.5-VL detected almost no numeric contradictions (0.01 text only, 0.03 text with figures) versus Pixtral-Large 0.36 and 0.20; trend-reversal errors were not detected by either model under either input condition; error detection was significantly lower with figures provided (odds ratio = 1.53, p = 7.9 × 10−7); the verification-oriented prompt increased detection across both LLMs from 12.1% to 22.2% (odds ratio = 2.05, p = 1.3×10−12), with Qwen2.5-VL rising from 0.06 to 0.16 (text with figures) and 0.11 to 0.22 (text only), and Pixtral-Large from 0.14 to 0.25 and 0.18 to 0.25",
+      "recall": "Overall recall of the 145 verified errors was 12.1% under the natural prompt, rising to 22.2% under the verification-oriented prompt (odds ratio = 2.05); Qwen2.5-VL rose from 0.06 to 0.16 for text with figures and from 0.11 to 0.22 for text only, and Pixtral-Large rose from 0.14 to 0.25 and from 0.18 to 0.25, respectively",
+      "score_bias": "LLM scores were consistently higher (inflated) than human scores: LLM scores ranged from 7.0 to 8.1 across all manuscript groups, including rejected submissions, whereas human mean scores ranged from 3.4 to 6.8; providing figures increased scores by 0.5 to 0.9 points for Qwen2.5-VL and by 0.1 to 0.2 points for Pixtral-Large",
+      "overconfidence": "LLM scores were inflated relative to human reviewers (LLM scores 7.0–8.1 versus human mean scores 3.4–6.8 across all manuscript groups, including rejected submissions); providing figures reduced error detection while increasing review scores; no visual error was reliably verified against its corresponding figure, and half of the text-only reviews described figures that were not provided; LLM reviews identified only surface-level weaknesses and failed to detect conceptual deficiencies",
+      "limitations": "The evaluation included only two LLMs from different model families and manuscripts from a single venue, research field, and review format; one LLM served as the judge for error detection and one reviewer belonged to the same model family (mitigated through symmetric, authorship-blind evaluation and human validation); the low-prestige institutional names were fictitious, testing unfamiliarity combined with modest naming rather than affiliation with an established low-prestige institution"
+    }
+  },
+  {
+    "study": "On the limits and opportunities of AI reviewers",
+    "year": "2026",
+    "type": "direct",
+    "status": "preprint",
+    "url": "https://alphaxiv.org/abs/2605.20668",
+    "host": "alphaxiv.org",
+    "design": "45 domain scientists in Physical, Biological, and Health Sciences spent 469 hours rating 2,960 individual criticisms from human-written and AI-generated reviews of 82 Nature-family papers (73 Nature Communications, 2 Nature, 2 Nature Computational Science, 2…",
+    "dims": {
+      "agreement": "On the composite fully-positive rate, GPT-5.2 (60.0%) exceeds the top-rated human reviewer (48.2%) by 11.6 percentage points, while Claude Opus 4.5 (53.1%) and Gemini 3.0 Pro (50.2%) are statistically indistinguishable from the top-rated human; all three AI reviewers substantially exceed the lowest-rated human (36.2%) on every dimension. Expert-judged win rates: GPT-5.2 matches or exceeds the Top-Rated Human on 48.6% of papers and the Lowest-Rated Human on 73.4%; Claude Opus 4.5 32.1%/68.8% and Gemini 3.0 Pro 30.3%/59.6%. A single AI reviewer recovers 27.1% of a human reviewer's items (versus 25.8% recovered by another human), and 74.0% of AI-raised items have a similar counterpart in at least one human's review",
+      "error_detection": "AI reviewers show strengths on rigor- and code-heavy scrutiny: they catch independence violations, missing validation splits, and inadequate uncertainty reporting that human reviewers often pass over, and via code inspection surface implementation bugs and data-leakage issues the manuscript text alone does not reveal; however, on correctness all three AI reviewers fall below the Top-Rated Human (92.3%) by 6 to 10 percentage points",
+      "recall": "On PeerReview Bench, recall (fraction of fully positive human review items the AI reviewer also raises) shows a substantial gap from the human ceiling: the top model Claude-Opus-4.5 reaches only recall 38.39% (F1 = 50.89), GPT-5.4 attains the highest precision (93.81%) but only 26.55% recall, and Gemini-3.0-Pro-Preview shows 53.35% precision and 37.65% recall",
+      "score_bias": "AI reviewers score below the top-rated human on correctness by 6 to 10 percentage points (GPT-5.2 86.2%, d = −0.23, p = .046; Claude Opus 4.5 83.7%, d = −0.34, p = .003; Gemini 3.0 Pro 81.9%, d = −0.42, p < .001 vs. 92.3%), but score higher on significance (rank-biserial r = +0.49 for GPT-5.2, +0.30 for Claude Opus 4.5, +0.42 for Gemini 3.0 Pro, all p ≤ .028 vs. 1.39) and slightly higher on evidence sufficiency for GPT-5.2 and Claude Opus 4.5 (d = +0.23 and +0.24, both p < .05); on the aggregate fully-positive rate GPT-5.2 exceeds the top-rated human by 11.6 percentage points while Claude Opus 4.5 and Gemini 3.0 Pro place between the top-rated and lowest-rated human baselines",
+      "overconfidence": "AI reviewers raise more incorrect items than the top-rated human; they exhibit 16 recurring weaknesses humans do not share, including an overly critical stance that inflates minor issues (severity miscalibration against field-specific norms) and false claims that information is absent from the manuscript when the paper provides it (W3 reading failure); however, AI-raised items humans do not raise are not hallucinations — uncovered items have a correctness rate of 81.8% and evidence-sufficiency rate of 93.5%, statistically indistinguishable from matched AI items",
+      "limitations": "Current AI reviewers are positioned as complements to, not substitutes for, human reviewers: AI reviewers overlap far more with each other than humans do (21% vs. 3% for cross-reviewer pairs), exhibit 16 recurring weaknesses humans do not share (limited subfield knowledge, lack of long context management over multiple files, overly critical stance on minor issues), and an all-AI panel would substantially narrow diversity of perspectives; open questions remain on whether the tradeoff persists as models improve and whether the patterns generalize beyond Nature-family papers"
+    }
+  },
+  {
+    "study": "Ophthalmology 300-manuscript comparison",
+    "year": "2026",
+    "type": "direct",
+    "status": "published",
+    "url": "https://ovid.com/jnls/md-journal/fulltext/10.1097/md.0000000000048147~current-capabilities-of-large-language-models-as-peer",
+    "host": "ovid.com",
+    "design": "300 randomly selected manuscripts submitted to 3 ophthalmology journals within a single subspecialty, managed by 1 editor, between June 2023 and July 2024, including a total of 705 peer reviews by 324 ophthalmologists; field: ophthalmology",
+    "dims": {
+      "agreement": "Poor agreement with human reviewers: human reviewers rejected manuscripts far more often (73.33%) than ChatGPT or Gemini (2.00% each; P < .001) and suggested major (22.67% vs 68.00% ChatGPT and 31.33% Gemini) or minor revisions (3.33% vs 30.00% ChatGPT and 66.33% Gemini) less often (P < .001); both AI platforms failed to align with the judgment capability of humans, grading all manuscripts similarly",
+      "error_detection": "",
+      "recall": "",
+      "score_bias": "AI models were far more lenient than human reviewers: human reviewers rejected 73.33% of manuscripts versus 2.00% for both ChatGPT and Gemini (P < .001), and chose 'Accept with Major Revisions' (22.67% vs 68.00% and 31.33%) and 'Accept with Minor Revisions' (3.33% vs 30.00% and 66.33%) less frequently than ChatGPT and Gemini, respectively; for manuscripts rejected by the editor, human reviewers provided more negative comments than both AI models (−1.05 vs −0.02 vs 0.24; P < .015)",
+      "overconfidence": "The LLMs were not overconfident but rather indecisive: they were reluctant to provide definitive accept/reject decisions, preferring revision recommendations, and were found to be indecisive and unwilling to provide a strong recommendation; they also repeated generic criticisms (ChatGPT mentioned “novelty,” “sample size,” and “clarity” in 75%, 60%, and 50% of manuscripts; Gemini in 80%, 70%, and 65%), which may be mistaken for critical analysis, and (per previous studies cited) AI-provided literature support has largely consisted of inaccurate or completely fabricated references",
+      "limitations": "The analysis was restricted to manuscripts from 3 journals within a single ophthalmology subspecialty assigned to a single editor and included only 2 popular LLMs, limiting external validity; manuscripts were not further classified by design or subject area, limiting generalizability; the independence assumption required for ANOVA may have been violated because multiple reviews were nested within individual manuscripts; structured grading systems could still benefit from further refinement and validity verification; and AI models might perform better with greater emphasis on prompt engineering, which was not the focus of the study"
+    }
+  },
+  {
+    "study": "PaperAudit-Bench (Tu et al.)",
+    "year": "2026",
+    "type": "bench",
+    "status": "preprint",
+    "url": "https://arxiv.org/html/2601.19916",
+    "host": "arxiv.org",
+    "design": "Benchmark study of automated peer review: PaperAudit-Dataset comprises 220 papers with injected synthetic errors (107 ICLR, 67 ICML, 46 NeurIPS papers); error-aware AI reviewers (PaperAudit-Review) are compared against baseline and DeepReview reviewers, and…",
+    "dims": {
+      "agreement": "The error-aware PaperAudit reviewer consistently outperforms its baseline and DeepReview in alignment with human judgments, achieving lower rank error (R-MSE 0.148 vs 0.152/0.160), higher correlation (Spearman 0.142 vs 0.119/0.075; Kendall 0.109 vs 0.085/0.057), higher pairwise accuracy (0.557 vs 0.545/0.529), and improved coverage of human-identified issues; however, absolute alignment remains limited, indicating a persistent gap between LLM-based and human reviewers",
+      "error_detection": "State-of-the-art LLMs exhibit substantial variability in detecting injected paper-level errors, with uneven sensitivity across error types and paper sections; Gemini-2.5-Pro and GPT-5 achieve the strongest Fast-mode performance (Macro-F1 41.4% and 40.6%), GPT-5 the highest Error Coverage (51.4%); errors involving subtle over-claiming (Claim Distortion, Rhetoric Bias) are harder to detect, while Context Misalignment, Method Logic, and Ethical Omission are more readily identified; abstract errors are consistently the hardest to uncover; integrating explicit error detection into review shifts AI reviewers toward more critical, discriminative evaluations",
+      "recall": "Coverage-based alignment shows the error-aware PaperAudit reviewer improves recall of human-identified weaknesses (Weak-Cov 0.591) over its baseline (0.568) and DeepReview (0.482), and improves strength coverage (Str-Cov 0.886 vs 0.876/0.844); error coverage (EC) improves with increased analytical depth, and removing global memory degrades coverage, particularly for cross-section consistency errors",
+      "score_bias": "PaperAudit-Review assigns systematically stricter scores than baseline reviews due to explicit error evidence, an effect that also extends to original papers by surfacing minor issues; synthetically corrupted papers consistently receive lower scores than originals, with the largest declines in technical quality and clarity; the authors caution these scores should not be interpreted as absolute judgments",
+      "overconfidence": "Larger general-purpose detection models exhibit high Error Coverage but low Finding Precision under Detection@all, indicating a tendency toward over-detection of weakly supported issues; unmatched findings are not necessarily false positives since even high-quality papers may surface reasonable but non-injected issues; deeper detection settings may lead to over-critical assessments without careful calibration",
+      "limitations": "Synthetic errors: errors are synthetically injected rather than originating from real authors, cannot fully capture naturally occurring issues, and unannotated flaws in original papers make precision-based evaluation inherently imperfect; potential over-criticality: deeper detection settings may identify borderline issues reflecting stricter scrutiny rather than clear errors, potentially leading to over-critical assessments without careful calibration; prompt and configuration sensitivity: behavior depends on prompt design and system configuration, and alternative design choices or calibration strategies may lead to different trade-offs between coverage and strictness"
+    }
+  },
+  {
+    "study": "Stop automating peer review (Baumann et al.)",
+    "year": "2026",
+    "type": "direct",
+    "status": "published",
+    "url": "https://arxiv.org/pdf/2605.03202v1",
+    "host": "arxiv.org",
+    "design": "Empirical comparison of human- versus AI-generated ICLR 2026 reviews using all 75,800 reviews from the 19,490 papers under review at ICLR 2026 (with AI-generation labels from Emi 2025, who found 15,899 reviews, 21%, are AI-generated), plus a simulation on 60…",
+    "dims": {
+      "agreement": "AI reviewers exhibit a hivemind effect of excessive agreement: higher agreement within papers (IntraSim +8.7% to +9.8%) and across papers (InterSim +4.1% to +39.8%) than humans, both in simulation and real ICLR 2026 reviews; fully AI-generated reviews show significantly higher within-group inter-paper similarity (mean = 0.486) than other reviews (mean = 0.467; Welch’s t = 3218, p < 0.0001, Cohen’s d = 0.29); AI reviewers also show weak correlation with human scores (Pearson r = 0.15) but high correlation with each other (r = 0.49)",
+      "error_detection": "",
+      "recall": "",
+      "score_bias": "AI reviewers show weak correlation with human scores (Pearson r = 0.15) but high correlation with each other (r = 0.49); AI scores are inflated (mean 7.3 for GPT, 6.1 for Claude) compared to human reviewers (mean 4.3); paper laundering raises AI review scores by +0.45 points on the 1–10 scale (Wilcoxon, p < 0.001); averaged human scores predict acceptance with AUC = 0.822 while averaged AI scores reach only 0.710",
+      "overconfidence": "Laundering edits that appear more substantive are typically hallucinated AI slop not grounded in actual experimental findings (e.g., a fabricated ablation section with invented accuracy numbers, a new theorem without corresponding proofs); AI reviewer agents reuse generic questions applicable to any paper, with the most common GPT reviewer phrase appearing in 13.3% of papers and Claude’s in 21.7%, versus fewer than 1% for ICLR reviews",
+      "limitations": "AI reviewer simulations use only two models (GPT-5.1 and Claude Sonnet 4.5) with a single fixed prompt, so high IntraSim partly reflects experimental homogeneity; ICLR 2026 AI-generation labels from Emi (2025) may contain classification errors; embedding-based similarity metrics capture linguistic and semantic patterns but do not directly measure diversity of viewpoints, arguments, or evaluative stances; simulation uses only 60 randomly sampled ICLR papers, which may not capture the full diversity of paper types and quality levels; findings are specific to one venue (ICLR) and may not generalize to other conferences; laundering tests only 4 zero-shot prompts, 2 launderer models, and 3 reviewer models; correlation results should be interpreted with caution due to the small sample size (n = 60 papers), and human scores reflect pre-rebuttal ratings"
+    }
+  }
+]

@@ -1,0 +1,416 @@
+{
+  "purpose": "Structural validation and evidence-status differences; not a model accuracy benchmark.",
+  "cutoff": "2026-10-01",
+  "models": {
+    "luna": {
+      "model": "gpt-6-luna",
+      "reasoning": "xhigh",
+      "rows": 27,
+      "cells": 162,
+      "status_counts": {
+        "not_measured": 58,
+        "verified": 95,
+        "not_reported": 9
+      }
+    },
+    "sol": {
+      "model": "gpt-6.1-sol",
+      "reasoning": "xhigh",
+      "rows": 27,
+      "cells": 162,
+      "status_counts": {
+        "not_measured": 54,
+        "verified": 107,
+        "not_reported": 1
+      }
+    }
+  },
+  "status_agreements": 146,
+  "status_differences": [
+    {
+      "candidate_id": 3,
+      "dimension": "score_bias",
+      "luna": {
+        "status": "not_reported",
+        "finding": "No calibrated numerical peer-review score comparison was performed; the pairwise abstract test found preference errors including positive-result bias, but it is not a score-bias estimate.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/html/2306.00622v1",
+            "location": "PDF §4, abstract-pair test"
+          }
+        ]
+      },
+      "sol": {
+        "status": "verified",
+        "finding": "Selected inferior abstract in 6/10 controlled pairs; failures included positive-result and bombastic-language preference, algorithm-name influence, prompt injection.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/pdf/2306.00622v1",
+            "location": "§5"
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": 8,
+      "dimension": "overconfidence",
+      "luna": {
+        "status": "not_measured",
+        "finding": "No confidence or calibration measure was reported.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/abs/2506.17311v1",
+            "location": "PDF §§VI–VIII"
+          }
+        ]
+      },
+      "sol": {
+        "status": "verified",
+        "finding": "Direct unsupported-claim example: title-only RAG input caused critique of a different paper, conflating documents. No quantified false-positive/calibration rate.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/pdf/2506.17311v1",
+            "location": "§VI.B, Fig.3"
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": 10,
+      "dimension": "agreement",
+      "luna": {
+        "status": "not_measured",
+        "finding": "No AI–human review agreement or decision agreement was measured.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/html/2511.21843v1",
+            "location": "PDF §§4–5, benchmark evaluation"
+          }
+        ]
+      },
+      "sol": {
+        "status": "verified",
+        "finding": "Evaluator validation α=.93 (95% CI .89,.96) against 253 human-agreed detection labels; human–human α=.73. This validates scoring, not complete-review agreement.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/pdf/2511.21843v1",
+            "location": "§5.1, Table 4"
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": 10,
+      "dimension": "recall",
+      "luna": {
+        "status": "not_reported",
+        "finding": "The headline measure is top-k identification accuracy, not conventional recall; the benchmark tests 713 inserted errors but does not report human-comment recall.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/html/2511.21843v1",
+            "location": "PDF §5.2, Table 1; metric definition"
+          }
+        ]
+      },
+      "sol": {
+        "status": "verified",
+        "finding": "Planted-error hit rate @1→@10: GPT 5 9.0%→39.1%; no model exceeds 50%. Top-k success is not precision of all proposed critiques.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/pdf/2511.21843v1",
+            "location": "Table 5; §5.2"
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": 14,
+      "dimension": "overconfidence",
+      "luna": {
+        "status": "not_measured",
+        "finding": "No confidence calibration was measured; numerical review scores are outcomes, not self-confidence.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/abs/2508.14146v4",
+            "location": "PDF §§3–5"
+          }
+        ]
+      },
+      "sol": {
+        "status": "verified",
+        "finding": "Polarity-reversed critique recognition documents factual-grounding vulnerability, via rating deviation. No direct confidence calibration or adjudicated generated-critique false-positive rate.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/pdf/2508.14146v4",
+            "location": "§3.4, Tables 3–4"
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": 15,
+      "dimension": "error_detection",
+      "luna": {
+        "status": "not_reported",
+        "finding": "A fact-checking module is part of the proposed workflow, but the reported study does not independently score verified scientific-error detection.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/abs/2510.08867v1",
+            "location": "PDF §3, Metareviewer Agent; §5, evaluation results"
+          }
+        ]
+      },
+      "sol": {
+        "status": "not_measured",
+        "finding": "No adjudicated scientific-error detection benchmark.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/pdf/2510.08867v1",
+            "location": "§§4–5"
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": 15,
+      "dimension": "recall",
+      "luna": {
+        "status": "not_measured",
+        "finding": "No human-comment recall or verified-flaw recall was measured.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/abs/2510.08867v1",
+            "location": "PDF §§4–5"
+          }
+        ]
+      },
+      "sol": {
+        "status": "verified",
+        "finding": "Meta(all) five-class macro recall32.4%, F1 28.1%; decision-label recall, not critical-comment/error recall.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/pdf/2510.08867v1",
+            "location": "Table 1; §4.3"
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": 15,
+      "dimension": "score_bias",
+      "luna": {
+        "status": "not_reported",
+        "finding": "The paper analyzes persona tendencies and post-rebuttal sycophancy, but does not report a controlled score-inflation or calibration estimate against paper quality.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/abs/2510.08867v1",
+            "location": "PDF §§5–6"
+          }
+        ]
+      },
+      "sol": {
+        "status": "verified",
+        "finding": "Permissive/critical personas skew acceptance/rejection; rebuttal conditioning increases false accept decisions in ablations. Outcome misclassification, not critique false positives.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/pdf/2510.08867v1",
+            "location": "§5, Table 2; confusion matrices"
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": 20,
+      "dimension": "error_detection",
+      "luna": {
+        "status": "not_reported",
+        "finding": "The evaluation scores atomic strength/weakness points for alignment with human references; it does not adjudicate each point against paper evidence as a verified factual error.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/abs/2604.19502v2",
+            "location": "PDF §§4–5, argumentative alignment method"
+          }
+        ]
+      },
+      "sol": {
+        "status": "not_measured",
+        "finding": "No independently adjudicated scientific-error discovery benchmark; generated-question grounding/constructiveness is judged.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/pdf/2604.19502v2",
+            "location": "§4; Table 3"
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": 20,
+      "dimension": "score_bias",
+      "luna": {
+        "status": "not_reported",
+        "finding": "The paper evaluates MAE and alignment but does not establish a directional overrating bias; it notes models can match clustered scores without high review quality.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/abs/2604.19502v2",
+            "location": "PDF §5.1, “Rethinking Rating Metric”"
+          }
+        ]
+      },
+      "sol": {
+        "status": "verified",
+        "finding": "Prompt-debugging appendix:neutral Qwen/Llama reviews cluster ratings in(8,10); stricter prompts balance scores and can improve MAE without review-quality improvement. No aggregate inflation effect size or denominator supplied.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/pdf/2604.19502v2",
+            "location": "AppendixA.5 Prompt Variations and Experiments"
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": 20,
+      "dimension": "overconfidence",
+      "luna": {
+        "status": "not_measured",
+        "finding": "No confidence calibration or overconfidence outcome was measured.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/abs/2604.19502v2",
+            "location": "PDF §§4–5"
+          }
+        ]
+      },
+      "sol": {
+        "status": "verified",
+        "finding": "Question Soundness (joint context support and constructive requested supplement):GPT-5.2 .46,Claude .43 versus human .45, judged by Qwen3-235B. Their “Confidence” criterion means contextual explanation, not self-reported calibration; unsound questions cannot be read as a pure hallucination rate.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/pdf/2604.19502v2",
+            "location": "§4.3; Table 3"
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": 21,
+      "dimension": "error_detection",
+      "luna": {
+        "status": "verified",
+        "finding": "Human reference reviews themselves had adjudicated errors: 22.13% of papers and 7.63% of reviews had incorrect opinions identified via inter-reviewer conflict/meta-review adjudication. Model review correctness is separately rated against filtered references.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/abs/2605.07905v2",
+            "location": "PDF §3.2, inter-reviewer conflicts; §5.2"
+          }
+        ]
+      },
+      "sol": {
+        "status": "not_measured",
+        "finding": "Correctness is agreement with conflict-filtered review references under an LLM judge; not independently verified manuscript-error discovery.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/pdf/2605.07905v2",
+            "location": "§5"
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": 21,
+      "dimension": "overconfidence",
+      "luna": {
+        "status": "not_measured",
+        "finding": "No confidence calibration was measured.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/abs/2605.07905v2",
+            "location": "PDF §§5–6"
+          }
+        ]
+      },
+      "sol": {
+        "status": "verified",
+        "finding": "Direct unsupported visual critiques occur in every tested text-only model, fewer than.05 figure-related opinions/paper; AppendixB.7 shows claims about unseen axes/example diversity. Separate reference-consistency/grounding ratings are not adjudicated false-positive rates; no confidence calibration.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/pdf/2605.07905v2",
+            "location": "§5.2 Hallucination Risks; AppendixB.7, Fig.8"
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": 23,
+      "dimension": "overconfidence",
+      "luna": {
+        "status": "not_measured",
+        "finding": "The study measures ratings and error detection, but does not report a distinct model confidence calibration or overconfidence measure.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/abs/2608.28626v1",
+            "location": "PDF §§2–4"
+          }
+        ]
+      },
+      "sol": {
+        "status": "verified",
+        "finding": "Direct unsupported-observation finding: text-only reviews describe unprovided figures. Abstract claims “half”, but no audit denominator or detailed result table is supplied; no self-confidence calibration.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/pdf/2608.28626v1",
+            "location": "Abstract; §5 Conclusions; §2 Methods"
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": 26,
+      "dimension": "score_bias",
+      "luna": {
+        "status": "not_reported",
+        "finding": "Explicit error-aware review produces stricter scores on corrupted papers, but this is an intervention effect and not a calibrated estimate of general score bias.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/abs/2601.19916v1",
+            "location": "PDF §5.2, Table 2 and discussion"
+          }
+        ]
+      },
+      "sol": {
+        "status": "verified",
+        "finding": "Explicit error workflow lowers clean ICML overall scores:Gemini8.20→6.81,GPT5 7.27→6.93; corrupted variants also lower. Stricter system scoring is not established human-calibrated accuracy.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/pdf/2601.19916v1",
+            "location": "§5.2; Table 2"
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": 26,
+      "dimension": "overconfidence",
+      "luna": {
+        "status": "not_reported",
+        "finding": "No model confidence calibration was measured. The AI-Extra Major Points metric measures divergence from human review coverage; the authors explicitly state extra points are not necessarily incorrect and do not report independent expert validation of AI-only points. Synthetic-error Finding Precision does not establish validity of those additional review critiques.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/abs/2601.19916v1",
+            "location": "PDF §5.2; Appendix B.4, Coverage-based Alignment Protocol"
+          }
+        ]
+      },
+      "sol": {
+        "status": "verified",
+        "finding": "Qualitative over-criticality:deeper modes sometimes elevate borderline or debatable issues; unmatched findings are explicitly not necessarily false positives. No adjudicated aggregate invalid-critique rate or direct confidence calibration.",
+        "citations": [
+          {
+            "url": "https://arxiv.org/pdf/2601.19916v1",
+            "location": "§5.1 Evaluation Metrics; Limitations; AppendixD.1 Table13"
+          }
+        ]
+      }
+    }
+  ],
+  "note": "Same status does not establish the same finding or numerical accuracy. Differences may reflect source versions, scope, or interpretation; review citations."
+}

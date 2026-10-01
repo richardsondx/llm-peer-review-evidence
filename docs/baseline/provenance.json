@@ -1,0 +1,8 @@
+{
+  "source_session": "https://app.keenable.ai/select/4235e5ac-941e-4fc5-b2ef-8ae6f0d29042",
+  "artifact": "https://select.keenable.ai/artifacts/VXv4vTbP7w8rPvmJ3CvnCg",
+  "retrieved_on": "2026-10-01",
+  "snapshot_sha256": "1ec65915b73bb4dc9d93f4c89d9b376a374ce71ef866eb18b0872ae58209b080",
+  "extraction": "Decoded original embedded var D JSON without altering finding strings.",
+  "model_attribution": "unconfirmed; attributed to GPT-4 by the author"
+}

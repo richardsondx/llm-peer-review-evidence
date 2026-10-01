@@ -1,18 +1,19 @@
 {
-  "luna": {
-    "rows": 27,
-    "clickable_cells": 162,
-    "embedded_data_matches_source": true,
-    "javascript_syntax": "passed",
-    "advanced_view_preserved": true,
-    "simple_is_default": true
-  },
-  "sol": {
-    "rows": 24,
-    "clickable_cells": 144,
-    "embedded_data_matches_source": true,
-    "javascript_syntax": "passed",
-    "advanced_view_preserved": true,
-    "simple_is_default": true
+  "version": "0.2.0",
+  "default_view": "simple",
+  "advanced_generated_from_current_json": true,
+  "models": {
+    "baseline": {
+      "rows": 27,
+      "cells": 162
+    },
+    "luna": {
+      "rows": 27,
+      "cells": 162
+    },
+    "sol": {
+      "rows": 27,
+      "cells": 162
+    }
   }
 }

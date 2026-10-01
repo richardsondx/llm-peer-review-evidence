@@ -1,17 +1,32 @@
 {
   "checked_on": "2026-10-01",
-  "github_pages_status": "built",
-  "github_pages_https": true,
-  "local_links": "all targets exist",
-  "published_json_matches_saved_research": true,
-  "browser_checks": [
-    "Landing page visible on GitHub Pages",
-    "Luna finding dialog contains full finding and primary-source locator",
-    "Sol finding dialog contains full finding and primary-source locator"
+  "version": "0.2.0",
+  "matrices": {
+    "luna": {
+      "rows": 27,
+      "cells": 162,
+      "data_matches_saved_extraction": true
+    },
+    "sol": {
+      "rows": 27,
+      "cells": 162,
+      "data_matches_saved_extraction": true
+    }
+  },
+  "baseline": {
+    "rows": 27,
+    "cells": 162,
+    "original_populated_findings": 131,
+    "original_blanks": 31,
+    "original_wording_preserved": true,
+    "model_attribution": "author-described GPT-4; Keenable generator metadata unconfirmed"
+  },
+  "checks": [
+    "all local HTML link targets exist",
+    "all inline JavaScript parses",
+    "both simple and advanced views regenerated from current JSON"
   ],
-  "luna_rows": 27,
-  "sol_rows": 24,
-  "release": "v0.1.0",
+  "comparison_scope": "all cells side by side, targeted source audit, no model accuracy score",
   "custom_domain_status": "pending domain spelling and authenticated DNS access",
-  "google_scholar_status": "profile setup prepared; article-selection step blocks completion because report not indexed"
+  "google_scholar_status": "setup prepared; completion blocked by article selection"
 }

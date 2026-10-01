@@ -101,71 +101,71 @@
       "candidate_label": "Liang et al., useful feedback?",
       "candidate_url": "https://ar5iv.labs.arxiv.org/html/2310.01783",
       "citation": "Liang et al., “Can Large Language Models Provide Useful Feedback on Research Papers? A Large-Scale Empirical Analysis”",
-      "publication_date": "2023-10-03",
-      "publication_status": "Peer-reviewed NEJM AI 1(8), 2024; article is final journal version",
-      "design_and_sample": "GPT-4 feedback on 3,096 accepted papers in 15 Nature journals and 1,709 ICLR submissions; separate self-selected researcher user study (308 researchers, 110 US institutions).",
-      "evaluated_models": "GPT-4 zero-shot feedback system; human reviewers/researchers as comparison.",
-      "source_version": "Published NEJM AI version (2024); official arXiv HTML contains the full article.",
-      "source_url": "https://ar5iv.labs.arxiv.org/html/2310.01783",
+      "publication_date": "2024-07-17",
+      "publication_status": "Peer-reviewed NEJM AI 1(8) (2024); DOI 10.1056/AIoa2400196",
+      "design_and_sample": "Retrospective GPT-4 feedback study on 3,096 accepted papers in 15 Nature-family journals and 1,709 ICLR submissions; final article also reports 666 eLife submissions with 1,632 reviews and a 425-paper Nature health-sciences subset. Prospective self-selected user study: 308 researchers at 110 US institutions.",
+      "evaluated_models": "GPT-4 zero-shot feedback pipeline; March 2023 and June 2023 GPT-4 checkpoints in a consistency check; human reviews and researcher participants as references/respondents.",
+      "source_version": "Final published NEJM AI 1(8) article (published 2024-07-17); publisher PDF copy cached locally. DOI 10.1056/AIoa2400196.",
+      "source_url": "https://doi.org/10.1056/AIoa2400196",
       "identity_or_scope_note": "",
       "dimensions": {
         "agreement": {
           "status": "verified",
-          "finding": "Directional comment overlap, not reviewer-level reliability: 30.85% of GPT comments overlapped comments from a given Nature reviewer versus 28.58% human–human; ICLR 39.23% versus 35.25%. Rejected ICLR papers had 47.09% overlap vs 30.63% for top oral papers.",
+          "finding": "Directional comment overlap, not reviewer-level reliability: 30.85% of GPT-4 comments overlapped an individual Nature reviewer versus 28.58% human–human; ICLR 39.23% versus 35.25%. In ICLR, rejected papers had 47.09% overlap versus 30.63% for top oral papers. The prospective survey separately reported that over 70% perceived at least partial alignment; these are comment-overlap and user-perception outcomes, not decision agreement.",
           "citations": [
             {
-              "url": "https://ar5iv.labs.arxiv.org/html/2310.01783",
-              "location": "HTML §§Results, “Overlap between ChatGPT and human reviewers”; Fig. 2"
+              "url": "https://doi.org/10.1056/AIoa2400196",
+              "location": "NEJM AI PDF pp. 5–8, Results “LLM Feedback Significantly Overlaps with Human-Generated Feedback”; Fig. 2A–D; prospective study §“Researchers find LLM feedback helpful”"
             }
           ]
         },
         "error_detection": {
           "status": "not_measured",
-          "finding": "No blinded benchmark of true paper flaws or verified-error detection was conducted.",
+          "finding": "No benchmark with independently adjudicated real paper flaws or verified-error detection was conducted. The authors identify injected-error detection as future work; overlap with human comments does not validate that those comments identify true flaws.",
           "citations": [
             {
-              "url": "https://ar5iv.labs.arxiv.org/html/2310.01783",
-              "location": "HTML Methods and Results; scope of feedback/overlap evaluation"
+              "url": "https://doi.org/10.1056/AIoa2400196",
+              "location": "NEJM AI PDF pp. 7–8, retrospective outcome definitions; p. 10, Discussion, future work on introduced errors"
             }
           ]
         },
         "recall": {
-          "status": "not_measured",
-          "finding": "The study reports directional comment overlap, not human-comment recall or recall of real verified flaws; no such recall denominator was evaluated.",
+          "status": "verified",
+          "finding": "Human-comment recall was measured as GPT-4’s likelihood of identifying a human reviewer comment, stratified by how many reviewers raised it: Nature-family 11.39% (one reviewer), 20.67% (two), 31.67% (three or more); ICLR 15.39%, 26.21%, 39.33%. This is recall of human comments, not recall of independently verified scientific flaws.",
           "citations": [
             {
-              "url": "https://ar5iv.labs.arxiv.org/html/2310.01783",
-              "location": "HTML §§Results, overlap metric"
+              "url": "https://doi.org/10.1056/AIoa2400196",
+              "location": "NEJM AI PDF p. 7, Results “Alignment Between LLMs and Humans on Major Comments”; Fig. 2E–F and caption (y-axis explicitly defines GPT-4 recall rate)"
             }
           ]
         },
         "score_bias": {
           "status": "not_measured",
-          "finding": "No controlled paper-score inflation/score-bias experiment was reported.",
+          "finding": "No paper accept/reject rating or score-inflation outcome was measured. A separate comment-aspect analysis found topical emphasis differences: GPT-4 discussed research implications 7.27× more often and novelty 10.69× less often than humans; humans requested ablations 6.71× more often, while GPT-4 requested more-dataset experiments 2.19× more often. Those are feedback-topic frequencies, not paper-score bias.",
           "citations": [
             {
-              "url": "https://ar5iv.labs.arxiv.org/html/2310.01783",
-              "location": "HTML Methods and Results"
+              "url": "https://doi.org/10.1056/AIoa2400196",
+              "location": "NEJM AI PDF p. 7, Fig. 3 and Results “LLM Feedback Emphasizes Certain Aspects More Than Humans”; Methods/Results outcome scope"
             }
           ]
         },
         "overconfidence": {
           "status": "not_measured",
-          "finding": "No model confidence or calibration outcome was measured.",
+          "finding": "No confidence calibration or independently verified false-positive criticism rate was measured. In the prospective survey, 65.3% of respondents thought at least to some extent that GPT-4 offered perspectives overlooked or underemphasized by humans; this is a perception of potentially useful novel feedback, not a finding that the added points were false or unsupported.",
           "citations": [
             {
-              "url": "https://ar5iv.labs.arxiv.org/html/2310.01783",
-              "location": "HTML Methods and Results"
+              "url": "https://doi.org/10.1056/AIoa2400196",
+              "location": "NEJM AI PDF p. 10, §“Strengths and Weaknesses of LLM Feedback”; prospective user study, n=308"
             }
           ]
         },
         "limitations": {
           "status": "verified",
-          "finding": "The paper evaluates one GPT-4 pipeline and user-perceived early-stage feedback; its text-only system could not inspect figures, graphs, and tables. User study was self-selected and concentrated in US AI/computational-biology researchers; results do not establish autonomous review quality.",
+          "finding": "The study evaluates one GPT-4 feedback pipeline, mostly zero-shot, with text-only inputs that could not interpret figures/tables/graphs; the researcher survey was self-selected and concentrated in AI/computational biology. The journal version adds eLife and Nature health-sciences subsets, but results still do not establish autonomous review quality.",
           "citations": [
             {
-              "url": "https://ar5iv.labs.arxiv.org/html/2310.01783",
-              "location": "HTML §Discussion and §Limitations"
+              "url": "https://doi.org/10.1056/AIoa2400196",
+              "location": "NEJM AI PDF pp. 10–11, Discussion and “Our study has several limitations”"
             }
           ]
         }
@@ -181,7 +181,7 @@
       "design_and_sample": "Exploratory GPT-4 evaluation: 13 short synthetic CS papers each with one planted flaw; checklist verification on 15 NeurIPS 2022 papers (119 question–paper pairs); and 10 constructed abstract pairs.",
       "evaluated_models": "GPT-4 (ChatGPT May 3/May 12 builds) on the three main tasks; other named models were compared only in the pilot.",
       "source_version": "arXiv v1 (2023-06-01)",
-      "source_url": "https://arxiv.org/html/2306.00622",
+      "source_url": "https://arxiv.org/html/2306.00622v1",
       "identity_or_scope_note": "",
       "dimensions": {
         "agreement": {
@@ -189,27 +189,27 @@
           "finding": "On 119 checklist question–paper pairs, GPT-4 answers were 86.6% accurate against manually labeled ground truth; this is checklist-answer accuracy, not agreement between full reviews.",
           "citations": [
             {
-              "url": "https://arxiv.org/html/2306.00622",
+              "url": "https://arxiv.org/html/2306.00622v1",
               "location": "PDF §4, checklist experiment and Table 4"
             }
           ]
         },
         "error_detection": {
           "status": "verified",
-          "finding": "GPT-4 identified the deliberately inserted error in 7 of 13 papers (53.8%); this is synthetic single-flaw detection. In a separate comparison of 10 deliberately ordered abstract pairs, it failed to choose the clearly better abstract in 6/10.",
+          "finding": "GPT-4 identified the planted error in 7/13 constructed papers (53.8%) under repeated prompting: three prompts × three responses per paper, with any successful response counting as a paper-level detection. This is synthetic single-flaw detection, not a single-run success rate. In a separate comparison of 10 deliberately ordered abstract pairs, it failed to choose the clearly better abstract in 6/10.",
           "citations": [
             {
-              "url": "https://arxiv.org/html/2306.00622",
+              "url": "https://arxiv.org/html/2306.00622v1",
               "location": "PDF §3, injected-error experiment; §4, pairwise experiment"
             }
           ]
         },
         "recall": {
           "status": "verified",
-          "finding": "Synthetic planted-flaw recall was 7/13 = 53.8% (one deliberately inserted error per short paper). The study does not report human-comment recall or recall over a real-error benchmark.",
+          "finding": "Paper-level cumulative synthetic detection was 7/13 = 53.8% (one planted error per constructed short paper; three prompts × three responses, and any hit counted). This is not a single-run success rate. The study does not report human-comment recall or recall over a real-error benchmark.",
           "citations": [
             {
-              "url": "https://arxiv.org/html/2306.00622",
+              "url": "https://arxiv.org/html/2306.00622v1",
               "location": "PDF Abstract; §3.2 and Table 1"
             }
           ]
@@ -219,7 +219,7 @@
           "finding": "No calibrated numerical peer-review score comparison was performed; the pairwise abstract test found preference errors including positive-result bias, but it is not a score-bias estimate.",
           "citations": [
             {
-              "url": "https://arxiv.org/html/2306.00622",
+              "url": "https://arxiv.org/html/2306.00622v1",
               "location": "PDF §4, abstract-pair test"
             }
           ]
@@ -229,7 +229,7 @@
           "finding": "False-alarm evidence, not confidence calibration: Table 1 records two false-alarm marks in the overall row across 13 deliberately flawed papers and repeated GPT-4 responses/prompts; “!” denotes a false alarm. The paper gives no false-positive rate denominator over clean papers and measures no confidence calibration.",
           "citations": [
             {
-              "url": "https://arxiv.org/html/2306.00622",
+              "url": "https://arxiv.org/html/2306.00622v1",
               "location": "PDF §3.2, Table 1 and its notation"
             }
           ]
@@ -239,7 +239,7 @@
           "finding": "Small, exploratory, task-specific tests: 13 handcrafted error-containing papers, 15 NeurIPS checklist papers, and 10 constructed abstract pairs. The authors say handcrafting was needed to ensure clear ground truth and avoid training-data exposure; results do not validate complete AI reviews against human experts.",
           "citations": [
             {
-              "url": "https://arxiv.org/html/2306.00622",
+              "url": "https://arxiv.org/html/2306.00622v1",
               "location": "PDF Abstract; §§3–6, especially §6 Discussion and Limitations"
             }
           ]
