@@ -1,0 +1,2059 @@
+{
+  "title": "Evidence matrix: 27 studies × 6 finding dimensions",
+  "question": "What empirical studies have compared LLM-generated scientific peer review with human peer review, and what did each study find about agreement, error detection, recall, score bias, overconfidence, and limitations?",
+  "cutoff": "2026-10-01",
+  "extraction_model": "gpt-6-luna",
+  "reasoning_effort": "xhigh",
+  "method_note": "This is a new evidence synthesis by GPT-6-Luna using primary sources; it does not rerun historical peer-review experiments, and GPT-6-Luna is not a reviewer evaluated in these studies unless a source explicitly says so.",
+  "dimensions": [
+    "agreement",
+    "error_detection",
+    "recall",
+    "score_bias",
+    "overconfidence",
+    "limitations"
+  ],
+  "status_definitions": {
+    "verified": "Finding checked against a primary source at the cited version/location.",
+    "not_measured": "Study design did not measure this outcome.",
+    "not_reported": "Related concepts appear, but the requested outcome is not reported as a measured result.",
+    "source_unavailable": "A primary source could not be recovered after trying official routes."
+  },
+  "version_policy": "Use the latest primary-source version available by 2026-10-01, except retain candidate-pinned versions when explicitly fixed in the brief (notably #9, #10, #27). For #13 use the published EMNLP 2025 proceedings paper; for #14 and #20 use latest arXiv v4 and v2; for #21 use arXiv v2/ICML 2026 version. Candidate ID and linked study identity are preserved when labels mismatch.",
+  "rows": [
+    {
+      "candidate_id": 1,
+      "candidate_label": "GPT-4 is slightly helpful (Robertson)",
+      "candidate_url": "https://arxiv.org/pdf/2307.05492",
+      "citation": "Robertson, “GPT4 is Slightly Helpful for Peer-Review Assistance: A Pilot Study”",
+      "publication_date": "2023-06-16",
+      "publication_status": "arXiv preprint; v1 only",
+      "design_and_sample": "Pilot comparing GPT-4-assisted and human reviewing on submissions to a major ML conference; small participant study and controlled injected-error tests.",
+      "evaluated_models": "GPT-4 (4k and 32k context variants); human participants/reviewers.",
+      "source_version": "arXiv v1 (2023-06-16; only version)",
+      "source_url": "https://arxiv.org/abs/2307.05492v1",
+      "identity_or_scope_note": "",
+      "dimensions": {
+        "agreement": {
+          "status": "not_measured",
+          "finding": "No human–human or AI–human review agreement statistic was measured. The paper reports helpfulness ratings, which are not agreement.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2307.05492v1",
+              "location": "PDF pp. 3–4, Fig. 1; evaluation design"
+            }
+          ]
+        },
+        "error_detection": {
+          "status": "verified",
+          "finding": "On 20 NeurIPS submissions split by acceptance, the authors injected an abstract-key-claim negation and an informal sentence. The test is synthetic corruption detection, not real peer-review flaw recall.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2307.05492v1",
+              "location": "PDF p. 4, §3 and Table 2"
+            }
+          ]
+        },
+        "recall": {
+          "status": "verified",
+          "finding": "Synthetic perturbation recall (95% CIs): abstract-swap 0.70±0.21 (4k) and 0.35±0.21 (32k); informal-sentence insertion 0.60±0.22 (4k) and 0.05±0.10 (32k), over 20 papers. These are perturbation conditions, not accepted/rejected subgroup results. Human-comment and real-error recall were not tested.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2307.05492v1",
+              "location": "PDF p. 4, Table 2; §4"
+            }
+          ]
+        },
+        "score_bias": {
+          "status": "not_measured",
+          "finding": "No paper rating/acceptance score bias outcome was measured.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2307.05492v1",
+              "location": "PDF pp. 3–4, measures and results"
+            }
+          ]
+        },
+        "overconfidence": {
+          "status": "not_measured",
+          "finding": "No confidence calibration or overconfidence measure was collected.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2307.05492v1",
+              "location": "PDF pp. 3–6, measures and discussion"
+            }
+          ]
+        },
+        "limitations": {
+          "status": "verified",
+          "finding": "Small, exploratory sample; the authors caution against generalizing to area-chair/public decisions. GPT reviews were high-variance, broad/generic, and weaker at specific technical criticism; the study was not designed as a general usefulness benchmark.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2307.05492v1",
+              "location": "PDF pp. 4–6, §§4–5"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "candidate_id": 2,
+      "candidate_label": "Liang et al., useful feedback?",
+      "candidate_url": "https://ar5iv.labs.arxiv.org/html/2310.01783",
+      "citation": "Liang et al., “Can Large Language Models Provide Useful Feedback on Research Papers? A Large-Scale Empirical Analysis”",
+      "publication_date": "2023-10-03",
+      "publication_status": "Peer-reviewed NEJM AI 1(8), 2024; article is final journal version",
+      "design_and_sample": "GPT-4 feedback on 3,096 accepted papers in 15 Nature journals and 1,709 ICLR submissions; separate self-selected researcher user study (308 researchers, 110 US institutions).",
+      "evaluated_models": "GPT-4 zero-shot feedback system; human reviewers/researchers as comparison.",
+      "source_version": "Published NEJM AI version (2024); official arXiv HTML contains the full article.",
+      "source_url": "https://ar5iv.labs.arxiv.org/html/2310.01783",
+      "identity_or_scope_note": "",
+      "dimensions": {
+        "agreement": {
+          "status": "verified",
+          "finding": "Directional comment overlap, not reviewer-level reliability: 30.85% of GPT comments overlapped comments from a given Nature reviewer versus 28.58% human–human; ICLR 39.23% versus 35.25%. Rejected ICLR papers had 47.09% overlap vs 30.63% for top oral papers.",
+          "citations": [
+            {
+              "url": "https://ar5iv.labs.arxiv.org/html/2310.01783",
+              "location": "HTML §§Results, “Overlap between ChatGPT and human reviewers”; Fig. 2"
+            }
+          ]
+        },
+        "error_detection": {
+          "status": "not_measured",
+          "finding": "No blinded benchmark of true paper flaws or verified-error detection was conducted.",
+          "citations": [
+            {
+              "url": "https://ar5iv.labs.arxiv.org/html/2310.01783",
+              "location": "HTML Methods and Results; scope of feedback/overlap evaluation"
+            }
+          ]
+        },
+        "recall": {
+          "status": "not_measured",
+          "finding": "The study reports directional comment overlap, not human-comment recall or recall of real verified flaws; no such recall denominator was evaluated.",
+          "citations": [
+            {
+              "url": "https://ar5iv.labs.arxiv.org/html/2310.01783",
+              "location": "HTML §§Results, overlap metric"
+            }
+          ]
+        },
+        "score_bias": {
+          "status": "not_measured",
+          "finding": "No controlled paper-score inflation/score-bias experiment was reported.",
+          "citations": [
+            {
+              "url": "https://ar5iv.labs.arxiv.org/html/2310.01783",
+              "location": "HTML Methods and Results"
+            }
+          ]
+        },
+        "overconfidence": {
+          "status": "not_measured",
+          "finding": "No model confidence or calibration outcome was measured.",
+          "citations": [
+            {
+              "url": "https://ar5iv.labs.arxiv.org/html/2310.01783",
+              "location": "HTML Methods and Results"
+            }
+          ]
+        },
+        "limitations": {
+          "status": "verified",
+          "finding": "The paper evaluates one GPT-4 pipeline and user-perceived early-stage feedback; its text-only system could not inspect figures, graphs, and tables. User study was self-selected and concentrated in US AI/computational-biology researchers; results do not establish autonomous review quality.",
+          "citations": [
+            {
+              "url": "https://ar5iv.labs.arxiv.org/html/2310.01783",
+              "location": "HTML §Discussion and §Limitations"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "candidate_id": 3,
+      "candidate_label": "ReviewerGPT? (Liu & Shah)",
+      "candidate_url": "https://ar5iv.labs.arxiv.org/html/2306.00622",
+      "citation": "Liu & Shah, “ReviewerGPT? An Exploratory Study on Using Large Language Models for Paper Reviewing”",
+      "publication_date": "2023-06-01",
+      "publication_status": "arXiv preprint; v1 only",
+      "design_and_sample": "Exploratory GPT-4 evaluation: 13 short synthetic CS papers each with one planted flaw; checklist verification on 15 NeurIPS 2022 papers (119 question–paper pairs); and 10 constructed abstract pairs.",
+      "evaluated_models": "GPT-4 (ChatGPT May 3/May 12 builds) on the three main tasks; other named models were compared only in the pilot.",
+      "source_version": "arXiv v1 (2023-06-01)",
+      "source_url": "https://arxiv.org/html/2306.00622",
+      "identity_or_scope_note": "",
+      "dimensions": {
+        "agreement": {
+          "status": "verified",
+          "finding": "On 119 checklist question–paper pairs, GPT-4 answers were 86.6% accurate against manually labeled ground truth; this is checklist-answer accuracy, not agreement between full reviews.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/html/2306.00622",
+              "location": "PDF §4, checklist experiment and Table 4"
+            }
+          ]
+        },
+        "error_detection": {
+          "status": "verified",
+          "finding": "GPT-4 identified the deliberately inserted error in 7 of 13 papers (53.8%); this is synthetic single-flaw detection. In a separate comparison of 10 deliberately ordered abstract pairs, it failed to choose the clearly better abstract in 6/10.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/html/2306.00622",
+              "location": "PDF §3, injected-error experiment; §4, pairwise experiment"
+            }
+          ]
+        },
+        "recall": {
+          "status": "verified",
+          "finding": "Synthetic planted-flaw recall was 7/13 = 53.8% (one deliberately inserted error per short paper). The study does not report human-comment recall or recall over a real-error benchmark.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/html/2306.00622",
+              "location": "PDF Abstract; §3.2 and Table 1"
+            }
+          ]
+        },
+        "score_bias": {
+          "status": "not_reported",
+          "finding": "No calibrated numerical peer-review score comparison was performed; the pairwise abstract test found preference errors including positive-result bias, but it is not a score-bias estimate.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/html/2306.00622",
+              "location": "PDF §4, abstract-pair test"
+            }
+          ]
+        },
+        "overconfidence": {
+          "status": "verified",
+          "finding": "False-alarm evidence, not confidence calibration: Table 1 records two false-alarm marks in the overall row across 13 deliberately flawed papers and repeated GPT-4 responses/prompts; “!” denotes a false alarm. The paper gives no false-positive rate denominator over clean papers and measures no confidence calibration.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/html/2306.00622",
+              "location": "PDF §3.2, Table 1 and its notation"
+            }
+          ]
+        },
+        "limitations": {
+          "status": "verified",
+          "finding": "Small, exploratory, task-specific tests: 13 handcrafted error-containing papers, 15 NeurIPS checklist papers, and 10 constructed abstract pairs. The authors say handcrafting was needed to ensure clear ground truth and avoid training-data exposure; results do not validate complete AI reviews against human experts.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/html/2306.00622",
+              "location": "PDF Abstract; §§3–6, especially §6 Discussion and Limitations"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "candidate_id": 4,
+      "candidate_label": "Are we there yet? (Ye et al.)",
+      "candidate_url": "https://arxiv.org/html/2412.01708",
+      "citation": "Ye et al., “Are We There Yet? Revealing the Risks of Utilizing Large Language Models in Scholarly Peer Review”",
+      "publication_date": "2024-12-02",
+      "publication_status": "arXiv preprint; v1 only",
+      "design_and_sample": "Adversarial prompt-injection and robustness experiments on ICLR 2024 submissions and three LLM review systems; includes fixed hidden-text injection, author-label and length manipulations.",
+      "evaluated_models": "Three LLM reviewer systems (see paper’s Tables 1–4); human review comments as content reference.",
+      "source_version": "arXiv v1 (2024-12-02)",
+      "source_url": "https://arxiv.org/html/2412.01708",
+      "identity_or_scope_note": "",
+      "dimensions": {
+        "agreement": {
+          "status": "verified",
+          "finding": "Injected hidden instructions reduced human–LLM key-point consistency: model-to-human points fell from 53.29% to 15.91%; human-to-model points fell from 18.57% to 5.09%. The measure is key-point overlap, not rating agreement.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/html/2412.01708",
+              "location": "PDF §4, Table 1"
+            }
+          ]
+        },
+        "error_detection": {
+          "status": "not_measured",
+          "finding": "The study tests review manipulation and robustness, not whether reviewers detect independently verified scientific errors.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/html/2412.01708",
+              "location": "PDF §§3–4; experimental outcomes"
+            }
+          ]
+        },
+        "recall": {
+          "status": "verified",
+          "finding": "Human-comment coverage proxy: LLM output preserved 18.57% of human key points before injection and 5.09% after injection (human-point denominator). This is not recall of true flaws.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/html/2412.01708",
+              "location": "PDF §4, Table 1"
+            }
+          ]
+        },
+        "score_bias": {
+          "status": "verified",
+          "finding": "The embedded “give a positive review” instruction raised the LLM Review system’s mean rating from 5.33±0.60 to 7.99±0.17. In a separate 500-paper authorship-label test, its positive-rating rate rose from 36.8% to 40.8%, 41.6% or 41.2% with prestigious affiliations/researcher names.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/html/2412.01708",
+              "location": "PDF §4, Table 3; §2.2 and Figure 9"
+            }
+          ]
+        },
+        "overconfidence": {
+          "status": "verified",
+          "finding": "False-positive/unsupported-claim evidence, not confidence calibration: when given an empty paper, the LLM Review system still produced claims such as “the paper presents a novel methodology” and “the paper is well-written”; AI Scientist and AgentReview detected the empty input. This is a qualitative controlled probe, not a rate, and no confidence calibration was measured.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/html/2412.01708",
+              "location": "PDF §2.3, empty-paper experiment and Figure 6"
+            }
+          ]
+        },
+        "limitations": {
+          "status": "verified",
+          "finding": "Controlled prompt-injection simulations using specific ICLR 2024 data and review systems; conclusions concern susceptibility under those prompts and inputs, not a broad estimate of review accuracy across disciplines.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/html/2412.01708",
+              "location": "PDF §5, Limitations/Discussion"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "candidate_id": 5,
+      "candidate_label": "Evaluating science: human vs AI reviewers",
+      "candidate_url": "https://www.cambridge.org/core/journals/judgment-and-decision-making/article/evaluating-science-a-comparison-of-human-and-ai-reviewers/6F69123851472B4A72DEC0BD08C13AA6",
+      "citation": "Shcherbiak et al., “Evaluating Science: A Comparison of Human and AI Reviewers”",
+      "publication_date": "2024-11-21 online",
+      "publication_status": "Peer-reviewed, Judgment and Decision Making 19 (2024), e21",
+      "design_and_sample": "Field experiment using 305 SPUDM’23 abstracts (including 20 GPT-3.5-generated fakes), 217 human reviewers, and GPT-4; assessed abstract quality ratings and AI-authorship detection.",
+      "evaluated_models": "GPT-4 reviewer; GPT-3.5-generated synthetic abstracts; 217 human reviewers.",
+      "source_version": "Final Cambridge journal article (2024)",
+      "source_url": "https://www.cambridge.org/core/journals/judgment-and-decision-making/article/evaluating-science-a-comparison-of-human-and-ai-reviewers/6F69123851472B4A72DEC0BD08C13AA6",
+      "identity_or_scope_note": "",
+      "dimensions": {
+        "agreement": {
+          "status": "verified",
+          "finding": "Human–AI quality-rating agreement was low: correlation r=.23 and exact Cohen’s κ=22%; human–human quality κ=20.8%. For AI-authorship classification, human–AI κ=17.6% vs human–human κ=16%.",
+          "citations": [
+            {
+              "url": "https://www.cambridge.org/core/journals/judgment-and-decision-making/article/evaluating-science-a-comparison-of-human-and-ai-reviewers/6F69123851472B4A72DEC0BD08C13AA6",
+              "location": "PDF pp. 5–8, Results/Fig. 2 and agreement tables"
+            }
+          ]
+        },
+        "error_detection": {
+          "status": "not_measured",
+          "finding": "No test of detecting factual or methodological flaws in scientific papers was conducted; the task was rating abstracts and identifying AI authorship.",
+          "citations": [
+            {
+              "url": "https://www.cambridge.org/core/journals/judgment-and-decision-making/article/evaluating-science-a-comparison-of-human-and-ai-reviewers/6F69123851472B4A72DEC0BD08C13AA6",
+              "location": "PDF §§2–4, design and measures"
+            }
+          ]
+        },
+        "recall": {
+          "status": "not_measured",
+          "finding": "No human-comment or paper-flaw recall measure was reported.",
+          "citations": [
+            {
+              "url": "https://www.cambridge.org/core/journals/judgment-and-decision-making/article/evaluating-science-a-comparison-of-human-and-ai-reviewers/6F69123851472B4A72DEC0BD08C13AA6",
+              "location": "PDF §§2–4"
+            }
+          ]
+        },
+        "score_bias": {
+          "status": "verified",
+          "finding": "GPT-4 barely differentiated human-authored from AI-generated abstracts on quality ratings (source effect B=.12, p=.752), while human reviewers rated human-authored abstracts more favorably (means 6.88 vs 4.01). GPT-4 ratings were generally higher than human ratings (Fig. 2).",
+          "citations": [
+            {
+              "url": "https://www.cambridge.org/core/journals/judgment-and-decision-making/article/evaluating-science-a-comparison-of-human-and-ai-reviewers/6F69123851472B4A72DEC0BD08C13AA6",
+              "location": "PDF pp. 6–9, regression and Figure 2"
+            }
+          ]
+        },
+        "overconfidence": {
+          "status": "not_measured",
+          "finding": "No model confidence or calibration outcome was measured.",
+          "citations": [
+            {
+              "url": "https://www.cambridge.org/core/journals/judgment-and-decision-making/article/evaluating-science-a-comparison-of-human-and-ai-reviewers/6F69123851472B4A72DEC0BD08C13AA6",
+              "location": "PDF §§2–4"
+            }
+          ]
+        },
+        "limitations": {
+          "status": "verified",
+          "finding": "One workshop/event and an abstract-only task; volunteer/self-selection, known pure human-vs-AI authorship conditions, GPT-3.5 authors and GPT-4 reviewer, and a broad prompt limit generalization to actual full-paper review.",
+          "citations": [
+            {
+              "url": "https://www.cambridge.org/core/journals/judgment-and-decision-making/article/evaluating-science-a-comparison-of-human-and-ai-reviewers/6F69123851472B4A72DEC0BD08C13AA6",
+              "location": "PDF pp. 9–10, Discussion and limitations"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "candidate_id": 6,
+      "candidate_label": "MARG (D'Arcy et al.)",
+      "candidate_url": "https://arxiv.org/html/2401.04259",
+      "citation": "D’Arcy et al., “MARG: Multi-Agent Review Generation for Scientific Papers”",
+      "publication_date": "2024-01-08",
+      "publication_status": "arXiv preprint; v1 only",
+      "design_and_sample": "Multi-agent GPT-4 review system evaluated against human reviews on conference-paper data, with a separate nine-person user study.",
+      "evaluated_models": "GPT-4 multi-agent review system, GPT-4 single-agent and prior automated review baselines; human reviews.",
+      "source_version": "arXiv v1 (2024-01-08)",
+      "source_url": "https://arxiv.org/html/2401.04259",
+      "identity_or_scope_note": "",
+      "dimensions": {
+        "agreement": {
+          "status": "verified",
+          "finding": "Against individual human-review comments, MARG-S achieved macro Jaccard 3.53 and precision 4.41 (table reports ×100 scores); the human baseline had precision 12.0. This is comment overlap, not agreement on decisions or scientific correctness.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/html/2401.04259",
+              "location": "PDF §6, Table 2 and metric definition"
+            }
+          ]
+        },
+        "error_detection": {
+          "status": "not_measured",
+          "finding": "No independently verified flaw-detection benchmark was used; alignment to human comments does not establish factual correctness.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/html/2401.04259",
+              "location": "PDF §6, evaluation metrics"
+            }
+          ]
+        },
+        "recall": {
+          "status": "verified",
+          "finding": "On human-review-comment alignment, MARG-S recall was 15.84 (reported on the table’s ×100 scale); this is recall of human comment content, not recall of verified flaws.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/html/2401.04259",
+              "location": "PDF §6, Table 2"
+            }
+          ]
+        },
+        "score_bias": {
+          "status": "not_measured",
+          "finding": "No controlled score-inflation or directional rating-bias test was reported.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/html/2401.04259",
+              "location": "PDF §§5–6"
+            }
+          ]
+        },
+        "overconfidence": {
+          "status": "verified",
+          "finding": "False-positive/unsupported-comment evidence, not confidence calibration: in the separately reviewed refinement sample (one comment from each of 30 test conversations), the system failed to prune an invalid comment in 47% of cases; reported causes were ignored information (17%), unavailable information (13%) and irrelevant comments (17%). No calibrated confidence was measured.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/html/2401.04259",
+              "location": "PDF §8.3, Refinement stage; 30 sampled conversations and error-category percentages"
+            }
+          ]
+        },
+        "limitations": {
+          "status": "verified",
+          "finding": "Review-comment alignment uses an automatic matching procedure and imperfect human-reference reviews; the system cannot inspect visual figure/table layouts reliably. User study had nine participants and review generation increased time because of the multi-agent workflow.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/html/2401.04259",
+              "location": "PDF §6 and Limitations/Discussion"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "candidate_id": 7,
+      "candidate_label": "AI as a peer reviewer (original label: blinded cardiology study)",
+      "candidate_url": "https://discovery.researcher.life/article/comparing-ai-generated-and-human-peer-reviews-a-study-on-11-articles/511e0059228e3139a91876e5e380a59b",
+      "citation": "Marrella et al. (2025), “Comparing AI-generated and human peer reviews: A study on 11 articles”",
+      "publication_date": "2025-07-19 Epub; 2025-09 issue",
+      "publication_status": "Peer-reviewed, Hand Surgery and Rehabilitation 44(4):102225; DOI 10.1016/j.hansur.2025.102225",
+      "design_and_sample": "Eleven hand-surgery papers rejected by one journal and later published elsewhere; compares 31 available human reviews with ChatGPT-4o and o1; one blinded PhD hand surgeon rated review quality.",
+      "evaluated_models": "ChatGPT-4o and OpenAI o1; human reviewers from accepting/rejecting journals.",
+      "source_version": "Final DOI-linked journal article (2025); source-linked study is the 11-article hand-surgery paper.",
+      "source_url": "https://doi.org/10.1016/j.hansur.2025.102225",
+      "identity_or_scope_note": "The original candidate label says “blinded cardiology study,” but its Researcher.Life URL resolves to the 11-article hand-surgery study above. No unrelated cardiology paper was substituted.",
+      "dimensions": {
+        "agreement": {
+          "status": "verified",
+          "finding": "AI recommendations matched the high-impact journal decision in 32% (GPT-4o) and 29% (o1), and low-impact journal decisions in 68% and 71%. This is recommendation concordance against journal outcomes, not reviewer–reviewer agreement.",
+          "citations": [
+            {
+              "url": "https://doi.org/10.1016/j.hansur.2025.102225",
+              "location": "Publisher article, Abstract and Results (recommendation concordance); PubMed PMID 40691944"
+            }
+          ]
+        },
+        "error_detection": {
+          "status": "not_measured",
+          "finding": "No independently verified flaw set or true-error detection rate was assessed.",
+          "citations": [
+            {
+              "url": "https://doi.org/10.1016/j.hansur.2025.102225",
+              "location": "Publisher article, Methods and Results"
+            }
+          ]
+        },
+        "recall": {
+          "status": "not_measured",
+          "finding": "No human-comment recall or verified-flaw recall measure was reported.",
+          "citations": [
+            {
+              "url": "https://doi.org/10.1016/j.hansur.2025.102225",
+              "location": "Publisher article, Methods and Results"
+            }
+          ]
+        },
+        "score_bias": {
+          "status": "verified",
+          "finding": "On this selected set of papers that were ultimately published, AI recommended acceptance for 95% (GPT-4o) and 98% (o1); AI review-quality scores averaged 4.8/4.9 versus 2.8 for accepting-journal and 3.2 for rejecting-journal human reviews. The selected sample limits any general claim of leniency.",
+          "citations": [
+            {
+              "url": "https://doi.org/10.1016/j.hansur.2025.102225",
+              "location": "Publisher article, Abstract and Results; ARCADIA ratings"
+            }
+          ]
+        },
+        "overconfidence": {
+          "status": "not_measured",
+          "finding": "No confidence calibration or self-confidence outcome was reported.",
+          "citations": [
+            {
+              "url": "https://doi.org/10.1016/j.hansur.2025.102225",
+              "location": "Publisher article, Methods and Results"
+            }
+          ]
+        },
+        "limitations": {
+          "status": "verified",
+          "finding": "Very small selected sample (11 ultimately published manuscripts); six human reviews were unavailable, only one expert rated review quality, papers came from hand surgery, and historic editorial outcomes may not represent current decisions.",
+          "citations": [
+            {
+              "url": "https://doi.org/10.1016/j.hansur.2025.102225",
+              "location": "Publisher article, Methods, Results and Discussion"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "candidate_id": 8,
+      "candidate_label": "Can LLMs be trusted paper reviewers? (Li et al.)",
+      "candidate_url": "https://doi.org/10.48550/arxiv.2506.17311",
+      "citation": "Li et al., “Can Large Language Models Be Trusted Paper Reviewers? A Feasibility Study”",
+      "publication_date": "2025-06-18",
+      "publication_status": "arXiv preprint; v1 only",
+      "design_and_sample": "GPT-4o RAG/multi-agent review system run on all 290 WASA 2024 conference submissions; five runs and supplementary retrieval/wording experiments.",
+      "evaluated_models": "GPT-4o; human WASA 2024 acceptance set as reference.",
+      "source_version": "arXiv v1 (2025-06-18)",
+      "source_url": "https://arxiv.org/abs/2506.17311v1",
+      "identity_or_scope_note": "",
+      "dimensions": {
+        "agreement": {
+          "status": "verified",
+          "finding": "LLM-selected accepted-paper set had 38.6% average similarity with the human-accepted set across five runs; the authors explicitly say this is not a correctness comparison.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2506.17311v1",
+              "location": "PDF §VI.A, Table I"
+            }
+          ]
+        },
+        "error_detection": {
+          "status": "not_measured",
+          "finding": "No independently verified scientific-error detection test; study itself states it does not assess decision correctness.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2506.17311v1",
+              "location": "PDF §VI, Evaluation; §VIII"
+            }
+          ]
+        },
+        "recall": {
+          "status": "not_measured",
+          "finding": "No human-comment or true-flaw recall was measured; 38.6% is accepted-set similarity.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2506.17311v1",
+              "location": "PDF §VI.A, Table I"
+            }
+          ]
+        },
+        "score_bias": {
+          "status": "verified",
+          "finding": "In one supplementary wording manipulation, inserting exaggerated positive statements raised average paper score from 85.8 to 88.4 over five runs (Table II). This is a single-paper manipulation, not a population estimate.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2506.17311v1",
+              "location": "PDF §VI.B, Table II"
+            }
+          ]
+        },
+        "overconfidence": {
+          "status": "not_measured",
+          "finding": "No confidence or calibration measure was reported.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2506.17311v1",
+              "location": "PDF §§VI–VIII"
+            }
+          ]
+        },
+        "limitations": {
+          "status": "verified",
+          "finding": "One conference (WASA 2024), one model, only 290 submissions; the authors disclaim validating whether decisions were correct, and report retrieval preference and an irrelevant response when the RAG context included only a title.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2506.17311v1",
+              "location": "PDF §VI and §VIII"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "candidate_id": 9,
+      "candidate_label": "Can LLMs identify critical limitations?",
+      "candidate_url": "https://arxiv.org/pdf/2507.02694v1",
+      "citation": "Xu et al., “Can LLMs Identify Critical Limitations within Scientific Research? A Systematic Evaluation on AI Research Papers”",
+      "publication_date": "2025-07-03",
+      "publication_status": "arXiv preprint; candidate pinned v1",
+      "design_and_sample": "LimitGen-Syn synthetic flaw benchmark and LimitGen-Human real limitations from ICLR 2025; evaluates LLMs, MARG and human assessors.",
+      "evaluated_models": "GPT-4o, GPT-4o-mini, Qwen/Llama variants, MARG, human evaluators.",
+      "source_version": "arXiv v1 (2025-07-03, pinned candidate version)",
+      "source_url": "https://arxiv.org/html/2507.02694v1",
+      "identity_or_scope_note": "",
+      "dimensions": {
+        "agreement": {
+          "status": "verified",
+          "finding": "The study evaluates generated limitation points against human-labeled focus/aspect points, but does not report full-review decision agreement. Human annotation reliability is κ=.833 for the synthetic set; in the human dataset κ=.772 for importance, .735 faithfulness and .717 soundness.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/html/2507.02694v1",
+              "location": "HTML §§4–6, annotation reliability and Tables 2–3"
+            }
+          ]
+        },
+        "error_detection": {
+          "status": "verified",
+          "finding": "On the synthetic critical-limitation benchmark, human participants reached 86% coarse accuracy, while GPT-4o achieved 52%; in a human evaluation of 100 randomly sampled examples, GPT-4o output accuracy was 45.9%. The task is limitation detection, not a verified set of fatal errors.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/html/2507.02694v1",
+              "location": "HTML §6.1, Table 3 and caption (100-example human-evaluation sample)"
+            }
+          ]
+        },
+        "recall": {
+          "status": "verified",
+          "finding": "For the methodology aspect in LimitGen-Human, GPT-4o had 46.7% recall, 20.9% precision and 17.1% Jaccard against human limitation comments. This is human-comment coverage, not verified-fault recall.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/html/2507.02694v1",
+              "location": "HTML Appendix/Table 18, methodology aspect"
+            }
+          ]
+        },
+        "score_bias": {
+          "status": "not_measured",
+          "finding": "No paper-score or recommendation bias experiment was reported.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/html/2507.02694v1",
+              "location": "HTML §§5–6"
+            }
+          ]
+        },
+        "overconfidence": {
+          "status": "verified",
+          "finding": "Unsupported-critique evidence, not confidence calibration: in the 100-example human-evaluation sample of the synthetic limitation benchmark, GPT-4o outputs had 45.9% accuracy (vs 82.0% for human-generated limitations). This accuracy is not a standalone false-positive rate; no confidence calibration was measured.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/html/2507.02694v1",
+              "location": "HTML §6.1, Table 3 and caption"
+            }
+          ]
+        },
+        "limitations": {
+          "status": "verified",
+          "finding": "Evaluation is AI-centric and heavily based on ICLR/AI research; the human benchmark has a limited taxonomy, matching does not establish substantive correctness of every generated point, and visual input/advanced retrieval were not comprehensively tested.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/html/2507.02694v1",
+              "location": "HTML §7, Limitations"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "candidate_id": 10,
+      "candidate_label": "FLAWS benchmark (Xi et al.)",
+      "candidate_url": "https://arxiv.org/html/2511.21843v1",
+      "citation": "Xi et al., “FLAWS: A Benchmark for Error Identification and Localization in Scientific Papers”",
+      "publication_date": "2025-11-26",
+      "publication_status": "arXiv preprint; v1 pinned candidate",
+      "design_and_sample": "Synthetic benchmark of 713 claim-invalidating error/paper pairs across 448 papers, generated and filtered with Gemini 2.5 Pro and GPT-5; five frontier models evaluated.",
+      "evaluated_models": "Claude Sonnet 4.5, DeepSeek Reasoner v3.1, Gemini 2.5 Pro, GPT-5, Grok 4.",
+      "source_version": "arXiv v1 (2025-11-26)",
+      "source_url": "https://arxiv.org/html/2511.21843v1",
+      "identity_or_scope_note": "",
+      "dimensions": {
+        "agreement": {
+          "status": "not_measured",
+          "finding": "No AI–human review agreement or decision agreement was measured.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/html/2511.21843v1",
+              "location": "PDF §§4–5, benchmark evaluation"
+            }
+          ]
+        },
+        "error_detection": {
+          "status": "verified",
+          "finding": "GPT-5 was best: 39.1% identification accuracy among its top 10 ranked candidate passages (k=10); at k=3 accuracy was 19.2%. Errors were synthetically inserted claim-invalidating errors.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/html/2511.21843v1",
+              "location": "PDF Abstract, §5.2 and Table 1"
+            }
+          ]
+        },
+        "recall": {
+          "status": "not_reported",
+          "finding": "The headline measure is top-k identification accuracy, not conventional recall; the benchmark tests 713 inserted errors but does not report human-comment recall.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/html/2511.21843v1",
+              "location": "PDF §5.2, Table 1; metric definition"
+            }
+          ]
+        },
+        "score_bias": {
+          "status": "not_measured",
+          "finding": "No paper rating bias experiment was conducted.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/html/2511.21843v1",
+              "location": "PDF §§4–5"
+            }
+          ]
+        },
+        "overconfidence": {
+          "status": "not_measured",
+          "finding": "No model confidence calibration was reported.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/html/2511.21843v1",
+              "location": "PDF §§4–5"
+            }
+          ]
+        },
+        "limitations": {
+          "status": "verified",
+          "finding": "Errors are synthetic and model-inserted; source papers are recent ICML 2025 papers with LaTeX, and evaluation depends on automated matching. The authors note results do not cover full-review generation and synthetic errors may not capture real-world error distribution.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/html/2511.21843v1",
+              "location": "PDF §6, Limitations and Future Work"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "candidate_id": 11,
+      "candidate_label": "Is LLM a reliable reviewer? (Zhou et al.)",
+      "candidate_url": "https://aclanthology.org/2024.lrec-main.816.pdf",
+      "citation": "Zhou, Chen & Yu, “Is LLM a Reliable Reviewer? A Comprehensive Evaluation of LLM on Automatic Paper Reviewing Tasks”",
+      "publication_date": "2024-05",
+      "publication_status": "Peer-reviewed, LREC-COLING 2024 proceedings, pp. 9340–9351",
+      "design_and_sample": "Tests rating prediction on ICLR 2017 PeerRead, review generation on ICLR 2020 papers, and review-forum MCQs from 14 ICLR 2023 papers.",
+      "evaluated_models": "GPT-3.5-turbo and GPT-4-0613; human annotations and review labels.",
+      "source_version": "Final LREC-COLING proceedings paper (2024)",
+      "source_url": "https://aclanthology.org/2024.lrec-main.816/",
+      "identity_or_scope_note": "",
+      "dimensions": {
+        "agreement": {
+          "status": "verified",
+          "finding": "Few-shot GPT-3.5 predicted review-aspect ratings with Pearson r=.651, Spearman ρ=.659 and Kendall τ=.580 (Table 1); this is prediction alignment to historical labels, not independent reviewer reliability.",
+          "citations": [
+            {
+              "url": "https://aclanthology.org/2024.lrec-main.816/",
+              "location": "PDF §3, Table 1"
+            }
+          ]
+        },
+        "error_detection": {
+          "status": "not_measured",
+          "finding": "No verified scientific-error detection benchmark was used; checklist and review-forum answer tasks are not equivalent to true flaw detection.",
+          "citations": [
+            {
+              "url": "https://aclanthology.org/2024.lrec-main.816/",
+              "location": "PDF §§3–4"
+            }
+          ]
+        },
+        "recall": {
+          "status": "verified",
+          "finding": "On RR-MCQ items drawn from 55 review/rebuttal threads for 14 ICLR 2023 papers, GPT-4-to-GPT-4 had macro recall .666; overall macro accuracy was .276. This is answer-label recall, not recall of human comments or verified flaws.",
+          "citations": [
+            {
+              "url": "https://aclanthology.org/2024.lrec-main.816/",
+              "location": "PDF §4, Table 7"
+            }
+          ]
+        },
+        "score_bias": {
+          "status": "verified",
+          "finding": "GPT-3.5 review generation produced >55% positive comments versus a 43% human reference; with abstract-only input, 99% of generated comments were positive. Negative soundness/substance critiques were underproduced.",
+          "citations": [
+            {
+              "url": "https://aclanthology.org/2024.lrec-main.816/",
+              "location": "PDF §4.2, Figure 3"
+            }
+          ]
+        },
+        "overconfidence": {
+          "status": "not_measured",
+          "finding": "No confidence calibration, model self-confidence, or unsupported-critique/false-positive rate was measured; positive-comment prevalence and answer-label accuracy are not those outcomes.",
+          "citations": [
+            {
+              "url": "https://aclanthology.org/2024.lrec-main.816/",
+              "location": "ACL PDF §§3–5; study measures and results"
+            }
+          ]
+        },
+        "limitations": {
+          "status": "verified",
+          "finding": "Tasks use historical ICLR data, limited samples (including only 50 papers for GPT-4 review generation), GPT-3.5/GPT-4-era models and fixed prompts; automated text metrics and a single human labeler limit interpretation.",
+          "citations": [
+            {
+              "url": "https://aclanthology.org/2024.lrec-main.816/",
+              "location": "PDF §5, Discussion/Limitations"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "candidate_id": 12,
+      "candidate_label": "LLM-REVal (Li et al.)",
+      "candidate_url": "https://arxiv.org/pdf/2510.12367",
+      "citation": "Li et al., “LLM-REVal: Can We Trust LLM Reviewers Yet?”",
+      "publication_date": "2025-10-14",
+      "publication_status": "arXiv preprint; v1 only",
+      "design_and_sample": "Simulation using 100 ICLR papers (50 accept/50 reject) and LLM-generated papers in 10 topics; DeepSeek-R1 primary reviewer with alternate backbones and iterative polishing.",
+      "evaluated_models": "DeepSeek-R1 primary reviewer; GPT-4o, Qwen3 and Gemini variants in robustness tests; human comparisons.",
+      "source_version": "arXiv v1 (2025-10-14)",
+      "source_url": "https://arxiv.org/abs/2510.12367v1",
+      "identity_or_scope_note": "",
+      "dimensions": {
+        "agreement": {
+          "status": "verified",
+          "finding": "On 100 ICLR 2025 papers, the simulated reviewer achieved 73.7% acceptance-decision accuracy at threshold 6 and score correlation with human decisions r=.5046 (p=8.61×10⁻⁸). These are decision/score alignment metrics, not comment agreement.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2510.12367v1",
+              "location": "PDF §6, validation experiment"
+            }
+          ]
+        },
+        "error_detection": {
+          "status": "not_measured",
+          "finding": "The study does not independently verify specific scientific errors or measure flaw-detection recall.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2510.12367v1",
+              "location": "PDF §§6–7"
+            }
+          ]
+        },
+        "recall": {
+          "status": "not_measured",
+          "finding": "No human-comment recall or verified-error recall metric was reported.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2510.12367v1",
+              "location": "PDF §§6–7"
+            }
+          ]
+        },
+        "score_bias": {
+          "status": "verified",
+          "finding": "Simulated reviewer favored LLM-authored papers: mean score 6.2142 vs 5.9371 for human-authored; acceptance 78% vs 49%, with LLM papers winning 66% of pairs vs human papers 26% (Table 1).",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2510.12367v1",
+              "location": "PDF §7.1, Table 1"
+            }
+          ]
+        },
+        "overconfidence": {
+          "status": "not_measured",
+          "finding": "No confidence calibration outcome was reported.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2510.12367v1",
+              "location": "PDF §§6–7"
+            }
+          ]
+        },
+        "limitations": {
+          "status": "verified",
+          "finding": "Offline simulation and synthetic LLM-authored papers across 10 topics; the paper acknowledges simulated research/reviewer agents and does not establish real-world scientific validity or outcomes.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2510.12367v1",
+              "location": "PDF Discussion/Limitations"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "candidate_id": 13,
+      "candidate_label": "Mind the blind spots",
+      "candidate_url": "https://arxiv.org/pdf/2502.17086.pdf",
+      "citation": "Shin et al., “Mind the Blind Spots: A Focus-Level Evaluation Framework for LLM Reviews”",
+      "publication_date": "2025-11 (EMNLP)",
+      "publication_status": "Peer-reviewed EMNLP 2025 proceedings, ACL Anthology 2025.emnlp-main.1805",
+      "design_and_sample": "Focus-level evaluation of 676 ICLR papers/reviews (2021–2024); 3,657 human expert strengths/weaknesses; 43,042 LLM review points from eight models plus MARG and fine-tuned GPT-4o.",
+      "evaluated_models": "GPT-4o/mini, o1/mini, Llama-70B/405B, DeepSeek-R1/V3, MARG, fine-tuned GPT-4o.",
+      "source_version": "Published EMNLP 2025 proceedings PDF (used instead of broken candidate PDF; arXiv v4 was also available by cutoff).",
+      "source_url": "https://aclanthology.org/2025.emnlp-main.1805/",
+      "identity_or_scope_note": "",
+      "dimensions": {
+        "agreement": {
+          "status": "verified",
+          "finding": "The best overall focus-level F1 was .373 for DeepSeek-R1; fine-tuned GPT-4o had the closest focus-distribution match (KL=.022) but F1=.306. This compares focus labels/distributions, not review decisions or claim correctness.",
+          "citations": [
+            {
+              "url": "https://aclanthology.org/2025.emnlp-main.1805/",
+              "location": "ACL PDF §5.2, Table 3"
+            }
+          ]
+        },
+        "error_detection": {
+          "status": "not_measured",
+          "finding": "The benchmark measures which targets/aspects reviews mention, not whether each criticism identifies a true scientific flaw.",
+          "citations": [
+            {
+              "url": "https://aclanthology.org/2025.emnlp-main.1805/",
+              "location": "ACL PDF §§3–5, evaluation definition"
+            }
+          ]
+        },
+        "recall": {
+          "status": "verified",
+          "finding": "Across LLM review points, focus-label recall averaged .402 versus precision .300, partly because models generate more points than human references. This is annotated focus coverage, not evidence that the point is a valid flaw.",
+          "citations": [
+            {
+              "url": "https://aclanthology.org/2025.emnlp-main.1805/",
+              "location": "ACL PDF §5.2, Table 3 and discussion"
+            }
+          ]
+        },
+        "score_bias": {
+          "status": "not_measured",
+          "finding": "No numerical paper-score inflation or score-distribution bias outcome was measured.",
+          "citations": [
+            {
+              "url": "https://aclanthology.org/2025.emnlp-main.1805/",
+              "location": "ACL PDF §§5–6"
+            }
+          ]
+        },
+        "overconfidence": {
+          "status": "not_measured",
+          "finding": "No confidence calibration or overconfidence outcome was measured.",
+          "citations": [
+            {
+              "url": "https://aclanthology.org/2025.emnlp-main.1805/",
+              "location": "ACL PDF §§5–6"
+            }
+          ]
+        },
+        "limitations": {
+          "status": "verified",
+          "finding": "Dataset covers ICLR only; schema and facet taxonomy emphasize AI-paper review, and focus matching does not evaluate individual item truth, specificity or depth. Human labels are automated/annotated and show residual disagreement.",
+          "citations": [
+            {
+              "url": "https://aclanthology.org/2025.emnlp-main.1805/",
+              "location": "ACL PDF §6, Limitations"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "candidate_id": 14,
+      "candidate_label": "MMReview",
+      "candidate_url": "https://arxiv.org/pdf/2508.14146v3",
+      "citation": "Gao et al., “MMReview: A Multidisciplinary and Multimodal Benchmark for LLM-Based Peer Review Automation”",
+      "publication_date": "2025-10-08 (v4)",
+      "publication_status": "arXiv preprint; v4 within cutoff; candidate v3 updated to latest available version",
+      "design_and_sample": "Benchmark of 240 papers, 17 research domains, four disciplines, and 13 tasks, including review generation, decisions, human preferences, fake-review points and hidden prompt injections.",
+      "evaluated_models": "16 open-source and five closed-source models, including GPT-4o, Claude Sonnet 4, Gemini 2.5, Qwen, Kimi, DeepSeek and multimodal models.",
+      "source_version": "arXiv v4 (2025-10-08); newer than candidate v3 and within cutoff.",
+      "source_url": "https://arxiv.org/abs/2508.14146v4",
+      "identity_or_scope_note": "",
+      "dimensions": {
+        "agreement": {
+          "status": "verified",
+          "finding": "In pairwise human-preference ranking, the large-model group averaged 67.87% accuracy on text-only inputs and 65.97% with multimodal input. This is pairwise preference classification, not inter-reviewer agreement.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2508.14146v4",
+              "location": "PDF §4.2, Tables 2–4; PR column"
+            }
+          ]
+        },
+        "error_detection": {
+          "status": "verified",
+          "finding": "The benchmark includes polarity-reversed fake-strength/fake-weakness statements and prompt-injection tasks. In text-only mode, large models’ group-average MAE was 3.36 on fake strengths and 1.41 on fake weaknesses (lower is better); these are synthetic robustness probes, not real-flaw detection.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2508.14146v4",
+              "location": "PDF §§3.2–4.2, Table 3"
+            }
+          ]
+        },
+        "recall": {
+          "status": "not_measured",
+          "finding": "No human-comment recall or verified flaw recall measure was reported; review-comment similarity uses BARTScore/LLM judge.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2508.14146v4",
+              "location": "PDF §4.1 metrics and Tables 2–4"
+            }
+          ]
+        },
+        "score_bias": {
+          "status": "verified",
+          "finding": "Under the injected positive-review instruction, GPT-4o-latest’s score rose in 36.47% of text-only conditions (expected rise +1.17); with multimodal input it rose in 34.30% (expected rise +1.08). These are condition-level proportions, not a probability that every review is inflated.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2508.14146v4",
+              "location": "PDF §4.2, Tables 6–7; prompt-injection experiment"
+            }
+          ]
+        },
+        "overconfidence": {
+          "status": "not_measured",
+          "finding": "No confidence calibration was measured; numerical review scores are outcomes, not self-confidence.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2508.14146v4",
+              "location": "PDF §§3–5"
+            }
+          ]
+        },
+        "limitations": {
+          "status": "verified",
+          "finding": "Roughly 48% of the collected reviews/papers are concentrated in AI because public peer-review data are unevenly available; the authors also note debate over treating human comments as gold and limited dataset representativeness.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2508.14146v4",
+              "location": "PDF §7, Limitations"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "candidate_id": 15,
+      "candidate_label": "ReviewerToo",
+      "candidate_url": "https://arxiv.org/pdf/2510.08867.pdf",
+      "citation": "“ReviewerToo: Should AI Join The Program Committee? A Look At The Future of Peer Review”",
+      "publication_date": "2025-10-09",
+      "publication_status": "arXiv preprint; v1 only",
+      "design_and_sample": "ReviewerToo multi-agent review simulation on stratified 1,963 ICLR 2025 submissions; outcomes evaluated against official accept/reject decisions, plus persona and rebuttal tests.",
+      "evaluated_models": "gpt-oss-120b agent personas and meta-reviewers; human reviewer baselines.",
+      "source_version": "arXiv v1 (2025-10-09)",
+      "source_url": "https://arxiv.org/abs/2510.08867v1",
+      "identity_or_scope_note": "",
+      "dimensions": {
+        "agreement": {
+          "status": "verified",
+          "finding": "The Meta (all) system had 81.8% binary accept/reject accuracy vs 83.9% for the average human reviewer; the same table reports 2-way macro F1 79.3% vs 83.8%. This is outcome prediction against official decisions, not review-text agreement.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2510.08867v1",
+              "location": "PDF §5, Table 1"
+            }
+          ]
+        },
+        "error_detection": {
+          "status": "not_reported",
+          "finding": "A fact-checking module is part of the proposed workflow, but the reported study does not independently score verified scientific-error detection.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2510.08867v1",
+              "location": "PDF §3, Metareviewer Agent; §5, evaluation results"
+            }
+          ]
+        },
+        "recall": {
+          "status": "not_measured",
+          "finding": "No human-comment recall or verified-flaw recall was measured.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2510.08867v1",
+              "location": "PDF §§4–5"
+            }
+          ]
+        },
+        "score_bias": {
+          "status": "not_reported",
+          "finding": "The paper analyzes persona tendencies and post-rebuttal sycophancy, but does not report a controlled score-inflation or calibration estimate against paper quality.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2510.08867v1",
+              "location": "PDF §§5–6"
+            }
+          ]
+        },
+        "overconfidence": {
+          "status": "not_measured",
+          "finding": "No model confidence or calibration measure was reported.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2510.08867v1",
+              "location": "PDF §§4–6"
+            }
+          ]
+        },
+        "limitations": {
+          "status": "verified",
+          "finding": "The evidence comes from one venue (ICLR 2025) and 1,963 selected submissions, simulated agents and historical labels; the authors warn that text-quality and human judgment remain nuanced and that performance varies by persona.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2510.08867v1",
+              "location": "PDF §§4–6, experimental setup and discussion"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "candidate_id": 16,
+      "candidate_label": "Revolutionizing peer review (Shopovski et al.)",
+      "candidate_url": "https://www.preprints.org/manuscript/202502.0058/v1",
+      "citation": "Shopovski, Mohdali & Marolov, “Revolutionizing Peer Review: A Comparative Analysis of ChatGPT and Human Review Reports in Scientific Publishing”",
+      "publication_date": "2025-02-03 posted",
+      "publication_status": "Preprints.org preprint; explicitly not peer reviewed",
+      "design_and_sample": "ChatGPT-4 with tools and human review forms compared on ESJ submissions from Jan–Sep 2024; abstract says 198 usable manuscripts; body methods state 201 collected and 198 after exclusions.",
+      "evaluated_models": "ChatGPT-4 Plus with tools; at least two human reviewers per manuscript.",
+      "source_version": "Preprints.org v1 (2025-02-03); official HTML is full text; PDF fetch returned 403.",
+      "source_url": "https://www.preprints.org/manuscript/202502.0058/v1",
+      "identity_or_scope_note": "",
+      "dimensions": {
+        "agreement": {
+          "status": "verified",
+          "finding": "Human-median vs AI final-recommendation Cohen’s κ=.008 across 198 manuscripts, indicating negligible agreement. Abstract and methods/table have inconsistent denominators (201 collected, 198 analyzed; 504 vs 512 human reports).",
+          "citations": [
+            {
+              "url": "https://www.preprints.org/manuscript/202502.0058/v1",
+              "location": "Official HTML, Methods/Data Collection and Results, recommendation agreement; Table 4"
+            }
+          ]
+        },
+        "error_detection": {
+          "status": "not_measured",
+          "finding": "No independently verified errors or review factuality labels were assessed.",
+          "citations": [
+            {
+              "url": "https://www.preprints.org/manuscript/202502.0058/v1",
+              "location": "Official HTML, Methods and Results"
+            }
+          ]
+        },
+        "recall": {
+          "status": "not_measured",
+          "finding": "No human-comment recall or true-flaw recall metric was reported.",
+          "citations": [
+            {
+              "url": "https://www.preprints.org/manuscript/202502.0058/v1",
+              "location": "Official HTML, Methods and Results"
+            }
+          ]
+        },
+        "score_bias": {
+          "status": "verified",
+          "finding": "AI recommended minor revision for 191/198 (96.5%), major revision 4/198 (2.0%) and rejection 0; humans recommended rejection for 28/504 (5.6%). Authors also report AI gave higher scores across all components (all p<.001).",
+          "citations": [
+            {
+              "url": "https://www.preprints.org/manuscript/202502.0058/v1",
+              "location": "Official HTML, Results/Table 4 and discussion"
+            }
+          ]
+        },
+        "overconfidence": {
+          "status": "not_measured",
+          "finding": "No model confidence/calibration measure was reported.",
+          "citations": [
+            {
+              "url": "https://www.preprints.org/manuscript/202502.0058/v1",
+              "location": "Official HTML, Methods and Results"
+            }
+          ]
+        },
+        "limitations": {
+          "status": "verified",
+          "finding": "Single journal and one GPT-4 version; no published peer review; only ESJ manuscripts and one evaluation form. There are internal reporting inconsistencies in sample/report counts; the authors also note conflicts of interest (one author is an ESJ managing editor).",
+          "citations": [
+            {
+              "url": "https://www.preprints.org/manuscript/202502.0058/v1",
+              "location": "Official HTML, §Limitations; Methods/Data Collection; Competing Interests"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "candidate_id": 17,
+      "candidate_label": "SPOT benchmark (Son et al.)",
+      "candidate_url": "https://doi.org/10.48550/arxiv.2505.11855",
+      "citation": "Son et al., “When AI Co-Scientists Fail: SPOT—a Benchmark for Automated Verification of Scientific Research”",
+      "publication_date": "2025-05-17",
+      "publication_status": "arXiv preprint; v1 only",
+      "design_and_sample": "83 published papers with 91 author-acknowledged/retraction-level errors, cross-validated by authors and experts; 10 multimodal models, eight repeated trials.",
+      "evaluated_models": "o3, GPT-4.1, Gemini 2.5 Pro, Gemini 2.0 Flash Lite, Claude 3.7, Qwen2.5-VL, Llama 4 and others.",
+      "source_version": "arXiv v1 (2025-05-17)",
+      "source_url": "https://arxiv.org/abs/2505.11855v1",
+      "identity_or_scope_note": "",
+      "dimensions": {
+        "agreement": {
+          "status": "not_measured",
+          "finding": "No AI–human peer-review agreement or human-reviewer agreement statistic was measured.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2505.11855v1",
+              "location": "PDF §§2–3, benchmark design"
+            }
+          ]
+        },
+        "error_detection": {
+          "status": "verified",
+          "finding": "On the full SPOT benchmark, o3 led with 6.1% precision, 21.1% recall and 37.8% pass@4; no other tested model exceeded those values. Errors are verified, consequential errors in published papers.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2505.11855v1",
+              "location": "PDF §3.1, Table 2"
+            }
+          ]
+        },
+        "recall": {
+          "status": "verified",
+          "finding": "True verified-error recall: best model o3 detected 21.1%±4.4 of annotated errors (full 91-error benchmark; eight runs). A 48-instance text-only subset has a separate o3 recall 25.7%±7.1; do not mix this with the full benchmark.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2505.11855v1",
+              "location": "PDF §3.1 Table 2; §3.3 Table 3"
+            }
+          ]
+        },
+        "score_bias": {
+          "status": "not_measured",
+          "finding": "No peer-review score-bias experiment was conducted.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2505.11855v1",
+              "location": "PDF §§2–3"
+            }
+          ]
+        },
+        "overconfidence": {
+          "status": "verified",
+          "finding": "False-positive and calibration evidence are distinct: o3 precision was 6.1%±1.3% against the annotated error set (so most flags were unmatched; the authors caution that some may be valid unannotated errors). In two expert-audited case studies, most extra flags were hallucinations or misunderstandings, while one unannotated issue was judged a genuine error. Self-reported confidence was mostly near zero, weakly correlated with pass@4, and maxed out in only 2/498 model–instance evaluations, both o3.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2505.11855v1",
+              "location": "PDF §2.3 metric definition; §3.1 Table 2; §3.2 Figure 4; §4 Case Study; Appendix A limitations"
+            }
+          ]
+        },
+        "limitations": {
+          "status": "verified",
+          "finding": "Benchmark is relatively small and based on errors explicitly verified by authors/retraction records; some true issues may remain unannotated, and expert validation remains important in highly specialized domains.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2505.11855v1",
+              "location": "PDF Appendix A, Limitations"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "candidate_id": 18,
+      "candidate_label": "To err is human (AI checker)",
+      "candidate_url": "https://arxiv.org/html/2512.05925",
+      "citation": "Bianchi et al., “To Err Is Human: Systematic Quantification of Errors in Published AI Papers via LLM Analysis”",
+      "publication_date": "2025-12-05",
+      "publication_status": "arXiv preprint; v1 only; adjacent to rather than a direct AI-vs-human peer-review comparison",
+      "design_and_sample": "GPT-5 correctness checker retrospectively scans 2,500 published ICLR/NeurIPS/TMLR papers; human experts review flagged issues and injected errors.",
+      "evaluated_models": "GPT-5 detector and verifier (medium reasoning); GPT-5-mini categories; human experts validate.",
+      "source_version": "arXiv v1 (2025-12-05)",
+      "source_url": "https://arxiv.org/abs/2512.05925v1",
+      "identity_or_scope_note": "",
+      "dimensions": {
+        "agreement": {
+          "status": "not_measured",
+          "finding": "This is a post-publication correctness audit, not a comparison of complete LLM-generated peer reviews with human reviews; no review agreement statistic.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2512.05925v1",
+              "location": "PDF §§1–2, study scope"
+            }
+          ]
+        },
+        "error_detection": {
+          "status": "verified",
+          "finding": "Human experts confirmed 263 of 316 checker-flagged candidate mistakes in 60 papers (83.2% precision); 86 confirmed mistakes were labeled substantive. This is retrospective detection, not pre-publication review performance.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2512.05925v1",
+              "location": "PDF Abstract and §3.2"
+            }
+          ]
+        },
+        "recall": {
+          "status": "verified",
+          "finding": "In a controlled test of 90 deliberately injected errors into 15 paper copies (5 papers × 3 copies × 6 errors), checker recall was 60.0%. This is synthetic error recall; no human-comment recall.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2512.05925v1",
+              "location": "PDF §2.3 and §3.2"
+            }
+          ]
+        },
+        "score_bias": {
+          "status": "not_measured",
+          "finding": "No review ratings or acceptance decisions were measured.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2512.05925v1",
+              "location": "PDF §§1–3"
+            }
+          ]
+        },
+        "overconfidence": {
+          "status": "verified",
+          "finding": "Human-verified false-positive evidence, not confidence calibration: of 316 issues flagged in the 60-paper validation sample, experts confirmed 263 and rejected 53 as false positives (83.2% precision; 16.8% of flags). No calibrated confidence measure was collected.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2512.05925v1",
+              "location": "PDF §3.2, Precision and recall of the AI Correctness Checker; Figure 4"
+            }
+          ]
+        },
+        "limitations": {
+          "status": "verified",
+          "finding": "This candidate is an adjacent paper-correctness checker, not a direct human-vs-AI peer-review comparison. False positives arise from OCR/reasoning, true flaws can be missed, and substantive severity judgments are partly subjective.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2512.05925v1",
+              "location": "PDF §4, Discussion/Limitations"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "candidate_id": 19,
+      "candidate_label": "When your reviewer is an LLM (Zhu et al.)",
+      "candidate_url": "https://arxiv.org/pdf/2509.09912v1",
+      "citation": "Zhu et al., “When Your Reviewer is an LLM: Biases, Divergence, and Prompt Injection Risks in Peer Review”",
+      "publication_date": "2025-09-12",
+      "publication_status": "arXiv preprint; v1 only (submitted to ACM)",
+      "design_and_sample": "GPT-5-mini compared with human reviews on 1,441 ICLR 2023 and NeurIPS 2022 papers, including explicit embedded prompt injections and instruction variations.",
+      "evaluated_models": "GPT-5-mini; GPT-4o-mini in some injection experiments; human reviews.",
+      "source_version": "arXiv v1 (2025-09-12)",
+      "source_url": "https://arxiv.org/abs/2509.09912v1",
+      "identity_or_scope_note": "",
+      "dimensions": {
+        "agreement": {
+          "status": "verified",
+          "finding": "For ICLR top-5% papers, 59.6% of AI ratings were within [−1,1) of human mean; for rejected papers only 27.0%. Topic Jaccard was mid-range (.3–.6) for 69.6% of papers on strengths and 64.5% on weaknesses.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2509.09912v1",
+              "location": "PDF §4.1 Figure 3; §4.2 Figure 5"
+            }
+          ]
+        },
+        "error_detection": {
+          "status": "not_measured",
+          "finding": "No verified scientific-flaw benchmark was evaluated; topical differences and injected-prompt susceptibility are not error-detection accuracy.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2509.09912v1",
+              "location": "PDF §§4.1–4.3"
+            }
+          ]
+        },
+        "recall": {
+          "status": "not_measured",
+          "finding": "No recall of human comments or verified flaws was reported; Jaccard topic overlap is symmetric topic-set similarity.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2509.09912v1",
+              "location": "PDF §4.2, Figures 4–5"
+            }
+          ]
+        },
+        "score_bias": {
+          "status": "verified",
+          "finding": "Across 1,441 papers, mean LLM rating was 6.86 vs human 5.70 (+1.16). For ICLR papers with human mean 3.5, 97.67% received higher LLM scores (mean difference +2.48); 479/500 rejected papers were rated as acceptable at poster threshold. Hidden positive prompt raised mean score about +0.35.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2509.09912v1",
+              "location": "PDF §4.1 Figure 2; decision-threshold analysis; §4.3"
+            }
+          ]
+        },
+        "overconfidence": {
+          "status": "not_measured",
+          "finding": "No calibrated model confidence outcome was measured; high predicted ratings are score bias, not self-confidence.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2509.09912v1",
+              "location": "PDF §§4–5"
+            }
+          ]
+        },
+        "limitations": {
+          "status": "verified",
+          "finding": "Most experiments use GPT-5-mini and computer-science conference papers; prompt settings and the chosen ICLR/NeurIPS review corpora constrain generalization to other disciplines and models.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2509.09912v1",
+              "location": "PDF §5.3, Limitations and Future Work"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "candidate_id": 20,
+      "candidate_label": "Beyond rating",
+      "candidate_url": "https://arxiv.org/pdf/2604.19502v1.pdf",
+      "citation": "Li et al., “Beyond Rating: A Comprehensive Evaluation and Benchmark for AI Reviews”",
+      "publication_date": "2026-04-22",
+      "publication_status": "arXiv preprint; v2 latest available by cutoff",
+      "design_and_sample": "Benchmark uses >16,000 papers (1,000 test papers) from ICLR/NeurIPS; compares human expert reviews and outputs from general and review-specialized LLMs across text-centric dimensions.",
+      "evaluated_models": "GPT-5.2, Claude 4.5 Sonnet, Gemini 3 Pro, Qwen3, Llama, DeepSeek, AI-Scientist, AgentReview, DeepReviewer, CycleReviewer, OpenReviewer, SEA-E.",
+      "source_version": "arXiv v2 (2026-04-22)",
+      "source_url": "https://arxiv.org/abs/2604.19502v2",
+      "identity_or_scope_note": "",
+      "dimensions": {
+        "agreement": {
+          "status": "verified",
+          "finding": "Rating MAE versus human scores ranged from .85 (DeepReviewer-14B) to 2.68 (AI-Scientist GPT-5 one-shot); GPT-5.2 MAE was 1.14. This is rating alignment, and the authors warn that clustered human scores can make MAE misleading.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2604.19502v2",
+              "location": "PDF §5.1, Table 3"
+            }
+          ]
+        },
+        "error_detection": {
+          "status": "not_reported",
+          "finding": "The evaluation scores atomic strength/weakness points for alignment with human references; it does not adjudicate each point against paper evidence as a verified factual error.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2604.19502v2",
+              "location": "PDF §§4–5, argumentative alignment method"
+            }
+          ]
+        },
+        "recall": {
+          "status": "verified",
+          "finding": "Human-reference weakness-point recall was .42 for GPT-5.2, .46 for Claude 4.5 Sonnet, and .32 for Qwen3-235B; precision was .19, .23, and .27. This is max-recall matching to expert review points, not verified-flaw recall.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2604.19502v2",
+              "location": "PDF §5.1, Table 3; Weakness analysis"
+            }
+          ]
+        },
+        "score_bias": {
+          "status": "not_reported",
+          "finding": "The paper evaluates MAE and alignment but does not establish a directional overrating bias; it notes models can match clustered scores without high review quality.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2604.19502v2",
+              "location": "PDF §5.1, “Rethinking Rating Metric”"
+            }
+          ]
+        },
+        "overconfidence": {
+          "status": "not_measured",
+          "finding": "No confidence calibration or overconfidence outcome was measured.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2604.19502v2",
+              "location": "PDF §§4–5"
+            }
+          ]
+        },
+        "limitations": {
+          "status": "verified",
+          "finding": "High-confidence review filtering excludes contentious papers; sampled test set and LLM-as-judge matching can miss valid expert disagreement. Human review text remains an imperfect reference for comment correctness.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2604.19502v2",
+              "location": "PDF §§3–5 and Discussion"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "candidate_id": 21,
+      "candidate_label": "CoCoReviewBench",
+      "candidate_url": "https://arxiv.org/html/2605.07905v2",
+      "citation": "Deng et al., “CoCoReviewBench: A Completeness- and Correctness-Oriented Benchmark for AI Reviewers”",
+      "publication_date": "2026-05-16 (v2)",
+      "publication_status": "Accepted ICML 2026; PMLR 306 proceedings; v2 used as latest available by cutoff",
+      "design_and_sample": "3,900 ICLR/NeurIPS papers and a one-third evaluation sample; 23-category review taxonomy; uses reviewer–author–meta-review conflicts to adjudicate correctness.",
+      "evaluated_models": "GPT-5.2/Mini, Gemini-3, Qwen3/QwQ, Nemotron, Llama, DeepReviewer, CycleReviewer, OpenReviewer, SEA-E; human-review baseline.",
+      "source_version": "arXiv v2 (2026-05-16); accepted ICML 2026 / PMLR 306",
+      "source_url": "https://arxiv.org/abs/2605.07905v2",
+      "identity_or_scope_note": "",
+      "dimensions": {
+        "agreement": {
+          "status": "verified",
+          "finding": "On category-level correctness (human scale 1–5), GPT-5.2 scored 3.91 vs human 3.55; paper-level aggregate quality was .90 above human on a separate alignment score. This evaluates correctness and alignment, not review-decision concordance.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2605.07905v2",
+              "location": "PDF §5.2, Table 2"
+            }
+          ]
+        },
+        "error_detection": {
+          "status": "verified",
+          "finding": "Human reference reviews themselves had adjudicated errors: 22.13% of papers and 7.63% of reviews had incorrect opinions identified via inter-reviewer conflict/meta-review adjudication. Model review correctness is separately rated against filtered references.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2605.07905v2",
+              "location": "PDF §3.2, inter-reviewer conflicts; §5.2"
+            }
+          ]
+        },
+        "recall": {
+          "status": "verified",
+          "finding": "Completeness relative to the union of human review categories was 84.49% for GPT-5.2; category coverage is a benchmark-defined completeness ratio, not recall of verified flaws or exact human comments.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2605.07905v2",
+              "location": "PDF §5.2, Table 2, Complete column"
+            }
+          ]
+        },
+        "score_bias": {
+          "status": "not_measured",
+          "finding": "No directional bias in paper accept scores was measured; the scored “Correctness”/“Complete” metrics are review-quality outcomes, not paper ratings.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2605.07905v2",
+              "location": "PDF §5, evaluation metrics"
+            }
+          ]
+        },
+        "overconfidence": {
+          "status": "not_measured",
+          "finding": "No confidence calibration was measured.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2605.07905v2",
+              "location": "PDF §§5–6"
+            }
+          ]
+        },
+        "limitations": {
+          "status": "verified",
+          "finding": "Human comments are sparse and fallible; the benchmark evaluates only covered categories and its correctness signal depends on discussion/meta-review adjudication. Main model runs use a sampled subset and LLM judges.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2605.07905v2",
+              "location": "PDF §§3 and 5, benchmark construction/evaluation"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "candidate_id": 22,
+      "candidate_label": "Large-scale randomized study of LLM feedback",
+      "candidate_url": "https://arxiv.org/pdf/2606.10159v1",
+      "citation": "Li et al., “Gaming AI-Assisted Peer Reviews Poses New Risks to the Scientific Community”",
+      "publication_date": "2026-06-08",
+      "publication_status": "arXiv preprint; v1 only",
+      "design_and_sample": "Iterative abstract-rewriting attacks on 100 rejected papers across AI, medicine and other fields; compares original/rephrased abstract review outcomes with eight sampled reviews per paper.",
+      "evaluated_models": "Gemini 3 Flash, GPT-5.4 Mini and additional transfer reviewers/prompts.",
+      "source_version": "arXiv v1 (2026-06-08)",
+      "source_url": "https://arxiv.org/abs/2606.10159v1",
+      "identity_or_scope_note": "Candidate shorthand names a “large-scale randomized study of LLM feedback.” Linked arXiv ID instead identifies this abstract-rewriting gaming study. The Nature Machine Intelligence randomized feedback article is a different work and was not substituted.",
+      "dimensions": {
+        "agreement": {
+          "status": "not_measured",
+          "finding": "No human–AI score agreement or full-review comment agreement was measured; outcome is robustness of AI ratings under rephrasing.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2606.10159v1",
+              "location": "PDF §§2–3"
+            }
+          ]
+        },
+        "error_detection": {
+          "status": "not_measured",
+          "finding": "The experiment tests manipulation of review ratings, not detection of independently verified errors.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2606.10159v1",
+              "location": "PDF §§2–5"
+            }
+          ]
+        },
+        "recall": {
+          "status": "not_measured",
+          "finding": "No human-comment recall or true-flaw recall was reported.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2606.10159v1",
+              "location": "PDF §§2–5"
+            }
+          ]
+        },
+        "score_bias": {
+          "status": "verified",
+          "finding": "Meaning-preserving/other abstract rewrites achieved attack success around 38%; average acceptance rating increased +1.31 for Gemini 3 Flash and +0.88 for GPT-5.4 Mini; among originally rejected cases success exceeded 50%.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2606.10159v1",
+              "location": "PDF Abstract; §3 Figure 4 and Figure 6"
+            }
+          ]
+        },
+        "overconfidence": {
+          "status": "not_reported",
+          "finding": "Abstract says rephrasing increased review “confidence,” but the retrieved Methods operationalize the outcome as eight-sample rating changes/ASR; no distinct calibrated confidence variable is defined.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2606.10159v1",
+              "location": "PDF Abstract; §2 Evaluation metrics"
+            }
+          ]
+        },
+        "limitations": {
+          "status": "verified",
+          "finding": "The attack targets a selected set of rejected papers and specific reviewer models/prompts; outcomes are ratings from the tested systems, not evidence that human-quality judgments changed. Paper reports cost as about $1 in abstract but about $12 in methods/results, an internal cost discrepancy.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2606.10159v1",
+              "location": "PDF §§2, 6–7 and cost description"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "candidate_id": 23,
+      "candidate_label": "Multimodal audit (Alharbi)",
+      "candidate_url": "https://arxiv.org/pdf/2608.28626",
+      "citation": "Alharbi, “Do Large Language Models Scrutinise What They Review? A Multimodal Audit of Scoring Calibration, Error Detection, and Author-Identity Effects”",
+      "publication_date": "2026-07-31",
+      "publication_status": "arXiv preprint; v1 only",
+      "design_and_sample": "Controlled audit on 165 ICLR 2026 submissions; 145 verified injected errors across 55 manuscripts; nearly 9,900 generated reviews with text-only vs figures, prompt and identity conditions.",
+      "evaluated_models": "Qwen2.5-VL-72B-Instruct and Pixtral-Large-Instruct-2411; independent LLM judge/editor and author validation.",
+      "source_version": "arXiv v1 (2026-07-31)",
+      "source_url": "https://arxiv.org/abs/2608.28626v1",
+      "identity_or_scope_note": "",
+      "dimensions": {
+        "agreement": {
+          "status": "verified",
+          "finding": "LLM editor decisions matched venue decisions on 60.6% of review pairs, exactly matching a naive score-threshold baseline; mean LLM scores correlated only weakly with human scores (paper discussion).",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2608.28626v1",
+              "location": "PDF §3.5 and §4.1"
+            }
+          ]
+        },
+        "error_detection": {
+          "status": "verified",
+          "finding": "Under natural prompts, models detected 12.1% of the 145 verified injected errors; explicit verification instructions raised this to 22.2%. Figure input reduced detection; trend-reversal errors were missed by both models.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2608.28626v1",
+              "location": "PDF §§3.2–3.3, Figures 2–3"
+            }
+          ]
+        },
+        "recall": {
+          "status": "verified",
+          "finding": "Verified synthetic flaw recall was 12.1% naturally and 22.2% with a one-sentence verification prompt across the benchmark; 78% remained undetected. This is flaw recall, not human-comment recall.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2608.28626v1",
+              "location": "PDF §3.3, Figure 3"
+            }
+          ]
+        },
+        "score_bias": {
+          "status": "verified",
+          "finding": "Under blinded identity, LLM means ranged 7.0–7.2 text-only and 7.1–8.1 with figures, versus human means 3.4 for clear rejects, 5.4 borderline and 6.8 clear accepts. Figures raised model scores while reducing detection; identity had no score effect.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2608.28626v1",
+              "location": "PDF §3.1 Figure 1; §3.4 Figure 4"
+            }
+          ]
+        },
+        "overconfidence": {
+          "status": "not_measured",
+          "finding": "The study measures ratings and error detection, but does not report a distinct model confidence calibration or overconfidence measure.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2608.28626v1",
+              "location": "PDF §§2–4"
+            }
+          ]
+        },
+        "limitations": {
+          "status": "verified",
+          "finding": "Two model families and one venue/review format; error judge is an LLM (with 63-item human validation), and low-prestige affiliations were fictitious. Accepted submissions required version recovery; only version-matched human comparisons were used.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2608.28626v1",
+              "location": "PDF §4.4, Limitations; §§2.3–2.5"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "candidate_id": 24,
+      "candidate_label": "On the limits and opportunities of AI reviewers",
+      "candidate_url": "https://alphaxiv.org/abs/2605.20668",
+      "citation": "Lu et al., “On the Limits and Opportunities of AI Reviewers: Reviewing the Reviews of Nature-Family Papers with 45 Expert Scientists”",
+      "publication_date": "2026-05-20",
+      "publication_status": "arXiv preprint; v1 available by cutoff",
+      "design_and_sample": "45 domain scientists evaluated 2,960 individual review criticisms for 82 Nature-family papers; comparison of three AI reviewers with top/lowest human reviewer per paper.",
+      "evaluated_models": "GPT-5.2, Claude Opus 4.5, Gemini 3.0 Pro; 45 expert annotators; tool access to manuscript/code/literature in AI reviewing setup.",
+      "source_version": "arXiv v1 (2026-05-20)",
+      "source_url": "https://arxiv.org/abs/2605.20668v1",
+      "identity_or_scope_note": "",
+      "dimensions": {
+        "agreement": {
+          "status": "verified",
+          "finding": "The paper-level mean fully-positive item rate (correct, significant, sufficient evidence) was 60.0% for GPT-5.2 vs 48.2% for the top-rated human (p=.009); this is not the percentage of papers. Experts judged GPT-5.2 to match/exceed that human review on 48.6% of papers.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2605.20668v1",
+              "location": "PDF §3, Table 4, “Paper-level mean” column; Table 5"
+            }
+          ]
+        },
+        "error_detection": {
+          "status": "verified",
+          "finding": "Domain experts rated correctness at a paper-level mean of 86.2% for GPT-5.2 review items (442 items across 81 papers) vs 92.3% for top-rated human items (1,139 items across 82 papers); AI items had higher mean significance (1.61 vs 1.39 on a 0–2 scale). This is expert-adjudicated review-item correctness, not a controlled error-injection test.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2605.20668v1",
+              "location": "PDF §3, Table 3 and unit-of-analysis description"
+            }
+          ]
+        },
+        "recall": {
+          "status": "verified",
+          "finding": "One AI reviewer recovered 26.9% of human review items; three AI reviewers covered 46.3%. Coverage is same-target/same-criticism human-comment matching, not recall of all verified flaws.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2605.20668v1",
+              "location": "PDF §4, Table 6"
+            }
+          ]
+        },
+        "score_bias": {
+          "status": "not_measured",
+          "finding": "No overall-paper rating inflation comparison is the main test; outputs evaluated are issue items and reviewer quality.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2605.20668v1",
+              "location": "PDF §§3–4"
+            }
+          ]
+        },
+        "overconfidence": {
+          "status": "verified",
+          "finding": "Expert-validated unsupported/incorrect-item evidence, not confidence calibration: paper-level mean correctness was 86.2% for GPT-5.2 review items versus 92.3% for the top-rated human, corresponding to 13.8% versus 7.7% not rated correct on that rubric. No model confidence calibration was measured.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2605.20668v1",
+              "location": "PDF §3, Table 3; unit-of-analysis description; §2.1 correctness rubric"
+            }
+          ]
+        },
+        "limitations": {
+          "status": "verified",
+          "finding": "Expert-intensive but still imperfect labels: only 27/82 papers received duplicate annotation and chance-corrected agreement varied by dimension; AI review capped at five items/paper and uses tool-enabled access. Authors list 16 recurring AI weaknesses.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2605.20668v1",
+              "location": "PDF §2.4, inter-annotator agreement; §5.1 failure cases"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "candidate_id": 25,
+      "candidate_label": "Ophthalmology 300-manuscript comparison",
+      "candidate_url": "https://www.ovid.com/jnls/md-journal/fulltext/10.1097/md.0000000000048147~current-capabilities-of-large-language-models-as-peer",
+      "citation": "Moshirfar et al., “Current Capabilities of Large Language Models as Peer Reviewers for Manuscripts Submitted to Ophthalmology-Related Journals”",
+      "publication_date": "2026-03-27",
+      "publication_status": "Peer-reviewed Medicine (Baltimore) 105(13):e48147; DOI 10.1097/MD.0000000000048147",
+      "design_and_sample": "Retrospective study: 300 randomly selected manuscripts from three anonymized ophthalmology journals under one editor (June 2023–July 2024), 705 human reviews by 324 ophthalmologists.",
+      "evaluated_models": "ChatGPT-4o and Gemini 1.5 Flash; human ophthalmologist reviewers.",
+      "source_version": "Final journal/PMC full text (2026); Ovid route was restricted but PubMed/PMC indexed full article was accessible.",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13034942/",
+      "identity_or_scope_note": "",
+      "dimensions": {
+        "agreement": {
+          "status": "verified",
+          "finding": "Human reviewers rejected 73.33% of papers vs 2.00% for each LLM; recommendations therefore diverged strongly. Human negative-feedback score for editor-rejected manuscripts was −1.05 vs −.02 ChatGPT and +.24 Gemini.",
+          "citations": [
+            {
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13034942/",
+              "location": "PMC Abstract and §§3 Results; Figure 2"
+            }
+          ]
+        },
+        "error_detection": {
+          "status": "not_measured",
+          "finding": "No objective verified-flaw benchmark or error-detection accuracy was measured.",
+          "citations": [
+            {
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13034942/",
+              "location": "PMC §§2–3, study design and outcomes"
+            }
+          ]
+        },
+        "recall": {
+          "status": "not_measured",
+          "finding": "No human-comment recall or verified-flaw recall measure was reported.",
+          "citations": [
+            {
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13034942/",
+              "location": "PMC §§2–3"
+            }
+          ]
+        },
+        "score_bias": {
+          "status": "verified",
+          "finding": "AI recommendations were markedly lenient: major revision 68.00% ChatGPT vs 22.67% humans; minor revision 30.00% ChatGPT/66.33% Gemini vs 3.33% humans; rejection 2% each AI vs 73.33% humans (300 papers).",
+          "citations": [
+            {
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13034942/",
+              "location": "PMC Abstract and §3 Results, Figure 1"
+            }
+          ]
+        },
+        "overconfidence": {
+          "status": "not_measured",
+          "finding": "No confidence calibration was assessed.",
+          "citations": [
+            {
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13034942/",
+              "location": "PMC §§2–3"
+            }
+          ]
+        },
+        "limitations": {
+          "status": "verified",
+          "finding": "One ophthalmology subspecialty, three anonymized journals under one editor, two AI systems, and nested reviews may violate ANOVA independence; structured review-quality rubric was not independently validated and prompts were brief.",
+          "citations": [
+            {
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13034942/",
+              "location": "PMC Discussion, limitations"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "candidate_id": 26,
+      "candidate_label": "PaperAudit-Bench (Tu et al.)",
+      "candidate_url": "https://arxiv.org/html/2601.19916",
+      "citation": "Tu et al., “PaperAudit-Bench: Benchmarking Error Detection in Research Papers for Critical Automated Peer Review”",
+      "publication_date": "2026-01-07",
+      "publication_status": "arXiv preprint; v1 only",
+      "design_and_sample": "Synthetic benchmark with 220 papers and >10 injected errors per paper; model study on 46 NeurIPS corrupted papers; separate review-alignment test on 50 ICLR 2026 submissions.",
+      "evaluated_models": "GPT-5, Gemini 2.5 Pro, o4-mini, Claude Sonnet 4.5, Qwen3, DeepSeek, Llama; PaperAudit-Review/DeepReview.",
+      "source_version": "arXiv v1 (2026-01-07)",
+      "source_url": "https://arxiv.org/abs/2601.19916v1",
+      "identity_or_scope_note": "",
+      "dimensions": {
+        "agreement": {
+          "status": "verified",
+          "finding": "On 50 ICLR 2026 papers, PaperAudit review reached score-based pairwise accuracy .557, Spearman .142 and Kendall .109 against human review ratings; the paper notes absolute alignment remained limited.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2601.19916v1",
+              "location": "PDF §5.2, Table 3 Panel A"
+            }
+          ]
+        },
+        "error_detection": {
+          "status": "verified",
+          "finding": "On Fast-mode synthetic error detection, GPT-5 achieved 51.4% Error Coverage and 40.6% macro-F1; Gemini-2.5-Pro had highest macro-F1 at 41.4%. At Detection@all on the separate ICML branch, large models reached high coverage but low precision.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2601.19916v1",
+              "location": "PDF §5.1 Figure 5; Table 4"
+            }
+          ]
+        },
+        "recall": {
+          "status": "verified",
+          "finding": "Error Coverage (EC) is matched injected errors / all gold errors; GPT-5 Fast-mode EC was 51.4%. In a separate human-review coverage comparison, PaperAudit had 0.591 weakness coverage on 50 ICLR papers.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2601.19916v1",
+              "location": "PDF §5.1 Figure 5; §5.2 Table 3 Panel B"
+            }
+          ]
+        },
+        "score_bias": {
+          "status": "not_reported",
+          "finding": "Explicit error-aware review produces stricter scores on corrupted papers, but this is an intervention effect and not a calibrated estimate of general score bias.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2601.19916v1",
+              "location": "PDF §5.2, Table 2 and discussion"
+            }
+          ]
+        },
+        "overconfidence": {
+          "status": "not_reported",
+          "finding": "No model confidence calibration was measured. The AI-Extra Major Points metric measures divergence from human review coverage; the authors explicitly state extra points are not necessarily incorrect and do not report independent expert validation of AI-only points. Synthetic-error Finding Precision does not establish validity of those additional review critiques.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2601.19916v1",
+              "location": "PDF §5.2; Appendix B.4, Coverage-based Alignment Protocol"
+            }
+          ]
+        },
+        "limitations": {
+          "status": "verified",
+          "finding": "Injected errors are synthetic; naturally occurring flaws and full precision assessment remain difficult. Deep review can become over-critical, and results depend on prompt/configuration; review alignment uses a 50-paper sample.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2601.19916v1",
+              "location": "PDF §6, Limitations"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "candidate_id": 27,
+      "candidate_label": "Stop automating peer review (Baumann et al.)",
+      "candidate_url": "https://arxiv.org/pdf/2605.03202v1",
+      "citation": "Baumann et al., “Stop Automating Peer Review Without Rigorous Evaluation”",
+      "publication_date": "2026-05-04",
+      "publication_status": "Peer-reviewed ICML 2026 position paper (Oral); extraction deliberately uses candidate-pinned arXiv v1, not later v2",
+      "design_and_sample": "Compares all 75,800 ICLR 2026 reviews (19,490 papers; 15,899 labeled AI-generated) plus simulated reviews of 60 papers; tests zero-shot AI laundering of papers.",
+      "evaluated_models": "GPT-5.1, GPT-5.4, Claude Sonnet 4.5 reviewer agents; GPT-5.1/GPT-5.4 launderers; human ICLR 2026 reviews.",
+      "source_version": "Pinned arXiv v1 (2026-05-04), preserved despite later v2/proceedings version.",
+      "source_url": "https://arxiv.org/abs/2605.03202v1",
+      "identity_or_scope_note": "",
+      "dimensions": {
+        "agreement": {
+          "status": "verified",
+          "finding": "AI-written reviews showed higher within-paper similarity than human reviews (IntraSim .882 vs .811, +8.7%) and across-paper similarity (GPT-5.1 .646 vs human .470, +37.4%). Wild 75,800-review comparison found inter-paper similarity .486 for fully AI-generated vs .467 for other reviews.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2605.03202v1",
+              "location": "PDF §3.3 Figure 1; §3.4 Figures 2–3"
+            }
+          ]
+        },
+        "error_detection": {
+          "status": "not_measured",
+          "finding": "No independently verified scientific-flaw detection test was conducted.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2605.03202v1",
+              "location": "PDF §§3–4"
+            }
+          ]
+        },
+        "recall": {
+          "status": "not_measured",
+          "finding": "No human-comment recall or true-flaw recall measure was reported.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2605.03202v1",
+              "location": "PDF §§3–4"
+            }
+          ]
+        },
+        "score_bias": {
+          "status": "verified",
+          "finding": "Across 24 rewriting conditions on 60 ICLR papers, zero-shot paper laundering raised AI reviewer score by +0.45 on a 1–10 scale (p<.001 in nearly every condition); laundered abstract/introduction embeddings became 6.5% more similar (Cohen d=1.02).",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2605.03202v1",
+              "location": "PDF §4.1 Figures 4–6"
+            }
+          ]
+        },
+        "overconfidence": {
+          "status": "not_measured",
+          "finding": "No confidence calibration was measured.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2605.03202v1",
+              "location": "PDF §§3–5"
+            }
+          ]
+        },
+        "limitations": {
+          "status": "verified",
+          "finding": "Simulation uses 60 ICLR papers, four rewrite prompts, two laundering models and three reviewer models; real-world review labels depend on a third-party AI-review classifier. Embedding similarity is only a proxy for viewpoint diversity.",
+          "citations": [
+            {
+              "url": "https://arxiv.org/abs/2605.03202v1",
+              "location": "PDF §7 Conclusions; Appendix A, Limitations"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "synthesis": [
+    "The evidence separates several different tasks: predicting scores/decisions, matching the topics or comments humans wrote, expert validation of review criticisms, detecting inserted synthetic flaws, and detecting real verified errors. These metrics are not interchangeable.",
+    "Score leniency/inflation appears across several distinct designs: e.g., a mean +1.16 rating difference for GPT-5-mini on ICLR/NeurIPS papers (#19), 95–98% acceptance recommendations on a selected set of ultimately published hand-surgery papers (#7), and near-uniform high scores for two models on ICLR 2026 manuscripts (#23). These are not directly comparable effect sizes.",
+    "Error-detection results are mixed and misses are common across distinct conditions: SPOT’s best full-set recall was 21.1% on errors verified in published papers (#17); FLAWS GPT-5 top-10 identification accuracy was 39.1% on synthetically inserted fatal errors (#10); and the ICLR 2026 multimodal audit found 12.1% recall under natural prompting and 22.2% with verification instructions for 145 verified injected errors (#23). The post-publication checker identified 60% of 90 controlled injected errors (#18). These benchmarks use different denominators and should not be pooled.",
+    "Human comment recall is usually absent or only approximated by topical/point overlap. MARG’s 15.84 comment recall (#6), Beyond Rating’s max-recall matching to expert weakness points (#20), and Nature-paper issue coverage (#24) have different definitions and should not be pooled.",
+    "Direct confidence calibration is rare. SPOT reports low self-confidence that is weakly associated with performance, not broad overconfidence (#17). Other studies provide separate evidence of unsupported or unmatched claims: an empty-paper probe elicited invented review assertions from one system (#4); ReviewerGPT’s aggregate table marks two false alarms (#3); MARG failed to prune an invalid comment in 47% of its 30 sampled refinement cases (#6); GPT-4o limitation outputs had 45.9% human-evaluated accuracy on a 100-example sample (#9); SPOT precision was 6.1% against its annotations, although some unmatched flags may be valid unannotated errors (#17); the post-publication checker’s experts confirmed 263/316 flags (#18); and experts rated GPT-5.2 review-item correctness at a paper-level mean of 86.2% (#24). These are not confidence scores and their validation conditions differ. PaperAudit-Bench’s AI-only extra-point rate measures coverage divergence, not invalid claims; the authors say extra points are not necessarily incorrect (#26).",
+    "One expert review-item study reports a paper-level mean fully-positive item rate of 60.0% for GPT-5.2 versus 48.2% for a top human reviewer, while paper-level mean correctness was lower (86.2% vs 92.3%) (#24). Aggregate helpfulness or preference results in other work do not establish equivalent factual reliability."
+  ],
+  "limitations_note": "Sources use different venues, model versions, prompts, thresholds, datasets and definitions. Several studies are preprints; in-sample decision alignment is not scientific correctness; human comments are incomplete references; synthetic injected errors may not represent natural flaws. No cross-study pooled estimate is justified."
+}

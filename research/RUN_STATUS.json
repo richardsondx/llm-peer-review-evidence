@@ -1,0 +1,11 @@
+{
+  "luna": "complete_reviewed",
+  "sol": "interrupted_workspace_credits_exhausted",
+  "sol_saved_rows": 24,
+  "sol_missing_candidate_ids": [
+    24,
+    26,
+    27
+  ],
+  "comparison": "pending_complete_sol_run"
+}

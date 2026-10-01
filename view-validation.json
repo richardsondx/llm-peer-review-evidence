@@ -1,0 +1,18 @@
+{
+  "luna": {
+    "rows": 27,
+    "clickable_cells": 162,
+    "embedded_data_matches_source": true,
+    "javascript_syntax": "passed",
+    "advanced_view_preserved": true,
+    "simple_is_default": true
+  },
+  "sol": {
+    "rows": 24,
+    "clickable_cells": 144,
+    "embedded_data_matches_source": true,
+    "javascript_syntax": "passed",
+    "advanced_view_preserved": true,
+    "simple_is_default": true
+  }
+}

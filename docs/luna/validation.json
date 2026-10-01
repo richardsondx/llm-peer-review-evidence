@@ -1,0 +1,42 @@
+{
+  "extraction_model": "gpt-6-luna",
+  "reasoning_effort": "xhigh",
+  "cutoff": "2026-10-01",
+  "rows": 27,
+  "unique_candidate_ids": 27,
+  "dimensions": [
+    "agreement",
+    "error_detection",
+    "recall",
+    "score_bias",
+    "overconfidence",
+    "limitations"
+  ],
+  "cells": 162,
+  "status_counts": {
+    "not_measured": 59,
+    "not_reported": 9,
+    "source_unavailable": 0,
+    "verified": 94
+  },
+  "source_unavailable_cells": 0,
+  "all_cells_have_primary_url_and_locator": true,
+  "json_structure_valid": true,
+  "markdown_rows": 27,
+  "html": {
+    "title": "Evidence matrix: 27 studies × 6 finding dimensions — GPT-6-Luna · Extra High",
+    "body_rows": 27,
+    "expandable_cells": 162,
+    "remote_asset_dependencies": 0
+  },
+  "original_report_comparison": {
+    "route": "https://select.keenable.ai/artifacts/VXv4vTbP7w8rPvmJ3CvnCg/raw",
+    "http_status": 200,
+    "bytes": 137817,
+    "embedded_rows": 27
+  },
+  "issues": [],
+  "parent_audit_corrections": [
+    "#1 source Table 2: abstract-swap and informal-sentence insertion, not acceptance subgroups"
+  ]
+}

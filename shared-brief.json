@@ -1,0 +1,160 @@
+{
+  "question": "What empirical studies have compared LLM-generated scientific peer review with human peer review, and what did each study find about agreement, error detection, recall, score bias, overconfidence, and limitations?",
+  "cutoff": "2026-10-01",
+  "original_artifact": "https://select.keenable.ai/artifacts/VXv4vTbP7w8rPvmJ3CvnCg",
+  "dimensions": [
+    "agreement",
+    "error_detection",
+    "recall",
+    "score_bias",
+    "overconfidence",
+    "limitations"
+  ],
+  "studies": [
+    {
+      "id": 1,
+      "label": "GPT-4 is slightly helpful (Robertson)",
+      "url": "https://arxiv.org/pdf/2307.05492"
+    },
+    {
+      "id": 2,
+      "label": "Liang et al., useful feedback?",
+      "url": "https://ar5iv.labs.arxiv.org/html/2310.01783"
+    },
+    {
+      "id": 3,
+      "label": "ReviewerGPT? (Liu & Shah)",
+      "url": "https://ar5iv.labs.arxiv.org/html/2306.00622"
+    },
+    {
+      "id": 4,
+      "label": "Are we there yet? (Ye et al.)",
+      "url": "https://arxiv.org/html/2412.01708"
+    },
+    {
+      "id": 5,
+      "label": "Evaluating science: human vs AI reviewers",
+      "url": "https://www.cambridge.org/core/journals/judgment-and-decision-making/article/evaluating-science-a-comparison-of-human-and-ai-reviewers/6F69123851472B4A72DEC0BD08C13AA6"
+    },
+    {
+      "id": 6,
+      "label": "MARG (D'Arcy et al.)",
+      "url": "https://arxiv.org/html/2401.04259"
+    },
+    {
+      "id": 7,
+      "label": "AI as a peer reviewer (original label: blinded cardiology study)",
+      "url": "https://discovery.researcher.life/article/comparing-ai-generated-and-human-peer-reviews-a-study-on-11-articles/511e0059228e3139a91876e5e380a59b"
+    },
+    {
+      "id": 8,
+      "label": "Can LLMs be trusted paper reviewers? (Li et al.)",
+      "url": "https://doi.org/10.48550/arxiv.2506.17311"
+    },
+    {
+      "id": 9,
+      "label": "Can LLMs identify critical limitations?",
+      "url": "https://arxiv.org/pdf/2507.02694v1"
+    },
+    {
+      "id": 10,
+      "label": "FLAWS benchmark (Xi et al.)",
+      "url": "https://arxiv.org/html/2511.21843v1"
+    },
+    {
+      "id": 11,
+      "label": "Is LLM a reliable reviewer? (Zhou et al.)",
+      "url": "https://aclanthology.org/2024.lrec-main.816.pdf"
+    },
+    {
+      "id": 12,
+      "label": "LLM-REVal (Li et al.)",
+      "url": "https://arxiv.org/pdf/2510.12367"
+    },
+    {
+      "id": 13,
+      "label": "Mind the blind spots",
+      "url": "https://arxiv.org/pdf/2502.17086.pdf"
+    },
+    {
+      "id": 14,
+      "label": "MMReview",
+      "url": "https://arxiv.org/pdf/2508.14146v3"
+    },
+    {
+      "id": 15,
+      "label": "ReviewerToo",
+      "url": "https://arxiv.org/pdf/2510.08867.pdf"
+    },
+    {
+      "id": 16,
+      "label": "Revolutionizing peer review (Shopovski et al.)",
+      "url": "https://www.preprints.org/manuscript/202502.0058/v1"
+    },
+    {
+      "id": 17,
+      "label": "SPOT benchmark (Son et al.)",
+      "url": "https://doi.org/10.48550/arxiv.2505.11855"
+    },
+    {
+      "id": 18,
+      "label": "To err is human (AI checker)",
+      "url": "https://arxiv.org/html/2512.05925"
+    },
+    {
+      "id": 19,
+      "label": "When your reviewer is an LLM (Zhu et al.)",
+      "url": "https://arxiv.org/pdf/2509.09912v1"
+    },
+    {
+      "id": 20,
+      "label": "Beyond rating",
+      "url": "https://arxiv.org/pdf/2604.19502v1.pdf"
+    },
+    {
+      "id": 21,
+      "label": "CoCoReviewBench",
+      "url": "https://arxiv.org/html/2605.07905v2"
+    },
+    {
+      "id": 22,
+      "label": "Large-scale randomized study of LLM feedback",
+      "url": "https://arxiv.org/pdf/2606.10159v1"
+    },
+    {
+      "id": 23,
+      "label": "Multimodal audit (Alharbi)",
+      "url": "https://arxiv.org/pdf/2608.28626"
+    },
+    {
+      "id": 24,
+      "label": "On the limits and opportunities of AI reviewers",
+      "url": "https://alphaxiv.org/abs/2605.20668"
+    },
+    {
+      "id": 25,
+      "label": "Ophthalmology 300-manuscript comparison",
+      "url": "https://www.ovid.com/jnls/md-journal/fulltext/10.1097/md.0000000000048147~current-capabilities-of-large-language-models-as-peer"
+    },
+    {
+      "id": 26,
+      "label": "PaperAudit-Bench (Tu et al.)",
+      "url": "https://arxiv.org/html/2601.19916"
+    },
+    {
+      "id": 27,
+      "label": "Stop automating peer review (Baumann et al.)",
+      "url": "https://arxiv.org/pdf/2605.03202v1"
+    }
+  ],
+  "source_version_policy": {
+    "pinned_v1_candidate_ids": [
+      9,
+      10,
+      27
+    ],
+    "otherwise": "latest primary-source version available by cutoff; published proceedings preferred for candidate 13",
+    "dates": "distinguish initial publication/submission from source revision date"
+  },
+  "overconfidence_scope": "Direct confidence calibration and independently measured unsupported claims/invalid critiques/false positives are distinct evidence types. Score leniency, fluency and human-unmatched comments alone do not establish overconfidence or false positives."
+}
