@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-01T21:08:27.479203+00:00",
+  "checked_at": "2026-10-01T21:12:20.485974+00:00",
   "version": "0.3.0",
   "html_pages_checked": 19,
   "inline_scripts_parsed": 10,
@@ -27,5 +27,22 @@
     }
   },
   "baseline_unchanged_since_previous_commit": true,
-  "scope": "Offline structural checks; live browser checks recorded separately."
+  "scope": "Offline structural checks; live browser checks recorded separately.",
+  "live_browser_checks": {
+    "checked_at": "2026-10-01T21:12:45.742176+00:00",
+    "browser": "Chrome",
+    "pages_build_commit": "dfb14dda39613c9d4a2083d9d48a927c2a836401",
+    "overview_results_correct": true,
+    "both_simple_and_advanced_matrices_27_rows_162_cells": true,
+    "search_P13_and_P01": true,
+    "dialogs_show_new_reviews_and_matched_flag_indexes": true,
+    "escape_and_close_work": true,
+    "paired_table_27_rows_and_case_anchor_navigation": true,
+    "published_PDF_loads_6_pages": true,
+    "HTML_report_citation_metadata_and_results_present": true,
+    "original_baseline_and_literature_archive_accessible": true,
+    "matrix_console_errors_observed": [],
+    "direct_JSON_navigation": "Chrome returned ERR_BLOCKED_BY_CLIENT; no bypass attempted. GitHub view link added as a separate user option; direct download not verified in this browser.",
+    "proof_screenshot": "reviewer-pilot-v030.png"
+  }
 }
