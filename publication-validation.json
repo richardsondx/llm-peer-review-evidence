@@ -1,0 +1,17 @@
+{
+  "checked_on": "2026-10-01",
+  "github_pages_status": "built",
+  "github_pages_https": true,
+  "local_links": "all targets exist",
+  "published_json_matches_saved_research": true,
+  "browser_checks": [
+    "Landing page visible on GitHub Pages",
+    "Luna finding dialog contains full finding and primary-source locator",
+    "Sol finding dialog contains full finding and primary-source locator"
+  ],
+  "luna_rows": 27,
+  "sol_rows": 24,
+  "release": "v0.1.0",
+  "custom_domain_status": "pending domain spelling and authenticated DNS access",
+  "google_scholar_status": "profile setup prepared; article-selection step blocks completion because report not indexed"
+}
