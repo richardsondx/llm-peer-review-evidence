@@ -28,5 +28,12 @@
   ],
   "comparison_scope": "all cells side by side, targeted source audit, no model accuracy score",
   "custom_domain_status": "pending domain spelling and authenticated DNS access",
-  "google_scholar_status": "setup prepared; completion blocked by article selection"
+  "google_scholar_status": "setup prepared; completion blocked by article selection",
+  "live_browser_checks": [
+    "Published landing page shows baseline, complete Luna and complete Sol",
+    "Comparison dimension and study filters show corrected Liang human-comment recall across three versions",
+    "Live Sol simple matrix has27-study heading and162 clickable cells",
+    "Previously missing Sol candidate24 opens full finding, primary locator and study context"
+  ],
+  "github_pages_status": "built"
 }
