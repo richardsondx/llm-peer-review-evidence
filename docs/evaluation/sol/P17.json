@@ -1,0 +1,53 @@
+{
+  "errors": [
+    {
+      "location": "Non-Archimedean definition of chi_v(x, infinity), and equation (6)",
+      "description": "The stated infinity distance makes N(x, infinity) a signed sum and contradicts the positive-part formula (6), invalidating subsequent height decompositions.",
+      "evidence": "The definition is chi_v(x, infinity)=1/|x|_v. For kappa=Q, S={infinity}, and x=p^n, it gives N(x, infinity)=-n log p. Equation (6) instead gives 0+O(1), since ord_p(x^{-1})=-n and S^c(x^{-1}) is empty. These cannot agree with an x-independent O(1).",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Theorem 2.1; construction of x'=x_0/x_infinity; Remark; proof of (17)",
+      "description": "The proof constructs x' separately for each x, although Theorem 2.1 requires a fixed x'. Its estimates do not establish constants uniform in this varying element.",
+      "evidence": "The theorem says 'There exist ... an element x′ ... such that all but finitely many x' satisfy (14). However, a_0=product p_i^{r_i-1} and a_infinity=product Q_i^{u_i+1} are formed from the factorizations of x-a_j and x. Moreover, the no-near-pole case of (17) asserts product |x'/(x-a_j)|_{v+} <= (2/delta_v)_+^q, omitting x': for q=2, a_1=0, a_2=1, real x=t>2 and x'=t(t-1), its left side is t(t-1)>4 while its right side is 4.",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Proof of Theorem 1.4, application of Dirichlet's unit theorem",
+      "description": "The asserted uniform comparability of the Archimedean absolute values of y is false for an algebraic integer as given. A balancing choice of unit, and its compatibility with the preceding estimates involving x', is not established.",
+      "evidence": "The proof states that a constant c(kappa) satisfies |y|_v <= c(kappa)|y|_w for any Archimedean v,w. In kappa=Q(sqrt(2)), the algebraic integer units y=(1+sqrt(2))^n have absolute values (1+sqrt(2))^n and (1+sqrt(2))^{-n}; their ratio is unbounded. Dirichlet's theorem does not give the stated bound for these unchanged elements.",
+      "confidence": 98,
+      "classification": "established_error"
+    },
+    {
+      "location": "Proofs of Theorems 1.4 and 1.5, conclusion m(y,0)=O(1)",
+      "description": "Archimedean estimates and integrality do not bound the contributions from finite places in S. Thus the claimed bound on m(y,0) fails even over Q, where Archimedean balancing is unnecessary.",
+      "evidence": "The manuscript allows S to contain finite places, but concludes 'm(y,0)=sum_{w in S} log^+(1/||y||_w)+O(1)=O(1)' from Archimedean bounds. Set kappa=Q, S={infinity,p}, a_1=0, a_2=1, and x=p^n. Its construction removes multiplicities only outside S, so x' is a p-adic unit and y=x(x-1)/x' has ord_p(y)=n. Consequently m(y,0) >= n log p+O(1), which is unbounded.",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Claim preceding Theorem 1.4; Theorems 1.4 and 1.5; passage from (12) to (21)",
+      "description": "The displayed theorems use untruncated N and therefore do not prove Conjecture 1.2 or justify the truncated inequality (21). Simplicity of x only constrains its denominator, not multiplicities in its numerator or x-a_j.",
+      "evidence": "Conjecture 1.2 uses barred N in (9), while (11) and (12) use N. The proof then claims that applying (12) yields barred N in (21). For kappa=Q, S={infinity}, and the simple number x=8/3, N(x,0)=3 log 2 whereas barred N(x,0)=log 2. Replacing the former by the latter is a strict strengthening with no justification in (12).",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Proof of Theorem 1.6, equation (21) and the following identities",
+      "description": "The proof changes a+b=c into a+b+c=0 and associates approximation to -1 with prime divisors of b. Under the theorem's actual hypothesis, x=a/c satisfies x-1=-b/c, not x+1=b/c.",
+      "evidence": "Theorem 1.6 assumes a+b=c, but the proof says 'Since a+b+c=0' and asserts barred N(a/c,-1)=sum_{v in S^c(b)} log N(p_v)/[kappa:Q]. For (a,b,c)=(2,3,5), kappa=Q and S={infinity}, a/c+1=7/5, so the left side is log 7 and the claimed right side is log 3.",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Theorem 1.6, inequality (13)",
+      "description": "The claimed absolute bound max{|a|,|b|,|c|} <= C r(abc) is false, including when one term is squarefree.",
+      "evidence": "For each k>=1, take a=1, c=4^{3^{k-1}}, and b=c-1. These are nonzero relatively prime integers with a+b=c, and 1 is squarefree. Inductively, 3^k divides c-1. Hence r(abc)=2 r(b) <= 2b/3^{k-1}, giving c/r(abc) > 3^{k-1}/2. This ratio is unbounded, contradicting any absolute constant C in (13).",
+      "confidence": 100,
+      "classification": "established_error"
+    }
+  ]
+}

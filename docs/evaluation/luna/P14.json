@@ -1,0 +1,18 @@
+{
+  "errors": [
+    {
+      "location": "Section 3, Lemma 3.1 proof, paragraph beginning ‘To achieve our upper bound for the accuracy’",
+      "description": "The proof applies a concentration bound for a fixed path to the path selected by minimizing noisy weights. That minimizing path depends on the same Laplace noise, and a union bound over vertex pairs does not cover the potentially exponential number of competing paths. The claimed error bound can fail: in a chain of d diamond gadgets, each with m two-edge alternatives of equal original weight, the noisy minimum accumulates downward fluctuations of order d log(m)/ε over t = 2d hops, exceeding O(√t log(n/γ)/ε) for large d.",
+      "evidence": "‘each distance d̃_{G̃}^{(t)}(u, v) is the sum of a maximum of t edge weights, hence the total error in the estimate d̃^{(t)}(u, v) is the accumulation of at most t Laplace random variables. By Lemma 2.4, with probability at least 1 − γ / n² we have’",
+      "confidence": 99,
+      "classification": "established_error"
+    },
+    {
+      "location": "Section 3, Theorem 3.1 privacy argument for long paths; also Section 4 tree-based constructions",
+      "description": "The shortest-path trees and tree collections are selected using the private edge weights, but Lemma 3.2 and Corollary 4.1 establish privacy for a tree supplied as fixed input. Applying those guarantees after a data-dependent tree selection does not by itself yield an ε-DP mechanism; the assertion that the trees are not released does not establish privacy of outputs whose mechanism depends on their topology. Thus the stated composition argument does not prove the claimed privacy guarantee.",
+      "evidence": "‘we construct a hitting set of vertices of size s from which to grow shortest path trees’ and ‘Lemma 3.2 ensures that’ the tree distances can be released; the proof then says ‘we do not release any shortest path trees themselves, hence no shortest path information is revealed.’",
+      "confidence": 97,
+      "classification": "established_error"
+    }
+  ]
+}

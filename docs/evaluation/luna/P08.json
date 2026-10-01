@@ -1,0 +1,25 @@
+{
+  "errors": [
+    {
+      "location": "Results, recombinant kinase screening; Abstract and Conclusion",
+      "description": "The reported interaction total conflicts with the per-kinase affinity counts. The listed bins sum to 201 interactions (EPHA6 53, TNK1 63, AATK 65, INSRR 15, LTK 5), while the abstract and conclusion report 195; no exclusion or alternate counting rule is given.",
+      "evidence": "Results: EPHA6 has 18 high-, 31 medium-, and 4 low-affinity peptides; TNK1, AATK, INSRR, and LTK have respectively 26/9/3/3 high, 31/46/4/1 medium, and 6/10/8/1 low-affinity peptides. These sum to 201. Abstract and Conclusion: “we identified 195 novel kinase-substrate interactions.”",
+      "confidence": 98,
+      "classification": "established_error"
+    },
+    {
+      "location": "Methods, postmortem subject cohort description",
+      "description": "The schizophrenia cohort total does not match its sex-specific counts: 8 male plus 9 female subjects is 17, not 16. The reported cohort size is internally inconsistent.",
+      "evidence": "“schizophrenia (16, M:8 and F:9) subjects”",
+      "confidence": 99,
+      "classification": "established_error"
+    },
+    {
+      "location": "Methods, human kinome assay; Results, sex-specific SCZ analyses",
+      "description": "Pooling all subjects within each diagnosis-by-sex group leaves one biological pool per group; technical triplicates cannot estimate between-subject variability. Thus the reported disease and sex-specific differences cannot support population-level inference from these samples, although they may describe the pooled specimens.",
+      "evidence": "Methods: “samples were pooled by diagnosis and sex. Pooled samples were run in technical triplicate to account for variability.” Results report “a strong reduction of global phosphorylation in both male and female subjects” and that peptide sets were enriched in females “whereas the same peptides sets were not enriched in the male kinome profiles.”",
+      "confidence": 96,
+      "classification": "suspected_concern"
+    }
+  ]
+}

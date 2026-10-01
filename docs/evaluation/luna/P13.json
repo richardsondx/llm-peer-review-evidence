@@ -1,0 +1,11 @@
+{
+  "errors": [
+    {
+      "location": "ELF-EMF discussion, paragraph beginning ‘Recently, Burman et al investigated…’",
+      "description": "The review misidentifies the animals in the Burman et al. study as rats; the manuscript's own reference 147 identifies the study as involving two strains of laboratory mouse.",
+      "evidence": "The paragraph says Burman et al. exposed “C57BL/6NCrl and BALB/cAnNCrl rats.” Reference 147 is titled “The effect of exposure to low frequency electromagnetic fields (EMF) as an integral part of the housing system on anxiety-related behaviour, cognition and welfare in two strains of laboratory mouse.”",
+      "confidence": 99,
+      "classification": "established_error"
+    }
+  ]
+}

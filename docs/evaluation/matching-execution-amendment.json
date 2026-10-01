@@ -1,0 +1,22 @@
+{
+  "saved_at": "2026-10-01T19:33:11.354046+00:00",
+  "adjudication_runs_started": false,
+  "reason": "Sol CLI route rejects this account before inference; use fresh app sub-agents for paired judging as for primary reviewer execution.",
+  "judge_model": "gpt-6.1-sol",
+  "reasoning_effort": "xhigh",
+  "interface": "app_subagent",
+  "identity_blinding": "Neutral A/B payload only; model mapping and run metadata withheld from judge contexts.",
+  "unchanged": [
+    "29 selected-category annotations",
+    "12-reference specificity screen",
+    "A/B assignment by SHA-256(case ID)",
+    "specific mechanism and compatible location matching rule"
+  ],
+  "tool_compliance": "self_attested file-only restrictions; not independently audited",
+  "input_preparer_sha256": "9d4a2505c48194561ee795b004284bcd44f95f72cc8a28fc75118ee52b364244",
+  "task_template_sha256": "a8485a2888fc7fe09aaf8933edb42c5c2407cc5851aba0431a65bc6f52cf4206",
+  "reference_screen_sha256": "7767a8c4adeb76df0bfc0152185fcc110da241c6f1acac2060f150b783b1b092",
+  "validation": "Automated semantic matching, not independent expert adjudication; same-family judge bias possible.",
+  "operational_preparation_updated_at": "2026-10-01T19:51:35.549399+00:00",
+  "operational_update": "Require 54 valid primary raw outputs before creating neutral inputs; refuse to overwrite inputs after any adjudication."
+}

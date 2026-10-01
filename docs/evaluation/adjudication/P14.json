@@ -1,0 +1,15 @@
+{
+  "annotations": [
+    {
+      "annotation_index": 0,
+      "A_matches": [
+        1
+      ],
+      "B_matches": [
+        1
+      ],
+      "A_rationale": "Flag 1 identifies private-weight-dependent shortest-path tree topology being treated as fixed public topology in Sections 3 and 4. Flag 0 alleges a separate noisy-path concentration error and does not connect Lemma 2.4 misuse to the reference’s topology assumption.",
+      "B_rationale": "Flag 1 explicitly identifies the use of fixed-tree privacy guarantees after selecting shortest-path trees from private weights in Sections 3 and 4. Flag 0 concerns noise-dependent path selection and concentration, a different mechanism from the reference’s public-topology assumption."
+    }
+  ]
+}

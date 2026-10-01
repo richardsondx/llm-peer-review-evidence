@@ -1,0 +1,18 @@
+{
+  "annotations": [
+    {
+      "annotation_index": 0,
+      "A_matches": [],
+      "B_matches": [],
+      "A_rationale": "Neither flag addresses the originality claim or the incorrectness of Lemma 4.2; both concern distinct Section 3 construction mechanisms.",
+      "B_rationale": "The flag concerns an optional-edge adjacency in Section 3.2, without corresponding to the originality claim or the alleged error in Lemma 4.2."
+    },
+    {
+      "annotation_index": 1,
+      "A_matches": [],
+      "B_matches": [],
+      "A_rationale": "The flags concern Lemma 3.3 attachment loss and a BFS-layer assignment, not Lemma 4.2. The reference supplies no mechanism establishing equivalence.",
+      "B_rationale": "The Section 3.2 optional-edge adjacency allegation does not explicitly correspond to the incorrectness of Lemma 4.2; the reference provides no matching mechanism."
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "errors": [
+    {
+      "location": "Materials and methods, non-compartmental pharmacokinetic model, AUC trapezoidal equation",
+      "description": "The stated trapezoidal AUC formula omits division by 2. The area between adjacent observations is their mean concentration multiplied by the time interval, so applying the printed formula doubles each trapezoid and therefore the calculated AUC.",
+      "evidence": "AUC_Trapezoid = Σ(C_i + C_(i+1)) · (t_(i+1) - t_i)",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Results, Pharmacokinetic result, reported gill elimination rate constant and half-life",
+      "description": "The reported gill elimination rate constant is inconsistent with the reported gill half-life under the manuscript's own equation: ln(2)/0.01 h⁻¹ is about 69.3 h, not 0.94 h.",
+      "evidence": "The highest elimination rate constant is reported in the gill at 0.01 h⁻¹, while the shortest half-life is reported in gill tissue at 0.94 h; the methods give t₁/₂ = ln(2)/k.",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Results, Pharmacokinetic result; Results, In the elimination phase; Conclusion",
+      "description": "The liver elimination half-life is reported as both 238.68 h and 420.28 h in the same study findings, and the conclusion repeats 238.68 h. These cannot both be the liver elimination half-life for this analysis.",
+      "evidence": "The Pharmacokinetic result states liver elimination t₁/₂b = 238.68 h; the elimination-phase paragraph lists liver = 420.28 h; the conclusion again gives the liver half-life as 238.68 h.",
+      "confidence": 99,
+      "classification": "established_error"
+    },
+    {
+      "location": "Results, Table 2 validation description",
+      "description": "The stated muscle R² of 6.96 is impossible for a coefficient of determination, which cannot exceed 1. The reported calibration statistics therefore contain an invalid value and do not support the claimed analytical validation as presented.",
+      "evidence": "The text says that muscle tissue had an R² value of 6.96 and describes R² as reflecting method linearity.",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Results, Table 2 validation description and Discussion, interpretation of negative LOD/LOQ",
+      "description": "Negative LOD and LOQ values cannot serve as physical detection or quantification thresholds; interpreting them as indicating minimal drug presence is invalid. These results instead indicate that the stated calculations or calibration are unsuitable for those matrices.",
+      "evidence": "The kidney LOD and LOQ are reported as −587.51 and −1780.34 µg kg⁻¹, and the discussion says negative LOD and LOQ values suggested minimal drug presence.",
+      "confidence": 99,
+      "classification": "established_error"
+    }
+  ]
+}

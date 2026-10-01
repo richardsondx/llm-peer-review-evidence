@@ -1,0 +1,164 @@
+[
+  {
+    "id": "P01",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/adjudication/inputs/P01.txt",
+    "input_sha256": "ea5ecfb8989777d03521f866db6e0ec983dd7e90558441935c4fd0e027937cb0",
+    "annotation_count": 1
+  },
+  {
+    "id": "P02",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/adjudication/inputs/P02.txt",
+    "input_sha256": "bc104a47c029dd02340050ba7ba988c69192783975b2ff0572559a66ebcbe764",
+    "annotation_count": 1
+  },
+  {
+    "id": "P03",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/adjudication/inputs/P03.txt",
+    "input_sha256": "44c640f591b816319aa747bc518d51ab96a4a402c6657802c3b9e12a512abb18",
+    "annotation_count": 1
+  },
+  {
+    "id": "P04",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/adjudication/inputs/P04.txt",
+    "input_sha256": "a31c94d41a9f23bb26b25fd4e88cd5a80941e9de59b3193b521ca3146f075d46",
+    "annotation_count": 1
+  },
+  {
+    "id": "P05",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/adjudication/inputs/P05.txt",
+    "input_sha256": "49a57220a132157255679faeb14b184d9a4fc87064353139a3846245a813ccf1",
+    "annotation_count": 1
+  },
+  {
+    "id": "P06",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/adjudication/inputs/P06.txt",
+    "input_sha256": "7572f556390db2538ea0d5dedd42f6a47bfcd4516088bef33d551df61e5c3a24",
+    "annotation_count": 1
+  },
+  {
+    "id": "P07",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/adjudication/inputs/P07.txt",
+    "input_sha256": "a6ff3a0060e963fd928c464e4d26413a2e140482fe7f72be2e091a21911fece3",
+    "annotation_count": 1
+  },
+  {
+    "id": "P08",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/adjudication/inputs/P08.txt",
+    "input_sha256": "8ebc15db8edd8ef6f3a42309b317d60a3cc09d2f0fca676d9bb14e558987ee9b",
+    "annotation_count": 1
+  },
+  {
+    "id": "P09",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/adjudication/inputs/P09.txt",
+    "input_sha256": "f461f05d1457893287e2d24a4a30c3894a43bb9724faf3bffef70eb16d2ea73e",
+    "annotation_count": 1
+  },
+  {
+    "id": "P10",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/adjudication/inputs/P10.txt",
+    "input_sha256": "f32ec053f2d85cd20e31464a29d56656c2002e15f5c8706e6793bb8c3d32c207",
+    "annotation_count": 1
+  },
+  {
+    "id": "P11",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/adjudication/inputs/P11.txt",
+    "input_sha256": "bbdb4654c195fb8218e71acec06bf2ac746c91f678bef87b761957ccbe020c75",
+    "annotation_count": 1
+  },
+  {
+    "id": "P12",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/adjudication/inputs/P12.txt",
+    "input_sha256": "26f587821b284a6c670610b3a10f10f568e8eaebd7b2113391b57aba4b48df29",
+    "annotation_count": 1
+  },
+  {
+    "id": "P13",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/adjudication/inputs/P13.txt",
+    "input_sha256": "a85cd9bcec10c52d4c15a7331e5a465f87ae95510280dcbf649e4b7e625f6686",
+    "annotation_count": 1
+  },
+  {
+    "id": "P14",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/adjudication/inputs/P14.txt",
+    "input_sha256": "75a5fd49671aae42978ab70bddb6ab1e5f8794a3bacebabe466dc77b979c0699",
+    "annotation_count": 1
+  },
+  {
+    "id": "P15",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/adjudication/inputs/P15.txt",
+    "input_sha256": "77dc086a7ce0a8a2e74c480fbda355b15f7b044245c8d1e7bb6e45c1a85cd89d",
+    "annotation_count": 1
+  },
+  {
+    "id": "P16",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/adjudication/inputs/P16.txt",
+    "input_sha256": "153437a35b7afd3210b4fe8572e8cf28f6cffb558f1291feaae11fbb0bb1b0d9",
+    "annotation_count": 2
+  },
+  {
+    "id": "P17",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/adjudication/inputs/P17.txt",
+    "input_sha256": "f21d4c4a41826d65d8041c28f264d334cd22d25acca288ec549dd6cfb6d3c170",
+    "annotation_count": 1
+  },
+  {
+    "id": "P18",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/adjudication/inputs/P18.txt",
+    "input_sha256": "e55edd2abc5f69a4f2dc90ac9d7c1505da500ccb502a79f5811bfe9434330258",
+    "annotation_count": 1
+  },
+  {
+    "id": "P19",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/adjudication/inputs/P19.txt",
+    "input_sha256": "af449977caa5de1b1a57f7890e3977e082ceae18f248ad0d0c16a611e4be251f",
+    "annotation_count": 1
+  },
+  {
+    "id": "P20",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/adjudication/inputs/P20.txt",
+    "input_sha256": "21928b4c953ea13e8a843bdda352c6d93531a2987c31c0f1eea21d46dca97d18",
+    "annotation_count": 1
+  },
+  {
+    "id": "P21",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/adjudication/inputs/P21.txt",
+    "input_sha256": "7e3950c7cbafe0a80dd1f204b71c317a72e1a827a22db4296f7994669d112a48",
+    "annotation_count": 1
+  },
+  {
+    "id": "P22",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/adjudication/inputs/P22.txt",
+    "input_sha256": "3315144016a6fae523db6e36f5461b756afb485ab0405f19b675e932189501c0",
+    "annotation_count": 1
+  },
+  {
+    "id": "P23",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/adjudication/inputs/P23.txt",
+    "input_sha256": "a117d1e3b5d518d60c1b5f71e89c85caf4601c620b23fc00b15a627b869355cc",
+    "annotation_count": 1
+  },
+  {
+    "id": "P24",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/adjudication/inputs/P24.txt",
+    "input_sha256": "32a8d8fa20660d5765cc2cc5addb9bc40c226357359be4f5c954528eb39a837d",
+    "annotation_count": 1
+  },
+  {
+    "id": "P25",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/adjudication/inputs/P25.txt",
+    "input_sha256": "527ccba53f5252e61ddca9109732e325d9b676080e959d88cd1278fb272bf28e",
+    "annotation_count": 2
+  },
+  {
+    "id": "P26",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/adjudication/inputs/P26.txt",
+    "input_sha256": "8bbaf80d0e54368330189f31d0bfe8b537ec71cc103709f3d2691647cfee6e17",
+    "annotation_count": 1
+  },
+  {
+    "id": "P27",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/adjudication/inputs/P27.txt",
+    "input_sha256": "c37c8561a15e097eefa1842611128262c9cab7599a3b2d336035e9c4661bf7a0",
+    "annotation_count": 1
+  }
+]

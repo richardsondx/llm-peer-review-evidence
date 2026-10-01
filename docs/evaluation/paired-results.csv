@@ -1,0 +1,28 @@
+case,title,primary_denominator,luna_primary_matches,sol_primary_matches,luna_flags,sol_flags
+P01,A New Radio to Overcome Critical Link Budgets,1,0,1,3,4
+P02,"Assessing the effect of therapeutic level of oxytetracycline dihydrate on pharmacokinetics and biosafety in Oncorhynchus mykiss (Walbaum, 1792)",1,1,1,5,9
+P03,Glycerol-silica/chitosan conjugated self-assembled nano-flower framework for Herstulla thompsoni delivery with effectiveness in natural settings: Optimization and pilot scale production,0,0,0,3,4
+P04,ITERTL: An Iterative Framework for Fine-tuning LLMs for RTL Code Generation,0,0,0,1,3
+P05,Farnesoid X receptor activation protects against renal fibrosis via modulation of β-catenin signaling,1,1,1,4,5
+P06,A Relationship Between Nonphysical Quasi-probabilities and Nonlocality Objectivity,1,1,1,2,5
+P07,Efficient Human Pose Estimation: Leveraging Advanced Techniques with MediaPipe,0,0,0,2,3
+P08,Illuminating the dark kinome: utilizing multiplex peptide activity arrays to functionally annotate understudied kinases,1,0,0,3,5
+P09,MSP-MVS: Multi-granularity Segmentation Prior Guided Multi-View Stereo,0,0,0,1,1
+P10,Qsyn: A Developer-Friendly Quantum Circuit Synthesis Framework for NISQ Era and Beyond,0,0,0,1,0
+P11,A Simple Ricci Flow Proof of the Uniformization Theorem,1,0,0,2,4
+P12,Going Beyond Word Matching: Syntax Improves In-context Example Selection for Machine Translation,0,0,0,1,1
+P13,Unveiling the biological effects of radio-frequency and extremely-low frequency electromagnetic fields on the central nervous system performance,1,1,1,1,6
+P14,"A Simple, Nearly-Optimal Algorithm for Differentially Private All-Pairs Shortest Distances",1,1,1,2,5
+P15,HDRTransDC: High Dynamic Range Image Reconstruction with Transformer Deformation Convolution,0,0,0,0,1
+P16,A Strongly Subcubic Combinatorial Algorithm for Triangle Detection with Applications,0,0,0,1,1
+P17,A form of refined Roth's theorem and its application to the $abc$-conjecture,0,0,0,2,7
+P18,A missing theorem on dual spaces,0,0,0,1,2
+P19,Algebraic description of complex conjugation on cohomology of a smooth projective hypersurface,1,1,1,4,4
+P20,"CR functions at CR singularities: approximation, extension, and hulls",0,0,0,1,4
+P21,Efficient Fault-Tolerant Single Qubit Gate Approximation And Universal Quantum Computation Without Using The Solovay-Kitaev Theorem,1,1,1,2,4
+P22,Every Polish group has a non-trivial topological group automorphism,1,1,1,2,2
+P23,Explicit expression and fast algorithms for the inverse of some matrices arising from implicit time integration,0,0,0,3,4
+P24,Fields of definition of dynamical systems on $\mathbb{P}^{1}$. Improvements on a result of Silverman,1,0,1,1,4
+P25,From Tripods to Bipods: Reducing the Queue Number of Planar Graphs Costs Just One Leg,0,0,0,1,2
+P26,How to surpass no-go limits in Gaussian quantum error correction and entangled Gaussian state distillation?,0,0,0,1,3
+P27,Large Bricks and Join-irreducible torsionfree classes,0,0,0,1,1

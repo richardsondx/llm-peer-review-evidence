@@ -1,0 +1,19 @@
+{
+  "case": "P22",
+  "judge_requested_model": "gpt-6.1-sol",
+  "reasoning_effort": "xhigh",
+  "interface": "app_subagent",
+  "agent_name": "/root/paired_judging/judge_p22",
+  "started_at": "2026-10-01 21:01:44 UTC",
+  "ended_at": "2026-10-01 21:03:06 UTC",
+  "completion_status": "completed",
+  "valid_json": true,
+  "exit_code": null,
+  "tool_calls": null,
+  "tool_compliance": "self_attested",
+  "tool_use_attestation": "Read only the assigned P22.txt and schema.json in full. Input SHA-256 matched. No browsing, unrelated reads, or output readback.",
+  "full_input_read": true,
+  "input_sha256_matches_manifest": true,
+  "input_sha256": "3315144016a6fae523db6e36f5461b756afb485ab0405f19b675e932189501c0",
+  "output_sha256": "726cddc152a312e1049ed8d29dbe15f53fd33693e5b5fe58b0f7eeef6c14588b"
+}

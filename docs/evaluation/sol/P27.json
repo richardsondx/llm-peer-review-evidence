@@ -1,0 +1,11 @@
+{
+  "errors": [
+    {
+      "location": "Proposition 3.9, construction of the direct system from the spanning tree",
+      "description": "An oriented spanning tree of the Hasse graph need not be a directed indexing poset. For the diamond a < b < d and a < c < d, the spanning tree with edges a → b, b → d, a → c has no common upper bound for c and d within the tree. Consequently Lemma 3.6 does not apply to the constructed diagram, and the claimed simple direct limit containing every f-simple is not established.",
+      "evidence": "The proof obtains a spanning tree using Lemma 3.8 and then states: “This gives a directed system of f−simples consisting of monomorphisms (we don't have any compatibility condition to check on the maps as the underlying graph is a tree), therefore we can use Lemma 3.6”. Lemma 3.8 guarantees only an acyclic connected spanning subgraph, not the common-upper-bound property required by Definition 2.8.",
+      "confidence": 100,
+      "classification": "established_error"
+    }
+  ]
+}

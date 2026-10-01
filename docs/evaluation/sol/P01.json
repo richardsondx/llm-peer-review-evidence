@@ -1,0 +1,32 @@
+{
+  "errors": [
+    {
+      "location": "Section III.A, paragraph after Eq. (4)",
+      "description": "Unitarity does not give the stated T-fold SINR improvement. A unitary row has squared norm 1, so matching it preserves white-noise variance and recovers h_n x_{b,n} without an integration gain. The unit-modulus tones in Eq. (7) instead have squared norm T and are not unitary-normalized; these two normalizations are conflated.",
+      "evidence": "The manuscript states: \"If the matrix F_b is unitary\" the matched filters \"provide the T-fold improvement of SINR.\" Eq. (7) assigns unit-modulus complex exponentials to waveform samples.",
+      "confidence": 99,
+      "classification": "established_error"
+    },
+    {
+      "location": "Section III.A, comparison following Eq. (3); numerical-results paragraph on temporal combining gains; abstract",
+      "description": "The comparison counts temporal integration as a replacement for transmit beamforming gain although the longer subcarrier symbols already consume that integration time. Set h_n=1, T=N, unit transmit amplitude, and sample-noise variance sigma^2. Eq. (1) gives beamforming SNR N^2/sigma^2 per symbol; Eq. (4) with orthogonal unit-modulus rows gives N/sigma^2 after matching. Both send N symbols in N samples with total transmit power N. Thus MA-TISK remains a factor N below beamforming in this equal-power, equal-throughput example.",
+      "evidence": "Following Eq. (3): \"For T = N, the same combining gain as with transmit beamforming is achieved.\" The numerical results compare temporal gains of 12.6 and 12.2 dB to the 12.0 dB beamforming gain. The abstract concludes: \"There is no loss in link budget gain compared to spatial beamforming at the transmitter.\"",
+      "confidence": 99,
+      "classification": "established_error"
+    },
+    {
+      "location": "Subsection C, Transmit Beamforming vs. MA-TISK, opening paragraph",
+      "description": "The restriction of beamforming spatial multiplexing to the near field is false. In a far-field rich-scattering channel, two angularly resolvable paths can support two simultaneous transmit/receive beam pairs and two spatial streams. Narrow beams can select those paths; they do not necessarily reduce channel rank to one. The rank-one precoder in Eq. (1) describes a single-stream choice and does not establish this restriction on beamforming generally.",
+      "evidence": "The text asserts: \"For transmit beamforming spatial multiplexing is only an option in the near-field.\" The preceding Spatial Multiplexing subsection instead identifies \"near-field communication or rich scattering\" as alternatives, and the manuscript explicitly discusses forming multiple beams for distinct propagation paths.",
+      "confidence": 96,
+      "classification": "established_error"
+    },
+    {
+      "location": "Subsection C, Transmit Beamforming vs. MA-TISK; final paragraph on peak data rate",
+      "description": "The claimed linear growth of peak rate with SNR omits the finite spatial-rank limit of the fixed antenna array. Activating additional streams can trade surplus SNR for rate over a limited range, but once all available spatial modes are used, applying Eq. (9) to each mode gives a finite sum of logarithmic rate terms. The described reuse of existing antennas does not justify unrestricted linear rate growth with SNR.",
+      "evidence": "Subsection C says \"MA-TISK can convert a linear increase in link-budget into a linear increase in data rate\" by grouping pairs, quadruples, or 8-tuples of waveforms. The final claim is: \"Peak data rate can be made to grow linearly with SNR by means of spatial multiplexing even in far field scenarios.\" Eq. (9) gives R = log_2(1 + SNR).",
+      "confidence": 88,
+      "classification": "suspected_concern"
+    }
+  ]
+}

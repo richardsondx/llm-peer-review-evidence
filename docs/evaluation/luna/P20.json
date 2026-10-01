@@ -1,0 +1,11 @@
+{
+  "errors": [
+    {
+      "location": "Theorem 8.1, proof, first step after equation (28)",
+      "description": "The stated condition defining A1 does not imply that the positive real number λ required by the disc construction exists, so the claimed inclusion A1 ⊂ DH(A0) is not established by this construction.",
+      "evidence": "For any C > 3, p = (z1,z2,w) = (1,-i,2i) lies in A1: Im(w conjugate(z1) z2)=0, Re(w conjugate(z1) z2)=2≥|z1z2|²=1, and the balance inequalities hold. It lies outside A0 since w ≠ conjugate(z1)z2. But the proof requires λ² = w z1/z2 = -2, which has no positive real solution; hence its asserted disc φ(ζ)=(λζ,wζ/λ,w) cannot pass through this p.",
+      "confidence": 99,
+      "classification": "established_error"
+    }
+  ]
+}

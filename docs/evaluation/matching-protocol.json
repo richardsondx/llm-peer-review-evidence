@@ -1,0 +1,13 @@
+{
+  "saved_at": "2026-10-01T17:30:53.171582+00:00",
+  "reviewer_runs_started": true,
+  "adjudication_runs_started": false,
+  "judge_model": "gpt-6.1-sol",
+  "reasoning_effort": "xhigh",
+  "identity_blinding": "Both reviews of a paper are labelled A/B; order flips if SHA-256(case ID) is odd. Model identifiers and run metadata are withheld.",
+  "matching_rule": "Same specific faulty mechanism and compatible location; generic criticism and shared topic are insufficient.",
+  "primary_denominator": 12,
+  "reference_screen_sha256": "7767a8c4adeb76df0bfc0152185fcc110da241c6f1acac2060f150b783b1b092",
+  "judge_code_sha256": "22f00ac2110fd44abd83b2bfb5ec074a29c732787efd41a9f77ddc33d6bca761",
+  "validation": "Automated semantic matching only; not independently human validated; same-family judge bias possible."
+}

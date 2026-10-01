@@ -1,0 +1,19 @@
+{
+  "case": "P16",
+  "started_at": "2026-10-01T20:09:48Z",
+  "agent_name": "/root/sol_primary_evaluation/sol_p16",
+  "ended_at": "2026-10-01T20:14:01Z",
+  "full_input_read": true,
+  "input_sha256_matches_manifest": true,
+  "input_sha256": "69f30abd3b14e6c7fbddc67804925daaf0c3755b0b4bc88fa7cff4abf5ac57b0",
+  "tool_use_attestation": "I read the full input in consecutive chunks and verified its computed SHA-256 as `69f30abd3b14e6c7fbddc67804925daaf0c3755b0b4bc88fa7cff4abf5ac57b0`, matching the required hash. I read only `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P16.txt` and `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json`, with no browsing, external research, unrelated reads, or delegation. The schema-conforming raw JSON was saved to `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/sol/P16.json`.",
+  "requested_model": "gpt-6.1-sol",
+  "reasoning_effort": "xhigh",
+  "interface": "app_subagent",
+  "completion_status": "completed",
+  "exit_code": null,
+  "tool_calls": null,
+  "tool_compliance": "self_attested",
+  "valid_json": true,
+  "output_sha256": "e4aa16523a7c7511ac2c7332c22a7d13c381f40e5dce48e4bc48319d5a4f624a"
+}

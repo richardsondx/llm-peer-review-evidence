@@ -1,0 +1,11 @@
+{
+  "annotations": [
+    {
+      "annotation_index": 0,
+      "A_matches": [],
+      "B_matches": [],
+      "A_rationale": "A contains no predictions.",
+      "B_rationale": "The reference concerns potentially incorrect metric calculations in Sections 4.2 and 4.3. Prediction 0 concerns spatially shared fusion weights in the method and does not explicitly correspond to that metric-calculation claim."
+    }
+  ]
+}

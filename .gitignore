@@ -5,3 +5,4 @@ sources/
 *.pdf
 docs/evaluation/inputs/
 docs/evaluation/*/*.events.jsonl
+docs/evaluation/**/*.events.jsonl

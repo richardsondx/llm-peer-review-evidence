@@ -1,0 +1,19 @@
+{
+  "case": "P04",
+  "requested_model": "gpt-6-luna",
+  "reasoning_effort": "xhigh",
+  "interface": "app_subagent",
+  "agent_name": "/root/luna_primary_evaluation/p04",
+  "started_at": "2026-10-01T18:10:19Z",
+  "ended_at": "2026-10-01T18:12:08Z",
+  "completion_status": "completed",
+  "exit_code": null,
+  "tool_calls": null,
+  "tool_compliance": "self_attested",
+  "tool_use_attestation": "Worker stated it fully read the supplied input and schema, computed an input SHA-256 matching the manifest, saved the review, and did no external research or other file reads.",
+  "full_input_read": true,
+  "input_sha256": "ad1c2d3898fbaac61df88beecbf3de62460a1058a686f58408d00522a4763db2",
+  "input_sha256_matches_manifest": true,
+  "output_sha256": "ef3c844e9f6a12eb07e0eac4dd09d5f05a841ea46bfbe150757b01f21cbabaf7",
+  "valid_json": true
+}

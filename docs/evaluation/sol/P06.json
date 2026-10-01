@@ -1,0 +1,39 @@
+{
+  "errors": [
+    {
+      "location": "Equations (8)–(9), Theorem 1.4, and its construction",
+      "description": "The matrix product for a single nonzero row is an outer product, not a diagonal matrix of squared entries. Consequently, qubit swapping cannot change the stated nonlocality criterion, and the proposed SIN states do not exist under that criterion.",
+      "evidence": "Equation (8) assigns the right-identity case the entries beta_ix^2, beta_iy^2, beta_iz^2, and the following text claims this asymmetry furnishes swap-intolerant nonlocality. For a nonzero row v, beta^T beta = v^T v has eigenvalues {||v||^2, 0, 0}, exactly as in the nonzero-column case. More generally, swapping gives beta_prime = beta^T, and beta^T beta and beta beta^T have identical eigenvalues. Thus both label orders have M = beta_1^2 + beta_2^2 + beta_3^2; the second inequality in (9) does not make the swapped state local.",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Eigenvalue formulas (6) and (7), and the prescribed smallest eigenvalue in the proof of Theorem 1.4",
+      "description": "Both eigenvalue formulas omit the factor 1/4 required by the density-matrix definition. This also invalidates the claimed numerical value of the constructed smallest eigenvalue.",
+      "evidence": "Equation (1) defines rho = (I_4 + sum c_ij sigma_i tensor sigma_j)/4, but (6) and (7) report eigenvalues 1 +/- c_p +/- a square root. Their four eigenvalues sum to 4 rather than Tr(rho) = 1. With all coefficients zero they predict eigenvalues 1, whereas rho = I_4/4 has eigenvalues 1/4. In the theorem construction, taking tau_p = 0, E = (1 + |lambda_0|/2)e and C = -(|lambda_0|/2)e for a unit vector e satisfies the specified geometry but gives the actual minimum eigenvalue lambda_0/4.",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Proposition 2.1",
+      "description": "The two sphere assignments are reversed relative to the eigenvalues in (7), so the stated equivalence with positive semidefiniteness is false.",
+      "evidence": "The proposition places E in (C, r_+) and -E in (C, r_-). Equation (7), with E = (beta_i) and C = (tau_i), instead requires ||E + C|| <= 1 + tau_p and ||E - C|| <= 1 - tau_p, assigning -E to r_+ and E to r_-. For tau_p = 0.4, C = (0.2, 0, 0), E = (0.6, 0, 0), the actual normalized eigenvalues are {0.55, 0.15, 0.25, 0.05}, all positive, yet the proposition excludes the state because ||-E - C|| = 0.8 exceeds r_- = 0.6.",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Paragraph following Proposition 2.1",
+      "description": "Translating the coefficient-space points E and C does not generally preserve eigenvalues or positive semidefiniteness, because the reflected point must remain -E.",
+      "evidence": "The text claims that \"under translations and rotations of the parameter space S, any eigenvalue-dependent property such as positive-definiteness is unchanged.\" Translating E and C by a preserves E - C but changes E + C to E + C + 2a, altering the first square root in (7). Starting with E = C = 0 and tau_p = 0 gives rho = I_4/4. Translating both by a = (1, 0, 0) produces normalized eigenvalues {3/4, -1/4, 1/4, 1/4}, destroying positive semidefiniteness.",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Concluding paragraph asserting coincident nonlocality and positivity boundaries",
+      "description": "The positive-semidefinite boundary is not generally the unit sphere in E-space; it also depends on the remaining coefficients. The manuscript therefore incorrectly identifies the two boundaries.",
+      "evidence": "The conclusion states that \"the boundary for nonlocality in general in this case ... is the same as the boundary for positive semidefiniteness\" and specifies |E| = 1. Holding C = 0 and tau_p = 0.8, equation (7) requires |E| <= 0.2 for positivity, whereas the rank-one correlation matrix gives M = |E|^2, crossing 1 at |E| = 1. For E = (0.3, 0, 0), the actual smallest eigenvalue is (1 - 0.8 - 0.3)/4 = -0.025 even though M = 0.09.",
+      "confidence": 99,
+      "classification": "established_error"
+    }
+  ]
+}

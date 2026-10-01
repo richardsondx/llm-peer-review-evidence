@@ -1,0 +1,60 @@
+{
+  "codex_version": "codex-cli 0.156.1",
+  "execution_protocol_sha256": "8333056dd7c78883c1deb35ffbd630764811cba80fc74a7700783d0767aa1498",
+  "case_manifest_sha256": "2efb0c42da569ed3d8a15d3cccf4e8a0b8747aaa5f06f0df4fd92c153ab502b6",
+  "annotation_source_sha256": "8ea52f77e3df46fad7a0a9d776dc9d66d50193fb923174a7795484af2c4cc09f",
+  "scope": "New reviewer pilot; separate from source extraction audit",
+  "adjudicator": {
+    "model": "gpt-6.1-sol",
+    "effort": "xhigh",
+    "reviewer_identities_withheld": true,
+    "human_validation": false,
+    "interface": "app_subagent",
+    "fresh_context_per_case": true,
+    "tool_compliance": "self_attested",
+    "paired_cases": 27
+  },
+  "annotation_repository_revision": "ad0c4f843eee320c1604b7eabbe4af35f96e286e",
+  "annotation_license": "cc-by-4.0",
+  "runtime_timeout_policy": {
+    "initial_luna_run_seconds": 1800,
+    "subsequent_runner_seconds": 3600,
+    "reason": "Infrastructure guard extended for long Extra High proof reviews; requested model effort and prompt unchanged.",
+    "amended_before_any_timeout_failure": true
+  },
+  "initial_scoring_reference_screen_sha256": "7767a8c4adeb76df0bfc0152185fcc110da241c6f1acac2060f150b783b1b092",
+  "scoring_reference_screen_sha256": "7767a8c4adeb76df0bfc0152185fcc110da241c6f1acac2060f150b783b1b092",
+  "primary_execution": {
+    "interface": "app_subagent",
+    "requested_models": [
+      "gpt-6-luna",
+      "gpt-6.1-sol"
+    ],
+    "effort": "xhigh",
+    "fresh_context_per_paper": true,
+    "model_runs_sequential": true,
+    "tool_compliance": "self_attested",
+    "independently_attested_snapshot_ids": false,
+    "completed_at": "2026-10-01T20:42:45Z"
+  },
+  "public_file_sha256": {
+    "protocol.json": "8333056dd7c78883c1deb35ffbd630764811cba80fc74a7700783d0767aa1498",
+    "protocol-amendment.json": "7207056171ae5607e9585a1f32530937abdc30385de94d2b7f259b068df74e6d",
+    "cases.json": "2efb0c42da569ed3d8a15d3cccf4e8a0b8747aaa5f06f0df4fd92c153ab502b6",
+    "annotation-audit.json": "7767a8c4adeb76df0bfc0152185fcc110da241c6f1acac2060f150b783b1b092",
+    "reviewer-prompt.txt": "60d0b3cb6579e669385759f622861ccd69dc6675b98dca046951ef64b4e5dffd",
+    "schema.json": "e2f952b93003884cbaf7463f3460aaf30df4870bef2d767f73152d4ba6a53ae8",
+    "matching-protocol.json": "b88a6b820a9915aa8caabe5260f793f46df3713d087c9c43c1f3cf9bd510c2fc",
+    "matching-execution-amendment.json": "98aea70af9cad6ebb17c7a6b3028f4e6fffd574d37b882861824aac12ebe1971",
+    "app-reviewer-task-template.txt": "4e53f727fbac555eb501ada18932f87009bd23add8d1ca0184ffd5e76d8f9ac9",
+    "app-judge-task-template.txt": "a8485a2888fc7fe09aaf8933edb42c5c2407cc5851aba0431a65bc6f52cf4206",
+    "adjudication/schema.json": "5d56800c8f4d5b4807c7231b83dccb5bfbf0ebbaacb426a4b44cdfb6d43e32c1",
+    "adjudication/judge-manifest.json": "5f4af8267caa8c2d800aa4b0288a5b5dd4cd5a56b684e97d416a38211af7c22f",
+    "report.pdf": "862cfde254cdc51f65fce66b0535ffb05d89c774bb77e7959e4e9cc5b79b65c6",
+    "report.html": "343119c0c35b66842c1afde20cc1c190d6c055366114849fde74c6b71b25f0a1",
+    "paired-results.csv": "b722ce58f9638bcb97161dafe1258eaae166374980631fba424bd728a8496321",
+    "README.md": "4de66614b4b06bfb9a853f2a24852a988bdb027e1b89454c6affb15d26fe09d5"
+  },
+  "report_renderer_sha256": "64feb811fee703b1b660b92219c9f37a5a719354c395954a2d7bd74a3b3c65d8",
+  "finalized_at": "2026-10-01T21:08:26.622231+00:00"
+}

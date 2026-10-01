@@ -1,0 +1,8 @@
+{
+  "requested_model": "gpt-6.1-sol",
+  "status": "rejected_before_inference",
+  "interface": "Codex CLI with ChatGPT authentication",
+  "error": "The 'gpt-6.1-sol' model is not supported when using Codex with a ChatGPT account.",
+  "successful_reviews": 0,
+  "attempted_requests": 27
+}

@@ -1,0 +1,15 @@
+{
+  "annotations": [
+    {
+      "annotation_index": 0,
+      "A_matches": [
+        0
+      ],
+      "B_matches": [
+        0
+      ],
+      "A_rationale": "The reference gives no specific mechanism, but this flag explicitly identifies a missing justification in Proposition 3.9: the tree's directedness is not established before applying Lemma 3.6, leaving the conclusion unsupported.",
+      "B_rationale": "The reference gives no specific mechanism, but this flag explicitly identifies a missing justification in Proposition 3.9: the spanning tree need not be directed, so Lemma 3.6 cannot establish the claimed direct limit."
+    }
+  ]
+}

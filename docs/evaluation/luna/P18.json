@@ -1,0 +1,11 @@
+{
+  "errors": [
+    {
+      "location": "Theorem 3.3(1), proof, paragraph beginning ‘Let u = L_i’",
+      "description": "The proof states that J^2 = I, but its parenthetical computation implies J^2 = -I. Since taking adjoints is injective and (J^2)^* = (J^*)^2, the stated parenthetical (J^2)^* = -I yields J^2 = -I. The asserted J^2 = I is therefore false and does not satisfy the paper’s stated criterion for a complex structure.",
+      "evidence": "The manuscript says: ‘It is easy to see by duality theory that J² = I (since (J²)* = -I).’",
+      "confidence": 100,
+      "classification": "established_error"
+    }
+  ]
+}

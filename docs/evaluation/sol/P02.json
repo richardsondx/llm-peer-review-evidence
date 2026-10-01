@@ -1,0 +1,67 @@
+{
+  "errors": [
+    {
+      "location": "Materials and methods, pharmacokinetic analysis: AUC trapezoidal formula",
+      "description": "The stated trapezoidal AUC formula omits the factor 1/2 and therefore doubles the area under the concentration-time curve if applied as written.",
+      "evidence": "AUC_Trapezoid is defined as the sum of (C_i + C_{i+1})(t_{i+1} - t_i); each trapezoid instead requires the average concentration (C_i + C_{i+1})/2.",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Materials and methods, half-life equations; Result, Pharmacokinetic result, first paragraph",
+      "description": "The reported absorption and elimination rate constants are mathematically incompatible with the reported half-lives under the manuscript's own equations.",
+      "evidence": "The methods give K_a = ln(2)/t_1/2a and t_1/2 = ln(2)/k. Muscle t_1/2a = 17.23 h implies K_a approximately 0.0402 h^-1, exceeding the stated range 0.0002-0.011 h^-1. Muscle t_1/2b = 20.56 h implies k approximately 0.0337 h^-1, exceeding the stated highest elimination rate of 0.01 h^-1.",
+      "confidence": 99,
+      "classification": "established_error"
+    },
+    {
+      "location": "Materials and methods, pharmacokinetic sampling and C_max/T_max determination; Result, Pharmacokinetic result",
+      "description": "The reported directly observed gill T_max of 3 h cannot be obtained from the stated sampling schedule.",
+      "evidence": "Treatment samples were collected at 0, 2, 4, 8, 12, 16, 24, 32, 48, 64, 96 and 128 h, and 'C_max and T_max were directly taken from analytical data.' The results nevertheless report gill C_max = 8710 micrograms/kg at 3 h, when no sample was collected.",
+      "confidence": 99,
+      "classification": "established_error"
+    },
+    {
+      "location": "Result, Table 2 validation discussion; Discussion, interpretation of negative LOD and LOQ",
+      "description": "Negative detection and quantification limits are invalid under the stated validation method; they cannot demonstrate minimal drug presence or method impartiality.",
+      "evidence": "LOD = 3(sigma/slope) and LOQ = 10(sigma/slope), with sigma a standard deviation. Kidney LOD and LOQ are reported as -587.51 and -1780.34 micrograms/kg. The discussion interprets these negative limits as 'minimal drug presence' and 'affirming method impartiality.' A standard deviation is nonnegative, and a valid increasing concentration calibration yields nonnegative limits.",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Result, Table 2 validation discussion",
+      "description": "The reported muscle calibration R-squared is impossible for the stated measure of linearity.",
+      "evidence": "The text states that 'muscle tissue had an R² value of 6.96.' A coefficient of determination cannot exceed 1.",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Result, plasma biochemical results and numerical table following the Fig. 3 caption",
+      "description": "The tabulated control ALT and creatinine concentrations contradict the control concentrations stated in the results, including after converting units.",
+      "evidence": "The prose reports control ALT = 28.00 +/- 1.06 IU/L and creatinine = 0.05 +/- 0.001 mg/dL. The table gives control ALT = 20 U/L and creatinine = 0.2 mg/L at every listed day. The prose creatinine value converts to 0.5 mg/L, not 0.2 mg/L.",
+      "confidence": 99,
+      "classification": "established_error"
+    },
+    {
+      "location": "Discussion, muscle residue and consumer-safety paragraphs; Result, muscle OTC and epimer concentrations",
+      "description": "The claim that therapeutic-group muscle residues remained below the stated maximum residue limits is contradicted by the reported concentrations.",
+      "evidence": "The discussion says residues 'remained below' the EU 100 micrograms/kg and US 200 micrograms/kg limits after 1x and 3x dosing, and concludes that therapeutic-dose residues remained 'well below' MRLs. The results report day-20 OTC concentrations of 118 micrograms/kg at 1x and 351 micrograms/kg at 3x: the former exceeds 100, and the latter exceeds both limits.",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Discussion, final recommendation; Result, histopathology; Discussion, therapeutic-dose organ injury",
+      "description": "The strong recommendation of 80 mg/kg as having a robust biosafety foundation is unsupported by the manuscript's reported injury at that dose.",
+      "evidence": "The conclusion 'strongly recommended' 80 mg/kg and claims a 'robust biosafety foundation.' The results describe intestinal degeneration/necrosis and renal lesions at 1x, including day-10 sampling; the discussion states that histological changes occurred 'even with therapeutic doses' from day 10 and that increased ALT at 1x suggests liver deterioration or injury. Survival alone does not establish biosafety in the presence of these reported injuries.",
+      "confidence": 99,
+      "classification": "established_error"
+    },
+    {
+      "location": "Materials and methods, biosafety dose assignment; Result, Behaviour and mortality, medicated-feed consumption",
+      "description": "The stated daily doses may overestimate actual exposure because medicated feed was incompletely consumed, weakening claims about safety at the designated doses.",
+      "evidence": "Groups are defined by 'daily consumption' of 80, 240, 400 and 800 mg/kg/day, but the results report only 80-90% feed consumption during medicated feeding. Without a reported adjustment or intake-based dose calculation, the nominal 80 mg/kg/day group would receive approximately 64-72 mg/kg/day rather than the claimed dose.",
+      "confidence": 92,
+      "classification": "suspected_concern"
+    }
+  ]
+}

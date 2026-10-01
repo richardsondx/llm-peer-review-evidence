@@ -1,0 +1,11 @@
+{
+  "errors": [
+    {
+      "location": "Reproducibility; Random baseline",
+      "description": "The claim that all experiments are completely reproducible is not established by the stated rationale. The reported Random baseline averages three random seeds, but the manuscript does not specify their values or the random-number setup, so the reported baseline cannot be regenerated from the described procedure.",
+      "evidence": "“All the experiments are completely reproducible since our selection methods are deterministic and sampling is disabled during LLM generation.” The baseline description says: “Random: We report the average result of 3 different random seeds.”",
+      "confidence": 76,
+      "classification": "suspected_concern"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "annotations": [
+    {
+      "annotation_index": 0,
+      "A_matches": [
+        2
+      ],
+      "B_matches": [
+        1
+      ],
+      "A_rationale": "Prediction 2 identifies the same failure in Theorem 2.3: one pairing and an arbitrary opposite-component polynomial cannot determine complex conjugation when a Hodge summand has dimension greater than one.",
+      "B_rationale": "Prediction 1 identifies the same higher-dimensional failure in Theorem 2.3, explaining that different choices with the same pairing yield different purported conjugates."
+    }
+  ]
+}

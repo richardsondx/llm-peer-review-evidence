@@ -1,0 +1,25 @@
+{
+  "errors": [
+    {
+      "location": "Eq. (2.9) and the binomial-coefficient form of Theorem 2.2",
+      "description": "The endpoint definition of the generalized binomial coefficient has an extra factor of (-1)^n, so the second expression for W_{ij} in Theorem 2.2 is not equivalent to its first expression for odd n.",
+      "evidence": "Take n=1, c_0=0, c_1=1. Equation (2.9) gives binom(c_1,c_0)=-1 and binom(c_1,c_1)=1. Thus the binomial form gives W_{01}=(-1)^{1}(-1)/(c_1-c_0)=+1, whereas the preceding product form gives W_{01}=(1/(c_1-c_0))[(c_1-c_0)/(c_0-c_1)]=-1.",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Eq. (2.18), the displayed identity for H^T",
+      "description": "The stated factorization of H^T uses C_n where the entries of H require D_n; the identity is false for the general nodes allowed by Theorem 2.4.",
+      "evidence": "With c_0=0, F times the displayed block matrix with lower-right block C_n has superdiagonal entries c_1,...,c_n. But H^T, from the definition of H in (1.1), has superdiagonal entries 1,...,n. For example, n=1 and c_1=1/2 gives 1/2 on the displayed right-hand side and 1 in H^T. The next displayed multiplication in the proof uses D_n instead.",
+      "confidence": 99,
+      "classification": "established_error"
+    },
+    {
+      "location": "Eq. (4.2), componentwise relative error Err_2; Example 4",
+      "description": "Err_2 is undefined at exact zero entries of W for even n in Example 4, so it cannot be used as a componentwise relative-error metric over all entries in that regime.",
+      "evidence": "For c_i=i, Corollary 2.3 gives W_{ii}=sum_{p=1}^i 1/p - sum_{p=1}^{n-i} 1/p. If n is even and i=n/2, these sums are equal and W_{ii}=0, making the denominator |W^q_{ii}| in Eq. (4.2) zero if W^q is treated as exact. A nonzero roundoff residual in W^q would instead make the reported ratio depend on that residual rather than the true zero entry.",
+      "confidence": 96,
+      "classification": "suspected_concern"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "errors": [
+    {
+      "location": "Method, Dynamic Weight Fusion Block description, paragraph following Equation (5)",
+      "description": "The stated spatial sharing of the fusion weight contradicts the claimed spatially adaptive frame selection. A channel-mixing weight shared across spatial positions applies the same frame/channel coefficients everywhere, so that operation cannot assign different fusion weights to well-exposed and badly exposed locations as claimed.",
+      "evidence": "The block is said to \"spatially and adaptively select useful information across frames\", selecting reference information in well-exposed regions and non-reference information in badly exposed regions. The subsequent fusion step instead uses \"the weight Δw that is shared in spatial dimension and fully connected in channel dimension\".",
+      "confidence": 95,
+      "classification": "established_error"
+    }
+  ]
+}

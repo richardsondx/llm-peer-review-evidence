@@ -1,0 +1,15 @@
+{
+  "annotations": [
+    {
+      "annotation_index": 0,
+      "A_matches": [
+        1
+      ],
+      "B_matches": [
+        0
+      ],
+      "A_rationale": "Flag 1 identifies the same Theorem 1.1 extension conflict: fixing Y can conflict with the prescribed automorphism on elements of L contained in span(Y). Flag 0 concerns a different theorem and mechanism.",
+      "B_rationale": "Flag 0 identifies the same Theorem 1.1 mechanism: span(Y) can contain L, so fixing Y forces behavior on L incompatible with its nontrivial automorphism. Flag 1 concerns a different theorem and mechanism."
+    }
+  ]
+}

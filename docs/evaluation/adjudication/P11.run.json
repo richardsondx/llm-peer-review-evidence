@@ -1,0 +1,19 @@
+{
+  "case": "P11",
+  "judge_requested_model": "gpt-6.1-sol",
+  "reasoning_effort": "xhigh",
+  "interface": "app_subagent",
+  "agent_name": "/root/paired_judging/judge_p11",
+  "started_at": "2026-10-01 20:55:01 UTC",
+  "ended_at": "2026-10-01 20:56:08 UTC",
+  "completion_status": "completed",
+  "valid_json": true,
+  "exit_code": null,
+  "tool_calls": null,
+  "tool_compliance": "self_attested",
+  "tool_use_attestation": "Read only the assigned P11.txt and schema.json in full. The input SHA-256 matched the expected hash. No browsing, unrelated reads, or output readback occurred; any existing output was preserved.",
+  "full_input_read": true,
+  "input_sha256_matches_manifest": true,
+  "input_sha256": "bbdb4654c195fb8218e71acec06bf2ac746c91f678bef87b761957ccbe020c75",
+  "output_sha256": "db326e59f22999fb9d3fc17e62cc41dcc6821448bc03c6fa30fa498e2043e794"
+}

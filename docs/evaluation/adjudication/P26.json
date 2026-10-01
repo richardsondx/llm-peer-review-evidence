@@ -1,0 +1,11 @@
+{
+  "annotations": [
+    {
+      "annotation_index": 0,
+      "A_matches": [],
+      "B_matches": [],
+      "A_rationale": "A0 concerns Lemma 4, but the reference specifies no claim or faulty mechanism. Location overlap alone cannot establish correspondence to its vague allegation.",
+      "B_rationale": "B0 overlaps Lemma 4, but the reference does not identify its Gaussian-channel or operator-transpose mechanism. B1 and B2 concern other locations; no specific correspondence is established."
+    }
+  ]
+}

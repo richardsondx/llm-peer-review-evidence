@@ -1,0 +1,2478 @@
+{
+  "summary": {
+    "requested_model": "GPT-6.1-Sol",
+    "reasoning_effort": "xhigh",
+    "interface": "app_subagent",
+    "papers_reviewed": 27,
+    "papers_planned": 27,
+    "scored_papers": 27,
+    "primary_annotation_denominator": 12,
+    "primary_annotation_matches": 10,
+    "total_flags": 94,
+    "status": "complete",
+    "adjudication": "Fresh GPT-6.1-Sol app sub-agent automated semantic matching, paired A/B with model identity withheld. Not independently human validated. Same-family judge may introduce bias.",
+    "tool_compliance": "File-only restriction; self-attested, not independently event-audited."
+  },
+  "rows": [
+    {
+      "id": "P01",
+      "title": "A New Radio to Overcome Critical Link Budgets",
+      "doi": "2402.10307v2",
+      "category": "Equation / proof",
+      "input_sha256": "d078b570a59f4bef19b218f5e7088f1fd0d9cf71653c08bb083bab90408d504e",
+      "characters": 39535,
+      "omitted_figures": 9,
+      "annotations": [
+        {
+          "title": "A New Radio to Overcome Critical Link Budgets",
+          "paper_category": "Computer Science",
+          "error_category": "Equation / proof",
+          "error_location": "Unknown",
+          "error_severity": "retract",
+          "error_annotation": "The error is that the beamforming gain for N antennas is incorrectly calculated as N, when it should actually be N^2, since coherent beamforming results in the received power increasing by the square of the number of antennas.",
+          "doi": "2402.10307v2"
+        }
+      ],
+      "requested_model": "gpt-6.1-sol",
+      "flags": [
+        {
+          "location": "Section III.A, paragraph after Eq. (4)",
+          "description": "Unitarity does not give the stated T-fold SINR improvement. A unitary row has squared norm 1, so matching it preserves white-noise variance and recovers h_n x_{b,n} without an integration gain. The unit-modulus tones in Eq. (7) instead have squared norm T and are not unitary-normalized; these two normalizations are conflated.",
+          "evidence": "The manuscript states: \"If the matrix F_b is unitary\" the matched filters \"provide the T-fold improvement of SINR.\" Eq. (7) assigns unit-modulus complex exponentials to waveform samples.",
+          "confidence": 99,
+          "classification": "established_error"
+        },
+        {
+          "location": "Section III.A, comparison following Eq. (3); numerical-results paragraph on temporal combining gains; abstract",
+          "description": "The comparison counts temporal integration as a replacement for transmit beamforming gain although the longer subcarrier symbols already consume that integration time. Set h_n=1, T=N, unit transmit amplitude, and sample-noise variance sigma^2. Eq. (1) gives beamforming SNR N^2/sigma^2 per symbol; Eq. (4) with orthogonal unit-modulus rows gives N/sigma^2 after matching. Both send N symbols in N samples with total transmit power N. Thus MA-TISK remains a factor N below beamforming in this equal-power, equal-throughput example.",
+          "evidence": "Following Eq. (3): \"For T = N, the same combining gain as with transmit beamforming is achieved.\" The numerical results compare temporal gains of 12.6 and 12.2 dB to the 12.0 dB beamforming gain. The abstract concludes: \"There is no loss in link budget gain compared to spatial beamforming at the transmitter.\"",
+          "confidence": 99,
+          "classification": "established_error"
+        },
+        {
+          "location": "Subsection C, Transmit Beamforming vs. MA-TISK, opening paragraph",
+          "description": "The restriction of beamforming spatial multiplexing to the near field is false. In a far-field rich-scattering channel, two angularly resolvable paths can support two simultaneous transmit/receive beam pairs and two spatial streams. Narrow beams can select those paths; they do not necessarily reduce channel rank to one. The rank-one precoder in Eq. (1) describes a single-stream choice and does not establish this restriction on beamforming generally.",
+          "evidence": "The text asserts: \"For transmit beamforming spatial multiplexing is only an option in the near-field.\" The preceding Spatial Multiplexing subsection instead identifies \"near-field communication or rich scattering\" as alternatives, and the manuscript explicitly discusses forming multiple beams for distinct propagation paths.",
+          "confidence": 96,
+          "classification": "established_error"
+        },
+        {
+          "location": "Subsection C, Transmit Beamforming vs. MA-TISK; final paragraph on peak data rate",
+          "description": "The claimed linear growth of peak rate with SNR omits the finite spatial-rank limit of the fixed antenna array. Activating additional streams can trade surplus SNR for rate over a limited range, but once all available spatial modes are used, applying Eq. (9) to each mode gives a finite sum of logarithmic rate terms. The described reuse of existing antennas does not justify unrestricted linear rate growth with SNR.",
+          "evidence": "Subsection C says \"MA-TISK can convert a linear increase in link-budget into a linear increase in data rate\" by grouping pairs, quadruples, or 8-tuples of waveforms. The final claim is: \"Peak data rate can be made to grow linearly with SNR by means of spatial multiplexing even in far field scenarios.\" Eq. (9) gives R = log_2(1 + SNR).",
+          "confidence": 88,
+          "classification": "suspected_concern"
+        }
+      ],
+      "run": {
+        "case": "P01",
+        "started_at": "2026-10-01T19:43:22Z",
+        "agent_name": "/root/sol_primary_evaluation/sol_p01",
+        "ended_at": "2026-10-01T19:48:52Z",
+        "full_input_read": true,
+        "input_sha256_matches_manifest": true,
+        "input_sha256": "d078b570a59f4bef19b218f5e7088f1fd0d9cf71653c08bb083bab90408d504e",
+        "tool_use_attestation": "Full input read; SHA-256 matched: `d078b570a59f4bef19b218f5e7088f1fd0d9cf71653c08bb083bab90408d504e`.\n\nExact files read:\n\n- `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P01.txt`\n- `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json`\n\nNo browsing, external research, unrelated reads, or delegation. Figures were not inspected.\n\nSaved schema-valid JSON to [P01.json](/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/sol/P01.json).",
+        "requested_model": "gpt-6.1-sol",
+        "reasoning_effort": "xhigh",
+        "interface": "app_subagent",
+        "completion_status": "completed",
+        "exit_code": null,
+        "tool_calls": null,
+        "tool_compliance": "self_attested",
+        "valid_json": true,
+        "output_sha256": "6b3cec26457769d952401c3bf9c2becfc3aa436a7e70853cf7f0aafd3959cb80"
+      },
+      "scoring_complete": true,
+      "matched_annotations": [
+        0
+      ],
+      "primary_annotations": [
+        0
+      ],
+      "primary_matches": [
+        0
+      ],
+      "adjudication": [
+        {
+          "annotation_index": 0,
+          "matched_predictions": [
+            1
+          ],
+          "rationale": "Prediction 1 explicitly derives N^2 beamforming SNR versus N temporal-combining SNR and identifies the missing factor N in their claimed equivalence, matching the reference mechanism."
+        }
+      ],
+      "screening": [
+        {
+          "case": "P01",
+          "annotation_index": 0,
+          "primary_eligible": true,
+          "reason": "Specific mechanism supports conservative semantic matching; underlying validity still requires expert verification."
+        }
+      ]
+    },
+    {
+      "id": "P02",
+      "title": "Assessing the effect of therapeutic level of oxytetracycline dihydrate on pharmacokinetics and biosafety in Oncorhynchus mykiss (Walbaum, 1792)",
+      "doi": "10.1038/s41598-024-73921-8",
+      "category": "Statistical reporting",
+      "input_sha256": "24e7725256b73ce6189afbb972f0fead9003c9eedffd1dcc4fee858a142bafbf",
+      "characters": 63783,
+      "omitted_figures": 15,
+      "annotations": [
+        {
+          "title": "Assessing the effect of therapeutic level of oxytetracycline dihydrate on pharmacokinetics and biosafety in Oncorhynchus mykiss (Walbaum, 1792)",
+          "paper_category": "Multidisciplinary",
+          "error_category": "Statistical reporting",
+          "error_location": "Table. 1",
+          "error_severity": "errata",
+          "error_annotation": "The error is that negative values are reported for pharmacokinetic parameters such as AUC, elimination rates, and LOQ in Table 1, which are nonsensical since these parameters should always be positive based on their definitions in pharmacokinetics and analytical chemistry.",
+          "doi": "10.1038/s41598-024-73921-8"
+        }
+      ],
+      "requested_model": "gpt-6.1-sol",
+      "flags": [
+        {
+          "location": "Materials and methods, pharmacokinetic analysis: AUC trapezoidal formula",
+          "description": "The stated trapezoidal AUC formula omits the factor 1/2 and therefore doubles the area under the concentration-time curve if applied as written.",
+          "evidence": "AUC_Trapezoid is defined as the sum of (C_i + C_{i+1})(t_{i+1} - t_i); each trapezoid instead requires the average concentration (C_i + C_{i+1})/2.",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Materials and methods, half-life equations; Result, Pharmacokinetic result, first paragraph",
+          "description": "The reported absorption and elimination rate constants are mathematically incompatible with the reported half-lives under the manuscript's own equations.",
+          "evidence": "The methods give K_a = ln(2)/t_1/2a and t_1/2 = ln(2)/k. Muscle t_1/2a = 17.23 h implies K_a approximately 0.0402 h^-1, exceeding the stated range 0.0002-0.011 h^-1. Muscle t_1/2b = 20.56 h implies k approximately 0.0337 h^-1, exceeding the stated highest elimination rate of 0.01 h^-1.",
+          "confidence": 99,
+          "classification": "established_error"
+        },
+        {
+          "location": "Materials and methods, pharmacokinetic sampling and C_max/T_max determination; Result, Pharmacokinetic result",
+          "description": "The reported directly observed gill T_max of 3 h cannot be obtained from the stated sampling schedule.",
+          "evidence": "Treatment samples were collected at 0, 2, 4, 8, 12, 16, 24, 32, 48, 64, 96 and 128 h, and 'C_max and T_max were directly taken from analytical data.' The results nevertheless report gill C_max = 8710 micrograms/kg at 3 h, when no sample was collected.",
+          "confidence": 99,
+          "classification": "established_error"
+        },
+        {
+          "location": "Result, Table 2 validation discussion; Discussion, interpretation of negative LOD and LOQ",
+          "description": "Negative detection and quantification limits are invalid under the stated validation method; they cannot demonstrate minimal drug presence or method impartiality.",
+          "evidence": "LOD = 3(sigma/slope) and LOQ = 10(sigma/slope), with sigma a standard deviation. Kidney LOD and LOQ are reported as -587.51 and -1780.34 micrograms/kg. The discussion interprets these negative limits as 'minimal drug presence' and 'affirming method impartiality.' A standard deviation is nonnegative, and a valid increasing concentration calibration yields nonnegative limits.",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Result, Table 2 validation discussion",
+          "description": "The reported muscle calibration R-squared is impossible for the stated measure of linearity.",
+          "evidence": "The text states that 'muscle tissue had an R² value of 6.96.' A coefficient of determination cannot exceed 1.",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Result, plasma biochemical results and numerical table following the Fig. 3 caption",
+          "description": "The tabulated control ALT and creatinine concentrations contradict the control concentrations stated in the results, including after converting units.",
+          "evidence": "The prose reports control ALT = 28.00 +/- 1.06 IU/L and creatinine = 0.05 +/- 0.001 mg/dL. The table gives control ALT = 20 U/L and creatinine = 0.2 mg/L at every listed day. The prose creatinine value converts to 0.5 mg/L, not 0.2 mg/L.",
+          "confidence": 99,
+          "classification": "established_error"
+        },
+        {
+          "location": "Discussion, muscle residue and consumer-safety paragraphs; Result, muscle OTC and epimer concentrations",
+          "description": "The claim that therapeutic-group muscle residues remained below the stated maximum residue limits is contradicted by the reported concentrations.",
+          "evidence": "The discussion says residues 'remained below' the EU 100 micrograms/kg and US 200 micrograms/kg limits after 1x and 3x dosing, and concludes that therapeutic-dose residues remained 'well below' MRLs. The results report day-20 OTC concentrations of 118 micrograms/kg at 1x and 351 micrograms/kg at 3x: the former exceeds 100, and the latter exceeds both limits.",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Discussion, final recommendation; Result, histopathology; Discussion, therapeutic-dose organ injury",
+          "description": "The strong recommendation of 80 mg/kg as having a robust biosafety foundation is unsupported by the manuscript's reported injury at that dose.",
+          "evidence": "The conclusion 'strongly recommended' 80 mg/kg and claims a 'robust biosafety foundation.' The results describe intestinal degeneration/necrosis and renal lesions at 1x, including day-10 sampling; the discussion states that histological changes occurred 'even with therapeutic doses' from day 10 and that increased ALT at 1x suggests liver deterioration or injury. Survival alone does not establish biosafety in the presence of these reported injuries.",
+          "confidence": 99,
+          "classification": "established_error"
+        },
+        {
+          "location": "Materials and methods, biosafety dose assignment; Result, Behaviour and mortality, medicated-feed consumption",
+          "description": "The stated daily doses may overestimate actual exposure because medicated feed was incompletely consumed, weakening claims about safety at the designated doses.",
+          "evidence": "Groups are defined by 'daily consumption' of 80, 240, 400 and 800 mg/kg/day, but the results report only 80-90% feed consumption during medicated feeding. Without a reported adjustment or intake-based dose calculation, the nominal 80 mg/kg/day group would receive approximately 64-72 mg/kg/day rather than the claimed dose.",
+          "confidence": 92,
+          "classification": "suspected_concern"
+        }
+      ],
+      "run": {
+        "case": "P02",
+        "started_at": "2026-10-01T19:43:41Z",
+        "agent_name": "/root/sol_primary_evaluation/sol_p02",
+        "ended_at": "2026-10-01T19:47:06Z",
+        "full_input_read": true,
+        "input_sha256_matches_manifest": true,
+        "input_sha256": "24e7725256b73ce6189afbb972f0fead9003c9eedffd1dcc4fee858a142bafbf",
+        "tool_use_attestation": "Saved schema-valid JSON to `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/sol/P02.json`.\n\nI read the full input and only these files:\n\n- `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P02.txt`\n- `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json`\n\nComputed SHA-256 matched: `24e7725256b73ce6189afbb972f0fead9003c9eedffd1dcc4fee858a142bafbf`.\n\nNo browsing, external research, unrelated reads, or figure inspection occurred.",
+        "requested_model": "gpt-6.1-sol",
+        "reasoning_effort": "xhigh",
+        "interface": "app_subagent",
+        "completion_status": "completed",
+        "exit_code": null,
+        "tool_calls": null,
+        "tool_compliance": "self_attested",
+        "valid_json": true,
+        "output_sha256": "7a5cfae6bf17230bddff433913884b534a7da45a342b129a04e5c0dd4ab34fd9"
+      },
+      "scoring_complete": true,
+      "matched_annotations": [
+        0
+      ],
+      "primary_annotations": [
+        0
+      ],
+      "primary_matches": [
+        0
+      ],
+      "adjudication": [
+        {
+          "annotation_index": 0,
+          "matched_predictions": [
+            3
+          ],
+          "rationale": "Explicitly identifies negative LOQ values as invalid, matching the reference mechanism; the table-number discrepancy creates some location uncertainty."
+        }
+      ],
+      "screening": [
+        {
+          "case": "P02",
+          "annotation_index": 0,
+          "primary_eligible": true,
+          "reason": "Specific mechanism supports conservative semantic matching; underlying validity still requires expert verification."
+        }
+      ]
+    },
+    {
+      "id": "P03",
+      "title": "Glycerol-silica/chitosan conjugated self-assembled nano-flower framework for Herstulla thompsoni delivery with effectiveness in natural settings: Optimization and pilot scale production",
+      "doi": "10.1016/j.ijbiomac.2024.137476",
+      "category": "Reagent identity",
+      "input_sha256": "b93be849f12bbe21cd998ba28d694b3e311ce2134200f2eb43d678627a93188c",
+      "characters": 70513,
+      "omitted_figures": 50,
+      "annotations": [
+        {
+          "title": "Glycerol-silica/chitosan conjugated self-assembled nano-flower framework for Herstulla thompsoni delivery with effectiveness in natural settings: Optimization and pilot scale production",
+          "paper_category": "Biology",
+          "error_category": "Reagent identity",
+          "error_location": "Title, Introduction",
+          "error_severity": "retract",
+          "error_annotation": "The name of the fungus \"Hirsutella thompsonii\" is misspelled in the title and introduction, which is a critical error because scientific names must be accurate for proper identification and credibility.",
+          "doi": "10.1016/j.ijbiomac.2024.137476"
+        }
+      ],
+      "requested_model": "gpt-6.1-sol",
+      "flags": [
+        {
+          "location": "Materials and methods, foliage adhesion assay, Equation (1) and loss-rate formula (3)",
+          "description": "Retention is calculated from the total treated leaf mass without subtracting the prespray leaf mass. This counts leaf tissue as retained formulation and biases the loss-rate denominator, so the reported retention and wash-off estimates do not measure pesticide deposition correctly.",
+          "evidence": "The leaf portions are initially weighed, then \"The leaf portion weighed (W1) was recorded after air-drying\" and \"R1 = W1/S\". The loss rate is subsequently defined as \"LR(%) = (R1 - R2) / R1 × 100\"; Equation (1) contains no subtraction of the initial leaf weight.",
+          "confidence": 99,
+          "classification": "established_error"
+        },
+        {
+          "location": "Pilot-batch characterization paragraph and supplied text for Fig. 4d",
+          "description": "The pilot-batch zeta potential is reported with contradictory signs. The positive value used to claim similarity to the laboratory batch cannot simultaneously agree with the supplied negative pilot value; opposite surface-charge signs materially change the scale-up comparison.",
+          "evidence": "The pilot batch is described as having \"zeta potential of +31.48 mv\", while the supplied Fig. 4d text states \"Zeta Potential: -31.48 mV\". The laboratory value is +31.84 mV, and the manuscript concludes that the laboratory and pilot zeta potentials were \"almost similar\".",
+          "confidence": 99,
+          "classification": "established_error"
+        },
+        {
+          "location": "Materials and methods, Artemia acute toxicity assay; toxicity introduction and Artemia developmental-toxicity discussion",
+          "description": "Artemia exposure concentrations differ by a factor of 1000 between methods and interpretation, leaving the dose supporting the safety claims unresolved. The developmental discussion also assigns both incompatible concentrations to its experiment.",
+          "evidence": "The acute assay uses \"100.0 mg L⁻¹\", but the toxicity discussion describes Artemia testing at \"100 μg/L\". The developmental discussion says \"at the dose 100μg/L\" and immediately describes embryos exposed to \"100 μg/mL HTS_NFG\". Both 100 mg/L and 100 μg/mL equal 100,000 μg/L.",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "UV/storage-stability methods and discussion beginning \"The degradation caused by UV radiation\"",
+          "description": "Unchanged bulk absorbance, morphology and particle size establish physical/optical stability, but do not establish retained fungal viability or insecticidal activity. No irradiated unformulated-HTS comparison is described, so the claim that formulation enhances HTS UV resistance and shelf life is unsupported by the reported assay.",
+          "evidence": "Methods compare \"UV spectra and morphology\" after irradiation/storage with \"freshly prepared samples\", and also measure particle size. The discussion states \"no variation in absorbance was observed\" and concludes \"the NFG effectively enhances the UV resistance of HTS\" and potentially improves shelf life; no post-exposure biological activity measurement is reported.",
+          "confidence": 94,
+          "classification": "suspected_concern"
+        }
+      ],
+      "run": {
+        "case": "P03",
+        "started_at": "2026-10-01T19:47:06Z",
+        "agent_name": "/root/sol_primary_evaluation/sol_p03",
+        "ended_at": "2026-10-01T19:50:42Z",
+        "full_input_read": true,
+        "input_sha256_matches_manifest": true,
+        "input_sha256": "b93be849f12bbe21cd998ba28d694b3e311ce2134200f2eb43d678627a93188c",
+        "tool_use_attestation": "Read the entire input and verified SHA-256 matches:\n`b93be849f12bbe21cd998ba28d694b3e311ce2134200f2eb43d678627a93188c`.\n\nFiles read only:\n\n- `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P03.txt`\n- `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json`\n\nNo browsing, external research, unrelated reads, delegation, or figure inspection.\n\nSaved schema-conforming JSON to [P03.json](/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/sol/P03.json).",
+        "requested_model": "gpt-6.1-sol",
+        "reasoning_effort": "xhigh",
+        "interface": "app_subagent",
+        "completion_status": "completed",
+        "exit_code": null,
+        "tool_calls": null,
+        "tool_compliance": "self_attested",
+        "valid_json": true,
+        "output_sha256": "c5bbcf14b4fa23e86fe38dea8897076887dcfc561b961086050b47be5d5d22c4"
+      },
+      "scoring_complete": true,
+      "matched_annotations": [],
+      "primary_annotations": [],
+      "primary_matches": [],
+      "adjudication": [
+        {
+          "annotation_index": 0,
+          "matched_predictions": [],
+          "rationale": "No A flag identifies a misspelling of the fungus name in the title or introduction."
+        }
+      ],
+      "screening": [
+        {
+          "case": "P03",
+          "annotation_index": 0,
+          "primary_eligible": false,
+          "reason": "Taxonomic spelling alone is outside the substantive-error prompt."
+        }
+      ]
+    },
+    {
+      "id": "P04",
+      "title": "ITERTL: An Iterative Framework for Fine-tuning LLMs for RTL Code Generation",
+      "doi": "2407.12022v2",
+      "category": "Experiment setup",
+      "input_sha256": "ad1c2d3898fbaac61df88beecbf3de62460a1058a686f58408d00522a4763db2",
+      "characters": 27800,
+      "omitted_figures": 4,
+      "annotations": [
+        {
+          "title": "ITERTL: An Iterative Framework for Fine-tuning LLMs for RTL Code Generation",
+          "paper_category": "Computer Science",
+          "error_category": "Experiment setup",
+          "error_location": "Sec 4.1",
+          "error_severity": "errata",
+          "error_annotation": "The problem is that there are inaccuracies or mistakes regarding the description or implementation of [REDACTED-NAME] in the experimental setup, which could lead to misunderstandings or misrepresentation of how the experiment was conducted.",
+          "doi": "2407.12022v2"
+        }
+      ],
+      "requested_model": "gpt-6.1-sol",
+      "flags": [
+        {
+          "location": "Section 3 theoretical analysis, Equation (6)",
+          "description": "The conversion of a teacher-sampled negative log-likelihood into teacher/model KL divergences is mathematically invalid as written.",
+          "evidence": "Equation (6) uses log(P_teacher(a_j | s, a_<j) / log P_pi(a_j | s, a_<j)). For positive teacher probability and 0 < P_pi < 1, the ratio is negative and its real logarithm is undefined. Even replacing the denominator with P_pi would not make a single observed-token log ratio equal to KL, which requires an expectation over the teacher token distribution.",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Section 3 theoretical analysis, Equations (9)-(11), generalized EM interpretation",
+          "description": "The claimed generalized-EM interpretation and formal superiority are not established by the displayed updates.",
+          "evidence": "Equation (9) optimizes E_{a~pi}[r_pi(s,a)], whereas Equation (10) freezes the sampling distribution at pi_t. No EM lower bound or ascent inequality connects this surrogate to Equation (9). With policy-dependent rewards, optimizing the frozen expectation need not improve the original expectation; setting pi_{t+2} = pi_{t+1} supplies no such guarantee.",
+          "confidence": 94,
+          "classification": "suspected_concern"
+        },
+        {
+          "location": "Section 4.1, Decoding Strategy; Section 4.2, state-of-the-art comparison and Table 1 caption",
+          "description": "Selecting decoding settings using the evaluation scores can inflate reported performance and undermine the claimed superiority over literature baselines.",
+          "evidence": "The model is tested at temperatures {0, 0.2, 0.5, 0.8}, and \"For each test metric (pass@1, pass@5, and pass@10), the best result is chosen.\" Selecting the maximum on the test benchmark introduces selection optimism and can use different policies for different metrics. Table 1 imports baseline results from other papers without establishing equivalent selection, while Section 4.2 attributes the score differences to the training method.",
+          "confidence": 95,
+          "classification": "suspected_concern"
+        }
+      ],
+      "run": {
+        "case": "P04",
+        "started_at": "2026-10-01T19:48:52Z",
+        "agent_name": "/root/sol_primary_evaluation/sol_p04",
+        "ended_at": "2026-10-01T19:54:29Z",
+        "full_input_read": true,
+        "input_sha256_matches_manifest": true,
+        "input_sha256": "ad1c2d3898fbaac61df88beecbf3de62460a1058a686f58408d00522a4763db2",
+        "tool_use_attestation": "Read the full input. Computed SHA-256 matches: `ad1c2d3898fbaac61df88beecbf3de62460a1058a686f58408d00522a4763db2`.\n\nOnly files read: [P04.txt](/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P04.txt) and [schema.json](/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json). No browsing, external research, unrelated reads, or delegation.\n\nSaved schema-conforming raw JSON to [P04.json](/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/sol/P04.json).",
+        "requested_model": "gpt-6.1-sol",
+        "reasoning_effort": "xhigh",
+        "interface": "app_subagent",
+        "completion_status": "completed",
+        "exit_code": null,
+        "tool_calls": null,
+        "tool_compliance": "self_attested",
+        "valid_json": true,
+        "output_sha256": "560b61227d73c48dde072c6831503ec261d30d7fa5899c35fe026c836c26023c"
+      },
+      "scoring_complete": true,
+      "matched_annotations": [],
+      "primary_annotations": [],
+      "primary_matches": [],
+      "adjudication": [
+        {
+          "annotation_index": 0,
+          "matched_predictions": [],
+          "rationale": "A[2] concerns selecting the best test decoding scores, not an inaccurate description or implementation of the redacted method. The vague reference does not establish equivalence; A[0–1] concern Section 3 theory."
+        }
+      ],
+      "screening": [
+        {
+          "case": "P04",
+          "annotation_index": 0,
+          "primary_eligible": false,
+          "reason": "Annotation does not specify a sufficiently precise faulty mechanism or corrected value for reliable primary scoring."
+        }
+      ]
+    },
+    {
+      "id": "P05",
+      "title": "Farnesoid X receptor activation protects against renal fibrosis via modulation of β-catenin signaling",
+      "doi": "10.1016/j.molmet.2023.101841",
+      "category": "Data Inconsistency (text-text)",
+      "input_sha256": "c356f90e9b8c5014704566ba876255f281ae95c44b9be6f6441bd1c6c77ef1af",
+      "characters": 47091,
+      "omitted_figures": 49,
+      "annotations": [
+        {
+          "title": "Farnesoid X receptor activation protects against renal fibrosis via modulation of β-catenin signaling",
+          "paper_category": "Medicine",
+          "error_category": "Data Inconsistency (text-text)",
+          "error_location": "Abstract & Method 2.6",
+          "error_severity": "errata",
+          "error_annotation": "There is a discrepancy between the Abstract and Method 2.6 regarding the duration of high-fat diet treatment in mice: the Abstract states 20 weeks, while the Methods section initially stated 12 weeks, causing confusion about the experimental timeline and raising concerns about data consistency throughout the paper.",
+          "doi": "10.1016/j.molmet.2023.101841"
+        }
+      ],
+      "requested_model": "gpt-6.1-sol",
+      "flags": [
+        {
+          "location": "Abstract, Results; animal experimental methods",
+          "description": "The abstract misstates HFD exposure as 20 weeks. The animal protocol specifies 12 weeks of treatment starting at 8 weeks of age, making 20 weeks the endpoint age rather than the feeding duration.",
+          "evidence": "Abstract: \"Mice were fed by a 60% kcal fat diet for 20 weeks\". Methods: mice were purchased at \"5 weeks\", randomized \"After 3 weeks\", and euthanized \"After a 12-week treatment\".",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Abstract, Results; animal experimental methods and mouse results",
+          "description": "The abstract attributes the mouse treatment results to GW4064, but the described mouse experiment used INT-747. GW4064 treatment of mice is not part of the reported protocol.",
+          "evidence": "Abstract: \"Treatment with the FXR agonist CDCA or GW4064 decreased body weight, renal lipid accumulation, as well as renal injury.\" The four mouse groups were control, HFD, HFD with 0.1% CDCA, and \"a 30 mg/kg INT-747 group\"; the mouse results likewise report \"Treatment with CDCA or INT-747\".",
+          "confidence": 99,
+          "classification": "established_error"
+        },
+        {
+          "location": "Mouse characteristics results; supplied textual label for Figure 5H",
+          "description": "Serum creatinine is reported with incompatible units. The results use micromoles per litre, whereas the supplied Figure 5H label uses millimoles per litre, a factor-of-1000 difference in the concentration scale.",
+          "evidence": "Results: \"serum creatinine (4.8 ± 1.3 vs. 1.11 μmol/L)\". Supplied textual label: \"Graph H: Serum Creatinine (mmol/L)\".",
+          "confidence": 99,
+          "classification": "established_error"
+        },
+        {
+          "location": "Abstract, Results; FXR interaction and AF1 deletion experiments; Figure 4 caption",
+          "description": "The claimed AF1-mediated binding and disruption of the β-catenin/TCF4 complex are not established by the described assays. The AF1 deletion experiment tests reporter suppression, while the reported co-immunoprecipitation measures FXR–β-catenin association; neither demonstrates AF1-dependent association or loss of TCF4 from that complex.",
+          "evidence": "Abstract: \"We showed that FXR could bind with β-catenin via the AF1 domain, and disrupt the assembly of the core β-catenin/TCF4 complex.\" The mutant result is that pDEL-FXR \"did not have any effect on β-catenin mediated TOPflash reporter activity\". The co-immunoprecipitation methods and Figure 4B–C caption specify detection of FXR and β-catenin, without a TCF4 complex measurement.",
+          "confidence": 93,
+          "classification": "suspected_concern"
+        },
+        {
+          "location": "Cell-culture results after Figure 2; opening discussion paragraph",
+          "description": "Changes in epithelial and myofibroblast markers in an NRK-52E monolayer are treated as confirmation of tubulo-interstitial fibrosis. These measurements show a fibrogenic cellular response, but do not establish fibrosis of a tubulo-interstitial tissue compartment.",
+          "evidence": "The reported in vitro endpoints are fibronectin, α-SMA, Snail and E-cadherin expression. The discussion calls these changes \"confirming that ox-LDL is able to trigger tubulo-interstitial fibrosis\" and states that FXR \"ameliorates the fibrosis in tubular epithelial cells in vitro\".",
+          "confidence": 88,
+          "classification": "suspected_concern"
+        }
+      ],
+      "run": {
+        "case": "P05",
+        "started_at": "2026-10-01T19:50:42Z",
+        "agent_name": "/root/sol_primary_evaluation/sol_p05",
+        "ended_at": "2026-10-01T19:53:56Z",
+        "full_input_read": true,
+        "input_sha256_matches_manifest": true,
+        "input_sha256": "c356f90e9b8c5014704566ba876255f281ae95c44b9be6f6441bd1c6c77ef1af",
+        "tool_use_attestation": "Read the full input in consecutive chunks; computed SHA-256 `c356f90e9b8c5014704566ba876255f281ae95c44b9be6f6441bd1c6c77ef1af` matched. Read only `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P05.txt` and `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json`. No browsing, external research, unrelated reads, or delegation occurred. Saved schema-conforming JSON to [P05.json](/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/sol/P05.json).",
+        "requested_model": "gpt-6.1-sol",
+        "reasoning_effort": "xhigh",
+        "interface": "app_subagent",
+        "completion_status": "completed",
+        "exit_code": null,
+        "tool_calls": null,
+        "tool_compliance": "self_attested",
+        "valid_json": true,
+        "output_sha256": "95aa40294eefdfe663986fce47d527833732b0c6b08d1a7cd22702f03bb9d512"
+      },
+      "scoring_complete": true,
+      "matched_annotations": [
+        0
+      ],
+      "primary_annotations": [
+        0
+      ],
+      "primary_matches": [
+        0
+      ],
+      "adjudication": [
+        {
+          "annotation_index": 0,
+          "matched_predictions": [
+            0
+          ],
+          "rationale": "B[0] identifies the same Abstract-versus-animal-Methods duration discrepancy: 20 weeks of HFD exposure versus 12 weeks of treatment."
+        }
+      ],
+      "screening": [
+        {
+          "case": "P05",
+          "annotation_index": 0,
+          "primary_eligible": true,
+          "reason": "Specific mechanism supports conservative semantic matching; underlying validity still requires expert verification."
+        }
+      ]
+    },
+    {
+      "id": "P06",
+      "title": "A Relationship Between Nonphysical Quasi-probabilities and Nonlocality Objectivity",
+      "doi": "2407.19061v3",
+      "category": "Equation / proof",
+      "input_sha256": "f7a86482152f4d096bc1f0a1b0910374cb908c666d581b36a316b83f60ee7b58",
+      "characters": 13749,
+      "omitted_figures": 6,
+      "annotations": [
+        {
+          "title": "A Relationship Between Nonphysical Quasi-probabilities and Nonlocality Objectivity",
+          "paper_category": "Physics",
+          "error_category": "Equation / proof",
+          "error_location": "Equation 8",
+          "error_severity": "retract",
+          "error_annotation": "The error is that the calculation incorrectly claims different eigenvalues for β^{T}β in the right-identity case, when in fact the eigenvalues remain unchanged for both the left- and right-identity cases, invalidating the argument's main result.",
+          "doi": "2407.19061v3"
+        }
+      ],
+      "requested_model": "gpt-6.1-sol",
+      "flags": [
+        {
+          "location": "Equations (8)–(9), Theorem 1.4, and its construction",
+          "description": "The matrix product for a single nonzero row is an outer product, not a diagonal matrix of squared entries. Consequently, qubit swapping cannot change the stated nonlocality criterion, and the proposed SIN states do not exist under that criterion.",
+          "evidence": "Equation (8) assigns the right-identity case the entries beta_ix^2, beta_iy^2, beta_iz^2, and the following text claims this asymmetry furnishes swap-intolerant nonlocality. For a nonzero row v, beta^T beta = v^T v has eigenvalues {||v||^2, 0, 0}, exactly as in the nonzero-column case. More generally, swapping gives beta_prime = beta^T, and beta^T beta and beta beta^T have identical eigenvalues. Thus both label orders have M = beta_1^2 + beta_2^2 + beta_3^2; the second inequality in (9) does not make the swapped state local.",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Eigenvalue formulas (6) and (7), and the prescribed smallest eigenvalue in the proof of Theorem 1.4",
+          "description": "Both eigenvalue formulas omit the factor 1/4 required by the density-matrix definition. This also invalidates the claimed numerical value of the constructed smallest eigenvalue.",
+          "evidence": "Equation (1) defines rho = (I_4 + sum c_ij sigma_i tensor sigma_j)/4, but (6) and (7) report eigenvalues 1 +/- c_p +/- a square root. Their four eigenvalues sum to 4 rather than Tr(rho) = 1. With all coefficients zero they predict eigenvalues 1, whereas rho = I_4/4 has eigenvalues 1/4. In the theorem construction, taking tau_p = 0, E = (1 + |lambda_0|/2)e and C = -(|lambda_0|/2)e for a unit vector e satisfies the specified geometry but gives the actual minimum eigenvalue lambda_0/4.",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Proposition 2.1",
+          "description": "The two sphere assignments are reversed relative to the eigenvalues in (7), so the stated equivalence with positive semidefiniteness is false.",
+          "evidence": "The proposition places E in (C, r_+) and -E in (C, r_-). Equation (7), with E = (beta_i) and C = (tau_i), instead requires ||E + C|| <= 1 + tau_p and ||E - C|| <= 1 - tau_p, assigning -E to r_+ and E to r_-. For tau_p = 0.4, C = (0.2, 0, 0), E = (0.6, 0, 0), the actual normalized eigenvalues are {0.55, 0.15, 0.25, 0.05}, all positive, yet the proposition excludes the state because ||-E - C|| = 0.8 exceeds r_- = 0.6.",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Paragraph following Proposition 2.1",
+          "description": "Translating the coefficient-space points E and C does not generally preserve eigenvalues or positive semidefiniteness, because the reflected point must remain -E.",
+          "evidence": "The text claims that \"under translations and rotations of the parameter space S, any eigenvalue-dependent property such as positive-definiteness is unchanged.\" Translating E and C by a preserves E - C but changes E + C to E + C + 2a, altering the first square root in (7). Starting with E = C = 0 and tau_p = 0 gives rho = I_4/4. Translating both by a = (1, 0, 0) produces normalized eigenvalues {3/4, -1/4, 1/4, 1/4}, destroying positive semidefiniteness.",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Concluding paragraph asserting coincident nonlocality and positivity boundaries",
+          "description": "The positive-semidefinite boundary is not generally the unit sphere in E-space; it also depends on the remaining coefficients. The manuscript therefore incorrectly identifies the two boundaries.",
+          "evidence": "The conclusion states that \"the boundary for nonlocality in general in this case ... is the same as the boundary for positive semidefiniteness\" and specifies |E| = 1. Holding C = 0 and tau_p = 0.8, equation (7) requires |E| <= 0.2 for positivity, whereas the rank-one correlation matrix gives M = |E|^2, crossing 1 at |E| = 1. For E = (0.3, 0, 0), the actual smallest eigenvalue is (1 - 0.8 - 0.3)/4 = -0.025 even though M = 0.09.",
+          "confidence": 99,
+          "classification": "established_error"
+        }
+      ],
+      "run": {
+        "case": "P06",
+        "started_at": "2026-10-01T19:53:56Z",
+        "agent_name": "/root/sol_primary_evaluation/sol_p06",
+        "ended_at": "2026-10-01T19:57:25Z",
+        "full_input_read": true,
+        "input_sha256_matches_manifest": true,
+        "input_sha256": "f7a86482152f4d096bc1f0a1b0910374cb908c666d581b36a316b83f60ee7b58",
+        "tool_use_attestation": "Read the full input; computed SHA-256 `f7a86482152f4d096bc1f0a1b0910374cb908c666d581b36a316b83f60ee7b58` matched. Read only `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P06.txt` and `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json`. No browsing, external research, unrelated reads, or delegation. Saved schema-conforming JSON to `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/sol/P06.json`.",
+        "requested_model": "gpt-6.1-sol",
+        "reasoning_effort": "xhigh",
+        "interface": "app_subagent",
+        "completion_status": "completed",
+        "exit_code": null,
+        "tool_calls": null,
+        "tool_compliance": "self_attested",
+        "valid_json": true,
+        "output_sha256": "fa3f6a9dcdd044c88641fa005a1ed16c50f2748388760fb45a9f18769ee211fd"
+      },
+      "scoring_complete": true,
+      "matched_annotations": [
+        0
+      ],
+      "primary_annotations": [
+        0
+      ],
+      "primary_matches": [
+        0
+      ],
+      "adjudication": [
+        {
+          "annotation_index": 0,
+          "matched_predictions": [
+            0
+          ],
+          "rationale": "Prediction 0 identifies the erroneous right-identity spectrum in Equation (8): the single-row outer product has the same eigenvalues as the single-column case, invalidating the claimed swap-dependent result."
+        }
+      ],
+      "screening": [
+        {
+          "case": "P06",
+          "annotation_index": 0,
+          "primary_eligible": true,
+          "reason": "Specific mechanism supports conservative semantic matching; underlying validity still requires expert verification."
+        }
+      ]
+    },
+    {
+      "id": "P07",
+      "title": "Efficient Human Pose Estimation: Leveraging Advanced Techniques with MediaPipe",
+      "doi": "2406.15649v2",
+      "category": "Statistical reporting",
+      "input_sha256": "7cc738bd5c3cbf5a64f573ceb965d1b32d257b525883773f3a96024eae92f97f",
+      "characters": 20897,
+      "omitted_figures": 3,
+      "annotations": [
+        {
+          "title": "Efficient Human Pose Estimation: Leveraging Advanced Techniques with MediaPipe",
+          "paper_category": "Computer Science",
+          "error_category": "Statistical reporting",
+          "error_location": "Sec 3.3",
+          "error_severity": "retract",
+          "error_annotation": "The error is that the angle was calculated incorrectly in Section 3.3, leading to potential inaccuracies in the reported statistical results that rely on this value.",
+          "doi": "2406.15649v2"
+        }
+      ],
+      "requested_model": "gpt-6.1-sol",
+      "flags": [
+        {
+          "location": "Methods: shoulder–elbow–wrist angle equation; Results: curl stage definition",
+          "description": "The signed difference of two arctan2 values is not the internal elbow angle. Applying the curl thresholds directly can count an extended arm as flexed and makes classification depend on orientation.",
+          "evidence": "The equation is angle = arctan2(c_y - b_y, c_x - b_x) - arctan2(a_y - b_y, a_x - b_x), with only conversion to degrees specified. For a=(0.4,0.5), b=(0.5,0.5), c=(0.6,0.5), the elbow is straight but the equation gives -180 degrees. The rule 'angle < 30° and previous_stage = down' therefore labels this straight arm 'up' and increments the counter. No absolute-value or angle-wrapping correction is stated.",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Methods: primary performance indicators, Equation (2); Conclusion: 20% IoU improvement",
+          "description": "The claimed IoU improvement lacks a defined measurement for the reported pose outputs. The method specifies landmark coordinates but never defines the regions whose overlap and union are measured or their ground truth, leaving the principal accuracy claim unsupported by the described evaluation.",
+          "evidence": "The model output is described as a 'set of landmark coordinates' and IoU only as '(Area of Overlap) / (Area of Union)'. Discrete landmarks alone do not define positive-area regions; a region construction and reference are needed. Nevertheless, the conclusion reports 'a 20% increase in the Intersection over Union (IoU) metric compared to existing solutions' without supplying those definitions.",
+          "confidence": 90,
+          "classification": "suspected_concern"
+        },
+        {
+          "location": "Methods: research design and system architecture; Results: attribution of enhancements; Conclusion: accuracy and processing-time gains",
+          "description": "The causal claim that algorithmic and neural-network optimizations produced the reported gains is not supported by a specified intervention or comparative experimental protocol in the supplied text. The described angle calculation and curl counter do not identify a change to the pose estimator that could establish the claimed accuracy and speed improvements.",
+          "evidence": "Results attribute gains to 'refined algorithms and the incorporation of advanced neural network architectures', but the methods provide no architecture change, optimization procedure, or training specification. They also provide no matched baseline protocol, timing hardware, or numerical baseline and optimized measurements in the available text. The conclusion nevertheless asserts a 20% IoU increase and approximately 30% processing-time reduction. Figures are omitted, so their contents cannot resolve this concern here.",
+          "confidence": 88,
+          "classification": "suspected_concern"
+        }
+      ],
+      "run": {
+        "case": "P07",
+        "started_at": "2026-10-01T19:54:29Z",
+        "agent_name": "/root/sol_primary_evaluation/sol_p07",
+        "ended_at": "2026-10-01T19:56:59Z",
+        "full_input_read": true,
+        "input_sha256_matches_manifest": true,
+        "input_sha256": "7cc738bd5c3cbf5a64f573ceb965d1b32d257b525883773f3a96024eae92f97f",
+        "tool_use_attestation": "Read the full input in consecutive chunks and verified SHA-256 `7cc738bd5c3cbf5a64f573ceb965d1b32d257b525883773f3a96024eae92f97f`, matching the expected hash. Read only `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P07.txt` and `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json`; used no browsing, external research, unrelated reads, or delegation. Saved schema-conforming raw JSON to `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/sol/P07.json`.",
+        "requested_model": "gpt-6.1-sol",
+        "reasoning_effort": "xhigh",
+        "interface": "app_subagent",
+        "completion_status": "completed",
+        "exit_code": null,
+        "tool_calls": null,
+        "tool_compliance": "self_attested",
+        "valid_json": true,
+        "output_sha256": "4703c5652b265bb41567988f54a6b15b11e8f6a178bf7bef92e6769c58b2c084"
+      },
+      "scoring_complete": true,
+      "matched_annotations": [
+        0
+      ],
+      "primary_annotations": [],
+      "primary_matches": [],
+      "adjudication": [
+        {
+          "annotation_index": 0,
+          "matched_predictions": [
+            0
+          ],
+          "rationale": "Flag 0 explicitly identifies an incorrect elbow-angle calculation and its downstream threshold errors, compatible with the reference claim. The reference does not specify the formula, so the precise subtype remains uncertain. The other flags concern evaluation and causal attribution."
+        }
+      ],
+      "screening": [
+        {
+          "case": "P07",
+          "annotation_index": 0,
+          "primary_eligible": false,
+          "reason": "Annotation does not specify a sufficiently precise faulty mechanism or corrected value for reliable primary scoring."
+        }
+      ]
+    },
+    {
+      "id": "P08",
+      "title": "Illuminating the dark kinome: utilizing multiplex peptide activity arrays to functionally annotate understudied kinases",
+      "doi": "10.1186/s12964-024-01868-4",
+      "category": "Reagent identity",
+      "input_sha256": "1a9859c7e68ce053295bc8a5810d38340327cb939402a31303e648ec505d8faf",
+      "characters": 65442,
+      "omitted_figures": 11,
+      "annotations": [
+        {
+          "title": "Illuminating the dark kinome: utilizing multiplex peptide activity arrays to functionally annotate understudied kinases",
+          "paper_category": "Biology",
+          "error_category": "Reagent identity",
+          "error_location": "Overall",
+          "error_severity": "errata",
+          "error_annotation": "The error is that the recombinant protein fragments used for at least three kinases do not include their respective kinase domains, meaning the reagents do not have intrinsic kinase activity and the experimental results do not reflect actual kinase function for those proteins.",
+          "doi": "10.1186/s12964-024-01868-4"
+        }
+      ],
+      "requested_model": "gpt-6.1-sol",
+      "flags": [
+        {
+          "location": "Methods, recombinant kinase constructs; Results, mass spectrometry of EPHA6 and GAB1",
+          "description": "The reported EPHA6 autophosphorylation sites are outside the stated recombinant construct. A protein comprising EPHA6 residues 683–1130 cannot contain EPHA6 residues 259 or 484, so the reported site assignments cannot describe this construct without an unexplained change in residue numbering or protein identity.",
+          "evidence": "The purchased EPHA6 construct is listed as 'AA range R683-V1130'; the mass-spectrometry results state that 'two putative autophosphorylation sites on EPHA6 were identified at pY259 and pY484.'",
+          "confidence": 99,
+          "classification": "established_error"
+        },
+        {
+          "location": "Methods, postmortem sample pooling; Results and Discussion, sex-specific kinase changes",
+          "description": "There is only one biological pool for each diagnosis-by-sex combination. Technical triplicates cannot estimate variation between subjects or establish a diagnosis-by-sex effect. The stated claim that analyzing chips separately accounts for biological variation, and the resulting inference of sex-specific disease signaling, are unsupported by this design.",
+          "evidence": "Methods state that samples were pooled 'by sex and diagnosis,' producing 'four pooled samples' run in 'technical triplicate.' Results claim the analysis accounts for 'biological variation between male and female subjects'; Discussion infers 'a sex-specific signaling alteration' from decreased activity in female but not male schizophrenia subjects.",
+          "confidence": 98,
+          "classification": "established_error"
+        },
+        {
+          "location": "Methods, KRSA preprocessing and log2 fold-change calculation",
+          "description": "As written, the method calculates log2 fold changes using ratios of already log-transformed signals. A log ratio of logged intensities is not the log2 fold change of phosphorylation intensity and can distort the magnitudes, rankings, and 0.2 selection threshold. The manuscript does not establish that the calculation instead used unlogged intensities or differences of appropriately transformed logs.",
+          "evidence": "The slope is multiplied by 100 and then log transformed; 'The derived values from the previous steps are used as the final signal ... in the comparative analyses.' Next, 'The signal ratios between pairs of groups ... were used to calculate log2 fold change (LFC),' with peptides selected at an average LFC of at least 0.2.",
+          "confidence": 91,
+          "classification": "suspected_concern"
+        },
+        {
+          "location": "Methods, recombinant kinase peptide clustering; Abstract and Conclusion, substrate affinity claims",
+          "description": "Detecting phosphorylation at different kinase concentrations does not establish substrate affinity. These thresholds also depend on catalytic turnover, active enzyme fraction, and assay detection, so the screen cannot support the claimed differences in affinity from the stated measurements alone.",
+          "evidence": "'High Affinity' means phosphorylation at the lowest protein concentration, 'Medium Affinity' means activity beginning at the medium concentration, and 'Low Affinity' means activity only at the highest concentration. The abstract and conclusion characterize the resulting kinase-substrate interactions as having 'variable degrees of affinity.'",
+          "confidence": 97,
+          "classification": "established_error"
+        },
+        {
+          "location": "Results, recombinant kinase screening hit counts; Abstract and Conclusion, total interaction count",
+          "description": "The reported peptide-hit counts total 201 rather than the claimed 195 interactions: EPHA6 53, TNK1 63, AATK 65, INSRR 15, and LTK 5. No stated consolidation or deduplication explains the six-interaction difference, leaving the central quantitative result inconsistent with the presented screening counts.",
+          "evidence": "Results report EPHA6 counts of 18 high, 31 medium, and 4 low; TNK1/AATK/INSRR/LTK high counts of 26/9/3/3, medium counts of 31/46/4/1, and low counts of 6/10/8/1. The abstract and conclusion report '195' novel kinase-substrate interactions.",
+          "confidence": 90,
+          "classification": "suspected_concern"
+        }
+      ],
+      "run": {
+        "case": "P08",
+        "started_at": "2026-10-01T19:56:59Z",
+        "agent_name": "/root/sol_primary_evaluation/sol_p08",
+        "ended_at": "2026-10-01T20:01:10Z",
+        "full_input_read": true,
+        "input_sha256_matches_manifest": true,
+        "input_sha256": "1a9859c7e68ce053295bc8a5810d38340327cb939402a31303e648ec505d8faf",
+        "tool_use_attestation": "Read the full input. Computed SHA-256 `1a9859c7e68ce053295bc8a5810d38340327cb939402a31303e648ec505d8faf` matched the supplied hash. Read only `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P08.txt` and `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json`; used no browsing, external research, unrelated reads, or delegation. Saved schema-valid JSON to [P08.json](/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/sol/P08.json).",
+        "requested_model": "gpt-6.1-sol",
+        "reasoning_effort": "xhigh",
+        "interface": "app_subagent",
+        "completion_status": "completed",
+        "exit_code": null,
+        "tool_calls": null,
+        "tool_compliance": "self_attested",
+        "valid_json": true,
+        "output_sha256": "8ad2f9aca69f231c00947cf0731885816beb4901dc0f01432c6d8acc32e69696"
+      },
+      "scoring_complete": true,
+      "matched_annotations": [],
+      "primary_annotations": [
+        0
+      ],
+      "primary_matches": [],
+      "adjudication": [
+        {
+          "annotation_index": 0,
+          "matched_predictions": [],
+          "rationale": "No flag identifies recombinant fragments lacking kinase domains. A[0] instead alleges phosphorylation sites outside the stated EPHA6 construct, which is a different faulty mechanism."
+        }
+      ],
+      "screening": [
+        {
+          "case": "P08",
+          "annotation_index": 0,
+          "primary_eligible": true,
+          "reason": "Specific mechanism supports conservative semantic matching; underlying validity still requires expert verification."
+        }
+      ]
+    },
+    {
+      "id": "P09",
+      "title": "MSP-MVS: Multi-granularity Segmentation Prior Guided Multi-View Stereo",
+      "doi": "2407.19323v3",
+      "category": "Experiment setup",
+      "input_sha256": "79e8abeb5976fc4dad98cba91dfdee6802726a25d9f26c8dbce2ca4101eebda0",
+      "characters": 24408,
+      "omitted_figures": 0,
+      "annotations": [
+        {
+          "title": "MSP-MVS: Multi-granularity Segmentation Prior Guided Multi-View Stereo",
+          "paper_category": "Computer Science",
+          "error_category": "Experiment setup",
+          "error_location": "Overview",
+          "error_severity": "errata",
+          "error_annotation": "The problem is that there is a significant flaw in how the experiment was designed in the Multi-granularity section, which affects the reliability of the resulting data analysis and the validity of the study’s conclusions.",
+          "doi": "2407.19323v3"
+        }
+      ],
+      "requested_model": "gpt-6.1-sol",
+      "flags": [
+        {
+          "location": "Introduction: paragraph beginning 'Therefore, we propose TSAR-MVS' and contributions 1–3; related-work paragraph mentioning TSAR-MVS; abstract and conclusion",
+          "description": "The manuscript gives incompatible definitions of its proposed method and misattributes novelty. The introduction proposes TSAR-MVS with filtering, superpixel refinement and edge/line segmentation, while the abstract, ablations and conclusion propose MSP-MVS with segmentation-guided patch deformation, anchor equidistribution and iterative local search. The related-work section also identifies TSAR-MVS as an existing method. These are different algorithmic contributions, so the introduction's claims about the method being introduced contradict the manuscript's own method identification and attribution.",
+          "evidence": "Introduction: 'we propose TSAR-MVS, a generalized post-processing MVS method that sequentially applies confidence-based outliers filtering, superpixel-based local refinement, and feature-based area generation'. Related work: 'TSAR-MVS (Yuan et al. 2024b) attempt to employ superpixel planarization'. Conclusion: 'we introduce MSP-MVS' and 'we introduce anchor equidistribution' and 'we present ILS optimization'.",
+          "confidence": 99,
+          "classification": "established_error"
+        }
+      ],
+      "run": {
+        "case": "P09",
+        "started_at": "2026-10-01T19:57:25Z",
+        "agent_name": "/root/sol_primary_evaluation/sol_p09",
+        "ended_at": "2026-10-01T19:59:26Z",
+        "full_input_read": true,
+        "input_sha256_matches_manifest": true,
+        "input_sha256": "79e8abeb5976fc4dad98cba91dfdee6802726a25d9f26c8dbce2ca4101eebda0",
+        "tool_use_attestation": "Read the full input; computed SHA-256 `79e8abeb5976fc4dad98cba91dfdee6802726a25d9f26c8dbce2ca4101eebda0` matched. Read only `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P09.txt` and `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json`. No browsing, external research, unrelated reads, or delegation. Saved schema-valid JSON to [P09.json](/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/sol/P09.json).",
+        "requested_model": "gpt-6.1-sol",
+        "reasoning_effort": "xhigh",
+        "interface": "app_subagent",
+        "completion_status": "completed",
+        "exit_code": null,
+        "tool_calls": null,
+        "tool_compliance": "self_attested",
+        "valid_json": true,
+        "output_sha256": "653ee58340ade721ae35ea013fa7cd6d4ace23af5b9d251c7687b0fc56309f74"
+      },
+      "scoring_complete": true,
+      "matched_annotations": [],
+      "primary_annotations": [],
+      "primary_matches": [],
+      "adjudication": [
+        {
+          "annotation_index": 0,
+          "matched_predictions": [],
+          "rationale": "The reference vaguely alleges an experimental-design flaw in the Multi-granularity section. A instead identifies contradictory method identities and novelty attribution, without explicitly connecting that mechanism to the referenced experiment."
+        }
+      ],
+      "screening": [
+        {
+          "case": "P09",
+          "annotation_index": 0,
+          "primary_eligible": false,
+          "reason": "Annotation does not specify a sufficiently precise faulty mechanism or corrected value for reliable primary scoring."
+        }
+      ]
+    },
+    {
+      "id": "P10",
+      "title": "Qsyn: A Developer-Friendly Quantum Circuit Synthesis Framework for NISQ Era and Beyond",
+      "doi": "2405.07197v2",
+      "category": "Data Inconsistency (text-text)",
+      "input_sha256": "aaf2bb8f16cb4d9e1c43c5bffa79cfad73eaf668567811dde7b4bfe3658f6c60",
+      "characters": 6024,
+      "omitted_figures": 0,
+      "annotations": [
+        {
+          "title": "Qsyn: A Developer-Friendly Quantum Circuit Synthesis Framework for NISQ Era and Beyond",
+          "paper_category": "Physics",
+          "error_category": "Data Inconsistency (text-text)",
+          "error_location": "Table 2",
+          "error_severity": "errata",
+          "error_annotation": "The values or entries in Table 2 are inconsistent or incorrect compared to reliable sources or other parts of the document, indicating a need for data verification and correction.",
+          "doi": "2405.07197v2"
+        }
+      ],
+      "requested_model": "gpt-6.1-sol",
+      "flags": [],
+      "run": {
+        "case": "P10",
+        "started_at": "2026-10-01T19:59:26Z",
+        "agent_name": "/root/sol_primary_evaluation/sol_p10",
+        "ended_at": "2026-10-01T20:00:44Z",
+        "full_input_read": true,
+        "input_sha256_matches_manifest": true,
+        "input_sha256": "aaf2bb8f16cb4d9e1c43c5bffa79cfad73eaf668567811dde7b4bfe3658f6c60",
+        "tool_use_attestation": "Read the full input and exactly these files: `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P10.txt` and `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json`. Computed SHA-256 matched `aaf2bb8f16cb4d9e1c43c5bffa79cfad73eaf668567811dde7b4bfe3658f6c60`. No browsing, external research, unrelated reads, or delegation occurred. Saved raw schema-compliant JSON to `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/sol/P10.json`.",
+        "requested_model": "gpt-6.1-sol",
+        "reasoning_effort": "xhigh",
+        "interface": "app_subagent",
+        "completion_status": "completed",
+        "exit_code": null,
+        "tool_calls": null,
+        "tool_compliance": "self_attested",
+        "valid_json": true,
+        "output_sha256": "4d7fb62d182e64d98296af95ffed7ef7a9b9c8c815c7466ac9fc4d953c021063"
+      },
+      "scoring_complete": true,
+      "matched_annotations": [],
+      "primary_annotations": [],
+      "primary_matches": [],
+      "adjudication": [
+        {
+          "annotation_index": 0,
+          "matched_predictions": [],
+          "rationale": "A contains no reviewer flags."
+        }
+      ],
+      "screening": [
+        {
+          "case": "P10",
+          "annotation_index": 0,
+          "primary_eligible": false,
+          "reason": "Annotation does not specify a sufficiently precise faulty mechanism or corrected value for reliable primary scoring."
+        }
+      ]
+    },
+    {
+      "id": "P11",
+      "title": "A Simple Ricci Flow Proof of the Uniformization Theorem",
+      "doi": "2404.01980v6",
+      "category": "Equation / proof",
+      "input_sha256": "87765c104fec2ffbab46add7372f6240c98d5257584ffcc250ca19311eaece16",
+      "characters": 8508,
+      "omitted_figures": 0,
+      "annotations": [
+        {
+          "title": "A Simple Ricci Flow Proof of the Uniformization Theorem",
+          "paper_category": "Mathematics",
+          "error_category": "Equation / proof",
+          "error_location": "Theorem 3.3",
+          "error_severity": "retract",
+          "error_annotation": "The proof incorrectly assumes that the value of A at t=0 and t=T are identical, but without a justification or condition ensuring this, the main inequality in the argument does not necessarily hold.",
+          "doi": "2404.01980v6"
+        }
+      ],
+      "requested_model": "gpt-6.1-sol",
+      "flags": [
+        {
+          "location": "Section 2, equation (2.1) and the subsequent area-preservation statement",
+          "description": "The stated normalization preserves area 4π only when the compact surface has Euler characteristic 2; it is not the normalized Ricci flow for an arbitrary compact surface.",
+          "evidence": "The text introduces an arbitrary compact surface and states that its area remains 4π under ∂t g = 2(1−K)g. Differentiating area gives dArea/dt = 2Area−2∫K dV = 8π−4πχ(M) at Area = 4π, which need not vanish.",
+          "confidence": 99,
+          "classification": "established_error"
+        },
+        {
+          "location": "Remark 2.2",
+          "description": "The displayed small-area expansion is algebraically false.",
+          "evidence": "The claimed equality is √(4πA−κA²) = √(4πA−κA³/(4√π)) + o(A²). The left expression is 2√π A^(1/2)−κ A^(3/2)/(4√π)+O(A^(5/2)); the right square root has no A^(3/2) term. Their difference is therefore not o(A²).",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Proposition 3.1, application of the maximum principle to the ODE solution",
+          "description": "The area-dependent ODE barrier is not a subsolution throughout the spatial domain, so the maximum principle does not establish the asserted bound with B(A).",
+          "evidence": "The proof fixes B = [A²+(4π−A)²]/[A(4π−A)] for one area and compares the resulting spatially constant f(t) with (2.5). Normal displacement changes enclosed area, so this coefficient varies with r. A subsolution requires (ln f)′ ≤ B(A(r))(1−f) everywhere; B(2π)=2, whereas B(A)>2 for A≠2π. The chosen ODE violates that inequality at the smaller coefficient.",
+          "confidence": 98,
+          "classification": "established_error"
+        },
+        {
+          "location": "Theorem 3.2, the step beginning “since the inequality (2.4) is tight for A → 0”",
+          "description": "Asymptotic tightness does not allow the lower bound in (2.4) to replace I_A² in another lower-bound inequality; the claimed ordering is actually false for sufficiently small A under the contradiction hypothesis.",
+          "evidence": "The proof asserts (4πA−κ(T)A²)/(4πA−A²) ≥ 1/(1+e^(−BT−C)). For fixed T>0 and κ(T)>1, its left side is 1−(κ(T)−1)A/(4π)+O(A²). With the stated C and B(A)∼4π/A, the right side is 1−O(Ae^(−4πT/A)). Thus the left side is smaller for sufficiently small A. Knowing both quantities are lower bounds for I_A² does not order them.",
+          "confidence": 100,
+          "classification": "established_error"
+        }
+      ],
+      "run": {
+        "case": "P11",
+        "started_at": "2026-10-01T20:00:44Z",
+        "agent_name": "/root/sol_primary_evaluation/sol_p11",
+        "ended_at": "2026-10-01T20:05:25Z",
+        "full_input_read": true,
+        "input_sha256_matches_manifest": true,
+        "input_sha256": "87765c104fec2ffbab46add7372f6240c98d5257584ffcc250ca19311eaece16",
+        "tool_use_attestation": "Read the full input. Computed SHA-256 `87765c104fec2ffbab46add7372f6240c98d5257584ffcc250ca19311eaece16` matched the supplied hash. Read only `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P11.txt` and `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json`; used no browsing, external research, unrelated reads, or delegation. Saved the schema-conforming JSON to [P11.json](/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/sol/P11.json).",
+        "requested_model": "gpt-6.1-sol",
+        "reasoning_effort": "xhigh",
+        "interface": "app_subagent",
+        "completion_status": "completed",
+        "exit_code": null,
+        "tool_calls": null,
+        "tool_compliance": "self_attested",
+        "valid_json": true,
+        "output_sha256": "c0a18015c0ad2d0e45e02509380527186374027f96eb3f9e8789a4943e9cc62d"
+      },
+      "scoring_complete": true,
+      "matched_annotations": [],
+      "primary_annotations": [
+        0
+      ],
+      "primary_matches": [],
+      "adjudication": [
+        {
+          "annotation_index": 0,
+          "matched_predictions": [],
+          "rationale": "No flag identifies the unjustified equality of A at t=0 and t=T in Theorem 3.3. The Section 2 total-area normalization criticism concerns a different condition and location; the remaining flags address expansion, barrier, or small-area ordering errors."
+        }
+      ],
+      "screening": [
+        {
+          "case": "P11",
+          "annotation_index": 0,
+          "primary_eligible": true,
+          "reason": "Specific mechanism supports conservative semantic matching; underlying validity still requires expert verification."
+        }
+      ]
+    },
+    {
+      "id": "P12",
+      "title": "Going Beyond Word Matching: Syntax Improves In-context Example Selection for Machine Translation",
+      "doi": "2403.19285v2",
+      "category": "Statistical reporting",
+      "input_sha256": "cb75b9925cfff2aae58e3759c39924123480440b26b30d5211337d62a4347572",
+      "characters": 22557,
+      "omitted_figures": 5,
+      "annotations": [
+        {
+          "title": "Going Beyond Word Matching: Syntax Improves In-context Example Selection for Machine Translation",
+          "paper_category": "Computer Science",
+          "error_category": "Statistical reporting",
+          "error_location": "Sec 5",
+          "error_severity": "retract",
+          "error_annotation": "The problem is that Section 5 compares baselines that are not directly comparable, which could lead to misleading or confusing interpretations of the results.",
+          "doi": "2403.19285v2"
+        }
+      ],
+      "requested_model": "gpt-6.1-sol",
+      "flags": [
+        {
+          "location": "Comparison with CTQScorer, Table 2 discussion",
+          "description": "The claimed lead over CTQScorer is confounded by different example databases and test-set versions. Comparing these COMET scores cannot isolate the selection method or establish that the proposed selector performs better than CTQScorer.",
+          "evidence": "The manuscript states, 'Our proposed methods secure all the highest scores on all 6 translation directions,' but also states that CTQScorer uses Europarl and ParaCrawl and is evaluated on FLORES-101, whereas the proposed methods use WikiMatrix and FLORES+. It acknowledges that these differences 'may lead to an unequal comparison.'",
+          "confidence": 88,
+          "classification": "suspected_concern"
+        }
+      ],
+      "run": {
+        "case": "P12",
+        "started_at": "2026-10-01T20:01:10Z",
+        "agent_name": "/root/sol_primary_evaluation/sol_p12",
+        "ended_at": "2026-10-01T20:03:53Z",
+        "full_input_read": true,
+        "input_sha256_matches_manifest": true,
+        "input_sha256": "cb75b9925cfff2aae58e3759c39924123480440b26b30d5211337d62a4347572",
+        "tool_use_attestation": "Read the full input; computed SHA-256 `cb75b9925cfff2aae58e3759c39924123480440b26b30d5211337d62a4347572` matched. Read only `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P12.txt` and `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json`. No browsing, external research, unrelated reads, or delegation occurred. Saved schema-valid JSON to `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/sol/P12.json`.",
+        "requested_model": "gpt-6.1-sol",
+        "reasoning_effort": "xhigh",
+        "interface": "app_subagent",
+        "completion_status": "completed",
+        "exit_code": null,
+        "tool_calls": null,
+        "tool_compliance": "self_attested",
+        "valid_json": true,
+        "output_sha256": "1e9ce0a7364d2dc2b3ccd2a8804d74d8c050a9a2a634ea13e0f9170cb2ec567b"
+      },
+      "scoring_complete": true,
+      "matched_annotations": [
+        0
+      ],
+      "primary_annotations": [],
+      "primary_matches": [],
+      "adjudication": [
+        {
+          "annotation_index": 0,
+          "matched_predictions": [
+            0
+          ],
+          "rationale": "B flag 0 explicitly identifies an unequal baseline comparison caused by different example databases and test-set versions, corresponding to the Section 5 comparability concern."
+        }
+      ],
+      "screening": [
+        {
+          "case": "P12",
+          "annotation_index": 0,
+          "primary_eligible": false,
+          "reason": "Annotation does not specify a sufficiently precise faulty mechanism or corrected value for reliable primary scoring."
+        }
+      ]
+    },
+    {
+      "id": "P13",
+      "title": "Unveiling the biological effects of radio-frequency and extremely-low frequency electromagnetic fields on the central nervous system performance",
+      "doi": "10.34172/bi.2023.30064",
+      "category": "Reagent identity",
+      "input_sha256": "52aae136e509cf92ce5352e66196a28a51edd76ae6e0ebcbd640d96eba668688",
+      "characters": 75423,
+      "omitted_figures": 6,
+      "annotations": [
+        {
+          "title": "Unveiling the biological effects of radio-frequency and extremely-low frequency electromagnetic fields on the central nervous system performance",
+          "paper_category": "Medicine",
+          "error_category": "Reagent identity",
+          "error_location": "Overall",
+          "error_severity": "errata",
+          "error_annotation": "The error is that the manuscript incorrectly refers to \"C57BL/6 rats,\" but C57BL/6 is a strain of mice, not rats; thus, there is a misidentification of the animal model used.",
+          "doi": "10.34172/bi.2023.30064"
+        }
+      ],
+      "requested_model": "gpt-6.1-sol",
+      "flags": [
+        {
+          "location": "RF-EMR exposure effects on the BBB, Kuribayashi et al. summary; bibliography entry for Kuribayashi et al.",
+          "description": "The review describes the negative BBB finding as an in vitro experiment, although the supplied reference identifies exposure of immature and young rats. This misclassifies an animal exposure study as a cell or tissue experiment.",
+          "evidence": "The text says \"Kuribayashi et al did not witness BBB leakage during in vitro experiments.\" The reference title is \"Lack of effects of 1439 MHz electromagnetic near field exposure on the blood–brain barrier in immature and young rats.\"",
+          "confidence": 99,
+          "classification": "established_error"
+        },
+        {
+          "location": "RF-EMR exposure effects on learning and memory, Wang et al. summary; reference 54",
+          "description": "An acute exposure experiment is presented as evidence about chronic exposure. Acute and chronic exposure are different experimental conditions, so this changes the finding being synthesized.",
+          "evidence": "The text says Wang et al. demonstrated that \"chronic exposure to pulsed 2450 MHz RF-EMF may reduce learning ability and memory functions.\" Reference 54 is titled \"Acute exposure to pulsed 2450-MHz microwaves affects water-maze performance of rats.\"",
+          "confidence": 99,
+          "classification": "established_error"
+        },
+        {
+          "location": "Son et al., Fu et al., and Burman et al. summaries; Table 1, reference 156 row; references 56, 146, 147, and 156",
+          "description": "Several mouse studies are incorrectly reported as rat studies. In particular, the Son study uses 5xFAD mice, a model specification also lost in the rat description. These errors alter the experimental populations underlying the review.",
+          "evidence": "Son is described as \"research conducted on rats,\" but reference 56 specifies \"5xFAD mice.\" Fu is described as exposing \"male adult Wistar rats,\" but reference 146 specifies \"spatial recognition memory in mice.\" Burman is described as exposing \"C57BL/6NCrl and BALB/cAnNCrl rats,\" but reference 147 specifies \"two strains of laboratory mouse.\" Table 1 lists \"C57BL/6 rats\" for reference 156, whose title specifies \"the mouse hippocampus.\"",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "RF-EMR exposure effects on neurotransmitters, final paragraph",
+          "description": "Acetylcholine is incorrectly categorized as an inhibitory neurotransmitter without qualification. Its effect depends on receptor type and cellular context; nicotinic acetylcholine receptors mediate excitatory transmission. The categorical label misstates the neurophysiology being reviewed.",
+          "evidence": "The text refers to \"inhibitory neurotransmitters such as Acetylcholine.\"",
+          "confidence": 98,
+          "classification": "established_error"
+        },
+        {
+          "location": "RF-EMR exposure effects on learning and memory, public-environment safety statement; reference 53",
+          "description": "The categorical claim that public RF exposure is harmless exceeds the scope of its supplied supporting reference. A review of brain cancer and head tumors does not establish absence of the non-cancer neurological harms discussed here, nor does the manuscript specify an exposure threshold for the claim.",
+          "evidence": "The text states \"the RF-EMR exposure intensity in the public environment is not detrimental\" and cites reference 53, titled \"Systematic review of wireless phone use and brain cancer and other head tumors.\" The same section discusses sleep problems, headaches, blood-pressure changes, and memory effects.",
+          "confidence": 94,
+          "classification": "suspected_concern"
+        },
+        {
+          "location": "Brain-development discussion, paragraph beginning \"During the prenatal period\"",
+          "description": "The claim that RF exposure has been demonstrated to elevate brain-tumor risk and reduce hippocampal neuron numbers in children is stronger than the evidence described in the manuscript. Its concrete developmental examples concern rodents or cultured cells, and its earlier tumor discussion expressly reports an absence of evidence. This appears to conflate experimental findings with demonstrated human effects.",
+          "evidence": "The text says \"Recent studies have demonstrated that RF-EMR exposure can elevate the risk of brain tumors and negatively impact cognitive function in children, reducing the number of neurons in the hippocampus.\" Nearby examples describe prenatal rat exposure, embryonic stem cells, and animal offspring. Earlier, the review states \"no evidence links RF-EMF exposure to brain tumors\" and that \"solid evidence is still absent\" for neurodegenerative associations.",
+          "confidence": 91,
+          "classification": "suspected_concern"
+        }
+      ],
+      "run": {
+        "case": "P13",
+        "started_at": "2026-10-01T20:03:53Z",
+        "agent_name": "/root/sol_primary_evaluation/sol_p13",
+        "ended_at": "2026-10-01T20:07:38Z",
+        "full_input_read": true,
+        "input_sha256_matches_manifest": true,
+        "input_sha256": "52aae136e509cf92ce5352e66196a28a51edd76ae6e0ebcbd640d96eba668688",
+        "tool_use_attestation": "Read the full input in consecutive chunks; computed SHA-256 `52aae136e509cf92ce5352e66196a28a51edd76ae6e0ebcbd640d96eba668688` matched the expected hash. Read only `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P13.txt` and `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json`; performed no browsing, external research, unrelated reads, or delegation. Saved schema-conformant raw JSON to `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/sol/P13.json`.",
+        "requested_model": "gpt-6.1-sol",
+        "reasoning_effort": "xhigh",
+        "interface": "app_subagent",
+        "completion_status": "completed",
+        "exit_code": null,
+        "tool_calls": null,
+        "tool_compliance": "self_attested",
+        "valid_json": true,
+        "output_sha256": "dd9244f18772ac75683e2f1a16972741b52047ece5c3633ccb6d3f5f521fdb50"
+      },
+      "scoring_complete": true,
+      "matched_annotations": [
+        0
+      ],
+      "primary_annotations": [
+        0
+      ],
+      "primary_matches": [
+        0
+      ],
+      "adjudication": [
+        {
+          "annotation_index": 0,
+          "matched_predictions": [
+            2
+          ],
+          "rationale": "Explicitly flags C57BL/6 rats in Table 1 and the Burman strain description as mouse studies misreported as rat studies."
+        }
+      ],
+      "screening": [
+        {
+          "case": "P13",
+          "annotation_index": 0,
+          "primary_eligible": true,
+          "reason": "Specific mechanism supports conservative semantic matching; underlying validity still requires expert verification."
+        }
+      ]
+    },
+    {
+      "id": "P14",
+      "title": "A Simple, Nearly-Optimal Algorithm for Differentially Private All-Pairs Shortest Distances",
+      "doi": "2407.06913v2",
+      "category": "Equation / proof",
+      "input_sha256": "f4b7170c48fffd1267a24ca4561641db1a7e9e3b91e3d02108b7a63d26396591",
+      "characters": 69933,
+      "omitted_figures": 1,
+      "annotations": [
+        {
+          "title": "A Simple, Nearly-Optimal Algorithm for Differentially Private All-Pairs Shortest Distances",
+          "paper_category": "Computer Science",
+          "error_category": "Equation / proof",
+          "error_location": "Sec 3, Sec4",
+          "error_severity": "retract",
+          "error_annotation": "The error is the incorrect assumption in Sections 3 and 4 that the topology of the shortest path trees is public, which may not be true; additionally, in Section 3, Lemma 2.4 is applied inappropriately under this false assumption.",
+          "doi": "2407.06913v2"
+        }
+      ],
+      "requested_model": "gpt-6.1-sol",
+      "flags": [
+        {
+          "location": "Lemma 3.1, accuracy proof; Theorems 3.1 and 3.2",
+          "description": "The shortest noisy path is selected using the same noise whose concentration is being bounded, so its edge noises are not independent Laplace variables. In a chain of m diamonds, each with two disjoint two-edge branches of equal true weight, the 2m-hop estimate is a sum of m independent minima of two branch-noise sums. Each minimum has a negative mean of constant magnitude times 1/epsilon. Thus the error is Omega(m/epsilon) with high probability, contradicting O(sqrt(m) log(m)/epsilon) for n=3m+1. The advertised additive bounds rely on this false lemma.",
+          "evidence": "The proof states: \"each distance ... is the sum of a maximum of t edge weights, hence the total error ... is the accumulation of at most t Laplace random variables,\" and then applies Lemma 2.4 and a union bound over n^2 distances.",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Theorem 4.3, privacy composition step; Appendix A, Corollary 4.1; analogous tree-based privacy claims in Sections 3 and 4",
+          "description": "The tree mechanism assumes fixed public topology, but these trees are selected from private weights. Its all-pairs output actually reveals tree structure through exact identities: for a tree containing the chain z-a-b, the released estimates satisfy d(z,b)=d(z,a)+d(a,b); for a tree with branches z-a and z-b they satisfy d(a,b)=d(z,a)+d(z,b). Changing only the triangle edge weight w(z,b) from M+1+eta to M+1-eta, with w(z,a)=M, w(a,b)=1 and 0<eta<=1/2, switches the shortest-path tree and these output supports. Consequently the claimed privacy of releasing all per-tree matrices does not follow from fixed-tree DP or composition, even if adjacency lists are hidden.",
+          "evidence": "Theorem 4.3 claims \"By basic composition ... releasing all the private estimates is epsilon-DP.\" Appendix A computes each pair estimate using the lowest common ancestor and the identity d_T(x,y)=d(z,x)+d(z,y)-2d(z,v_x,y). Section 3 argues that not releasing shortest-path trees means \"no shortest path information is revealed.\"",
+          "confidence": 99,
+          "classification": "established_error"
+        },
+        {
+          "location": "Lemma 4.4 and its expectation bound in Construction 2",
+          "description": "The claimed cardinality lower bound can exceed the entire vertex set within the permitted parameter range. Take n=2^k and k=log_2(n)>=3. Then |A_1^r|=n/4 and t=ceil(200 log(n)), so Lemma 4.4 requires |A_1|>=tn/16>n. This event has probability zero. The proof incorrectly assumes |A_i^r|t<=n; uniform marginal inclusion also does not make the union size Binomial(n,p_i).",
+          "evidence": "Lemma 4.4 asserts \"|A_i| >= (t/4) ... n^{1-(i+1)/k}\" with probability at least 1-1/(2n^2). The proof uses \"Let X_i ~ Binomial(n,p_i) be the number of vertices in A_i\" and \"the last inequality follows from |A_i^r| ... t <= n.\" The allowed range includes k=floor(log(n)/log(2)).",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Lemma 4.5, probability amplification in Construction 2",
+          "description": "The candidate comparisons share the same random second-nearest local center, so they cannot be amplified as independent events. For k=3, let q=n^{1/3}; A_1^r has q vertices and A_2 is the union of t independent singleton samples. On a star with distinct distances from its center u, take the first L=floor(n/(2t)) vertices in distance order. With constant probability every A_2 sample lies outside this prefix; conditional on that event, a fixed A_1^r contains at least two prefix vertices with probability Omega(q^2/t^2)=Omega(1/log^2(n)). Its second-nearest center then precedes all of A_2, violating the lemma. The failure probability is therefore much larger than 1/n^2.",
+          "evidence": "The proof asserts P[d(u,p_{i+1}(u)) <= d(u,A_i^r-{w})] >= 1-(1-1/(2|A_i^r|))^{|A_{i+1}|} >= 1-n^{-7}, then claims Lemma 4.5 holds with probability at least 1-1/n^2.",
+          "confidence": 98,
+          "classification": "established_error"
+        },
+        {
+          "location": "Theorem 4.3, equation (3), and Theorem 4.4",
+          "description": "The accuracy calculation drops the log(n) factor in the number of trees. Corollary 4.1 with privacy budget epsilon/(tk) gives error O(tk log^{1.5}(n) log(ntk/gamma)/epsilon). Since t=ceil(100 n^{1/k} log(n)), equation (3) loses an additional log(n); its stated simplification should carry log^{3.5}(n) rather than log^{2.5}(n). Advanced composition analogously introduces sqrt(tk), so the approximate-DP calculation loses sqrt(log(n)). The displayed theorem bounds do not follow from the stated mechanism and corollary.",
+          "evidence": "Construction 2 defines t=ceil(100 n^{1/k} log(n)). Theorem 4.3 runs the \"epsilon/(t ... k)-DP algorithm\" but equation (3) bounds the error by O(k n^{1/k} log^{1.5}(n) log(n ... t ... k/gamma)/epsilon), omitting the log(n) factor contributed by t.",
+          "confidence": 100,
+          "classification": "established_error"
+        }
+      ],
+      "run": {
+        "case": "P14",
+        "started_at": "2026-10-01T20:05:25Z",
+        "agent_name": "/root/sol_primary_evaluation/sol_p14",
+        "ended_at": "2026-10-01T20:12:50Z",
+        "full_input_read": true,
+        "input_sha256_matches_manifest": true,
+        "input_sha256": "f4b7170c48fffd1267a24ca4561641db1a7e9e3b91e3d02108b7a63d26396591",
+        "tool_use_attestation": "Read the entire input and only these two files: [P14.txt](/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P14.txt) and [schema.json](/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json). Computed SHA-256 `f4b7170c48fffd1267a24ca4561641db1a7e9e3b91e3d02108b7a63d26396591` matched the expected hash. No browsing, external research, unrelated reads, or delegation occurred. Saved schema-valid raw JSON to [P14.json](/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/sol/P14.json).",
+        "requested_model": "gpt-6.1-sol",
+        "reasoning_effort": "xhigh",
+        "interface": "app_subagent",
+        "completion_status": "completed",
+        "exit_code": null,
+        "tool_calls": null,
+        "tool_compliance": "self_attested",
+        "valid_json": true,
+        "output_sha256": "fe8a72be4faed598e2bd8dc430669212b429db6e3e669d49d42be3d46b431945"
+      },
+      "scoring_complete": true,
+      "matched_annotations": [
+        0
+      ],
+      "primary_annotations": [
+        0
+      ],
+      "primary_matches": [
+        0
+      ],
+      "adjudication": [
+        {
+          "annotation_index": 0,
+          "matched_predictions": [
+            1
+          ],
+          "rationale": "Flag 1 identifies private-weight-dependent shortest-path tree topology being treated as fixed public topology in Sections 3 and 4. Flag 0 alleges a separate noisy-path concentration error and does not connect Lemma 2.4 misuse to the reference’s topology assumption."
+        }
+      ],
+      "screening": [
+        {
+          "case": "P14",
+          "annotation_index": 0,
+          "primary_eligible": true,
+          "reason": "Specific mechanism supports conservative semantic matching; underlying validity still requires expert verification."
+        }
+      ]
+    },
+    {
+      "id": "P15",
+      "title": "HDRTransDC: High Dynamic Range Image Reconstruction with Transformer Deformation Convolution",
+      "doi": "2403.06831v2",
+      "category": "Statistical reporting",
+      "input_sha256": "2dab4c43fe39914185b60b936f6652eb1c57ba297185d48ff9c195660bd982fa",
+      "characters": 33450,
+      "omitted_figures": 23,
+      "annotations": [
+        {
+          "title": "HDRTransDC: High Dynamic Range Image Reconstruction with Transformer Deformation Convolution",
+          "paper_category": "Computer Science",
+          "error_category": "Statistical reporting",
+          "error_location": "Sec 4.2, 4.3",
+          "error_severity": "retract",
+          "error_annotation": "The error is related to potentially incorrect metric calculations in Sections 4.2 and 4.3, meaning the statistical results reported in these sections may be inaccurate or misleading and require further validation.",
+          "doi": "2403.06831v2"
+        }
+      ],
+      "requested_model": "gpt-6.1-sol",
+      "flags": [
+        {
+          "location": "Method, Dynamic Weight Fusion Block description, paragraph following Equation (5)",
+          "description": "The stated spatial sharing of the fusion weight contradicts the claimed spatially adaptive frame selection. A channel-mixing weight shared across spatial positions applies the same frame/channel coefficients everywhere, so that operation cannot assign different fusion weights to well-exposed and badly exposed locations as claimed.",
+          "evidence": "The block is said to \"spatially and adaptively select useful information across frames\", selecting reference information in well-exposed regions and non-reference information in badly exposed regions. The subsequent fusion step instead uses \"the weight Δw that is shared in spatial dimension and fully connected in channel dimension\".",
+          "confidence": 95,
+          "classification": "established_error"
+        }
+      ],
+      "run": {
+        "case": "P15",
+        "started_at": "2026-10-01T20:07:38Z",
+        "agent_name": "/root/sol_primary_evaluation/sol_p15",
+        "ended_at": "2026-10-01T20:09:48Z",
+        "full_input_read": true,
+        "input_sha256_matches_manifest": true,
+        "input_sha256": "2dab4c43fe39914185b60b936f6652eb1c57ba297185d48ff9c195660bd982fa",
+        "tool_use_attestation": "Read the full input; its computed SHA-256 matched `2dab4c43fe39914185b60b936f6652eb1c57ba297185d48ff9c195660bd982fa`. Read only `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P15.txt` and `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json`, with no browsing, external research, unrelated reads, or delegation. Saved the schema-compliant raw JSON to `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/sol/P15.json`.",
+        "requested_model": "gpt-6.1-sol",
+        "reasoning_effort": "xhigh",
+        "interface": "app_subagent",
+        "completion_status": "completed",
+        "exit_code": null,
+        "tool_calls": null,
+        "tool_compliance": "self_attested",
+        "valid_json": true,
+        "output_sha256": "9c2ade82ac936736df9137d49ee16dd759fa7e7522614d7af2d90642fa720d59"
+      },
+      "scoring_complete": true,
+      "matched_annotations": [],
+      "primary_annotations": [],
+      "primary_matches": [],
+      "adjudication": [
+        {
+          "annotation_index": 0,
+          "matched_predictions": [],
+          "rationale": "The reference concerns potentially incorrect metric calculations in Sections 4.2 and 4.3. Prediction 0 concerns spatially shared fusion weights in the method and does not explicitly correspond to that metric-calculation claim."
+        }
+      ],
+      "screening": [
+        {
+          "case": "P15",
+          "annotation_index": 0,
+          "primary_eligible": false,
+          "reason": "Annotation does not specify a sufficiently precise faulty mechanism or corrected value for reliable primary scoring."
+        }
+      ]
+    },
+    {
+      "id": "P16",
+      "title": "A Strongly Subcubic Combinatorial Algorithm for Triangle Detection with Applications",
+      "doi": "2403.01085v2",
+      "category": "Equation / proof",
+      "input_sha256": "69f30abd3b14e6c7fbddc67804925daaf0c3755b0b4bc88fa7cff4abf5ac57b0",
+      "characters": 36669,
+      "omitted_figures": 4,
+      "annotations": [
+        {
+          "title": "A Strongly Subcubic Combinatorial Algorithm for Triangle Detection with Applications",
+          "paper_category": "Computer Science",
+          "error_category": "Equation / proof",
+          "error_location": "Overall in paper",
+          "error_severity": "retract",
+          "error_annotation": "The triangle detection algorithm is incorrect because the reasoning or analysis provided for Case 2.1 in Subsection 2.1 is flawed, which can lead to incorrect detection results in certain cases.",
+          "doi": "2403.01085v2"
+        },
+        {
+          "title": "A Strongly Subcubic Combinatorial Algorithm for Triangle Detection with Applications",
+          "paper_category": "Computer Science",
+          "error_category": "Equation / proof",
+          "error_location": "Sec 2",
+          "error_severity": "retract",
+          "error_annotation": "The analysis in Case 2.1 is faulty because it incorrectly assumes that the triangle detection algorithm will always succeed under certain conditions, but there exist cases where the algorithm fails, making the proof invalid.",
+          "doi": "2403.01085v2"
+        }
+      ],
+      "requested_model": "gpt-6.1-sol",
+      "flags": [
+        {
+          "location": "Theorem 2 correctness proof, Case 2.1, and the subsequent sampling guarantee",
+          "description": "Case 2.1 does not establish that BFS detects the triangle: placing b and c on level 2 does not ensure that a discovers them or that they have a common BFS parent. Consequently, sampling the closed neighborhood A alone does not justify the claimed success probability.",
+          "evidence": "The proof states: \"Assuming that b is discovered before c, the triangle {a, b, c} is detected while scanning the adjacency list of b.\" Consider edges sa, su, sv, ub, vc, ab, ac, bc, with s scanning u, v, a in that order. The only triangle is abc; a is on level 1, and b and c are on level 2, but their parents are u and v. Both are discovered before a is processed. A common-parent BFS triangle test misses abc, and the supplied text provides no alternative BFS+ detection rule that resolves this case in the asserted O(m) time.",
+          "confidence": 97,
+          "classification": "suspected_concern"
+        }
+      ],
+      "run": {
+        "case": "P16",
+        "started_at": "2026-10-01T20:09:48Z",
+        "agent_name": "/root/sol_primary_evaluation/sol_p16",
+        "ended_at": "2026-10-01T20:14:01Z",
+        "full_input_read": true,
+        "input_sha256_matches_manifest": true,
+        "input_sha256": "69f30abd3b14e6c7fbddc67804925daaf0c3755b0b4bc88fa7cff4abf5ac57b0",
+        "tool_use_attestation": "I read the full input in consecutive chunks and verified its computed SHA-256 as `69f30abd3b14e6c7fbddc67804925daaf0c3755b0b4bc88fa7cff4abf5ac57b0`, matching the required hash. I read only `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P16.txt` and `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json`, with no browsing, external research, unrelated reads, or delegation. The schema-conforming raw JSON was saved to `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/sol/P16.json`.",
+        "requested_model": "gpt-6.1-sol",
+        "reasoning_effort": "xhigh",
+        "interface": "app_subagent",
+        "completion_status": "completed",
+        "exit_code": null,
+        "tool_calls": null,
+        "tool_compliance": "self_attested",
+        "valid_json": true,
+        "output_sha256": "e4aa16523a7c7511ac2c7332c22a7d13c381f40e5dce48e4bc48319d5a4f624a"
+      },
+      "scoring_complete": true,
+      "matched_annotations": [
+        0,
+        1
+      ],
+      "primary_annotations": [],
+      "primary_matches": [],
+      "adjudication": [
+        {
+          "annotation_index": 0,
+          "matched_predictions": [
+            0
+          ],
+          "rationale": "B explicitly identifies a triangle missed under Case 2.1, corresponding to the reference correctness claim; the reference supplies no finer mechanism."
+        },
+        {
+          "annotation_index": 1,
+          "matched_predictions": [
+            0
+          ],
+          "rationale": "B gives a Case 2.1 example where the asserted BFS detection fails, directly corresponding to the reference claim that assumed success invalidates the proof."
+        }
+      ],
+      "screening": [
+        {
+          "case": "P16",
+          "annotation_index": 0,
+          "primary_eligible": false,
+          "reason": "Annotation does not specify a sufficiently precise faulty mechanism or corrected value for reliable primary scoring."
+        },
+        {
+          "case": "P16",
+          "annotation_index": 1,
+          "primary_eligible": false,
+          "reason": "Annotation does not specify a sufficiently precise faulty mechanism or corrected value for reliable primary scoring."
+        }
+      ]
+    },
+    {
+      "id": "P17",
+      "title": "A form of refined Roth's theorem and its application to the $abc$-conjecture",
+      "doi": "2407.18406v2",
+      "category": "Equation / proof",
+      "input_sha256": "07807f28115c4a28e2fd2539f9b95753538737c342e8b4f7f8c9cbdacb60291c",
+      "characters": 21345,
+      "omitted_figures": 0,
+      "annotations": [
+        {
+          "title": "A form of refined Roth's theorem and its application to the $abc$-conjecture",
+          "paper_category": "Mathematics",
+          "error_category": "Equation / proof",
+          "error_location": "Theorem 1.6",
+          "error_severity": "retract",
+          "error_annotation": "Theorem 1.6 contains an error because one or more of the equations or logical steps used in the proof are incorrect, possibly due to an invalid assumption or a misapplied result that invalidates the theorem's conclusion.",
+          "doi": "2407.18406v2"
+        }
+      ],
+      "requested_model": "gpt-6.1-sol",
+      "flags": [
+        {
+          "location": "Non-Archimedean definition of chi_v(x, infinity), and equation (6)",
+          "description": "The stated infinity distance makes N(x, infinity) a signed sum and contradicts the positive-part formula (6), invalidating subsequent height decompositions.",
+          "evidence": "The definition is chi_v(x, infinity)=1/|x|_v. For kappa=Q, S={infinity}, and x=p^n, it gives N(x, infinity)=-n log p. Equation (6) instead gives 0+O(1), since ord_p(x^{-1})=-n and S^c(x^{-1}) is empty. These cannot agree with an x-independent O(1).",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Theorem 2.1; construction of x'=x_0/x_infinity; Remark; proof of (17)",
+          "description": "The proof constructs x' separately for each x, although Theorem 2.1 requires a fixed x'. Its estimates do not establish constants uniform in this varying element.",
+          "evidence": "The theorem says 'There exist ... an element x′ ... such that all but finitely many x' satisfy (14). However, a_0=product p_i^{r_i-1} and a_infinity=product Q_i^{u_i+1} are formed from the factorizations of x-a_j and x. Moreover, the no-near-pole case of (17) asserts product |x'/(x-a_j)|_{v+} <= (2/delta_v)_+^q, omitting x': for q=2, a_1=0, a_2=1, real x=t>2 and x'=t(t-1), its left side is t(t-1)>4 while its right side is 4.",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Proof of Theorem 1.4, application of Dirichlet's unit theorem",
+          "description": "The asserted uniform comparability of the Archimedean absolute values of y is false for an algebraic integer as given. A balancing choice of unit, and its compatibility with the preceding estimates involving x', is not established.",
+          "evidence": "The proof states that a constant c(kappa) satisfies |y|_v <= c(kappa)|y|_w for any Archimedean v,w. In kappa=Q(sqrt(2)), the algebraic integer units y=(1+sqrt(2))^n have absolute values (1+sqrt(2))^n and (1+sqrt(2))^{-n}; their ratio is unbounded. Dirichlet's theorem does not give the stated bound for these unchanged elements.",
+          "confidence": 98,
+          "classification": "established_error"
+        },
+        {
+          "location": "Proofs of Theorems 1.4 and 1.5, conclusion m(y,0)=O(1)",
+          "description": "Archimedean estimates and integrality do not bound the contributions from finite places in S. Thus the claimed bound on m(y,0) fails even over Q, where Archimedean balancing is unnecessary.",
+          "evidence": "The manuscript allows S to contain finite places, but concludes 'm(y,0)=sum_{w in S} log^+(1/||y||_w)+O(1)=O(1)' from Archimedean bounds. Set kappa=Q, S={infinity,p}, a_1=0, a_2=1, and x=p^n. Its construction removes multiplicities only outside S, so x' is a p-adic unit and y=x(x-1)/x' has ord_p(y)=n. Consequently m(y,0) >= n log p+O(1), which is unbounded.",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Claim preceding Theorem 1.4; Theorems 1.4 and 1.5; passage from (12) to (21)",
+          "description": "The displayed theorems use untruncated N and therefore do not prove Conjecture 1.2 or justify the truncated inequality (21). Simplicity of x only constrains its denominator, not multiplicities in its numerator or x-a_j.",
+          "evidence": "Conjecture 1.2 uses barred N in (9), while (11) and (12) use N. The proof then claims that applying (12) yields barred N in (21). For kappa=Q, S={infinity}, and the simple number x=8/3, N(x,0)=3 log 2 whereas barred N(x,0)=log 2. Replacing the former by the latter is a strict strengthening with no justification in (12).",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Proof of Theorem 1.6, equation (21) and the following identities",
+          "description": "The proof changes a+b=c into a+b+c=0 and associates approximation to -1 with prime divisors of b. Under the theorem's actual hypothesis, x=a/c satisfies x-1=-b/c, not x+1=b/c.",
+          "evidence": "Theorem 1.6 assumes a+b=c, but the proof says 'Since a+b+c=0' and asserts barred N(a/c,-1)=sum_{v in S^c(b)} log N(p_v)/[kappa:Q]. For (a,b,c)=(2,3,5), kappa=Q and S={infinity}, a/c+1=7/5, so the left side is log 7 and the claimed right side is log 3.",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Theorem 1.6, inequality (13)",
+          "description": "The claimed absolute bound max{|a|,|b|,|c|} <= C r(abc) is false, including when one term is squarefree.",
+          "evidence": "For each k>=1, take a=1, c=4^{3^{k-1}}, and b=c-1. These are nonzero relatively prime integers with a+b=c, and 1 is squarefree. Inductively, 3^k divides c-1. Hence r(abc)=2 r(b) <= 2b/3^{k-1}, giving c/r(abc) > 3^{k-1}/2. This ratio is unbounded, contradicting any absolute constant C in (13).",
+          "confidence": 100,
+          "classification": "established_error"
+        }
+      ],
+      "run": {
+        "case": "P17",
+        "started_at": "2026-10-01T20:12:50Z",
+        "agent_name": "/root/sol_primary_evaluation/sol_p17",
+        "ended_at": "2026-10-01T20:19:55Z",
+        "full_input_read": true,
+        "input_sha256_matches_manifest": true,
+        "input_sha256": "07807f28115c4a28e2fd2539f9b95753538737c342e8b4f7f8c9cbdacb60291c",
+        "tool_use_attestation": "Read the full input and verified computed SHA-256 `07807f28115c4a28e2fd2539f9b95753538737c342e8b4f7f8c9cbdacb60291c` matched. The only files read were `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P17.txt` and `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json`. No browsing, external research, annotations, other reviews, unrelated reads, or delegation occurred. Saved the schema-conforming JSON to `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/sol/P17.json`.",
+        "requested_model": "gpt-6.1-sol",
+        "reasoning_effort": "xhigh",
+        "interface": "app_subagent",
+        "completion_status": "completed",
+        "exit_code": null,
+        "tool_calls": null,
+        "tool_compliance": "self_attested",
+        "valid_json": true,
+        "output_sha256": "078b26fa94fd73ec1c1f5fafdf481b5231be854db2a90086e19801107a3e5ab2"
+      },
+      "scoring_complete": true,
+      "matched_annotations": [
+        0
+      ],
+      "primary_annotations": [],
+      "primary_matches": [],
+      "adjudication": [
+        {
+          "annotation_index": 0,
+          "matched_predictions": [
+            4,
+            5
+          ],
+          "rationale": "Despite the reference's unspecified mechanism, B[4] and B[5] explicitly allege incorrect deductions or identities in the proof of Theorem 1.6. B[6] challenges the conclusion without identifying a corresponding proof error; the remaining flags concern other locations."
+        }
+      ],
+      "screening": [
+        {
+          "case": "P17",
+          "annotation_index": 0,
+          "primary_eligible": false,
+          "reason": "Annotation does not specify a sufficiently precise faulty mechanism or corrected value for reliable primary scoring."
+        }
+      ]
+    },
+    {
+      "id": "P18",
+      "title": "A missing theorem on dual spaces",
+      "doi": "2405.01133v3",
+      "category": "Equation / proof",
+      "input_sha256": "e0441fe0a9b0ca089a51b97606c59daa33e35dd19f9f8050a1250f218650bab8",
+      "characters": 40800,
+      "omitted_figures": 0,
+      "annotations": [
+        {
+          "title": "A missing theorem on dual spaces",
+          "paper_category": "Mathematics",
+          "error_category": "Equation / proof",
+          "error_location": "Lemma 3,4",
+          "error_severity": "retract",
+          "error_annotation": "The issue is that an error in Proposition 2.3 undermines the validity of Lemmas 3 and 4, and Theorem 4.1 depends on results from Proposition 2.3; therefore, Lemmas 3 and 4 are only valid if the conclusions of Proposition 2.3 hold for the map q used in Theorem 4.1.",
+          "doi": "2405.01133v3"
+        }
+      ],
+      "requested_model": "gpt-6.1-sol",
+      "flags": [
+        {
+          "location": "Proposition 2.3; Theorem 4.1, second paragraph of proof",
+          "description": "The asserted equality of the real-linear operator norm and completely bounded norm is false. Consequently, this proposition does not justify the complete contractivity of q used in Theorem 4.1.",
+          "evidence": "Proposition 2.3 asserts \"‖T_m‖_cb = ‖T‖\" for continuous real-linear maps between complex Banach spaces. Take X = ℂ² with its Euclidean norm, Y = ℂ, and T(z₁,z₂) = Re(z₁) + i Re(z₂), so ‖T‖ = 1. Let B = [[0,1],[-1,0]] and take the matrix over X with coordinate matrices I₂ and B. By the stated complex Min definition its norm is sup_{|a|²+|b|²≤1} ‖aI₂+bB‖ = √2, whereas its image is I₂+iB, of norm 2. Thus ‖T_m‖_cb ≥ √2. Theorem 4.1 explicitly invokes Proposition 2.3 to make q completely contractive.",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Theorem 3.3, proof (1), deduction of the complex structure on X",
+          "description": "The calculation gives the wrong sign for J². A preadjoint of multiplication by i satisfies J² = −I, whereas the proof asserts J² = I and then invokes the complex-structure criterion requiring J² = −I.",
+          "evidence": "The proof states \"J² = I (since (J²)* = -I). So X has (isometric) complex structure by the criterion mentioned after Example 1.\" Since the adjoint separates points, (J²)* = −I implies J² = −I. The earlier criterion explicitly requires \"J² = -I\".",
+          "confidence": 100,
+          "classification": "established_error"
+        }
+      ],
+      "run": {
+        "case": "P18",
+        "started_at": "2026-10-01T20:14:01Z",
+        "agent_name": "/root/sol_primary_evaluation/sol_p18",
+        "ended_at": "2026-10-01T20:17:22Z",
+        "full_input_read": true,
+        "input_sha256_matches_manifest": true,
+        "input_sha256": "e0441fe0a9b0ca089a51b97606c59daa33e35dd19f9f8050a1250f218650bab8",
+        "tool_use_attestation": "Read the full input in consecutive chunks; the computed SHA-256 was e0441fe0a9b0ca089a51b97606c59daa33e35dd19f9f8050a1250f218650bab8 and matched the supplied hash. Read only `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P18.txt` and `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json`, with no browsing, external research, unrelated reads, or delegation. Saved the schema-valid raw JSON to `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/sol/P18.json`.",
+        "requested_model": "gpt-6.1-sol",
+        "reasoning_effort": "xhigh",
+        "interface": "app_subagent",
+        "completion_status": "completed",
+        "exit_code": null,
+        "tool_calls": null,
+        "tool_compliance": "self_attested",
+        "valid_json": true,
+        "output_sha256": "4abe9ad97ec4acd59f3be5d9a3f55676ad8d600b34c16ab76edabd5d968c11fa"
+      },
+      "scoring_complete": true,
+      "matched_annotations": [
+        0
+      ],
+      "primary_annotations": [],
+      "primary_matches": [],
+      "adjudication": [
+        {
+          "annotation_index": 0,
+          "matched_predictions": [
+            0
+          ],
+          "rationale": "Although the reference does not specify the Proposition 2.3 error, A[0] explicitly identifies its failure to justify complete contractivity of q in Theorem 4.1, corresponding to the reference dependency concern. A[1] describes a separate sign error."
+        }
+      ],
+      "screening": [
+        {
+          "case": "P18",
+          "annotation_index": 0,
+          "primary_eligible": false,
+          "reason": "Annotation does not specify a sufficiently precise faulty mechanism or corrected value for reliable primary scoring."
+        }
+      ]
+    },
+    {
+      "id": "P19",
+      "title": "Algebraic description of complex conjugation on cohomology of a smooth projective hypersurface",
+      "doi": "2402.14546v2",
+      "category": "Equation / proof",
+      "input_sha256": "d498dcc974791cdd61569f7ddb37dc001095bd71225d72b77be03c93b2917556",
+      "characters": 27987,
+      "omitted_figures": 0,
+      "annotations": [
+        {
+          "title": "Algebraic description of complex conjugation on cohomology of a smooth projective hypersurface",
+          "paper_category": "Mathematics",
+          "error_category": "Equation / proof",
+          "error_location": "Theorem 2.3",
+          "error_severity": "retract",
+          "error_annotation": "The statement and proof of Theorem 2.3 is not correct. What was described in the paper is an order 2 operation which swaps the Hodge components, which gives the complex conjugation only when the Hodge component has dimensions 1. But our description does not give the complex conjugation in the general case where the Hodge component has a bigger dimension",
+          "doi": "2402.14546v2"
+        }
+      ],
+      "requested_model": "gpt-6.1-sol",
+      "flags": [
+        {
+          "location": "Theorem 2.1 and the displayed formula defining phi_C",
+          "description": "The stated residue formula does not descend to the quotient by Jac(S): a zero quotient class can have a nonzero residue image.",
+          "evidence": "For n=2, e=3 and G=x0^3+x1^3+x2^3, y*x0*G0 belongs to Jac(S) and has charge zero. However, d[x0*(x2 dx1-x1 dx2)/G]=Omega_x/G-x0*G0*Omega_x/G^2. The displayed formula therefore sends this zero class to -res(Omega_x/G)=-phi_C([1]), which is nonzero by the claimed isomorphism and Example 2.4.",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Theorem 2.3, equation (2.10), and its proof's final paragraph",
+          "description": "Matching one cup-product value cannot determine the conjugate class in a Hodge component of dimension greater than one. The formula's arbitrary choice of g can produce different purported conjugates of the same class.",
+          "evidence": "The theorem permits 'any polynomial' g with r_(f*g) nonzero, while the proof identifies conjugation using only R(y^i f,y^(n-1-i)h)=U_(k,gamma). For a smooth plane quartic, the manuscript's dimension formula gives mu=6 and |I0|=|I1|=3. The linear functional [g] -> r_(f*g) on the three-dimensional complementary component has a nonzero kernel. Replacing g by g+v for a nonzero kernel class preserves the denominator in (2.10) but changes the resulting class, so both choices cannot equal the unique conjugate.",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Section 2.4, definition U_(k,gamma)=diagonal(P_X P conjugate(P_X)^T), and its extension of Theorem 2.3",
+          "description": "For even-dimensional hypersurfaces, the cup product expressed in cycle periods uses the inverse intersection matrix. Using P itself gives the wrong normalization and invalidates the asserted extension.",
+          "evidence": "Section 2.4 states det(P)=+/-e and uses P_X P conjugate(P_X)^T. If a cohomology class has period column a on the cycle basis, its Poincare-dual cycle has coefficients P^(-1)a; thus its pairing with a class of periods b is a^T P^(-1)b. Since e>1, P cannot equal P^(-1): their determinant magnitudes are e and 1/e. The odd-dimensional symplectic normalization does not justify using P in this case.",
+          "confidence": 99,
+          "classification": "established_error"
+        },
+        {
+          "location": "Corollary 2.7, equation (2.19), and Example 2.8",
+          "description": "The proposed real cohomology contains imaginary multiples of conjugation-fixed nonzero classes, which are not real classes. The claimed spanning formula is therefore false.",
+          "evidence": "Equation (2.19) defines w=(U+conjugate(U))/2 under the theorem's claimed conjugation relation, so conjugate(w)=w. Corollary 2.7 nevertheless includes both R[w] and R[sqrt(-1)w]. Conjugation sends sqrt(-1)w to -sqrt(-1)w, so this vector is not fixed when w is nonzero. For n even, U and its conjugate lie in distinct Hodge components, ensuring w is nonzero. Example 2.8 repeats this same incorrect real spanning formula.",
+          "confidence": 100,
+          "classification": "established_error"
+        }
+      ],
+      "run": {
+        "case": "P19",
+        "started_at": "2026-10-01T20:17:22Z",
+        "agent_name": "/root/sol_primary_evaluation/sol_p19",
+        "ended_at": "2026-10-01T20:21:11Z",
+        "full_input_read": true,
+        "input_sha256_matches_manifest": true,
+        "input_sha256": "d498dcc974791cdd61569f7ddb37dc001095bd71225d72b77be03c93b2917556",
+        "tool_use_attestation": "Read the full input in consecutive chunks. Computed SHA-256 `d498dcc974791cdd61569f7ddb37dc001095bd71225d72b77be03c93b2917556` matched. Read only `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P19.txt` and `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json`; used no browsing, external research, annotations, other reviews, unrelated reads, or delegation. Saved schema-conforming JSON to [P19.json](/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/sol/P19.json).",
+        "requested_model": "gpt-6.1-sol",
+        "reasoning_effort": "xhigh",
+        "interface": "app_subagent",
+        "completion_status": "completed",
+        "exit_code": null,
+        "tool_calls": null,
+        "tool_compliance": "self_attested",
+        "valid_json": true,
+        "output_sha256": "3808a42c3efdd3e3fd607bbe20b2c0b77eb36c7dc51ac96644e4a41befb5d05d"
+      },
+      "scoring_complete": true,
+      "matched_annotations": [
+        0
+      ],
+      "primary_annotations": [
+        0
+      ],
+      "primary_matches": [
+        0
+      ],
+      "adjudication": [
+        {
+          "annotation_index": 0,
+          "matched_predictions": [
+            1
+          ],
+          "rationale": "Prediction 1 identifies the same higher-dimensional failure in Theorem 2.3, explaining that different choices with the same pairing yield different purported conjugates."
+        }
+      ],
+      "screening": [
+        {
+          "case": "P19",
+          "annotation_index": 0,
+          "primary_eligible": true,
+          "reason": "Specific mechanism supports conservative semantic matching; underlying validity still requires expert verification."
+        }
+      ]
+    },
+    {
+      "id": "P20",
+      "title": "CR functions at CR singularities: approximation, extension, and hulls",
+      "doi": "2406.06431v2",
+      "category": "Equation / proof",
+      "input_sha256": "a25edd2bd5958fdb17e9444b0a91c1a67c09feef1c205f63cbac604447b0fea6",
+      "characters": 82761,
+      "omitted_figures": 0,
+      "annotations": [
+        {
+          "title": "CR functions at CR singularities: approximation, extension, and hulls",
+          "paper_category": "Mathematics",
+          "error_category": "Equation / proof",
+          "error_location": "Theorem 4.2",
+          "error_severity": "errata",
+          "error_annotation": "There is a logical gap in the proof of Theorem 4.2, meaning that one or more steps necessary to arrive at the conclusion are missing or insufficiently justified, making the argument incomplete.",
+          "doi": "2406.06431v2"
+        }
+      ],
+      "requested_model": "gpt-6.1-sol",
+      "flags": [
+        {
+          "location": "Section 6, definition of c_n, equation (24), and the claimed uniform convergence after equation (27)",
+          "description": "The Gaussian broadens as n increases, so these operators do not converge to f. For the admissible function f = 1, c_n = 1/(pi n) and 0 <= Q_n(z) <= epsilon^2/n because chi is supported in the radius-epsilon disc. Thus Q_n converges uniformly to 0, contradicting the claimed convergence to 1.",
+          "evidence": "The manuscript defines 1/c_n = integral_C exp(-|zeta|^2/n) dA(zeta), uses exp(-|z-zeta|^2/n) in (24), and states that {Q_n} converges uniformly to f on |z| <= epsilon/2.",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Theorem 8.1 proof, First step, equation (28) and the choice of lambda",
+          "description": "The phase condition defining A_1 does not imply the positive-real square needed by the disc construction. For C > 3, p = (1, i, -i) satisfies every condition in (28) and is outside A_0, but w z_1/z_2 = -1. Therefore no positive real lambda can satisfy the asserted lambda^2 = w z_1/z_2, leaving the claimed first-step inclusion unproved.",
+          "evidence": "Equation (28) requires Im(omega conjugate(xi_1) xi_2) = 0 and Re(omega conjugate(xi_1) xi_2) >= |xi_1 xi_2|^2. The next paragraph says: Let lambda > 0 satisfy lambda^2 = w z_1 / z_2.",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Example 3.9, equation (5) and the assertion that X is compact",
+          "description": "The defined X is not closed and therefore is not compact. Taking z_1 = -1 gives points (-1, phi_k(-1), 1/k) in X converging to (-1, phi_infinity(-1), 0), which is excluded by (5). Consequently this example does not establish its stated claim about the disc hull of a compact set.",
+          "evidence": "The example is introduced as a compact-set counterexample, but (5) defines X using z_3 = 1/k, k in N, with no z_3 = 0 points. It assumes phi_k converges to phi_infinity away from the boundary point 1.",
+          "confidence": 99,
+          "classification": "established_error"
+        },
+        {
+          "location": "Definition 3.3, Lemma 3.8, and the SADH neighborhood hypotheses in Theorem 4.3",
+          "description": "The strict-increase requirement excludes q itself from SADH_q(X): the distance starts at 0 and must end strictly above 0. Thus this hull cannot contain a neighborhood of q. It also need not be compact when X is compact; for X = [0,1] and q = 0, constant-in-zeta discs phi_t = t x put every x in (0,1] in the hull, while their limit 0 is excluded.",
+          "evidence": "Definition 3.3 requires z = phi_1(0), phi_0 identically q, and ||phi_t(0)-q|| strictly increasing in t. Lemma 3.8 claims SADH_q(X) is compact for compact X, and Theorem 4.3 assumes q lies in its interior.",
+          "confidence": 99,
+          "classification": "established_error"
+        }
+      ],
+      "run": {
+        "case": "P20",
+        "started_at": "2026-10-01T20:19:55Z",
+        "agent_name": "/root/sol_primary_evaluation/sol_p20",
+        "ended_at": "2026-10-01T20:26:24Z",
+        "full_input_read": true,
+        "input_sha256_matches_manifest": true,
+        "input_sha256": "a25edd2bd5958fdb17e9444b0a91c1a67c09feef1c205f63cbac604447b0fea6",
+        "tool_use_attestation": "Read the full input and verified its computed SHA-256 as a25edd2bd5958fdb17e9444b0a91c1a67c09feef1c205f63cbac604447b0fea6, matching the supplied hash. Read only `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P20.txt` and `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json`; used no browsing, external research, unrelated reads, or delegation. Saved schema-valid JSON to `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/sol/P20.json`.",
+        "requested_model": "gpt-6.1-sol",
+        "reasoning_effort": "xhigh",
+        "interface": "app_subagent",
+        "completion_status": "completed",
+        "exit_code": null,
+        "tool_calls": null,
+        "tool_compliance": "self_attested",
+        "valid_json": true,
+        "output_sha256": "ddb75a199ea1e2c2daf41d43ea2132dae243ea2b299bd8acaf9af7cf78e96578"
+      },
+      "scoring_complete": true,
+      "matched_annotations": [],
+      "primary_annotations": [],
+      "primary_matches": [],
+      "adjudication": [
+        {
+          "annotation_index": 0,
+          "matched_predictions": [],
+          "rationale": "The reference gives no specific mechanism for the gap in Theorem 4.2. B flags other locations and mechanisms, including Theorem 4.3 hull hypotheses, without explicitly corresponding to the Theorem 4.2 claim."
+        }
+      ],
+      "screening": [
+        {
+          "case": "P20",
+          "annotation_index": 0,
+          "primary_eligible": false,
+          "reason": "Annotation does not specify a sufficiently precise faulty mechanism or corrected value for reliable primary scoring."
+        }
+      ]
+    },
+    {
+      "id": "P21",
+      "title": "Efficient Fault-Tolerant Single Qubit Gate Approximation And Universal Quantum Computation Without Using The Solovay-Kitaev Theorem",
+      "doi": "2406.04846v2",
+      "category": "Equation / proof",
+      "input_sha256": "2afe8e3fae6c1fbd66cda9bdf59f926020a00c13a70560fa8ac7e8cf334ba9b9",
+      "characters": 12428,
+      "omitted_figures": 2,
+      "annotations": [
+        {
+          "title": "Efficient Fault-Tolerant Single Qubit Gate Approximation And Universal Quantum Computation Without Using The Solovay-Kitaev Theorem",
+          "paper_category": "Physics",
+          "error_category": "Equation / proof",
+          "error_location": "Equation 6",
+          "error_severity": "retract",
+          "error_annotation": "The error is that Equation 6, derived using real arithmetic, is incorrectly applied to a context that uses modulo 2 arithmetic, making the result incompatible with the actual operations on the state ket.",
+          "doi": "2406.04846v2"
+        }
+      ],
+      "requested_model": "gpt-6.1-sol",
+      "flags": [
+        {
+          "location": "Opening paragraph and Introduction, claimed universal gate set",
+          "description": "The listed gates Z, S, T and CNOT cannot approximate arbitrary single-qubit unitaries: they preserve computational-basis states up to phases and permutations, whereas H creates superpositions.",
+          "evidence": "The Introduction says that “single-qubit Z, S and T gates together with two-qubit CNOT gate are sufficient to approximate any unitary operator in U(2)”. Every product of these gates maps a computational-basis input to another computational-basis state times a phase; the manuscript defines H|0⟩ = (|0⟩ + |1⟩)/√2.",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Method, Eqs. (4)–(6)",
+          "description": "The proposed transversal implementation does not implement the claimed logical phase gate. Solving the real linear system Hv = w does not ensure the required phases on binary codeword superpositions.",
+          "evidence": "Eq. (6) gives P(−α) ⊗ P(α) ⊗ 1^⊗4 ⊗ P(α). In Eq. (5), logical zero contains both |0000000⟩ and |0110011⟩ (the latter from a = 0, b = c = 1). Eq. (6) multiplies these terms by 1 and e^{2iα}, respectively. At α = π/4 their relative phase changes to i, although a logical P(α) must leave |0⟩_L unchanged. This also invalidates the recursive construction relying on Eq. (4).",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Conclusions, formula fixing m for the finite gate set",
+          "description": "The prescribed denominator exponent remains 1 as the requested error decreases, so the resulting phase grid cannot provide arbitrarily fine approximations.",
+          "evidence": "The gate set is specified with “m = ⌈ϵ/ [log_2(1/ϵ) log_2 log_2(1/ϵ)···]⌉” and positive integers ℓ < 2^m. For sufficiently small positive ϵ this yields m = 1 and ℓ = 1, hence only the phase angle π/2. It cannot satisfy the earlier requirement |α − πℓ/2^m| < δ ≤ ϵ/⌈log_2(1/ϵ)⌉ for α = π/4.",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Conclusions, claimed gate-count asymptotics",
+          "description": "The stated gate-count bound tends to zero with the requested error and therefore cannot describe approximation of an arbitrary nonidentity gate.",
+          "evidence": "The Conclusions claim approximation to accuracy ϵ “using O(ϵ log[1/ϵ] log log[1/ϵ] ···) gates”. With the stated termination of the iterated-log product, this expression tends to zero as ϵ → 0. An integer gate count obeying that bound would eventually be zero, whereas the empty circuit is the identity and cannot approximate P(π/2) arbitrarily accurately.",
+          "confidence": 100,
+          "classification": "established_error"
+        }
+      ],
+      "run": {
+        "case": "P21",
+        "started_at": "2026-10-01T20:21:11Z",
+        "agent_name": "/root/sol_primary_evaluation/sol_p21",
+        "ended_at": "2026-10-01T20:24:36Z",
+        "full_input_read": true,
+        "input_sha256_matches_manifest": true,
+        "input_sha256": "2afe8e3fae6c1fbd66cda9bdf59f926020a00c13a70560fa8ac7e8cf334ba9b9",
+        "tool_use_attestation": "Read the full input and verified computed SHA-256 `2afe8e3fae6c1fbd66cda9bdf59f926020a00c13a70560fa8ac7e8cf334ba9b9` matched. The only files read were `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P21.txt` and `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json`. No browsing, external research, unrelated reads, or delegation occurred. Saved schema-compliant JSON to [P21.json](/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/sol/P21.json).",
+        "requested_model": "gpt-6.1-sol",
+        "reasoning_effort": "xhigh",
+        "interface": "app_subagent",
+        "completion_status": "completed",
+        "exit_code": null,
+        "tool_calls": null,
+        "tool_compliance": "self_attested",
+        "valid_json": true,
+        "output_sha256": "456579cfcdaacccfb379d7e344ce831d45797cf04f366fa6572229ce69b0af9f"
+      },
+      "scoring_complete": true,
+      "matched_annotations": [
+        0
+      ],
+      "primary_annotations": [
+        0
+      ],
+      "primary_matches": [
+        0
+      ],
+      "adjudication": [
+        {
+          "annotation_index": 0,
+          "matched_predictions": [
+            1
+          ],
+          "rationale": "The flag explicitly identifies the real linear-system solution as incompatible with phases on binary codewords in Equations 4–6, and supplies a precise counterexample."
+        }
+      ],
+      "screening": [
+        {
+          "case": "P21",
+          "annotation_index": 0,
+          "primary_eligible": true,
+          "reason": "Specific mechanism supports conservative semantic matching; underlying validity still requires expert verification."
+        }
+      ]
+    },
+    {
+      "id": "P22",
+      "title": "Every Polish group has a non-trivial topological group automorphism",
+      "doi": "2408.16162v2",
+      "category": "Equation / proof",
+      "input_sha256": "09d01d941e8a2d0457a3e1a36e0f3287c8475f2074283d137704e36fc3111620",
+      "characters": 16155,
+      "omitted_figures": 0,
+      "annotations": [
+        {
+          "title": "Every Polish group has a non-trivial topological group automorphism",
+          "paper_category": "Mathematics",
+          "error_category": "Equation / proof",
+          "error_location": "Theorem 1.1",
+          "error_severity": "retract",
+          "error_annotation": "The error is that extending a non-trivial automorphism of L by fixing elements of a maximal independent subset Y of U can inadvertently redefine the automorphism on elements of L that are generated by Y, making the extension invalid.",
+          "doi": "2408.16162v2"
+        }
+      ],
+      "requested_model": "gpt-6.1-sol",
+      "flags": [
+        {
+          "location": "Proof of Theorem 1.1, construction of Y and extension of the automorphism of span{x_i}",
+          "description": "The separation of the translates of U does not ensure that span(Y) intersects L trivially. Therefore an automorphism of L cannot in general be extended while fixing every element of Y; the proposed construction can force the extension to be the identity.",
+          "evidence": "The proof asserts that each nonzero t in U is independent from {x_i}, then says to take any nontrivial automorphism of L and extend it by setting φ(y)=y for y in Y. For a counterexample satisfying all stated conditions, let G=Z₂⁶×K, K=Z₂^ℕ, with first-factor basis x₁,x₂,x₃,a,b,c and L=span{x₁,x₂,x₃}×{0}. Set U={0,a,b,c,a+b+x₁,a+c+x₂,b+c+x₃,a+b+c}×K. This is an open identity neighborhood whose L-translates partition G, so both conditions of Lemma 2.3 hold. Nevertheless x₁=a+b+(a+b+x₁), and similarly x₂ and x₃ belong to span(U); hence span(U)=G. Every maximal independent Y⊆U spans G, so fixing Y forces the identity on L as well.",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Theorem 3.1 and the unrestricted claims in the abstract",
+          "description": "The two-element discrete Polish group is uniquely homogeneous and has no nontrivial group automorphism, contradicting these statements. The restriction to more than two elements in Theorem 1.1 is necessary here too.",
+          "evidence": "Theorem 3.1 states: “A non-trivial Polish group cannot be uniquely homogeneous.” The abstract claims that every Polish group admits a nontrivial automorphism and that there are no uniquely homogeneous Polish groups. For G=Z₂ with the discrete topology, the only group automorphism is the identity. Its only homeomorphisms are the identity and the transposition, giving exactly one homeomorphism carrying any specified point p to any specified point q, precisely the manuscript’s definition of unique homogeneity.",
+          "confidence": 100,
+          "classification": "established_error"
+        }
+      ],
+      "run": {
+        "case": "P22",
+        "started_at": "2026-10-01T20:24:36Z",
+        "agent_name": "/root/sol_primary_evaluation/sol_p22",
+        "ended_at": "2026-10-01T20:27:22Z",
+        "full_input_read": true,
+        "input_sha256_matches_manifest": true,
+        "input_sha256": "09d01d941e8a2d0457a3e1a36e0f3287c8475f2074283d137704e36fc3111620",
+        "tool_use_attestation": "Read the full input; its computed SHA-256 matched `09d01d941e8a2d0457a3e1a36e0f3287c8475f2074283d137704e36fc3111620`. The only files read were `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P22.txt` and `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json`. No browsing, external research, unrelated reads, or delegation occurred. Saved the schema-compliant JSON to `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/sol/P22.json`.",
+        "requested_model": "gpt-6.1-sol",
+        "reasoning_effort": "xhigh",
+        "interface": "app_subagent",
+        "completion_status": "completed",
+        "exit_code": null,
+        "tool_calls": null,
+        "tool_compliance": "self_attested",
+        "valid_json": true,
+        "output_sha256": "cdd37c1f54bbae15c614d868a916e40e3578e60d75ddbf55ae15a06d0b7213f8"
+      },
+      "scoring_complete": true,
+      "matched_annotations": [
+        0
+      ],
+      "primary_annotations": [
+        0
+      ],
+      "primary_matches": [
+        0
+      ],
+      "adjudication": [
+        {
+          "annotation_index": 0,
+          "matched_predictions": [
+            0
+          ],
+          "rationale": "Flag 0 identifies the same Theorem 1.1 mechanism: span(Y) can contain L, so fixing Y forces behavior on L incompatible with its nontrivial automorphism. Flag 1 concerns a different theorem and mechanism."
+        }
+      ],
+      "screening": [
+        {
+          "case": "P22",
+          "annotation_index": 0,
+          "primary_eligible": true,
+          "reason": "Specific mechanism supports conservative semantic matching; underlying validity still requires expert verification."
+        }
+      ]
+    },
+    {
+      "id": "P23",
+      "title": "Explicit expression and fast algorithms for the inverse of some matrices arising from implicit time integration",
+      "doi": "2408.04316v2",
+      "category": "Equation / proof",
+      "input_sha256": "c2d5df4a4dd18db29dad1511c2677816db2159a887a01375eb57c6f3c12dabf0",
+      "characters": 32654,
+      "omitted_figures": 4,
+      "annotations": [
+        {
+          "title": "Explicit expression and fast algorithms for the inverse of some matrices arising from implicit time integration",
+          "paper_category": "Mathematics",
+          "error_category": "Equation / proof",
+          "error_location": "Theorem 2.2",
+          "error_severity": "retract",
+          "error_annotation": "There is a mistake in the logical steps or calculations in the proof of Theorem 2.2, resulting in formula (2.10) being incorrect; as a result, any numerical results or conclusions that depend on this formula may also be invalid or misleading.",
+          "doi": "2408.04316v2"
+        }
+      ],
+      "requested_model": "gpt-6.1-sol",
+      "flags": [
+        {
+          "location": "Lemma 2.1, off-diagonal case",
+          "description": "The stated off-diagonal identity is missing the exclusion of k=i (equivalently, division by c_j-c_i). It contradicts the identity obtained in the proof.",
+          "evidence": "The lemma gives the product over k≠j, whereas its proof gives the product over k≠i,j. For n=1, c_0=0, c_1=2, i=0, j=1, the left side is the derivative of ψ(x)=x-2, namely 1, but the stated right side is 2.",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Equation (2.9), the subsequent binomial-coefficient claim, and Theorem 2.2",
+          "description": "The definition of the generalized coefficient at c_0 has an erroneous sign for odd n. Consequently, the second off-diagonal expression in Theorem 2.2 disagrees with its first expression when an index is zero.",
+          "evidence": "For c_i=i, (2.9) gives binom(c_n,c_0)=(-1)^n, although the manuscript claims it equals binom(n,0)=1. With n=1, c_0=0, c_1=1, Theorem 2.2's product expression gives W_01=-1, but its generalized-binomial expression gives W_01=+1.",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Introduction, identification of the BIM inverse with W_n^T; Section 2.2, formula for N",
+          "description": "The assertion that the BIM inverse is exactly W_n^T for equidistant nodes conflicts with the manuscript's explicit BIM inverse N.",
+          "evidence": "The introduction states that the BIM inverse is 'exactly W_n^T' for c_i=i. Section 2.2 instead gives N=D_n(V_n D_n V_n^{-1}D_n^{-1})D_n^{-1}+D_n^{-1}. For n=1 and c_0=0, c_1=1, the formulas give W_n^T=[1] and N=[2], so these cannot be the same inverse.",
+          "confidence": 98,
+          "classification": "established_error"
+        },
+        {
+          "location": "Section 4.2, equation (4.2) and the discussion of Example 4",
+          "description": "Equidistant nodes can produce complete cancellation and exactly zero diagonal entries. The claim that heavy cancellation does not occur is false, and the stated componentwise relative-error metric is undefined at those entries without a zero-denominator convention.",
+          "evidence": "For c_k=k and n=2m, Corollary 2.3 gives W_mm=∑_{p=1}^m 1/p−∑_{p=1}^m 1/p=0, while the sum of absolute reciprocal terms is 2∑_{p=1}^m 1/p>0. Section 4.2 says 'heavy cancellation does not occur in the sum', and Err_2 in (4.2) divides by |W^q_ij| for every entry while treating W^q as exact; the central diagonal therefore has a zero denominator.",
+          "confidence": 100,
+          "classification": "established_error"
+        }
+      ],
+      "run": {
+        "case": "P23",
+        "started_at": "2026-10-01T20:26:24Z",
+        "agent_name": "/root/sol_primary_evaluation/sol_p23",
+        "ended_at": "2026-10-01T20:31:06Z",
+        "full_input_read": true,
+        "input_sha256_matches_manifest": true,
+        "input_sha256": "c2d5df4a4dd18db29dad1511c2677816db2159a887a01375eb57c6f3c12dabf0",
+        "tool_use_attestation": "Read the full input; computed SHA-256 `c2d5df4a4dd18db29dad1511c2677816db2159a887a01375eb57c6f3c12dabf0` matched. Read only `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P23.txt` and `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json`; used no browsing, external research, unrelated reads, or delegation. Saved schema-conforming JSON to `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/sol/P23.json`.",
+        "requested_model": "gpt-6.1-sol",
+        "reasoning_effort": "xhigh",
+        "interface": "app_subagent",
+        "completion_status": "completed",
+        "exit_code": null,
+        "tool_calls": null,
+        "tool_compliance": "self_attested",
+        "valid_json": true,
+        "output_sha256": "39ff7045300dfc119f5d30abeb0676032158c68e407f3a41a4024b8e7ffb46b4"
+      },
+      "scoring_complete": true,
+      "matched_annotations": [
+        0
+      ],
+      "primary_annotations": [],
+      "primary_matches": [],
+      "adjudication": [
+        {
+          "annotation_index": 0,
+          "matched_predictions": [
+            1
+          ],
+          "rationale": "Flag 1 explicitly identifies an incorrect expression in Theorem 2.2 through the same sign discrepancy between its two formulas, corresponding to the reference's incorrect formula (2.10). The reference does not specify the underlying mistake, so mechanism-level agreement remains uncertain."
+        }
+      ],
+      "screening": [
+        {
+          "case": "P23",
+          "annotation_index": 0,
+          "primary_eligible": false,
+          "reason": "Annotation does not specify a sufficiently precise faulty mechanism or corrected value for reliable primary scoring."
+        }
+      ]
+    },
+    {
+      "id": "P24",
+      "title": "Fields of definition of dynamical systems on $\\mathbb{P}^{1}$. Improvements on a result of Silverman",
+      "doi": "2405.03612v2",
+      "category": "Equation / proof",
+      "input_sha256": "f4a4b565538d388e45c0bf2a51b78e425b4361c267a7ab4f7686de2752349197",
+      "characters": 25893,
+      "omitted_figures": 6,
+      "annotations": [
+        {
+          "title": "Fields of definition of dynamical systems on $\\mathbb{P}^{1}$. Improvements on a result of Silverman",
+          "paper_category": "Mathematics",
+          "error_category": "Equation / proof",
+          "error_location": "Page 5",
+          "error_severity": "retract",
+          "error_annotation": "The error is that the proof incorrectly claims that having equal ramification degrees implies equal orders of vanishing at 0 and ∞, but equal ramification degrees alone do not guarantee equal orders of vanishing, so the conclusion does not follow.",
+          "doi": "2405.03612v2"
+        }
+      ],
+      "requested_model": "gpt-6.1-sol",
+      "flags": [
+        {
+          "location": "Theorem 2; proof of non-trivial-stabilizer descent, paragraph beginning \"If the orders of vanishing\"",
+          "description": "The claimed descent for every system with non-trivial stabilizer is false. Commuting semilinear transformations that swap 0 and infinity need not preserve the signed orders of the rational function, so unequal orders do not distinguish 0.",
+          "evidence": "The proof asserts that unequal orders make {0} distinguished. Over k=R, take phi(x)=x^3(x^2+1+i)/(1-(1-i)x^2). Its only ramification-index-3 points are 0 and infinity; checking the transformations cx and c/x gives A_phi={x,-x}. The semilinear h(x)=i/conjugate(x) commutes with phi and swaps these points, although ord_0(phi)=3 and ord_infinity(phi)=-3. Moreover h^2=-x. The only lifts of complex conjugation are h and -h, both with square -x, so this system has field of moduli R but no model on any real Brauer-Severi curve.",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Paragraph following Theorem 3; repeated argument under condition (3) in section 4",
+          "description": "The polynomial alternative is false: a polynomial need not be conjugate to x^d merely because it has two points with ramification index d.",
+          "evidence": "The manuscript states that a polynomial system either contains x^d or has a unique point with ramification index d. In characteristic zero, phi(x)=x^3+1 has exactly two points with ramification index 3, namely 0 and infinity. It is not conjugate to x^3: both ramification-index-3 points of x^3 are fixed, whereas phi(0)=1. Thus the asserted deduction of the odd-ramification-count condition fails.",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Definition 7 and Proposition 10",
+          "description": "The geometric-fiber condition in Definition 7 allows non-isotrivial infinitesimal deformations, contradicting the assertion that this category is a finite gerbe.",
+          "evidence": "Definition 7 requires only that every geometric fiber belong to xi. In characteristic zero, let xi=[x^2], S=Spec C[epsilon]/(epsilon^2), and psi(x)=x^2+epsilon on P^1_S. This satisfies the stated condition but is not an infinitesimal conjugate of x^2. For an infinitesimal Mobius transformation with vector field v=A+Bx+Cx^2, the change is 2xv(x)-v(x^2), whose constant and linear coefficients are -A and 2A; they cannot equal 1 and 0 simultaneously. A finite gerbe with the finite etale stabilizer of x^2 has no such deformation over this strictly local Artinian base.",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "A remark about Silverman's results, displayed identification with Br(k)[2]",
+          "description": "The identification of H^1(G_k,PGL_2(K)) with the entire two-torsion subgroup of the Brauer group is false for general fields.",
+          "evidence": "The display states H^1(G_k,PGL_2(K))=Br(k)[2]. PGL_2 torsors correspond to degree-2 central simple algebras, so their Brauer classes have index at most 2. Two-torsion Brauer classes can have index 4: over the perfect field C(s,t,u,v), the generic division biquaternion algebra (s,t) tensor (u,v) has exponent 2 and index 4. Its class therefore belongs to Br(k)[2] but not to this H^1 set.",
+          "confidence": 100,
+          "classification": "established_error"
+        }
+      ],
+      "run": {
+        "case": "P24",
+        "started_at": "2026-10-01T20:27:22Z",
+        "agent_name": "/root/sol_primary_evaluation/sol_p24",
+        "ended_at": "2026-10-01T20:35:23Z",
+        "full_input_read": true,
+        "input_sha256_matches_manifest": true,
+        "input_sha256": "f4a4b565538d388e45c0bf2a51b78e425b4361c267a7ab4f7686de2752349197",
+        "tool_use_attestation": "Read the entire [P24 input](/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P24.txt) and [schema](/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json), and no other files. Computed SHA-256 `f4a4b565538d388e45c0bf2a51b78e425b4361c267a7ab4f7686de2752349197` matched. No browsing, external research, unrelated reads, or delegation occurred. Saved schema-valid JSON to [P24.json](/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/sol/P24.json).",
+        "requested_model": "gpt-6.1-sol",
+        "reasoning_effort": "xhigh",
+        "interface": "app_subagent",
+        "completion_status": "completed",
+        "exit_code": null,
+        "tool_calls": null,
+        "tool_compliance": "self_attested",
+        "valid_json": true,
+        "output_sha256": "91eaa2e085a3c19afaff66ad2d7c54e8d926ecd87bfe10b0a25022c050fb1d7f"
+      },
+      "scoring_complete": true,
+      "matched_annotations": [
+        0
+      ],
+      "primary_annotations": [
+        0
+      ],
+      "primary_matches": [
+        0
+      ],
+      "adjudication": [
+        {
+          "annotation_index": 0,
+          "matched_predictions": [
+            0
+          ],
+          "rationale": "Flag 0 addresses the same proof argument at 0 and infinity and gives equal ramification indices of 3 with unequal signed orders of 3 and -3. The other flags concern different faulty mechanisms."
+        }
+      ],
+      "screening": [
+        {
+          "case": "P24",
+          "annotation_index": 0,
+          "primary_eligible": true,
+          "reason": "Specific mechanism supports conservative semantic matching; underlying validity still requires expert verification."
+        }
+      ]
+    },
+    {
+      "id": "P25",
+      "title": "From Tripods to Bipods: Reducing the Queue Number of Planar Graphs Costs Just One Leg",
+      "doi": "2401.16191v2",
+      "category": "Equation / proof",
+      "input_sha256": "39b136f4928f4bcb35b4eb3637c74ff6ab3720f1e5f8c01f37bbf564dd487ef7",
+      "characters": 72368,
+      "omitted_figures": 21,
+      "annotations": [
+        {
+          "title": "From Tripods to Bipods: Reducing the Queue Number of Planar Graphs Costs Just One Leg",
+          "paper_category": "Mathematics",
+          "error_category": "Equation / proof",
+          "error_location": "Theorems 1.2, 1.3",
+          "error_severity": "retract",
+          "error_annotation": "The error is that the decomposition technique claimed as original in Theorems 1.2 and 1.3 was previously established by other authors, and furthermore, Lemma 4.2 is incorrect, rendering the current proofs insufficient and requiring new technical details.",
+          "doi": "2401.16191v2"
+        },
+        {
+          "title": "From Tripods to Bipods: Reducing the Queue Number of Planar Graphs Costs Just One Leg",
+          "paper_category": "Mathematics",
+          "error_category": "Equation / proof",
+          "error_location": "Lemma 4.2",
+          "error_severity": "retract",
+          "error_annotation": "Lemma 4.2 is incorrect, so the proof relying on it is invalid and requires new technical details to correct the decomposition argument.",
+          "doi": "2401.16191v2"
+        }
+      ],
+      "requested_model": "gpt-6.1-sol",
+      "flags": [
+        {
+          "location": "Section 3, triangular and quadrangular iterative steps: application of Lemma 3.3 to the new bag",
+          "description": "The acyclic reduction supplied by Lemma 3.3 can discard the vertices attaching the new bag to the boundary bags. It therefore does not justify the claimed preservation of those attachments or the subsequent face subdivision.",
+          "evidence": "Lemma 3.3 retains suffixes after choosing i and j maximally, whereas the iterative step asserts that the resulting bipod 'can be extended by p_1 and p_3 to obtain a path connecting p_1 and p_3' (and analogously p_1,p_2). For paths p_1-u_1-u_2 and p_3-v_1-v_2, with u_1,v_1 on one layer and u_2,v_2 on the next, cross edges u_1v_1 and u_2v_2 form a cycle. The lemma's maximal choice retains only u_2,v_2; if the boundary attachments are p_1u_1 and p_3v_1, neither survives. Keeping both original attachment vertices would require retaining the whole cyclic bag under the lemma's suffix restriction.",
+          "confidence": 97,
+          "classification": "established_error"
+        },
+        {
+          "location": "Section 3, 'Degenerate Step: Assumption 3.6 does not hold', paragraph assigning v_y to a BFS layer",
+          "description": "The argument assumes without establishing that t_2 is no closer to the BFS root than t_1 and t_3. If t_2 is the closest vertex, the prescribed parent and layer of v_y are incorrect, so the augmentation need not preserve the BFS layering.",
+          "evidence": "The text asserts 'By Invariant I3.4.5' that i_2 >= i_3 and i_2 >= i_1, then attaches v_y to t_1 and puts it in L_{i_1+1}. The described invariant concerns tree paths reaching boundary bags, and the step expressly allows t_2 to belong to B_{x_2} or B_{x_4}; no stated restriction excludes i_2=i_1-1=i_3-1. This layer pattern is compatible with all three edges of the triangle. In that case the edge t_2v_y gives distance at most i_2+1=i_1, while the prescribed layer is i_1+1; that edge would span two prescribed layers.",
+          "confidence": 88,
+          "classification": "suspected_concern"
+        }
+      ],
+      "run": {
+        "case": "P25",
+        "started_at": "2026-10-01T20:31:06Z",
+        "agent_name": "/root/sol_primary_evaluation/sol_p25",
+        "ended_at": "2026-10-01T20:39:13Z",
+        "full_input_read": true,
+        "input_sha256_matches_manifest": true,
+        "input_sha256": "39b136f4928f4bcb35b4eb3637c74ff6ab3720f1e5f8c01f37bbf564dd487ef7",
+        "tool_use_attestation": "Read the entire P25 input. Computed SHA-256 `39b136f4928f4bcb35b4eb3637c74ff6ab3720f1e5f8c01f37bbf564dd487ef7` matched the supplied hash. The only files read were `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P25.txt` and `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json`. No browsing, external research, unrelated reads, or delegation occurred. Saved the schema-conforming JSON to [P25.json](/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/sol/P25.json).",
+        "requested_model": "gpt-6.1-sol",
+        "reasoning_effort": "xhigh",
+        "interface": "app_subagent",
+        "completion_status": "completed",
+        "exit_code": null,
+        "tool_calls": null,
+        "tool_compliance": "self_attested",
+        "valid_json": true,
+        "output_sha256": "82b3c52c2918d866214817c47691c893c3aa45a8aeeaa1f908630d35a769317d"
+      },
+      "scoring_complete": true,
+      "matched_annotations": [],
+      "primary_annotations": [],
+      "primary_matches": [],
+      "adjudication": [
+        {
+          "annotation_index": 0,
+          "matched_predictions": [],
+          "rationale": "Neither flag addresses the originality claim or the incorrectness of Lemma 4.2; both concern distinct Section 3 construction mechanisms."
+        },
+        {
+          "annotation_index": 1,
+          "matched_predictions": [],
+          "rationale": "The flags concern Lemma 3.3 attachment loss and a BFS-layer assignment, not Lemma 4.2. The reference supplies no mechanism establishing equivalence."
+        }
+      ],
+      "screening": [
+        {
+          "case": "P25",
+          "annotation_index": 0,
+          "primary_eligible": false,
+          "reason": "Annotation does not specify a sufficiently precise faulty mechanism or corrected value for reliable primary scoring."
+        },
+        {
+          "case": "P25",
+          "annotation_index": 1,
+          "primary_eligible": false,
+          "reason": "Annotation does not specify a sufficiently precise faulty mechanism or corrected value for reliable primary scoring."
+        }
+      ]
+    },
+    {
+      "id": "P26",
+      "title": "How to surpass no-go limits in Gaussian quantum error correction and entangled Gaussian state distillation?",
+      "doi": "2404.18586v2",
+      "category": "Equation / proof",
+      "input_sha256": "e67f9bb7a90af2e9df9e7bf8e505568e36baffae8de8408792e87fdb5ebbe8a8",
+      "characters": 38092,
+      "omitted_figures": 4,
+      "annotations": [
+        {
+          "title": "How to surpass no-go limits in Gaussian quantum error correction and entangled Gaussian state distillation?",
+          "paper_category": "Physics",
+          "error_category": "Equation / proof",
+          "error_location": "Lemma 3,4",
+          "error_severity": "retract",
+          "error_annotation": "The error is that the statements or proofs of Lemma 3 and Lemma 4 contain inaccuracies, likely due to incorrect assumptions, logical gaps, or invalid mathematical steps, which compromise the validity of their conclusions.",
+          "doi": "2404.18586v2"
+        }
+      ],
+      "requested_model": "gpt-6.1-sol",
+      "flags": [
+        {
+          "location": "Lemma 4, Eqs. (12)-(14), and Theorem 5",
+          "description": "The claimed partial-transpose gate has an invalid Gaussian-channel representation. For the supplied beam-splitter matrix, A = Z_2 B Z_2 gives q'_1 = (q_1 + q_2)/sqrt(2) and p'_1 = (p_1 - p_2)/sqrt(2), so [q'_1,p'_1] = 0 rather than i. It cannot implement a noiseless bosonic channel. Consequently, the zero-noise encoding and decoding assumed in Theorem 5 do not establish physical noise polarization. The operator-transpose identification also fails for the manuscript's single-mode squeezer: S-hat(r)^T = S-hat(-r), whereas Z S(r) Z = S(r).",
+          "evidence": "Lemma 4 assigns the partial transpose the matrices tilde M_i = Z_i M Z_i and tilde N_i = Z_i N Z_i. The text acknowledges that tilde M_i is generally nonsymplectic, although its earlier definition requires M to be symplectic for a noiseless Gaussian unitary. Theorem 5 nevertheless uses B_2(G^B) and B_2(G^(B^T)) as gates without added noise.",
+          "confidence": 100,
+          "classification": "established_error"
+        },
+        {
+          "location": "Corollary 6 proof and Eq. (18)",
+          "description": "The proposed output drops the noise already present in the first shared pair. Even accepting Theorem 5 formally, applying the stated I_(1) tensor G_(2,3) to sigma_AB^(1) and the ancilla composes N^(e^(-2r) sigma^2) with the existing N^(sigma^2). Equation (3) makes their variances add, yielding (1 + e^(-2r)) sigma^2, rather than the reduced variance in Eq. (18). That equation would require an initially ideal first pair.",
+          "evidence": "Corollary 6 defines sigma_AB^(i) = (I_A tensor N_B^(sigma^2))(rho_zeta). Its proof encodes sigma_A^(1), and the preceding text explicitly says the composite channel acts on sigma_AB^(1) and rho_anc. Equation (18) then gives (I tensor N^(e^(-2r) sigma^2))(rho_zeta), omitting the initial N^(sigma^2).",
+          "confidence": 99,
+          "classification": "established_error"
+        },
+        {
+          "location": "Appendix G, expansion of V and Eq. (G3)",
+          "description": "The fidelity expansion omits complex conjugation of the coefficients belonging to the adjoint operator. A checkable counterexample is W = exp(i pi n_j/2) tensor I_k with a vacuum ancilla. Because W is diagonal and the EPR components have equal occupation numbers, Psi_L = Psi_R for every finite r and tr(rho_0 V) = 1. The printed Eq. (G3), with two unconjugated alpha factors, instead gives (1 - tanh^2(r))/(1 + tanh^2(r)), tending to zero. The expression therefore cannot support the finite-squeezing fidelity claim.",
+          "evidence": "Appendix G defines V = (W^T_(i,k_1) tensor I_j)^dagger (I_i tensor W_(j,k_1)), but Eq. (G3) multiplies alpha_(n' m' n'' n_k_1) by alpha_(m' n' m_k_1 n'') with neither factor conjugated. The main text claims that the corresponding fidelity approaches 1 as r tends to infinity.",
+          "confidence": 100,
+          "classification": "established_error"
+        }
+      ],
+      "run": {
+        "case": "P26",
+        "started_at": "2026-10-01T20:35:23Z",
+        "agent_name": "/root/sol_primary_evaluation/sol_p26",
+        "ended_at": "2026-10-01T20:41:21Z",
+        "full_input_read": true,
+        "input_sha256_matches_manifest": true,
+        "input_sha256": "e67f9bb7a90af2e9df9e7bf8e505568e36baffae8de8408792e87fdb5ebbe8a8",
+        "tool_use_attestation": "Read the entire P26 input and schema, and verified computed SHA-256 `e67f9bb7a90af2e9df9e7bf8e505568e36baffae8de8408792e87fdb5ebbe8a8` matched. The only files read were `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P26.txt` and `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json`; no browsing, external research, annotations, other reviews, unrelated reads, or delegation occurred. Saved schema-compliant raw JSON to [P26.json](/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/sol/P26.json).",
+        "requested_model": "gpt-6.1-sol",
+        "reasoning_effort": "xhigh",
+        "interface": "app_subagent",
+        "completion_status": "completed",
+        "exit_code": null,
+        "tool_calls": null,
+        "tool_compliance": "self_attested",
+        "valid_json": true,
+        "output_sha256": "755ac19231e1fc24a4d6a872c167af963acaf4d2504f5f44f2753776d5b81102"
+      },
+      "scoring_complete": true,
+      "matched_annotations": [],
+      "primary_annotations": [],
+      "primary_matches": [],
+      "adjudication": [
+        {
+          "annotation_index": 0,
+          "matched_predictions": [],
+          "rationale": "B0 overlaps Lemma 4, but the reference does not identify its Gaussian-channel or operator-transpose mechanism. B1 and B2 concern other locations; no specific correspondence is established."
+        }
+      ],
+      "screening": [
+        {
+          "case": "P26",
+          "annotation_index": 0,
+          "primary_eligible": false,
+          "reason": "Annotation does not specify a sufficiently precise faulty mechanism or corrected value for reliable primary scoring."
+        }
+      ]
+    },
+    {
+      "id": "P27",
+      "title": "Large Bricks and Join-irreducible torsionfree classes",
+      "doi": "2405.05635v2",
+      "category": "Equation / proof",
+      "input_sha256": "0082bee1a2c876f146117c6b9aa6ff96a1b865c0247f563e7c7942265dc494de",
+      "characters": 16706,
+      "omitted_figures": 0,
+      "annotations": [
+        {
+          "title": "Large Bricks and Join-irreducible torsionfree classes",
+          "paper_category": "Mathematics",
+          "error_category": "Equation / proof",
+          "error_location": "Proposition 3.9",
+          "error_severity": "retract",
+          "error_annotation": "There is a logical gap in the proof of Proposition 3.9, meaning that a necessary step or justification is missing, so the conclusion does not properly follow from the premises given.",
+          "doi": "2405.05635v2"
+        }
+      ],
+      "requested_model": "gpt-6.1-sol",
+      "flags": [
+        {
+          "location": "Proposition 3.9, construction of the direct system from the spanning tree",
+          "description": "An oriented spanning tree of the Hasse graph need not be a directed indexing poset. For the diamond a < b < d and a < c < d, the spanning tree with edges a → b, b → d, a → c has no common upper bound for c and d within the tree. Consequently Lemma 3.6 does not apply to the constructed diagram, and the claimed simple direct limit containing every f-simple is not established.",
+          "evidence": "The proof obtains a spanning tree using Lemma 3.8 and then states: “This gives a directed system of f−simples consisting of monomorphisms (we don't have any compatibility condition to check on the maps as the underlying graph is a tree), therefore we can use Lemma 3.6”. Lemma 3.8 guarantees only an acyclic connected spanning subgraph, not the common-upper-bound property required by Definition 2.8.",
+          "confidence": 100,
+          "classification": "established_error"
+        }
+      ],
+      "run": {
+        "case": "P27",
+        "started_at": "2026-10-01T20:39:13Z",
+        "agent_name": "/root/sol_primary_evaluation/sol_p27",
+        "ended_at": "2026-10-01T20:42:45Z",
+        "full_input_read": true,
+        "input_sha256_matches_manifest": true,
+        "input_sha256": "0082bee1a2c876f146117c6b9aa6ff96a1b865c0247f563e7c7942265dc494de",
+        "tool_use_attestation": "Read the full input; its computed SHA-256 matched `0082bee1a2c876f146117c6b9aa6ff96a1b865c0247f563e7c7942265dc494de`. The only files read were `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P27.txt` and `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json`. No browsing, external research, unrelated reads, or delegation occurred. Saved the schema-conforming JSON to `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/sol/P27.json`.",
+        "requested_model": "gpt-6.1-sol",
+        "reasoning_effort": "xhigh",
+        "interface": "app_subagent",
+        "completion_status": "completed",
+        "exit_code": null,
+        "tool_calls": null,
+        "tool_compliance": "self_attested",
+        "valid_json": true,
+        "output_sha256": "9dc484f924ff7bd585efdc09b41816818229af365deca49ee6de1da5ef06bcf4"
+      },
+      "scoring_complete": true,
+      "matched_annotations": [
+        0
+      ],
+      "primary_annotations": [],
+      "primary_matches": [],
+      "adjudication": [
+        {
+          "annotation_index": 0,
+          "matched_predictions": [
+            0
+          ],
+          "rationale": "The reference gives no specific mechanism, but this flag explicitly identifies a missing justification in Proposition 3.9: the spanning tree need not be directed, so Lemma 3.6 cannot establish the claimed direct limit."
+        }
+      ],
+      "screening": [
+        {
+          "case": "P27",
+          "annotation_index": 0,
+          "primary_eligible": false,
+          "reason": "Annotation does not specify a sufficiently precise faulty mechanism or corrected value for reliable primary scoring."
+        }
+      ]
+    }
+  ]
+}

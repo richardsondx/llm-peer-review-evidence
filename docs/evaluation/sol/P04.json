@@ -1,0 +1,25 @@
+{
+  "errors": [
+    {
+      "location": "Section 3 theoretical analysis, Equation (6)",
+      "description": "The conversion of a teacher-sampled negative log-likelihood into teacher/model KL divergences is mathematically invalid as written.",
+      "evidence": "Equation (6) uses log(P_teacher(a_j | s, a_<j) / log P_pi(a_j | s, a_<j)). For positive teacher probability and 0 < P_pi < 1, the ratio is negative and its real logarithm is undefined. Even replacing the denominator with P_pi would not make a single observed-token log ratio equal to KL, which requires an expectation over the teacher token distribution.",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Section 3 theoretical analysis, Equations (9)-(11), generalized EM interpretation",
+      "description": "The claimed generalized-EM interpretation and formal superiority are not established by the displayed updates.",
+      "evidence": "Equation (9) optimizes E_{a~pi}[r_pi(s,a)], whereas Equation (10) freezes the sampling distribution at pi_t. No EM lower bound or ascent inequality connects this surrogate to Equation (9). With policy-dependent rewards, optimizing the frozen expectation need not improve the original expectation; setting pi_{t+2} = pi_{t+1} supplies no such guarantee.",
+      "confidence": 94,
+      "classification": "suspected_concern"
+    },
+    {
+      "location": "Section 4.1, Decoding Strategy; Section 4.2, state-of-the-art comparison and Table 1 caption",
+      "description": "Selecting decoding settings using the evaluation scores can inflate reported performance and undermine the claimed superiority over literature baselines.",
+      "evidence": "The model is tested at temperatures {0, 0.2, 0.5, 0.8}, and \"For each test metric (pass@1, pass@5, and pass@10), the best result is chosen.\" Selecting the maximum on the test benchmark introduces selection optimism and can use different policies for different metrics. Table 1 imports baseline results from other papers without establishing equivalent selection, while Section 4.2 attributes the score differences to the training method.",
+      "confidence": 95,
+      "classification": "suspected_concern"
+    }
+  ]
+}

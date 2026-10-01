@@ -1,0 +1,11 @@
+{
+  "errors": [
+    {
+      "location": "Abstract; Introduction (paragraph beginning ‘Therefore, we propose TSAR-MVS’); Conclusion",
+      "description": "The manuscript describes two materially different proposed systems, so its reported results cannot be attributed to a coherent, specified method. The abstract and conclusion identify MSP-MVS and describe Semantic-SAM multi-granularity edges, anchor equidistribution, and iterative local search. The introduction instead proposes TSAR-MVS and describes confidence/disparity filtering, superpixel RANSAC with weighted-median refinement, and Roberts/Hough segmentation. The related-work section also lists TSAR-MVS as prior work. These accounts conflict on both the method's identity and its core algorithm.",
+      "evidence": "Abstract: ‘Consequently, we introduce Multi-granularity Segmentation Prior Multi-View Stereo (MSP-MVS)’ and ‘we introduce iterative local search optimization’; Introduction: ‘Therefore, we propose TSAR-MVS’ followed by ‘confidence-based outliers filtering, superpixel-based local refinement, and feature-based area generation’; later related work: ‘TSAR-MVS (Yuan et al. 2024b)’; Conclusion: ‘we introduce MSP-MVS’.",
+      "confidence": 99,
+      "classification": "established_error"
+    }
+  ]
+}

@@ -1,19 +1,20 @@
 cff-version: 1.2.0
-message: "Please cite the specific version of this evidence review that you use."
+message: "Please cite the specific version; these are exploratory, AI-adjudicated pilot results."
 type: dataset
-title: "LLMs in Scientific Peer Review: A Source-Based Reassessment of 27 Studies"
+title: "Can newer models detect scientific errors? A text-only reviewer pilot with GPT-6-Luna and GPT-6.1-Sol"
 authors:
   - family-names: Dackam
     given-names: Richardson
     affiliation: "Nshipyard; independent researcher"
     website: "https://richackam.com"
-version: 0.2.0
+version: 0.3.0
 date-released: 2026-10-01
-url: "https://richardsondx.github.io/llm-peer-review-evidence/report.html"
+url: "https://richardsondx.github.io/llm-peer-review-evidence/"
 repository-code: "https://github.com/richardsondx/llm-peer-review-evidence"
 license: CC-BY-4.0
-abstract: "Source-based reassessment of 27 candidate studies of LLM scientific peer review. Newer models independently extract evidence across six dimensions; both 27-study extractions are complete, with a preserved original baseline, side-by-side comparison and targeted source audits."
+abstract: "Exploratory evaluation of GPT-6-Luna and GPT-6.1-Sol as manuscript reviewers on 27 identical text-only SPOT inputs. Each model produces one fresh review per manuscript; paired, identity-blinded automated adjudication measures matching to published annotations. A 12-annotation specificity screen defines primary coverage. No independent human validation, negative controls, human reviewer comparison, confidence calibration or general reliability claim. The original 27-study literature audit is archived separately."
 keywords:
   - scientific peer review
   - large language models
-  - evidence synthesis
+  - scientific error detection
+  - exploratory evaluation

@@ -1,0 +1,32 @@
+{
+  "errors": [
+    {
+      "location": "Section 6, definition of c_n, equation (24), and the claimed uniform convergence after equation (27)",
+      "description": "The Gaussian broadens as n increases, so these operators do not converge to f. For the admissible function f = 1, c_n = 1/(pi n) and 0 <= Q_n(z) <= epsilon^2/n because chi is supported in the radius-epsilon disc. Thus Q_n converges uniformly to 0, contradicting the claimed convergence to 1.",
+      "evidence": "The manuscript defines 1/c_n = integral_C exp(-|zeta|^2/n) dA(zeta), uses exp(-|z-zeta|^2/n) in (24), and states that {Q_n} converges uniformly to f on |z| <= epsilon/2.",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Theorem 8.1 proof, First step, equation (28) and the choice of lambda",
+      "description": "The phase condition defining A_1 does not imply the positive-real square needed by the disc construction. For C > 3, p = (1, i, -i) satisfies every condition in (28) and is outside A_0, but w z_1/z_2 = -1. Therefore no positive real lambda can satisfy the asserted lambda^2 = w z_1/z_2, leaving the claimed first-step inclusion unproved.",
+      "evidence": "Equation (28) requires Im(omega conjugate(xi_1) xi_2) = 0 and Re(omega conjugate(xi_1) xi_2) >= |xi_1 xi_2|^2. The next paragraph says: Let lambda > 0 satisfy lambda^2 = w z_1 / z_2.",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Example 3.9, equation (5) and the assertion that X is compact",
+      "description": "The defined X is not closed and therefore is not compact. Taking z_1 = -1 gives points (-1, phi_k(-1), 1/k) in X converging to (-1, phi_infinity(-1), 0), which is excluded by (5). Consequently this example does not establish its stated claim about the disc hull of a compact set.",
+      "evidence": "The example is introduced as a compact-set counterexample, but (5) defines X using z_3 = 1/k, k in N, with no z_3 = 0 points. It assumes phi_k converges to phi_infinity away from the boundary point 1.",
+      "confidence": 99,
+      "classification": "established_error"
+    },
+    {
+      "location": "Definition 3.3, Lemma 3.8, and the SADH neighborhood hypotheses in Theorem 4.3",
+      "description": "The strict-increase requirement excludes q itself from SADH_q(X): the distance starts at 0 and must end strictly above 0. Thus this hull cannot contain a neighborhood of q. It also need not be compact when X is compact; for X = [0,1] and q = 0, constant-in-zeta discs phi_t = t x put every x in (0,1] in the hull, while their limit 0 is excluded.",
+      "evidence": "Definition 3.3 requires z = phi_1(0), phi_0 identically q, and ||phi_t(0)-q|| strictly increasing in t. Lemma 3.8 claims SADH_q(X) is compact for compact X, and Theorem 4.3 assumes q lies in its interior.",
+      "confidence": 99,
+      "classification": "established_error"
+    }
+  ]
+}

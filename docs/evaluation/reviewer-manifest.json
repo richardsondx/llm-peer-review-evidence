@@ -1,0 +1,137 @@
+[
+  {
+    "id": "P01",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P01.txt",
+    "input_sha256": "d078b570a59f4bef19b218f5e7088f1fd0d9cf71653c08bb083bab90408d504e"
+  },
+  {
+    "id": "P02",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P02.txt",
+    "input_sha256": "24e7725256b73ce6189afbb972f0fead9003c9eedffd1dcc4fee858a142bafbf"
+  },
+  {
+    "id": "P03",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P03.txt",
+    "input_sha256": "b93be849f12bbe21cd998ba28d694b3e311ce2134200f2eb43d678627a93188c"
+  },
+  {
+    "id": "P04",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P04.txt",
+    "input_sha256": "ad1c2d3898fbaac61df88beecbf3de62460a1058a686f58408d00522a4763db2"
+  },
+  {
+    "id": "P05",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P05.txt",
+    "input_sha256": "c356f90e9b8c5014704566ba876255f281ae95c44b9be6f6441bd1c6c77ef1af"
+  },
+  {
+    "id": "P06",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P06.txt",
+    "input_sha256": "f7a86482152f4d096bc1f0a1b0910374cb908c666d581b36a316b83f60ee7b58"
+  },
+  {
+    "id": "P07",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P07.txt",
+    "input_sha256": "7cc738bd5c3cbf5a64f573ceb965d1b32d257b525883773f3a96024eae92f97f"
+  },
+  {
+    "id": "P08",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P08.txt",
+    "input_sha256": "1a9859c7e68ce053295bc8a5810d38340327cb939402a31303e648ec505d8faf"
+  },
+  {
+    "id": "P09",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P09.txt",
+    "input_sha256": "79e8abeb5976fc4dad98cba91dfdee6802726a25d9f26c8dbce2ca4101eebda0"
+  },
+  {
+    "id": "P10",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P10.txt",
+    "input_sha256": "aaf2bb8f16cb4d9e1c43c5bffa79cfad73eaf668567811dde7b4bfe3658f6c60"
+  },
+  {
+    "id": "P11",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P11.txt",
+    "input_sha256": "87765c104fec2ffbab46add7372f6240c98d5257584ffcc250ca19311eaece16"
+  },
+  {
+    "id": "P12",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P12.txt",
+    "input_sha256": "cb75b9925cfff2aae58e3759c39924123480440b26b30d5211337d62a4347572"
+  },
+  {
+    "id": "P13",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P13.txt",
+    "input_sha256": "52aae136e509cf92ce5352e66196a28a51edd76ae6e0ebcbd640d96eba668688"
+  },
+  {
+    "id": "P14",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P14.txt",
+    "input_sha256": "f4b7170c48fffd1267a24ca4561641db1a7e9e3b91e3d02108b7a63d26396591"
+  },
+  {
+    "id": "P15",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P15.txt",
+    "input_sha256": "2dab4c43fe39914185b60b936f6652eb1c57ba297185d48ff9c195660bd982fa"
+  },
+  {
+    "id": "P16",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P16.txt",
+    "input_sha256": "69f30abd3b14e6c7fbddc67804925daaf0c3755b0b4bc88fa7cff4abf5ac57b0"
+  },
+  {
+    "id": "P17",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P17.txt",
+    "input_sha256": "07807f28115c4a28e2fd2539f9b95753538737c342e8b4f7f8c9cbdacb60291c"
+  },
+  {
+    "id": "P18",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P18.txt",
+    "input_sha256": "e0441fe0a9b0ca089a51b97606c59daa33e35dd19f9f8050a1250f218650bab8"
+  },
+  {
+    "id": "P19",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P19.txt",
+    "input_sha256": "d498dcc974791cdd61569f7ddb37dc001095bd71225d72b77be03c93b2917556"
+  },
+  {
+    "id": "P20",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P20.txt",
+    "input_sha256": "a25edd2bd5958fdb17e9444b0a91c1a67c09feef1c205f63cbac604447b0fea6"
+  },
+  {
+    "id": "P21",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P21.txt",
+    "input_sha256": "2afe8e3fae6c1fbd66cda9bdf59f926020a00c13a70560fa8ac7e8cf334ba9b9"
+  },
+  {
+    "id": "P22",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P22.txt",
+    "input_sha256": "09d01d941e8a2d0457a3e1a36e0f3287c8475f2074283d137704e36fc3111620"
+  },
+  {
+    "id": "P23",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P23.txt",
+    "input_sha256": "c2d5df4a4dd18db29dad1511c2677816db2159a887a01375eb57c6f3c12dabf0"
+  },
+  {
+    "id": "P24",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P24.txt",
+    "input_sha256": "f4a4b565538d388e45c0bf2a51b78e425b4361c267a7ab4f7686de2752349197"
+  },
+  {
+    "id": "P25",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P25.txt",
+    "input_sha256": "39b136f4928f4bcb35b4eb3637c74ff6ab3720f1e5f8c01f37bbf564dd487ef7"
+  },
+  {
+    "id": "P26",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P26.txt",
+    "input_sha256": "e67f9bb7a90af2e9df9e7bf8e505568e36baffae8de8408792e87fdb5ebbe8a8"
+  },
+  {
+    "id": "P27",
+    "input_path": "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P27.txt",
+    "input_sha256": "0082bee1a2c876f146117c6b9aa6ff96a1b865c0247f563e7c7942265dc494de"
+  }
+]

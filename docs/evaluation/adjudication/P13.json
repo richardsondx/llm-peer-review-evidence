@@ -1,0 +1,15 @@
+{
+  "annotations": [
+    {
+      "annotation_index": 0,
+      "A_matches": [
+        0
+      ],
+      "B_matches": [
+        2
+      ],
+      "A_rationale": "Explicitly identifies C57BL/6NCrl mice incorrectly described as rats, matching the animal-model misidentification.",
+      "B_rationale": "Explicitly flags C57BL/6 rats in Table 1 and the Burman strain description as mouse studies misreported as rat studies."
+    }
+  ]
+}

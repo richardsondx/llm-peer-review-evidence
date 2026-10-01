@@ -1,0 +1,15 @@
+{
+  "annotations": [
+    {
+      "annotation_index": 0,
+      "A_matches": [
+        0
+      ],
+      "B_matches": [
+        0
+      ],
+      "A_rationale": "Flag 0 explicitly identifies an incorrect elbow-angle calculation and its downstream threshold errors, compatible with the reference claim. The reference does not specify the formula, so the precise subtype remains uncertain. The other flags concern evaluation and causal attribution.",
+      "B_rationale": "Flag 0 explicitly identifies an incorrect elbow-angle calculation and its downstream threshold errors, compatible with the reference claim. The reference does not specify the formula, so the precise subtype remains uncertain. The other flag concerns evaluation metrics."
+    }
+  ]
+}

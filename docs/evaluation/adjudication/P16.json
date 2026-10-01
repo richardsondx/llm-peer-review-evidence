@@ -1,0 +1,22 @@
+{
+  "annotations": [
+    {
+      "annotation_index": 0,
+      "A_matches": [],
+      "B_matches": [
+        0
+      ],
+      "A_rationale": "A concerns omitted adjacency-matrix construction costs, not flawed Case 2.1 reasoning or incorrect triangle detection.",
+      "B_rationale": "B explicitly identifies a triangle missed under Case 2.1, corresponding to the reference correctness claim; the reference supplies no finer mechanism."
+    },
+    {
+      "annotation_index": 1,
+      "A_matches": [],
+      "B_matches": [
+        0
+      ],
+      "A_rationale": "A challenges the running-time bound through representation costs, not the assumed success of detection in Case 2.1.",
+      "B_rationale": "B gives a Case 2.1 example where the asserted BFS detection fails, directly corresponding to the reference claim that assumed success invalidates the proof."
+    }
+  ]
+}

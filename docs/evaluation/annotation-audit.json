@@ -1,6 +1,8 @@
 {
   "frozen_at": "2026-10-01T17:16:36.402204+00:00",
-  "reviewer_outputs_consulted": false,
+  "reviewer_outputs_consulted": [
+    "P03 (excluded from primary scoring); viewed for runtime/tool-use verification before this screening was saved"
+  ],
   "rule": "Primary coverage denominator requires a specific error mechanism, not merely a statement that a named proof, table, or experiment is flawed. Editorial-only and unspecified errors remain visible but are excluded. This is annotation specificity screening, not verification of scientific truth.",
   "eligible_papers": [
     "P01",
@@ -191,5 +193,6 @@
       "primary_eligible": false,
       "reason": "Annotation does not specify a sufficiently precise faulty mechanism or corrected value for reliable primary scoring."
     }
-  ]
+  ],
+  "timing_note": "Screening saved after review execution began, before inspecting eligible-case outputs. It is not an external preregistration."
 }

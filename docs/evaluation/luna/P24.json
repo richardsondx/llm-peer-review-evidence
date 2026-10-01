@@ -1,0 +1,11 @@
+{
+  "errors": [
+    {
+      "location": "§4, Definition 7",
+      "description": "The definition restricts P → S to a projective bundle, which in the standard scheme-theoretic sense is the projectivization of a vector bundle. Over S = Spec k this is a split projective line, so the resulting groupoid Gξ cannot include a model on a nonsplit Brauer–Severi curve. This conflicts with Proposition 10 and Lemma 11, which use Gξ(kξ) to classify descent to arbitrary Brauer–Severi curves; that classification is needed for the stated descent results.",
+      "evidence": "“π : P → S is a projective bundle of relative dimension 1”; later: “ξ descends to a Brauer–Severi curve over kξ if and only if Gξ(kξ) ≠ ∅.”",
+      "confidence": 91,
+      "classification": "established_error"
+    }
+  ]
+}

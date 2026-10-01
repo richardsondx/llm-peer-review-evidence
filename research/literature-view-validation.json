@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "default_view": "simple",
+  "advanced_generated_from_current_json": true,
+  "models": {
+    "baseline": {
+      "rows": 27,
+      "cells": 162
+    },
+    "luna": {
+      "rows": 27,
+      "cells": 162
+    },
+    "sol": {
+      "rows": 27,
+      "cells": 162
+    }
+  }
+}

@@ -1,0 +1,72 @@
+"""Publish raw new reviews separately from the historical literature extraction."""
+import datetime, html, json, pathlib, statistics
+ROOT=pathlib.Path(__file__).resolve().parents[2]
+DOCS=ROOT/'docs'; DATA=DOCS/'evaluation'
+E=lambda s:html.escape(str(s),quote=True)
+cases=json.loads((DATA/'cases.json').read_text())
+screen=json.loads((DATA/'annotation-audit.json').read_text())
+eligible={(a['case'],a['annotation_index']) for a in screen['annotations'] if a['primary_eligible']}
+names={'luna':'GPT-6-Luna','sol':'GPT-6.1-Sol'}
+all_results={}
+for model,name in names.items():
+    results=[]
+    for c in cases:
+        cid=c['id']; review_path=DATA/model/f'{cid}.json'; run_path=DATA/model/f'{cid}.run.json'
+        if not review_path.exists() or not run_path.exists():continue
+        run=json.loads(run_path.read_text())
+        valid_run = run.get('completion_status')=='completed' and run.get('interface')=='app_subagent' and run.get('tool_compliance')=='self_attested'
+        if not valid_run or not run['valid_json']:raise ValueError(f'Invalid run: {model}/{cid}')
+        flags=json.loads(review_path.read_text())['errors']
+        matched=[]; rationales=[]; judge_path=DATA/'adjudication'/f'{cid}.json'
+        if judge_path.exists():
+            jr=json.loads((DATA/'adjudication'/f'{cid}.run.json').read_text())
+            if jr.get('completion_status')!='completed':raise ValueError(f'Invalid judge {cid}')
+            mapping=json.loads((DATA/'adjudication'/f'{cid}.mapping.json').read_text())
+            arm='A' if mapping['A_model']==model else 'B'
+            adjudication=json.loads(judge_path.read_text())
+            if sorted(a['annotation_index'] for a in adjudication['annotations'])!=list(range(len(c['annotations']))):raise ValueError(f'Incomplete adjudication {cid}')
+            for a in adjudication['annotations']:
+                indexes=a[arm+'_matches']
+                if any(i<0 or i>=len(flags) for i in indexes):raise ValueError(f'Bad prediction index {cid}')
+                if indexes:matched.append(a['annotation_index'])
+                rationales.append({'annotation_index':a['annotation_index'],'matched_predictions':indexes,'rationale':a[arm+'_rationale']})
+        primary=[i for i in range(len(c['annotations'])) if (cid,i) in eligible]
+        results.append({**c,'requested_model':run['requested_model'],'flags':flags,'run':run,'scoring_complete':judge_path.exists(),'matched_annotations':matched,'primary_annotations':primary,'primary_matches':[i for i in matched if i in primary],'adjudication':rationales,'screening':[a for a in screen['annotations'] if a['case']==cid]})
+    summary={'requested_model':names[model],'reasoning_effort':'xhigh','interface':'app_subagent','papers_reviewed':len(results),'papers_planned':27,'scored_papers':sum(r['scoring_complete'] for r in results),'primary_annotation_denominator':sum(len(r['primary_annotations']) for r in results if r['scoring_complete']),'primary_annotation_matches':sum(len(r['primary_matches']) for r in results if r['scoring_complete']),'total_flags':sum(len(r['flags']) for r in results),'status':'complete' if len(results)==27 and all(r['scoring_complete'] for r in results) else 'running','adjudication':'Fresh GPT-6.1-Sol app sub-agent automated semantic matching, paired A/B with model identity withheld. Not independently human validated. Same-family judge may introduce bias.','tool_compliance':'File-only restriction; self-attested, not independently event-audited.'}
+    payload={'summary':summary,'rows':results}
+    (DATA/model).mkdir(exist_ok=True)
+    (DATA/model/'results.json').write_text(json.dumps(payload,ensure_ascii=False,indent=2))
+    all_results[model]=payload
+
+CSS='''*{box-sizing:border-box}body{margin:0;background:white;color:#171717;font:15px/1.6 system-ui,sans-serif}main{max-width:1550px;margin:auto;padding:35px 35px 70px}a{color:#174ba0}nav{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:30px}h1{font-size:clamp(28px,3vw,45px);line-height:1.15;letter-spacing:-.035em}h2{font-size:23px}.intro{max-width:1050px;color:#626262;font-size:17px}.summary{display:flex;gap:24px;flex-wrap:wrap;padding:18px;background:#f3f6fc;margin:20px 0}.summary b{font-size:25px;display:block}.note{background:#fff8e9;padding:16px;border:1px solid #eadfbd;margin:20px 0}.tools{display:flex;justify-content:space-between;gap:15px;margin:25px 0}input{padding:11px;border:1px solid #ccc;border-radius:6px;font:inherit}.scroll{overflow:auto;max-height:72vh}table{border-collapse:separate;border-spacing:0;min-width:1250px;width:100%;table-layout:fixed}th,td{padding:18px 12px;vertical-align:top;border-bottom:1px solid #ddd;text-align:left}tbody tr{scroll-margin-top:85px}thead th{position:sticky;top:0;background:white;z-index:3;color:#555;font-weight:500}thead th:first-child{width:260px;left:0;z-index:4}tbody th{position:sticky;left:0;background:white;z-index:2;width:260px;font-weight:650}small{font-weight:400;color:#777;display:block}.cell{border:0;padding:10px;font:inherit;line-height:1.5;cursor:pointer;text-align:left;width:100%;color:#14428d;background:#eaf0ff}.cell span{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}.cell.miss{background:#fceced;color:#9b2922}.cell.hit{background:#e6f4eb;color:#19562c}.cell.context{background:#f2f2f2;color:#565656}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #3165be;outline-offset:3px}dialog{overflow-wrap:anywhere;width:min(850px,calc(100% - 35px));max-height:85vh;border:1px solid #ddd;border-radius:14px;padding:28px;box-shadow:0 20px 90px #0004}dialog::backdrop{background:#12213b77}.close{float:right;border:0;border-radius:50%;padding:7px 12px;font-size:24px;cursor:pointer}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.6 system-ui}details{border-top:1px solid #ddd;padding:17px 0}summary{cursor:pointer;font-weight:650}.flag{margin:22px 0;padding:16px;background:#f6f8fc}.legend{color:#666}.advanced .scroll{max-height:none}.advanced table{min-width:1600px}.advanced .cell span{display:block}.advanced .cell{font-size:14px}.advanced td{overflow-wrap:anywhere}@media(max-width:700px){main{padding:24px 18px}input{width:100%}.tools{display:block}table{min-width:950px}thead th:first-child,tbody th{width:145px}}'''
+labels=['Reference detection','Primary coverage','Reviewer flags','Reported confidence','Reference quality','Input limitations']
+def source(c):return 'https://arxiv.org/abs/'+c['doi'] if c['doi'][0].isdigit() and not c['doi'].startswith('10.') else 'https://doi.org/'+c['doi']
+for model,payload in all_results.items():
+    s=payload['summary'];name=names[model]
+    coverage=f'{s["primary_annotation_matches"]}/{s["primary_annotation_denominator"]}' if s["primary_annotation_denominator"] else "Pending"
+    rows=[]
+    for r in payload['rows']:
+        n=len(r['annotations']);m=len(r['matched_annotations']);p=len(r['primary_annotations']);k=len(r['primary_matches']);fs=r['flags'];conf=[f['confidence'] for f in fs]
+        matched_flags={i for a in r['adjudication'] for i in a['matched_predictions']}
+        values=[f'{m}/{n} reference annotations matched' if r['scoring_complete'] else 'Matching pending',f'{k}/{p} eligible annotations matched' if p and r['scoring_complete'] else 'Not scored: reference insufficiently specific or outside scope' if not p else 'Matching pending',f'{len(fs)} reported flags; {len(matched_flags)} match a reference. Other flags need expert review.' if r['scoring_complete'] else f'{len(fs)} reported flags; reference matching pending.',(f'{conf[0]}% self-reported confidence' if min(conf)==max(conf) else f'{min(conf)}–{max(conf)}% self-reported confidence') if conf else 'No flags; no confidence reported', 'Specific mechanism; truth not independently verified' if p else 'Excluded from primary score; see screening rationale', f'Text only; {r["omitted_figures"]} images omitted. One review; no negative control.']
+        rows.append({**r,'display_values':values,'raw_review_href':f'../evaluation/{model}/{r["id"]}.json'})
+    dataset=json.dumps(rows,ensure_ascii=False).replace('<','\\u003c')
+    for advanced in [False,True]:
+        filename='matrix.advanced.html' if advanced else 'matrix.html'
+        pieces=[f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{E(name)} — New reviewer evaluation</title><style>{CSS}</style></head><body class="'+('advanced' if advanced else '')+'"><main>',f'<nav><a href="../index.html">Research overview</a><span><a href="matrix.html">Simple</a> · <a href="matrix.advanced.html">Advanced</a> · <a href="literature.html">Historical literature audit</a></span></nav><p>{E(name)} · Extra High · New manuscript reviews · 1 October 2026</p><h1>Reviewer evaluation: 27 papers × 6 evaluation dimensions</h1><p class="intro">{E(name)} reviewed the manuscripts directly. These are newly generated reviewer outputs, scored against SPOT annotations. The six columns describe this pilot; they differ from the historical literature matrix.</p>',f'<div class="summary"><div><b>{s["papers_reviewed"]}/27</b>papers reviewed</div><div><b>{coverage}</b>specific annotations matched</div><div><b>{s["total_flags"]}</b>reviewer flags</div><div><b>{s["scored_papers"]}/27</b>reviews matched to references</div></div>', '<div class="note"><strong>Exploratory results.</strong> Matching is automated and needs independent expert validation. Unmatched flags may be valid. This pilot does not measure human agreement, score bias, hallucination rate, or confidence calibration. Images, including image-rendered tables, were omitted; public benchmark exposure is unknown. <a href="../evaluation/methods.html">Read the protocol and limitations</a>.</div><p class="legend">Green: reference matched · Red: specific reference not matched · Grey: context or excluded from scoring. Select any cell for the full review and matching rationale.</p><div class="tools"><input type="search" id="search" aria-label="Find a paper" placeholder="Find a paper…"><span id="count">'+str(len(rows))+' papers</span></div><div class="scroll" tabindex="0" role="region" aria-label="Reviewer evaluation matrix"><table><thead><tr><th scope="col">Paper</th>'+''.join(f'<th scope="col">{x}</th>' for x in labels)+'</tr></thead><tbody>']
+        for i,r in enumerate(rows):
+            pieces.append(f'<tr id="{r["id"]}" data-search="{E((r["id"]+" "+r["title"]+" "+r["category"]).lower())}"><th scope="row"><a href="{E(source(r))}">{r["id"]} · {E(r["title"])}</a><small>{E(r["category"])}</small></th>')
+            for d,v in enumerate(r['display_values']):
+                color='context'
+                if d in [0,1] and r['primary_annotations'] and r['scoring_complete']:color='hit' if r['primary_matches'] else 'miss'
+                if d in [2,3]:color=''
+                pieces.append(f'<td><button class="cell {color}" data-row="{i}" data-dim="{d}" aria-haspopup="dialog" aria-label="{E(r["id"]+": "+labels[d])}"><span>{E(v)}</span></button>')
+                if advanced and d==2:
+                    for f in r['flags']:pieces.append(f'<p><strong>{E(f["location"])}</strong>: {E(f["description"])}<br><small>Model classification: {E(f["classification"])} · Confidence: {f["confidence"]}%</small></p>')
+                pieces.append('</td>')
+            pieces.append('</tr>')
+        pieces.append(f'</tbody></table></div><p><a href="../evaluation/{model}/results.json">Complete results JSON</a> · <a href="../evaluation/cases.json">Case manifest</a> · <a href="../evaluation/annotation-audit.json">Reference screening</a></p></main><dialog aria-labelledby="title"><button class="close" aria-label="Close details">×</button><h2 id="title"></h2><div id="detail"></div></dialog>')
+        pieces.append('<script>const DATA='+dataset+';const LABELS='+json.dumps(labels)+''';const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const dialog=document.querySelector('dialog');document.querySelectorAll('[data-row]').forEach(b=>b.onclick=()=>{const r=DATA[Number(b.dataset.row)];document.querySelector('#title').textContent=LABELS[Number(b.dataset.dim)]+' — '+r.id;let h='<p>'+esc(r.title)+'</p><h3>Reference annotations</h3>';r.annotations.forEach((a,i)=>{h+='<p><strong>'+esc(a.error_location)+'</strong>: '+esc(a.error_annotation)+'</p><p>'+ (r.primary_annotations.includes(i)?'Included in primary coverage denominator.':'Excluded from primary coverage denominator.')+'</p>';let screening=r.screening.find(x=>x.annotation_index===i);if(screening)h+='<p><strong>Screening:</strong> '+esc(screening.reason)+'</p>';let q=r.adjudication.find(x=>x.annotation_index===i);if(q){h+='<p><strong>Matched reviewer flags:</strong> '+(q.matched_predictions.length?q.matched_predictions.map(i=>'Flag '+(i+1)+' (raw index '+i+')').join(', '):'None')+'</p><p><strong>Automated match:</strong> '+esc(q.rationale)+'</p>'; }});h+='<h3>Unverified reviewer flags</h3><p><a href="'+esc(r.raw_review_href)+'">Download the raw review JSON</a></p>';if(!r.flags.length)h+='<p>No reviewer flags returned for this input.</p>';r.flags.forEach((f,i)=>h+='<div class="flag"><strong>Flag '+(i+1)+' (raw index '+i+') · '+esc(f.location)+'</strong><p>'+esc(f.description)+'</p><p><strong>Evidence:</strong> '+esc(f.evidence)+'</p><small>Model classification: '+esc(f.classification)+' · Self-reported confidence: '+f.confidence+'%</small></div>');h+='<details><summary>Run provenance</summary><pre>'+esc(JSON.stringify(r.run,null,2))+'</pre></details>';document.querySelector('#detail').innerHTML=h;dialog.showModal();});document.querySelector('.close').onclick=()=>dialog.close();dialog.onclick=e=>{if(e.target===dialog){let r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}};document.querySelector('#search').oninput=e=>{let n=0;document.querySelectorAll('tbody tr').forEach(r=>{r.hidden=!r.dataset.search.includes(e.target.value.toLowerCase().trim());if(!r.hidden)n++;});document.querySelector('#count').textContent=n+' papers';};</script></body></html>''')
+        (DOCS/model/filename).write_text(''.join(pieces))
+(DATA/'summary.json').write_text(json.dumps({m:p['summary'] for m,p in all_results.items()},indent=2))
+print(json.dumps({m:p['summary'] for m,p in all_results.items()},indent=2))

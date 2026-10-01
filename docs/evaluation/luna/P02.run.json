@@ -1,0 +1,19 @@
+{
+  "case": "P02",
+  "requested_model": "gpt-6-luna",
+  "reasoning_effort": "xhigh",
+  "interface": "app_subagent",
+  "agent_name": "/root/luna_primary_evaluation/p02",
+  "started_at": "2026-10-01T18:04:26Z",
+  "ended_at": "2026-10-01T18:07:53Z",
+  "completion_status": "completed",
+  "exit_code": null,
+  "tool_calls": null,
+  "tool_compliance": "self_attested",
+  "tool_use_attestation": "Worker stated it fully read the specified input in consecutive chunks after the initial output was truncated, read the shared schema, computed an input SHA-256 matching the expected hash, used no external research, and read no other files.",
+  "valid_json": true,
+  "input_sha256": "24e7725256b73ce6189afbb972f0fead9003c9eedffd1dcc4fee858a142bafbf",
+  "output_sha256": "e0673c114d92b03100927cef34d5de5ca7e9db3e7047baf4490a45732e2f23ca",
+  "full_input_read": true,
+  "input_sha256_matches_manifest": true
+}

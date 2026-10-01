@@ -1,0 +1,19 @@
+{
+  "case": "P23",
+  "judge_requested_model": "gpt-6.1-sol",
+  "reasoning_effort": "xhigh",
+  "interface": "app_subagent",
+  "agent_name": "/root/paired_judging/judge_p23",
+  "started_at": "2026-10-01 21:02:12 UTC",
+  "ended_at": "2026-10-01 21:03:36 UTC",
+  "completion_status": "completed",
+  "valid_json": true,
+  "exit_code": null,
+  "tool_calls": null,
+  "tool_compliance": "self_attested",
+  "tool_use_attestation": "Read only the assigned inputs/P23.txt and schema.json, both in full. The input SHA-256 matched. No browsing, delegation, unrelated reads, or output readback occurred.",
+  "full_input_read": true,
+  "input_sha256_matches_manifest": true,
+  "input_sha256": "a117d1e3b5d518d60c1b5f71e89c85caf4601c620b23fc00b15a627b869355cc",
+  "output_sha256": "63b0af215dc741ef1663c8204188105dee5cc50d12324873e7036f88ce922171"
+}

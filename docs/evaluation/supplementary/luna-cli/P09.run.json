@@ -1,0 +1,41 @@
+{
+  "case": "P09",
+  "requested_model": "gpt-6-luna",
+  "reasoning_effort": "xhigh",
+  "started_at": "2026-10-01T17:19:47.493788+00:00",
+  "ended_at": "2026-10-01T17:20:42.065754+00:00",
+  "exit_code": 0,
+  "tool_calls": 0,
+  "valid_json": true,
+  "input_sha256": "79e8abeb5976fc4dad98cba91dfdee6802726a25d9f26c8dbce2ca4101eebda0",
+  "usage": [
+    {
+      "input_tokens": 24316,
+      "cached_input_tokens": 17152,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 1937,
+      "reasoning_output_tokens": 1518
+    }
+  ],
+  "command": [
+    "/Users/richardson/.local/bin/codex",
+    "exec",
+    "--ignore-user-config",
+    "--ephemeral",
+    "--skip-git-repo-check",
+    "-C",
+    "/tmp/peer-review-blind-runtime",
+    "-s",
+    "read-only",
+    "-m",
+    "gpt-6-luna",
+    "-c",
+    "model_reasoning_effort=\"xhigh\"",
+    "--json",
+    "--output-schema",
+    "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json",
+    "-o",
+    "/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/luna/P09.json",
+    "-"
+  ]
+}

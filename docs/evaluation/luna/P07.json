@@ -1,0 +1,18 @@
+{
+  "errors": [
+    {
+      "location": "Methods, elbow-angle equation and curl-counter stage thresholds",
+      "description": "The equation computes a signed difference between the two limb directions, but the subsequent thresholds treat the result as an unsigned interior angle in the range 0–180°. Depending on arm orientation, the same elbow opening can produce a negative angle, so an extended arm may fail the stated down-stage test. Normalize the angular difference to the unsigned 0–180° angle before applying these thresholds.",
+      "evidence": "The manuscript defines angle = arctan2(c_y - b_y, c_x - b_x) - arctan2(a_y - b_y, a_x - b_x), then sets the stage to down if angle > 160° and up if angle < 30°.",
+      "confidence": 98,
+      "classification": "established_error"
+    },
+    {
+      "location": "Methods, performance metrics; Results/Conclusion, claimed 20% IoU improvement",
+      "description": "The accuracy comparison is not auditable from the described method: the manuscript does not define the ground-truth targets for MSE or what regions are used to calculate IoU, and it gives no underlying values for the stated 20% IoU improvement. Thus the central accuracy claim cannot be checked or reproduced from the reported evaluation.",
+      "evidence": "The methods give MSE = (1/n) ∑(Y_i - Ŷ_i)^2 and IoU = (Area of Overlap)/(Area of Union), without defining Y_i, Ŷ_i, ground-truth annotations, or the objects whose areas overlap. The conclusion then claims a 20% increase in IoU but reports no baseline or optimized IoU values in the supplied text.",
+      "confidence": 94,
+      "classification": "suspected_concern"
+    }
+  ]
+}

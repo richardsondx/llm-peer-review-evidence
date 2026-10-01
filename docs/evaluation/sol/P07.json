@@ -1,0 +1,25 @@
+{
+  "errors": [
+    {
+      "location": "Methods: shoulder–elbow–wrist angle equation; Results: curl stage definition",
+      "description": "The signed difference of two arctan2 values is not the internal elbow angle. Applying the curl thresholds directly can count an extended arm as flexed and makes classification depend on orientation.",
+      "evidence": "The equation is angle = arctan2(c_y - b_y, c_x - b_x) - arctan2(a_y - b_y, a_x - b_x), with only conversion to degrees specified. For a=(0.4,0.5), b=(0.5,0.5), c=(0.6,0.5), the elbow is straight but the equation gives -180 degrees. The rule 'angle < 30° and previous_stage = down' therefore labels this straight arm 'up' and increments the counter. No absolute-value or angle-wrapping correction is stated.",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Methods: primary performance indicators, Equation (2); Conclusion: 20% IoU improvement",
+      "description": "The claimed IoU improvement lacks a defined measurement for the reported pose outputs. The method specifies landmark coordinates but never defines the regions whose overlap and union are measured or their ground truth, leaving the principal accuracy claim unsupported by the described evaluation.",
+      "evidence": "The model output is described as a 'set of landmark coordinates' and IoU only as '(Area of Overlap) / (Area of Union)'. Discrete landmarks alone do not define positive-area regions; a region construction and reference are needed. Nevertheless, the conclusion reports 'a 20% increase in the Intersection over Union (IoU) metric compared to existing solutions' without supplying those definitions.",
+      "confidence": 90,
+      "classification": "suspected_concern"
+    },
+    {
+      "location": "Methods: research design and system architecture; Results: attribution of enhancements; Conclusion: accuracy and processing-time gains",
+      "description": "The causal claim that algorithmic and neural-network optimizations produced the reported gains is not supported by a specified intervention or comparative experimental protocol in the supplied text. The described angle calculation and curl counter do not identify a change to the pose estimator that could establish the claimed accuracy and speed improvements.",
+      "evidence": "Results attribute gains to 'refined algorithms and the incorporation of advanced neural network architectures', but the methods provide no architecture change, optimization procedure, or training specification. They also provide no matched baseline protocol, timing hardware, or numerical baseline and optimized measurements in the available text. The conclusion nevertheless asserts a 20% IoU increase and approximately 30% processing-time reduction. Figures are omitted, so their contents cannot resolve this concern here.",
+      "confidence": 88,
+      "classification": "suspected_concern"
+    }
+  ]
+}

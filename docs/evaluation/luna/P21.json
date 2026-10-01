@@ -1,0 +1,18 @@
+{
+  "errors": [
+    {
+      "location": "Method, Eq. (6) and the claimed logical implementation of P(α)",
+      "description": "The stated transversal operator does not implement the claimed logical phase gate: its phase varies across computational-basis terms of |0⟩_L, so it does not preserve the encoded state for general α.",
+      "evidence": "In Eq. (5), the term a=0,b=0,c=0 in |0⟩_L is |0000000⟩ and acquires phase 1 under Eq. (6). The term a=0,b=1,c=1 is |0110011⟩ and acquires phase e^{2iα}, from qubits 2 and 7. These phases differ for general α, contradicting Eq. (6)'s asserted action P(α)_L on the code space.",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Conclusions, final paragraph, resource bound and definition of m",
+      "description": "The stated gate-count bound and m choice contradict the manuscript's logarithmic lower bound and fail to refine the phase grid as ε tends to zero.",
+      "evidence": "The paragraph gives O(ε log[1/ε] log log[1/ε] ···) gates and m=⌈ε/[log₂(1/ε) log₂ log₂(1/ε)···]⌉. As ε→0, the first expression tends to zero, contradicting the earlier Ω(log[1/ε]) lower bound, while the displayed m tends to zero rather than increasing to provide arbitrarily fine dyadic phase approximations.",
+      "confidence": 100,
+      "classification": "established_error"
+    }
+  ]
+}

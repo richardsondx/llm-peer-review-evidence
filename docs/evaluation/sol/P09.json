@@ -1,0 +1,11 @@
+{
+  "errors": [
+    {
+      "location": "Introduction: paragraph beginning 'Therefore, we propose TSAR-MVS' and contributions 1–3; related-work paragraph mentioning TSAR-MVS; abstract and conclusion",
+      "description": "The manuscript gives incompatible definitions of its proposed method and misattributes novelty. The introduction proposes TSAR-MVS with filtering, superpixel refinement and edge/line segmentation, while the abstract, ablations and conclusion propose MSP-MVS with segmentation-guided patch deformation, anchor equidistribution and iterative local search. The related-work section also identifies TSAR-MVS as an existing method. These are different algorithmic contributions, so the introduction's claims about the method being introduced contradict the manuscript's own method identification and attribution.",
+      "evidence": "Introduction: 'we propose TSAR-MVS, a generalized post-processing MVS method that sequentially applies confidence-based outliers filtering, superpixel-based local refinement, and feature-based area generation'. Related work: 'TSAR-MVS (Yuan et al. 2024b) attempt to employ superpixel planarization'. Conclusion: 'we introduce MSP-MVS' and 'we introduce anchor equidistribution' and 'we present ILS optimization'.",
+      "confidence": 99,
+      "classification": "established_error"
+    }
+  ]
+}

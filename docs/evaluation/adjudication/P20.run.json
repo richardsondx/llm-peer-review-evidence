@@ -1,0 +1,19 @@
+{
+  "case": "P20",
+  "judge_requested_model": "gpt-6.1-sol",
+  "reasoning_effort": "xhigh",
+  "interface": "app_subagent",
+  "agent_name": "/root/paired_judging/judge_p20",
+  "started_at": "2026-10-01 21:00:30 UTC",
+  "ended_at": "2026-10-01 21:01:44 UTC",
+  "completion_status": "completed",
+  "valid_json": true,
+  "exit_code": null,
+  "tool_calls": null,
+  "tool_compliance": "self_attested",
+  "tool_use_attestation": "Read only the assigned P20.txt and schema.json, both in full. The input SHA-256 matched the expected hash. No browsing, delegation, unrelated reads, or output readback.",
+  "full_input_read": true,
+  "input_sha256_matches_manifest": true,
+  "input_sha256": "21928b4c953ea13e8a843bdda352c6d93531a2987c31c0f1eea21d46dca97d18",
+  "output_sha256": "29788de94fb4f5fda6f17cdef0b1cd78829a44b31bdeead23e6f7678239f8942"
+}

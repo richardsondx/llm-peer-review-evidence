@@ -1,0 +1,18 @@
+{
+  "errors": [
+    {
+      "location": "Theorem 3.1",
+      "description": "The assertion that no non-trivial Polish group is uniquely homogeneous is false as stated: the two-element group with the discrete topology is a counterexample.",
+      "evidence": "Theorem 3.1 states, ‘A non-trivial Polish group cannot be uniquely homogeneous.’ The two-element discrete group is Polish, and for each ordered pair of its points there is exactly one permutation (hence homeomorphism) carrying the first point to the second. Theorem 1.1 itself excludes groups with exactly two elements.",
+      "confidence": 98,
+      "classification": "established_error"
+    },
+    {
+      "location": "Proof of Theorem 1.1, paragraph beginning ‘As a result, to construct the desired topological group automorphism’",
+      "description": "The prescribed extension of an automorphism of span{x_i} by fixing each y in Y is not shown to be well-defined. The proof only establishes that individual nonzero elements of U lie outside span{x_i}; it does not establish that span(Y) intersects span{x_i} trivially. A finite sum of three or more elements of U could belong to span{x_i}, creating a relation on which the two prescriptions may conflict.",
+      "evidence": "The proof takes ‘a maximal Z₂-linearly independent subset Y ⊆ U’ and then says to extend φ ‘by setting φ(y) = y for y ∈ Y.’ Lemma 2.3(1) only gives pairwise disjointness of x+U for x∈span{x_i}; it excludes nonzero elements of span{x_i} from U and excludes sums of two elements of U from span{x_i}, but gives no stated condition on sums of three or more elements. Thus the asserted prescriptions on the generators of H need not define an automorphism from the preceding argument.",
+      "confidence": 91,
+      "classification": "suspected_concern"
+    }
+  ]
+}

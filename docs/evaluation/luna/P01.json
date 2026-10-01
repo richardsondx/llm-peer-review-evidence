@@ -1,0 +1,25 @@
+{
+  "errors": [
+    {
+      "location": "Section III, paragraph immediately after Eq. (4)",
+      "description": "The claimed T-fold SINR improvement does not follow from a unitary F_b. A unitary matrix has unit-norm rows, so matched filtering with f_{b,n}† does not collect T times the signal energy; that gain would require orthogonal rows with squared norm T or a different stated energy normalization.",
+      "evidence": "“If the matrix F_b is unitary, the data symbols x_{b,n} can be recovered without crosstalk by the matched filters f_{b,n}† that provide the T-fold improvement of SINR.”",
+      "confidence": 99,
+      "classification": "established_error"
+    },
+    {
+      "location": "Eq. (3) and the first numerical example in Section IV",
+      "description": "T is used as a matrix dimension in F_b ∈ C^{T×T} and as the number of columns in T_b, but the first numerical example sets T = 18.375. A fractional value cannot be a matrix dimension, so this example is not represented by the stated discrete matrix model.",
+      "evidence": "“For some matrix F_b ∈ C^{T × T} ... allow for a more general N × T transmit matrix” (Eq. 3); later, “we set T = 18.375.”",
+      "confidence": 99,
+      "classification": "established_error"
+    },
+    {
+      "location": "Final summary claim about spatial multiplexing and peak data rate",
+      "description": "The unqualified claim that peak data rate grows linearly with SNR conflates adding spatial streams with rate scaling in SNR. With a finite number of spatial dimensions, spatial multiplexing adds parallel channels, while each channel's rate follows a logarithmic dependence on SNR as in Eq. (9); the linear approximation in Eq. (10) is limited to low SNR and does not establish linear peak-rate growth.",
+      "evidence": "The summary says, “Peak data rate can be made to grow linearly with SNR by means of spatial multiplexing,” while Eq. (9) gives “R = log_2(1 + SNR)” and Eq. (10) labels its linear form as an approximation for SNR ≪ 1.",
+      "confidence": 94,
+      "classification": "established_error"
+    }
+  ]
+}

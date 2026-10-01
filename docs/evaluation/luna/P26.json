@@ -1,0 +1,11 @@
+{
+  "errors": [
+    {
+      "location": "Lemma 4 proof, Eqs. (12)–(13)",
+      "description": "The proof treats partial transpose on one subsystem as an algebra homomorphism, asserting that applying it to an operator function is equivalent to substituting q_i→q_i and p_i→−p_i inside that function. Partial transpose reverses the order of factors on the transposed subsystem, so this substitution is not valid for general products or exponentials of noncommuting operators. Consequently, the claimed covariance transformation and its use to implement the partial-transposed gate do not follow as stated.",
+      "evidence": "The proof states “W^{T_i}(x) = f_i(W(x)) = W(f_i(x))” and uses this in Eq. (12) to derive the matrix transformation in Eq. (13). For factors A_i and C_i on mode i, (A_i C_i)^{T_i}=C_i^{T_i}A_i^{T_i}, whereas A_i^{T_i}C_i^{T_i} generally differs; thus partial transpose cannot in general be performed by the asserted substitution through W(x).",
+      "confidence": 96,
+      "classification": "established_error"
+    }
+  ]
+}

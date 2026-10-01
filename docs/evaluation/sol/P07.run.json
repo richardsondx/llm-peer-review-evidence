@@ -1,0 +1,19 @@
+{
+  "case": "P07",
+  "started_at": "2026-10-01T19:54:29Z",
+  "agent_name": "/root/sol_primary_evaluation/sol_p07",
+  "ended_at": "2026-10-01T19:56:59Z",
+  "full_input_read": true,
+  "input_sha256_matches_manifest": true,
+  "input_sha256": "7cc738bd5c3cbf5a64f573ceb965d1b32d257b525883773f3a96024eae92f97f",
+  "tool_use_attestation": "Read the full input in consecutive chunks and verified SHA-256 `7cc738bd5c3cbf5a64f573ceb965d1b32d257b525883773f3a96024eae92f97f`, matching the expected hash. Read only `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P07.txt` and `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json`; used no browsing, external research, unrelated reads, or delegation. Saved schema-conforming raw JSON to `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/sol/P07.json`.",
+  "requested_model": "gpt-6.1-sol",
+  "reasoning_effort": "xhigh",
+  "interface": "app_subagent",
+  "completion_status": "completed",
+  "exit_code": null,
+  "tool_calls": null,
+  "tool_compliance": "self_attested",
+  "valid_json": true,
+  "output_sha256": "4703c5652b265bb41567988f54a6b15b11e8f6a178bf7bef92e6769c58b2c084"
+}

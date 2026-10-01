@@ -1,0 +1,18 @@
+{
+  "errors": [
+    {
+      "location": "Theorem 3.2, claimed estimate for κ(t)−1 and the subsequent small-A comparison",
+      "description": "The claimed exponential upper bound is false for admissible initial metrics, and the comparison used to prove it also fails as A tends to zero.",
+      "evidence": "Under (2.1), curvature evolves by K_t = ΔK + 2K(K−1). If an initial maximum κ(0)>1 is attained on an open region, then at an interior point ΔK=0 and K_t=2κ(0)(κ(0)−1)>0, so the maximum initially rises, contrary to (3.2), which requires it to decrease immediately. Also, in the proof's proposed comparison, B∼4π/A and e^(−C)∼(κ(0)−1)A/(4π). For fixed T>0 the logistic bound is 1−o(A), whereas (4πA−κ(T)A²)/(4πA−A²)=1−(κ(T)−1)A/(4π)+O(A²). Under the contradiction hypothesis κ(T)>1, the latter is smaller for sufficiently small A, so the asserted inequality in that comparison does not follow.",
+      "confidence": 99,
+      "classification": "established_error"
+    },
+    {
+      "location": "Remark 2.2, displayed expansion of L as A→0",
+      "description": "The stated asymptotic expansion omits the leading correction term and is not valid to the claimed o(A²) accuracy.",
+      "evidence": "Expanding the left expression gives √(4πA−κA²)=2√π A^(1/2)−κA^(3/2)/(4√π)+O(A^(5/2)). The displayed second square root, √(4πA−κA³/(4√π)), differs from 2√π A^(1/2) only at order A^(5/2), so adding o(A²) cannot account for the missing order-A^(3/2) term.",
+      "confidence": 100,
+      "classification": "established_error"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "errors": [
+    {
+      "location": "Theorem 2; proof of non-trivial-stabilizer descent, paragraph beginning \"If the orders of vanishing\"",
+      "description": "The claimed descent for every system with non-trivial stabilizer is false. Commuting semilinear transformations that swap 0 and infinity need not preserve the signed orders of the rational function, so unequal orders do not distinguish 0.",
+      "evidence": "The proof asserts that unequal orders make {0} distinguished. Over k=R, take phi(x)=x^3(x^2+1+i)/(1-(1-i)x^2). Its only ramification-index-3 points are 0 and infinity; checking the transformations cx and c/x gives A_phi={x,-x}. The semilinear h(x)=i/conjugate(x) commutes with phi and swaps these points, although ord_0(phi)=3 and ord_infinity(phi)=-3. Moreover h^2=-x. The only lifts of complex conjugation are h and -h, both with square -x, so this system has field of moduli R but no model on any real Brauer-Severi curve.",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Paragraph following Theorem 3; repeated argument under condition (3) in section 4",
+      "description": "The polynomial alternative is false: a polynomial need not be conjugate to x^d merely because it has two points with ramification index d.",
+      "evidence": "The manuscript states that a polynomial system either contains x^d or has a unique point with ramification index d. In characteristic zero, phi(x)=x^3+1 has exactly two points with ramification index 3, namely 0 and infinity. It is not conjugate to x^3: both ramification-index-3 points of x^3 are fixed, whereas phi(0)=1. Thus the asserted deduction of the odd-ramification-count condition fails.",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Definition 7 and Proposition 10",
+      "description": "The geometric-fiber condition in Definition 7 allows non-isotrivial infinitesimal deformations, contradicting the assertion that this category is a finite gerbe.",
+      "evidence": "Definition 7 requires only that every geometric fiber belong to xi. In characteristic zero, let xi=[x^2], S=Spec C[epsilon]/(epsilon^2), and psi(x)=x^2+epsilon on P^1_S. This satisfies the stated condition but is not an infinitesimal conjugate of x^2. For an infinitesimal Mobius transformation with vector field v=A+Bx+Cx^2, the change is 2xv(x)-v(x^2), whose constant and linear coefficients are -A and 2A; they cannot equal 1 and 0 simultaneously. A finite gerbe with the finite etale stabilizer of x^2 has no such deformation over this strictly local Artinian base.",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "A remark about Silverman's results, displayed identification with Br(k)[2]",
+      "description": "The identification of H^1(G_k,PGL_2(K)) with the entire two-torsion subgroup of the Brauer group is false for general fields.",
+      "evidence": "The display states H^1(G_k,PGL_2(K))=Br(k)[2]. PGL_2 torsors correspond to degree-2 central simple algebras, so their Brauer classes have index at most 2. Two-torsion Brauer classes can have index 4: over the perfect field C(s,t,u,v), the generic division biquaternion algebra (s,t) tensor (u,v) has exponent 2 and index 4. Its class therefore belongs to Br(k)[2] but not to this H^1 set.",
+      "confidence": 100,
+      "classification": "established_error"
+    }
+  ]
+}

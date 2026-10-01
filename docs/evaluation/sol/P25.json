@@ -1,0 +1,18 @@
+{
+  "errors": [
+    {
+      "location": "Section 3, triangular and quadrangular iterative steps: application of Lemma 3.3 to the new bag",
+      "description": "The acyclic reduction supplied by Lemma 3.3 can discard the vertices attaching the new bag to the boundary bags. It therefore does not justify the claimed preservation of those attachments or the subsequent face subdivision.",
+      "evidence": "Lemma 3.3 retains suffixes after choosing i and j maximally, whereas the iterative step asserts that the resulting bipod 'can be extended by p_1 and p_3 to obtain a path connecting p_1 and p_3' (and analogously p_1,p_2). For paths p_1-u_1-u_2 and p_3-v_1-v_2, with u_1,v_1 on one layer and u_2,v_2 on the next, cross edges u_1v_1 and u_2v_2 form a cycle. The lemma's maximal choice retains only u_2,v_2; if the boundary attachments are p_1u_1 and p_3v_1, neither survives. Keeping both original attachment vertices would require retaining the whole cyclic bag under the lemma's suffix restriction.",
+      "confidence": 97,
+      "classification": "established_error"
+    },
+    {
+      "location": "Section 3, 'Degenerate Step: Assumption 3.6 does not hold', paragraph assigning v_y to a BFS layer",
+      "description": "The argument assumes without establishing that t_2 is no closer to the BFS root than t_1 and t_3. If t_2 is the closest vertex, the prescribed parent and layer of v_y are incorrect, so the augmentation need not preserve the BFS layering.",
+      "evidence": "The text asserts 'By Invariant I3.4.5' that i_2 >= i_3 and i_2 >= i_1, then attaches v_y to t_1 and puts it in L_{i_1+1}. The described invariant concerns tree paths reaching boundary bags, and the step expressly allows t_2 to belong to B_{x_2} or B_{x_4}; no stated restriction excludes i_2=i_1-1=i_3-1. This layer pattern is compatible with all three edges of the triangle. In that case the edge t_2v_y gives distance at most i_2+1=i_1, while the prescribed layer is i_1+1; that edge would span two prescribed layers.",
+      "confidence": 88,
+      "classification": "suspected_concern"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "annotations": [
+    {
+      "annotation_index": 0,
+      "A_matches": [],
+      "B_matches": [],
+      "A_rationale": "The reference vaguely alleges an experimental-design flaw in the Multi-granularity section. A instead identifies contradictory method identities and novelty attribution, without explicitly connecting that mechanism to the referenced experiment.",
+      "B_rationale": "The reference does not specify the experimental-design mechanism. B identifies conflicting descriptions of the proposed system; its mention of multi-granularity edges does not explicitly correspond to the referenced experimental-design flaw."
+    }
+  ]
+}

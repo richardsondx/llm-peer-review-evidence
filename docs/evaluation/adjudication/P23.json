@@ -1,0 +1,15 @@
+{
+  "annotations": [
+    {
+      "annotation_index": 0,
+      "A_matches": [
+        0
+      ],
+      "B_matches": [
+        1
+      ],
+      "A_rationale": "Flag 0 explicitly identifies an incorrect expression in Theorem 2.2 through a sign discrepancy between its two formulas, corresponding to the reference's incorrect formula (2.10). The reference does not specify the underlying mistake, so mechanism-level agreement remains uncertain.",
+      "B_rationale": "Flag 1 explicitly identifies an incorrect expression in Theorem 2.2 through the same sign discrepancy between its two formulas, corresponding to the reference's incorrect formula (2.10). The reference does not specify the underlying mistake, so mechanism-level agreement remains uncertain."
+    }
+  ]
+}

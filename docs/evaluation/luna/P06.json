@@ -1,0 +1,18 @@
+{
+  "errors": [
+    {
+      "location": "Eqs. (6)–(7)",
+      "description": "The displayed eigenvalues omit the normalization factor 1/4 from the definition of ρ in Eq. (1).",
+      "evidence": "Setting all coefficients to zero gives ρ = I₄/4, whose four eigenvalues are 1/4, while Eqs. (6)–(7) give four eigenvalues equal to 1. More generally, diagonalizing ρ = (I₄ + A)/4 scales each eigenvalue of I₄ + A by 1/4.",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Eq. (8), conditions (9), and Theorem 1.4",
+      "description": "The claimed swap-dependent Horodecki nonlocality does not follow: swapping the qubits transposes the correlation matrix, which preserves the eigenvalues used by the criterion. The row/column products in Eq. (8) also do not have the displayed spectra.",
+      "evidence": "If β′ = βᵀ after swapping, then β′ᵀβ′ = ββᵀ, and ββᵀ and βᵀβ have the same eigenvalues (the squared singular values of β). In particular, a β with just one nonzero row has βᵀβ of rank at most one with nonzero eigenvalue equal to the sum of the row's squared entries; its transpose has the same spectrum. Thus the sum of the two largest eigenvalues, and hence the stated criterion M > 1, is invariant under the defined swap, contrary to the asymmetry asserted in (8)–(9) and the construction in Theorem 1.4.",
+      "confidence": 100,
+      "classification": "established_error"
+    }
+  ]
+}

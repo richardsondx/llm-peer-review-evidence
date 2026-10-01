@@ -1,0 +1,16 @@
+{
+  "saved_at": "2026-10-01T18:03:02.040776+00:00",
+  "reason": "GPT-6.1-Sol CLI requests were rejected before inference, while the app sub-agent route succeeded. Primary paired reviews will use the same app sub-agent interface for both models.",
+  "primary_interface": "collaboration.spawn_agent; fresh fork_turns=none per manuscript, explicit model and xhigh effort. Manuscript read and output writes permitted; browsing, annotations, other reviews and unrelated files prohibited. Tool compliance is self-attested rather than independently event-audited.",
+  "execution_order": "Complete all primary Luna app reviews before starting primary Sol app reviews.",
+  "unchanged": [
+    "27 manuscripts and their input hashes",
+    "reviewer prompt",
+    "output schema",
+    "requested models and effort",
+    "12-annotation primary screen"
+  ],
+  "supplementary": "27 completed earlier Luna CLI reviews and 27 rejected Sol CLI requests preserved; excluded from primary paired scores.",
+  "screening_context": "Primary subset was screened after viewing the earlier P03 CLI response but before eligible-case outputs were inspected. No primary app reviewer outputs existed at amendment time.",
+  "interpretation": "Primary results are app sub-agent evaluations, not pure API or CLI benchmarks."
+}

@@ -1,0 +1,19 @@
+{
+  "case": "P10",
+  "started_at": "2026-10-01T19:59:26Z",
+  "agent_name": "/root/sol_primary_evaluation/sol_p10",
+  "ended_at": "2026-10-01T20:00:44Z",
+  "full_input_read": true,
+  "input_sha256_matches_manifest": true,
+  "input_sha256": "aaf2bb8f16cb4d9e1c43c5bffa79cfad73eaf668567811dde7b4bfe3658f6c60",
+  "tool_use_attestation": "Read the full input and exactly these files: `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/inputs/P10.txt` and `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/schema.json`. Computed SHA-256 matched `aaf2bb8f16cb4d9e1c43c5bffa79cfad73eaf668567811dde7b4bfe3658f6c60`. No browsing, external research, unrelated reads, or delegation occurred. Saved raw schema-compliant JSON to `/Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/sol/P10.json`.",
+  "requested_model": "gpt-6.1-sol",
+  "reasoning_effort": "xhigh",
+  "interface": "app_subagent",
+  "completion_status": "completed",
+  "exit_code": null,
+  "tool_calls": null,
+  "tool_compliance": "self_attested",
+  "valid_json": true,
+  "output_sha256": "4d7fb62d182e64d98296af95ffed7ef7a9b9c8c815c7466ac9fc4d953c021063"
+}

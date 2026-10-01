@@ -1,0 +1,15 @@
+{
+  "annotations": [
+    {
+      "annotation_index": 0,
+      "A_matches": [
+        1
+      ],
+      "B_matches": [
+        0
+      ],
+      "A_rationale": "A[1] identifies the same discrepancy between the Abstract's 20-week HFD exposure and the Methods' 12-week treatment duration at compatible locations.",
+      "B_rationale": "B[0] identifies the same Abstract-versus-animal-Methods duration discrepancy: 20 weeks of HFD exposure versus 12 weeks of treatment."
+    }
+  ]
+}

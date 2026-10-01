@@ -1,0 +1,30 @@
+{
+  "luna": {
+    "requested_model": "GPT-6-Luna",
+    "reasoning_effort": "xhigh",
+    "interface": "app_subagent",
+    "papers_reviewed": 27,
+    "papers_planned": 27,
+    "scored_papers": 27,
+    "primary_annotation_denominator": 12,
+    "primary_annotation_matches": 8,
+    "total_flags": 51,
+    "status": "complete",
+    "adjudication": "Fresh GPT-6.1-Sol app sub-agent automated semantic matching, paired A/B with model identity withheld. Not independently human validated. Same-family judge may introduce bias.",
+    "tool_compliance": "File-only restriction; self-attested, not independently event-audited."
+  },
+  "sol": {
+    "requested_model": "GPT-6.1-Sol",
+    "reasoning_effort": "xhigh",
+    "interface": "app_subagent",
+    "papers_reviewed": 27,
+    "papers_planned": 27,
+    "scored_papers": 27,
+    "primary_annotation_denominator": 12,
+    "primary_annotation_matches": 10,
+    "total_flags": 94,
+    "status": "complete",
+    "adjudication": "Fresh GPT-6.1-Sol app sub-agent automated semantic matching, paired A/B with model identity withheld. Not independently human validated. Same-family judge may introduce bias.",
+    "tool_compliance": "File-only restriction; self-attested, not independently event-audited."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "errors": [
+    {
+      "location": "Proposition 2.3; Theorem 4.1, second paragraph of proof",
+      "description": "The asserted equality of the real-linear operator norm and completely bounded norm is false. Consequently, this proposition does not justify the complete contractivity of q used in Theorem 4.1.",
+      "evidence": "Proposition 2.3 asserts \"‖T_m‖_cb = ‖T‖\" for continuous real-linear maps between complex Banach spaces. Take X = ℂ² with its Euclidean norm, Y = ℂ, and T(z₁,z₂) = Re(z₁) + i Re(z₂), so ‖T‖ = 1. Let B = [[0,1],[-1,0]] and take the matrix over X with coordinate matrices I₂ and B. By the stated complex Min definition its norm is sup_{|a|²+|b|²≤1} ‖aI₂+bB‖ = √2, whereas its image is I₂+iB, of norm 2. Thus ‖T_m‖_cb ≥ √2. Theorem 4.1 explicitly invokes Proposition 2.3 to make q completely contractive.",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Theorem 3.3, proof (1), deduction of the complex structure on X",
+      "description": "The calculation gives the wrong sign for J². A preadjoint of multiplication by i satisfies J² = −I, whereas the proof asserts J² = I and then invokes the complex-structure criterion requiring J² = −I.",
+      "evidence": "The proof states \"J² = I (since (J²)* = -I). So X has (isometric) complex structure by the criterion mentioned after Example 1.\" Since the adjoint separates points, (J²)* = −I implies J² = −I. The earlier criterion explicitly requires \"J² = -I\".",
+      "confidence": 100,
+      "classification": "established_error"
+    }
+  ]
+}

@@ -1,9 +1,26 @@
 {
-  "luna": "complete_reviewed",
-  "sol": "complete_reviewed",
-  "luna_saved_rows": 27,
-  "sol_saved_rows": 27,
-  "sol_missing_candidate_ids": [],
-  "comparison": "three_version_view_and_targeted_source_audit_complete",
-  "comparison_scope": "All cells available side by side; targeted semantic audit, not exhaustive claim adjudication or model accuracy benchmark."
+  "literature_audit": {
+    "luna": "complete_reviewed",
+    "sol": "complete_reviewed",
+    "luna_saved_rows": 27,
+    "sol_saved_rows": 27,
+    "sol_missing_candidate_ids": [],
+    "comparison": "three_version_view_and_targeted_source_audit_complete",
+    "comparison_scope": "All cells available side by side; targeted semantic audit, not exhaustive claim adjudication or model accuracy benchmark."
+  },
+  "reviewer_pilot": {
+    "status": "complete_automated_matching_expert_validation_pending",
+    "primary_interface": "fresh app sub-agents",
+    "luna_primary_reviews": 27,
+    "sol_primary_reviews": 27,
+    "planned_per_model": 27,
+    "primary_annotations": 12,
+    "earlier_luna_cli_reviews": 27,
+    "earlier_sol_cli_successful_reviews": 0,
+    "earlier_sol_cli_requests_rejected": 27,
+    "updated_at": "2026-10-01T21:08:26.622231+00:00",
+    "paired_adjudications": 27,
+    "luna_primary_matches": 8,
+    "sol_primary_matches": 10
+  }
 }

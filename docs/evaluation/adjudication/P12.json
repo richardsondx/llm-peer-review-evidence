@@ -1,0 +1,13 @@
+{
+  "annotations": [
+    {
+      "annotation_index": 0,
+      "A_matches": [],
+      "B_matches": [
+        0
+      ],
+      "A_rationale": "A flag 0 concerns unspecified random seeds and reproducibility, not the comparability of baseline results.",
+      "B_rationale": "B flag 0 explicitly identifies an unequal baseline comparison caused by different example databases and test-set versions, corresponding to the Section 5 comparability concern."
+    }
+  ]
+}

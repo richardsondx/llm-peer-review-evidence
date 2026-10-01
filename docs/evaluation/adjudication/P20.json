@@ -1,0 +1,11 @@
+{
+  "annotations": [
+    {
+      "annotation_index": 0,
+      "A_matches": [],
+      "B_matches": [],
+      "A_rationale": "The reference gives no specific mechanism for the gap in Theorem 4.2. A alleges a failed positive-real lambda construction in Theorem 8.1 and does not explicitly connect it to the reference claim.",
+      "B_rationale": "The reference gives no specific mechanism for the gap in Theorem 4.2. B flags other locations and mechanisms, including Theorem 4.3 hull hypotheses, without explicitly corresponding to the Theorem 4.2 claim."
+    }
+  ]
+}

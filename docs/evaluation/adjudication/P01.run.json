@@ -1,0 +1,19 @@
+{
+  "case": "P01",
+  "judge_requested_model": "gpt-6.1-sol",
+  "reasoning_effort": "xhigh",
+  "interface": "app_subagent",
+  "agent_name": "/root/paired_judging/judge_p01",
+  "started_at": "2026-10-01 20:48:32 UTC",
+  "ended_at": "2026-10-01 20:49:57 UTC",
+  "completion_status": "completed",
+  "valid_json": true,
+  "exit_code": null,
+  "tool_calls": null,
+  "tool_compliance": "self_attested",
+  "tool_use_attestation": "read the assigned input and schema, read the full input, verified its SHA-256 matched, and performed no browsing or unrelated reads.",
+  "full_input_read": true,
+  "input_sha256_matches_manifest": true,
+  "input_sha256": "ea5ecfb8989777d03521f866db6e0ec983dd7e90558441935c4fd0e027937cb0",
+  "output_sha256": "bb3056ccbe83dbb73357c3aad96abd7edb3ac9677cd6be6121bcaec89db8a644"
+}

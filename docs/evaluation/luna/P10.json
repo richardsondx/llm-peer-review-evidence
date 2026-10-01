@@ -1,0 +1,11 @@
+{
+  "errors": [
+    {
+      "location": "Comparison with PyZX, paragraph beginning ‘Compared to PyZX’",
+      "description": "The comparative performance conclusions are not auditable from the supplied manuscript text: it refers to Table I but provides only the table caption, without measurements or experimental protocol. The stated runtime and memory advantages, RZ-count comparison, and average circuit-depth result therefore cannot be checked.",
+      "evidence": "‘Compared to PyZX, Qsyn tended to optimize circuits with shorter program runtimes and lower memory usage.’ ‘For circuit statistics, Qsyn achieved either smaller or equal RZ-counts and, on average, shallower circuits.’ The text then gives only the Table I caption, ‘COMPARISON WITH PYZX [1] ON THE GATE-LEVEL SYNTHESIS STAGE TIME UNIT: s, MEMORY UNIT: MiB.’",
+      "confidence": 73,
+      "classification": "suspected_concern"
+    }
+  ]
+}

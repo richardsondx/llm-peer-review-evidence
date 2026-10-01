@@ -1,0 +1,15 @@
+{
+  "annotations": [
+    {
+      "annotation_index": 0,
+      "A_matches": [
+        0
+      ],
+      "B_matches": [
+        1
+      ],
+      "A_rationale": "Prediction 0 identifies the erroneous right-identity spectrum in Equation (8): the single-row outer product has the same eigenvalues as the single-column case, invalidating the claimed swap-dependent result.",
+      "B_rationale": "Prediction 1 explicitly identifies the incorrect spectra in Equation (8) and explains that transposing the correlation matrix preserves the criterion eigenvalues, matching the reference mechanism and location."
+    }
+  ]
+}

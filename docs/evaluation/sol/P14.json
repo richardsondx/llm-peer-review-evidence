@@ -1,0 +1,39 @@
+{
+  "errors": [
+    {
+      "location": "Lemma 3.1, accuracy proof; Theorems 3.1 and 3.2",
+      "description": "The shortest noisy path is selected using the same noise whose concentration is being bounded, so its edge noises are not independent Laplace variables. In a chain of m diamonds, each with two disjoint two-edge branches of equal true weight, the 2m-hop estimate is a sum of m independent minima of two branch-noise sums. Each minimum has a negative mean of constant magnitude times 1/epsilon. Thus the error is Omega(m/epsilon) with high probability, contradicting O(sqrt(m) log(m)/epsilon) for n=3m+1. The advertised additive bounds rely on this false lemma.",
+      "evidence": "The proof states: \"each distance ... is the sum of a maximum of t edge weights, hence the total error ... is the accumulation of at most t Laplace random variables,\" and then applies Lemma 2.4 and a union bound over n^2 distances.",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Theorem 4.3, privacy composition step; Appendix A, Corollary 4.1; analogous tree-based privacy claims in Sections 3 and 4",
+      "description": "The tree mechanism assumes fixed public topology, but these trees are selected from private weights. Its all-pairs output actually reveals tree structure through exact identities: for a tree containing the chain z-a-b, the released estimates satisfy d(z,b)=d(z,a)+d(a,b); for a tree with branches z-a and z-b they satisfy d(a,b)=d(z,a)+d(z,b). Changing only the triangle edge weight w(z,b) from M+1+eta to M+1-eta, with w(z,a)=M, w(a,b)=1 and 0<eta<=1/2, switches the shortest-path tree and these output supports. Consequently the claimed privacy of releasing all per-tree matrices does not follow from fixed-tree DP or composition, even if adjacency lists are hidden.",
+      "evidence": "Theorem 4.3 claims \"By basic composition ... releasing all the private estimates is epsilon-DP.\" Appendix A computes each pair estimate using the lowest common ancestor and the identity d_T(x,y)=d(z,x)+d(z,y)-2d(z,v_x,y). Section 3 argues that not releasing shortest-path trees means \"no shortest path information is revealed.\"",
+      "confidence": 99,
+      "classification": "established_error"
+    },
+    {
+      "location": "Lemma 4.4 and its expectation bound in Construction 2",
+      "description": "The claimed cardinality lower bound can exceed the entire vertex set within the permitted parameter range. Take n=2^k and k=log_2(n)>=3. Then |A_1^r|=n/4 and t=ceil(200 log(n)), so Lemma 4.4 requires |A_1|>=tn/16>n. This event has probability zero. The proof incorrectly assumes |A_i^r|t<=n; uniform marginal inclusion also does not make the union size Binomial(n,p_i).",
+      "evidence": "Lemma 4.4 asserts \"|A_i| >= (t/4) ... n^{1-(i+1)/k}\" with probability at least 1-1/(2n^2). The proof uses \"Let X_i ~ Binomial(n,p_i) be the number of vertices in A_i\" and \"the last inequality follows from |A_i^r| ... t <= n.\" The allowed range includes k=floor(log(n)/log(2)).",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Lemma 4.5, probability amplification in Construction 2",
+      "description": "The candidate comparisons share the same random second-nearest local center, so they cannot be amplified as independent events. For k=3, let q=n^{1/3}; A_1^r has q vertices and A_2 is the union of t independent singleton samples. On a star with distinct distances from its center u, take the first L=floor(n/(2t)) vertices in distance order. With constant probability every A_2 sample lies outside this prefix; conditional on that event, a fixed A_1^r contains at least two prefix vertices with probability Omega(q^2/t^2)=Omega(1/log^2(n)). Its second-nearest center then precedes all of A_2, violating the lemma. The failure probability is therefore much larger than 1/n^2.",
+      "evidence": "The proof asserts P[d(u,p_{i+1}(u)) <= d(u,A_i^r-{w})] >= 1-(1-1/(2|A_i^r|))^{|A_{i+1}|} >= 1-n^{-7}, then claims Lemma 4.5 holds with probability at least 1-1/n^2.",
+      "confidence": 98,
+      "classification": "established_error"
+    },
+    {
+      "location": "Theorem 4.3, equation (3), and Theorem 4.4",
+      "description": "The accuracy calculation drops the log(n) factor in the number of trees. Corollary 4.1 with privacy budget epsilon/(tk) gives error O(tk log^{1.5}(n) log(ntk/gamma)/epsilon). Since t=ceil(100 n^{1/k} log(n)), equation (3) loses an additional log(n); its stated simplification should carry log^{3.5}(n) rather than log^{2.5}(n). Advanced composition analogously introduces sqrt(tk), so the approximate-DP calculation loses sqrt(log(n)). The displayed theorem bounds do not follow from the stated mechanism and corollary.",
+      "evidence": "Construction 2 defines t=ceil(100 n^{1/k} log(n)). Theorem 4.3 runs the \"epsilon/(t ... k)-DP algorithm\" but equation (3) bounds the error by O(k n^{1/k} log^{1.5}(n) log(n ... t ... k/gamma)/epsilon), omitting the log(n) factor contributed by t.",
+      "confidence": 100,
+      "classification": "established_error"
+    }
+  ]
+}

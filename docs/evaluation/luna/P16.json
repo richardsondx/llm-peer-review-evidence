@@ -1,0 +1,11 @@
+{
+  "errors": [
+    {
+      "location": "TRIANGLE-DETECTION-1 time analysis, Phase I; the later O(m^{4/3}) bound",
+      "description": "The stated running times omit the cost of the adjacency-matrix representation used for the constant-time edge tests. For a sparse connected graph with m = Θ(n), constructing that matrix costs Θ(n²), exceeding the claimed O(m^{4/3}) time. The manuscript does not specify an alternative constant-time edge-query structure or account for its construction.",
+      "evidence": "The text says Phase I runs in O(nx²) because ‘an edge test takes O(1) time using the adjacency matrix of G’; it later derives an O(m^{4/3}) bound for graphs with an arbitrary number of vertices.",
+      "confidence": 88,
+      "classification": "suspected_concern"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "errors": [
+    {
+      "location": "Lemma 4, Eqs. (12)-(14), and Theorem 5",
+      "description": "The claimed partial-transpose gate has an invalid Gaussian-channel representation. For the supplied beam-splitter matrix, A = Z_2 B Z_2 gives q'_1 = (q_1 + q_2)/sqrt(2) and p'_1 = (p_1 - p_2)/sqrt(2), so [q'_1,p'_1] = 0 rather than i. It cannot implement a noiseless bosonic channel. Consequently, the zero-noise encoding and decoding assumed in Theorem 5 do not establish physical noise polarization. The operator-transpose identification also fails for the manuscript's single-mode squeezer: S-hat(r)^T = S-hat(-r), whereas Z S(r) Z = S(r).",
+      "evidence": "Lemma 4 assigns the partial transpose the matrices tilde M_i = Z_i M Z_i and tilde N_i = Z_i N Z_i. The text acknowledges that tilde M_i is generally nonsymplectic, although its earlier definition requires M to be symplectic for a noiseless Gaussian unitary. Theorem 5 nevertheless uses B_2(G^B) and B_2(G^(B^T)) as gates without added noise.",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Corollary 6 proof and Eq. (18)",
+      "description": "The proposed output drops the noise already present in the first shared pair. Even accepting Theorem 5 formally, applying the stated I_(1) tensor G_(2,3) to sigma_AB^(1) and the ancilla composes N^(e^(-2r) sigma^2) with the existing N^(sigma^2). Equation (3) makes their variances add, yielding (1 + e^(-2r)) sigma^2, rather than the reduced variance in Eq. (18). That equation would require an initially ideal first pair.",
+      "evidence": "Corollary 6 defines sigma_AB^(i) = (I_A tensor N_B^(sigma^2))(rho_zeta). Its proof encodes sigma_A^(1), and the preceding text explicitly says the composite channel acts on sigma_AB^(1) and rho_anc. Equation (18) then gives (I tensor N^(e^(-2r) sigma^2))(rho_zeta), omitting the initial N^(sigma^2).",
+      "confidence": 99,
+      "classification": "established_error"
+    },
+    {
+      "location": "Appendix G, expansion of V and Eq. (G3)",
+      "description": "The fidelity expansion omits complex conjugation of the coefficients belonging to the adjoint operator. A checkable counterexample is W = exp(i pi n_j/2) tensor I_k with a vacuum ancilla. Because W is diagonal and the EPR components have equal occupation numbers, Psi_L = Psi_R for every finite r and tr(rho_0 V) = 1. The printed Eq. (G3), with two unconjugated alpha factors, instead gives (1 - tanh^2(r))/(1 + tanh^2(r)), tending to zero. The expression therefore cannot support the finite-squeezing fidelity claim.",
+      "evidence": "Appendix G defines V = (W^T_(i,k_1) tensor I_j)^dagger (I_i tensor W_(j,k_1)), but Eq. (G3) multiplies alpha_(n' m' n'' n_k_1) by alpha_(m' n' m_k_1 n'') with neither factor conjugated. The main text claims that the corresponding fidelity approaches 1 as r tends to infinity.",
+      "confidence": 100,
+      "classification": "established_error"
+    }
+  ]
+}

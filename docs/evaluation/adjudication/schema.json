@@ -1,0 +1,46 @@
+{
+  "type": "object",
+  "properties": {
+    "annotations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "annotation_index": {
+            "type": "integer"
+          },
+          "A_matches": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "B_matches": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "A_rationale": {
+            "type": "string"
+          },
+          "B_rationale": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "annotation_index",
+          "A_matches",
+          "B_matches",
+          "A_rationale",
+          "B_rationale"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "annotations"
+  ],
+  "additionalProperties": false
+}

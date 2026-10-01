@@ -1,9 +1,17 @@
 """Freeze the sample and prompts before any reviewer outputs exist."""
-import collections, csv, datetime, hashlib, json, pathlib, re, subprocess, unicodedata
+import collections, csv, datetime, hashlib, json, pathlib, re, subprocess, unicodedata, urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
 OUT = ROOT / 'docs/evaluation'
 SOURCE = pathlib.Path('/tmp/peer-review-SPOT')
+if (OUT/'luna').exists() or (OUT/'sol').exists():
+    raise SystemExit('Review outputs exist: refusing to overwrite frozen inputs or selection. Use a fresh output directory to reproduce a new experiment.')
+if not SOURCE.exists():
+    subprocess.run(['git','clone','https://github.com/guijinSON/SPOT.git',str(SOURCE)],check=True)
+subprocess.run(['git','checkout','cb0018d4bc5f18f6c43d83a27ffde1287addc748'],cwd=SOURCE,check=True)
+if not pathlib.Path('/tmp/spot-gold.json').exists():
+    url='https://datasets-server.huggingface.co/rows?dataset=amphora/SPOT-MetaData&config=default&split=train&offset=0&length=100'
+    pathlib.Path('/tmp/spot-gold.json').write_bytes(urllib.request.urlopen(url).read())
 normalize = lambda s: re.sub(r'\W', '', unicodedata.normalize('NFKD', s).lower())
 rows = list(csv.DictReader((SOURCE/'annotation/retracted_machine_filtered_final.csv').open()))
 gold = [x['row'] for x in json.load(open('/tmp/spot-gold.json'))['rows']]

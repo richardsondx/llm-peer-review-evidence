@@ -1,0 +1,11 @@
+{
+  "errors": [
+    {
+      "location": "Theorem 2 correctness proof, Case 2.1, and the subsequent sampling guarantee",
+      "description": "Case 2.1 does not establish that BFS detects the triangle: placing b and c on level 2 does not ensure that a discovers them or that they have a common BFS parent. Consequently, sampling the closed neighborhood A alone does not justify the claimed success probability.",
+      "evidence": "The proof states: \"Assuming that b is discovered before c, the triangle {a, b, c} is detected while scanning the adjacency list of b.\" Consider edges sa, su, sv, ub, vc, ab, ac, bc, with s scanning u, v, a in that order. The only triangle is abc; a is on level 1, and b and c are on level 2, but their parents are u and v. Both are discovered before a is processed. A common-parent BFS triangle test misses abc, and the supplied text provides no alternative BFS+ detection rule that resolves this case in the asserted O(m) time.",
+      "confidence": 97,
+      "classification": "suspected_concern"
+    }
+  ]
+}

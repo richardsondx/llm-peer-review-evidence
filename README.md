@@ -1,60 +1,52 @@
-# LLMs in Scientific Peer Review: A Source-Based Reassessment of 27 Studies
+# Can newer models detect scientific errors?
 
-**Author: [Richardson Dackam](https://richackam.com)** · Independent researcher, [Nshipyard](https://nshipyard.com) · [X: @richardsondx](https://x.com/richardsondx)
+**Author: [Richardson Dackam](https://richackam.com)** · Independent researcher, [Nshipyard](https://nshipyard.com) · [X @richardsondx](https://x.com/richardsondx)
 
-[Read the publication](https://richardsondx.github.io/llm-peer-review-evidence/) · [Read the report](https://richardsondx.github.io/llm-peer-review-evidence/report.html) · [Luna matrix](https://richardsondx.github.io/llm-peer-review-evidence/luna/matrix.html) · [Sol matrix](https://richardsondx.github.io/llm-peer-review-evidence/sol/matrix.html)
+[Research website](https://richardsondx.github.io/llm-peer-review-evidence/) · [Luna reviewer results](https://richardsondx.github.io/llm-peer-review-evidence/luna/matrix.html) · [Sol reviewer results](https://richardsondx.github.io/llm-peer-review-evidence/sol/matrix.html) · [Methods](https://richardsondx.github.io/llm-peer-review-evidence/evaluation/methods.html) · [Research report (PDF)](https://richardsondx.github.io/llm-peer-review-evidence/evaluation/report.pdf)
 
-## Why this project exists
+I wanted to test whether concerns raised in a previous review of AI peer review still apply to newer models. The first implementation re-extracted old studies, which did not answer that performance question. This project now includes actual new manuscript reviews by GPT-6-Luna and GPT-6.1-Sol, both with Extra High reasoning.
 
-I wanted to verify whether the findings of a previous evidence review of LLM-generated scientific peer review still hold when newer models independently examine the same primary sources. This project re-extracts the original 27 candidate studies across six finding dimensions with GPT-6-Luna (Extra High) and GPT-6.1-Sol (Extra High).
+## New reviewer pilot
 
-The models are evidence extractors. The project does not conduct new experiments testing these two models as scientific peer reviewers, and it does not yet establish that the earlier review has been replicated.
+The exploratory experiment uses **27 manuscripts from SPOT**, with identical text-only inputs, a fixed scientific-validity prompt, and one fresh review per manuscript per model. Luna runs first, then Sol. Reviewers receive no reference annotations, other-model outputs, or browsing access. Both primary runs use the same app sub-agent interface with no inherited conversation per paper. Input/schema reads and output writes are allowed; other reads and browsing are prohibited. Tool compliance and full-input reading are self-attested, not independently event-audited. Requested Codex runtime identifiers are `gpt-6-luna` and `gpt-6.1-sol`, both `xhigh`; these are not independently attested API snapshot IDs.
 
-## Publication status
+The **29 selected-category reference annotations** vary in specificity. The primary coverage measure uses **12 sufficiently specific annotations**; the rest remain visible but are excluded from the primary denominator. Screening was saved after execution began and before eligible-case outputs were inspected; P03 had already been viewed for runtime verification. This is not an external preregistration.
 
-Version **0.2.0**, published **1 October 2026**, is an **research report; not peer reviewed**. Luna and Sol each contain 27 reviewed study records (162 cells each). The original baseline is preserved, and all three versions can be inspected side by side. Targeted baseline audits document source-checked corrections; exhaustive claim adjudication and a model accuracy benchmark are not claimed. See [run status](RUN_STATUS.json).
+A fresh GPT-6.1-Sol Extra High app sub-agent judge compares paired outputs labelled A/B, without reviewer model names. Matching requires the same specific mechanism and a compatible location. This is automated annotation matching, **not independently human-validated scientific truth**. A same-family judge may bias results. Unmatched reviewer flags may be valid additional findings; they are not automatically hallucinations.
 
-## Cite this work
+A [paired results table](https://richardsondx.github.io/llm-peer-review-evidence/evaluation/comparison.html) and downloadable CSV compare the same cases across reviewers. Each paper has a stable matrix anchor and raw JSON link.
 
-Dackam, R. (2026). *LLMs in Scientific Peer Review: A Source-Based Reassessment of 27 Studies* (Version 0.2.0; research report). Nshipyard. https://github.com/richardsondx/llm-peer-review-evidence/releases/tag/v0.2.0
+The six pilot matrix columns describe reference detection, primary coverage, reviewer flags, reported confidence, reference quality and input limitations. This differs from the six historical literature dimensions because this experiment does not measure human agreement, score bias, true false-positive rate or confidence calibration.
 
-Use [CITATION.cff](CITATION.cff) or [BibTeX](docs/citation.bib). This release has a versioned URL but no DOI. No journal publication or Google Scholar indexing is claimed.
+The sample is enriched for equation/proof errors (16 of 27 papers). There are 223 omitted images across the text-only inputs. All sampled papers have annotations, with no clean-paper controls. Public-benchmark training exposure and single-run variability are unknown. The results cannot establish general reviewer reliability or autonomous deployment readiness.
 
-## Original baseline
+Records: [protocol](docs/evaluation/protocol.json), [case manifest](docs/evaluation/cases.json), [reference screening](docs/evaluation/annotation-audit.json), [provenance](docs/evaluation/provenance.json), [current summary](docs/evaluation/summary.json). Each model’s directory contains raw review JSON, run metadata, and combined results. An initial CLI route completed 27 Luna reviews but rejected Sol before inference; the primary comparison was moved to the same app sub-agent interface for both models. The earlier CLI outputs and failure records are retained as supplementary data, outside primary scores. See the execution amendment in docs/evaluation/protocol-amendment.json. Full third-party manuscript text and local runtime logs are excluded from publication; input hashes enable reproduction from the public source repository.
 
-The original Keenable report is preserved in `docs/baseline/original-data.json` and an unmodified report snapshot, with SHA-256 provenance. All 131 populated findings match the original embedded data exactly; its 31 blank cells remain explicit. The author describes its generating model as GPT-4; Keenable did not expose generator metadata, so this attribution is unconfirmed. GPT-4 in individual findings identifies a model tested by the original paper.
+## Completed pilot results
 
-[Compare baseline, Luna and Sol](https://richardsondx.github.io/llm-peer-review-evidence/comparison.html). This compares evidence extraction and interpretation, not reviewer performance.
+| Reviewer (Extra High) | Manuscripts reviewed | Specific reference annotations matched | Reviewer flags |
+|---|---:|---:|---:|
+| GPT-6-Luna | 27 | 8/12 | 51 |
+| GPT-6.1-Sol | 27 | 10/12 | 94 |
 
-## Reproduce the website
+Matching was automated, with reviewer identities withheld. These are exploratory reference-coverage counts, not independently verified accuracy or a general performance ranking.
 
-The site is static HTML with no external runtime dependencies. The reviewed data live in `docs/luna/matrix.json` and `docs/sol/matrix.json`. Run `python3 research/build_advanced.py`, `python3 research/build_views.py` and `python3 research/build_comparison.py` to regenerate the interactive views from saved data. Serve `docs/` using any static web server. GitHub Pages publishes this folder from `main`. Simplified matrices open by default, with the detailed matrices available as Advanced views.
+## Historical literature audit
 
-`python3 research/build_views.py` reproduces the simplified matrix views in `docs/`; `research/luna/build_matrix.py` preserves the reviewed Luna extraction definitions. Downloaded third-party source caches are excluded. Primary-source URLs and locators remain in the data. The earlier partial Sol snapshot remains identifiable in release v0.1.0; the current matrix is complete.
+The earlier **27 studies are a different corpus** from the new 27 manuscripts. Their source audit and the original Keenable baseline remain intact: [literature overview](https://richardsondx.github.io/llm-peer-review-evidence/literature.html), [original matrix](https://richardsondx.github.io/llm-peer-review-evidence/baseline/matrix.html), and [three-version extraction comparison](https://richardsondx.github.io/llm-peer-review-evidence/comparison.html).
 
-## Methods and provenance
+The original report’s generating model is attributed to GPT-4 by the author, but generator metadata is unconfirmed. It is historical context, not a controlled GPT-4 run on the new pilot. Version [0.2.0](https://github.com/richardsondx/llm-peer-review-evidence/releases/tag/v0.2.0) preserves the source-based reassessment as a separately citable research report. Historical source claims are never relabelled as results for the newer reviewers.
 
+## Reproduce
 
-Current status: both Luna and Sol have completed 27-study source-based extractions with recorded QA and corrections. All three versions, including the original Keenable baseline, are available for comparison.
+The site is static HTML. `python3 research/evaluation/restore_inputs.py` rebuilds the frozen inputs from SPOT revision `cb0018d4bc5f18f6c43d83a27ffde1287addc748` and checks every SHA-256 hash. To reproduce the primary interface, use Codex app sub-agents with explicit model/effort selection and no inherited context. `python3 research/evaluation/refresh_reviewer_manifest.py` updates local input paths while preserving hashes. The public task templates are `docs/evaluation/app-reviewer-task-template.txt` and `docs/evaluation/app-judge-task-template.txt`. Preserve published outputs; new independent reruns should use a separate experiment directory.
 
-This project rebuilds the original report's 27-study, six-dimension evidence matrix using two research agents sequentially: GPT-6-Luna with Extra High reasoning, followed by GPT-6.1-Sol. The shared verification cutoff is 1 October 2026.
+Run all fresh Luna app reviews, then all fresh Sol app reviews. After both model outputs exist, `python3 research/evaluation/prepare_app_judging.py` creates identity-blinded A/B inputs for fresh Sol matching sub-agents. The CLI runner and CLI judge scripts preserve the initial attempted route; Sol was rejected on that route for this account, so they do not reproduce the primary interface. `python3 research/evaluation/build.py`, `python3 research/evaluation/build_paired.py` and `python3 research/evaluation/build_overview.py` regenerate the reviewer matrices and overview. After validation, `research/evaluation/build_report.py` uses ReportLab to create the fixed technical-report PDF and its HTML version. `python3 research/evaluation/validate.py` checks run provenance, output integrity, scoring completeness and arithmetic; `python3 research/evaluation/check_site.py` checks the published files and links. The source audit builders `research/build_views.py`, `research/build_advanced.py` and `research/build_comparison.py` regenerate the separate literature views.
 
-The newer models act as researchers and extractors. These outputs do not constitute new experiments measuring GPT-6-Luna or GPT-6.1-Sol as scientific peer reviewers.
+GitHub Pages publishes `docs/` from `main`. See [CITATION.cff](CITATION.cff) for the current citation; archive citation metadata remain in `docs/literature-CITATION.cff`. The fixed paper is Nshipyard technical report `NS-LLMPR-2026-01`, version 0.3.0. This work is exploratory, not peer reviewed, and has no DOI. No Google Scholar indexing is claimed.
 
-Both agents receive the same question and study candidates in `shared-brief.json`. Candidate labels and links are unverified inputs. Each agent independently retrieves primary evidence, identifies source and metadata errors, and records missing or inaccessible evidence. The second agent must not inspect the first agent's results while extracting.
+## Authorship, provenance and reuse
 
-The main matrices preserve the original 27 candidate IDs. An identity mismatch must be documented rather than silently substituting a different study. Any additional studies belong in an appendix. Original-report comparisons happen after each agent saves its independent extraction.
+Richardson Dackam initiated and authored this publication under Nshipyard. AI systems generated the reviews, performed automated annotation matching, assisted with source audits and developed the presentation. Independent expert validation is outstanding; the author is responsible for publication decisions.
 
-Both runs use Extra High reasoning (`xhigh`). The common source-version policy preserves arXiv v1 for candidate IDs 9, 10, and 27; other candidates use the latest primary-source version available by the cutoff, with published proceedings preferred for candidate 13. Source versions are recorded explicitly. The overconfidence column distinguishes confidence calibration from independently measured false positives or unsupported critiques.
-
-Each model directory contains a structured JSON matrix, a Markdown version, a self-contained HTML matrix, and a correction log. Source access and version limitations are part of the evidence record. The three-version viewer displays all cells; targeted baseline audits describe source-checked corrections.
-
-These are reviewed research outputs, not untouched model benchmarks. The parent agent checks structure, sampled source claims, metadata, and metric interpretation; identified draft errors are corrected within each model run. Counts of source-checked cells do not measure model accuracy, and matching findings do not prove that either extraction is correct.
-
-## Authorship and AI assistance
-
-Richardson Dackam initiated and authored this research publication under Nshipyard. AI agents performed the evidence extraction, source checking, sampled QA, presentation development and corrections described above. The extraction outputs include corrections by a supervising AI agent; an independent human audit of every cell is not claimed. The author is responsible for publication decisions. Original studies retain their own authorship and rights.
-
-## Corrections and reuse
-
-Open an issue with the candidate ID, dimension, primary source and exact locator to propose a correction. Cite a specific release when using the findings. Authored narrative and the original organization of this evidence synthesis are shared under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); third-party quotations and source material retain their original rights. Project code is MIT licensed (see LICENSE).
+Benchmark: [SPOT project](https://llms-in-science.github.io/spot/), [source repository](https://github.com/guijinSON/SPOT), [SPOT-MetaData](https://huggingface.co/datasets/amphora/SPOT-MetaData). Original papers and annotations retain their own authorship and licenses. Authored narrative is CC BY 4.0; project code is MIT. Open an issue with the paper ID and exact evidence to propose a correction.

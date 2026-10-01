@@ -65,8 +65,8 @@ def build(model):
     out=ROOT/model
     partial=not (out/'matrix.json').exists()
     data=json.loads((out/('matrix.partial.json' if partial else 'matrix.json')).read_text())
-    current=out/('matrix.partial.html' if partial else 'matrix.html')
-    advanced=out/'matrix.advanced.html'
+    current=out/(('matrix.partial.html' if partial else 'matrix.html') if model=='baseline' else 'literature.html')
+    advanced=out/('matrix.advanced.html' if model=='baseline' else 'literature.advanced.html')
     if not advanced.exists():
         original=current.read_text()
         navigation='<nav class="view-navigation" aria-label="Matrix view"><a href="matrix.html">Simple</a><a href="matrix.advanced.html" aria-current="page">Advanced</a></nav>'
@@ -110,8 +110,11 @@ def build(model):
     if model=='baseline':
         result=result.replace('Quantified or detailed finding','Original reported finding (not reverified)')
         result=re.sub(r'<span class="key"><i class="swatch (red|green)"></i>.*?</span>','',result)
-    (out/'matrix.html').write_text(result)
-    if partial:current.write_text(result)
+    if model in {'luna','sol'}:
+        result=result.replace('href="matrix.html"','href="literature.html"').replace('href="matrix.advanced.html"','href="literature.advanced.html"')
+        (out/'literature.html').write_text(result)
+    else:
+        (out/'matrix.html').write_text(result)
     print(model,n,'rows; compact default + original advanced view saved')
 
 if __name__=='__main__':

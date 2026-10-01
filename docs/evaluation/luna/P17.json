@@ -1,0 +1,18 @@
+{
+  "errors": [
+    {
+      "location": "Proof of Theorem 1.4, paragraph beginning ‘By using Dirichlet’s unit theorem’",
+      "description": "The claimed uniform bound between all archimedean absolute values of an arbitrary algebraic integer is false, so the ensuing conclusion that m(y, 0) = O(1) is not established.",
+      "evidence": "The proof asserts a constant c(κ) with |y|_v ≤ c(κ)|y|_w for every pair of archimedean places and every y. For κ = ℚ(√2), the algebraic integers y_n = (1 + √2)^n have absolute values (1 + √2)^n and (√2 − 1)^n at the two real embeddings, whose ratio is (3 + 2√2)^n and is unbounded. At the smaller embedding, log⁺(1/|y_n|_v) = n log(1 + √2), so the asserted O(1) bound also fails. Dirichlet’s unit theorem permits balancing after multiplying by a suitable unit; it does not give the stated bound for y itself.",
+      "confidence": 99,
+      "classification": "established_error"
+    },
+    {
+      "location": "Proof of Theorem 1.6, equations (21)–(22)",
+      "description": "The proof replaces the multiplicity-counting N terms supplied by Theorem 1.5 with radical counts overline N without justification; the ‘simple’ condition only restricts denominator valuations of x.",
+      "evidence": "Theorem 1.5, equation (12), gives N(x,∞) + N(x,0) + N(x,−1), whereas (21) uses overline N for all three terms. By (5), N counts ord_v(x−a) with multiplicity; by (7)–(8), overline N counts each prime only once. For S consisting of the archimedean place of ℚ and x = 2^n (n ≥ 2), x is simple, N(x,0) = n log 2 while overline N(x,0) = log 2. This occurs in the proof’s triple (a,b,c) = (2^n, −(2^n+1), 1), with a+b+c=0 and c squarefree. Thus the replacement is not an O(1) identity, and the stated deduction of (21) from (12) does not follow.",
+      "confidence": 98,
+      "classification": "established_error"
+    }
+  ]
+}

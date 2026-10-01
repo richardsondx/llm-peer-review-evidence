@@ -1,0 +1,32 @@
+{
+  "errors": [
+    {
+      "location": "Materials and methods, foliage adhesion assay, Equation (1) and loss-rate formula (3)",
+      "description": "Retention is calculated from the total treated leaf mass without subtracting the prespray leaf mass. This counts leaf tissue as retained formulation and biases the loss-rate denominator, so the reported retention and wash-off estimates do not measure pesticide deposition correctly.",
+      "evidence": "The leaf portions are initially weighed, then \"The leaf portion weighed (W1) was recorded after air-drying\" and \"R1 = W1/S\". The loss rate is subsequently defined as \"LR(%) = (R1 - R2) / R1 × 100\"; Equation (1) contains no subtraction of the initial leaf weight.",
+      "confidence": 99,
+      "classification": "established_error"
+    },
+    {
+      "location": "Pilot-batch characterization paragraph and supplied text for Fig. 4d",
+      "description": "The pilot-batch zeta potential is reported with contradictory signs. The positive value used to claim similarity to the laboratory batch cannot simultaneously agree with the supplied negative pilot value; opposite surface-charge signs materially change the scale-up comparison.",
+      "evidence": "The pilot batch is described as having \"zeta potential of +31.48 mv\", while the supplied Fig. 4d text states \"Zeta Potential: -31.48 mV\". The laboratory value is +31.84 mV, and the manuscript concludes that the laboratory and pilot zeta potentials were \"almost similar\".",
+      "confidence": 99,
+      "classification": "established_error"
+    },
+    {
+      "location": "Materials and methods, Artemia acute toxicity assay; toxicity introduction and Artemia developmental-toxicity discussion",
+      "description": "Artemia exposure concentrations differ by a factor of 1000 between methods and interpretation, leaving the dose supporting the safety claims unresolved. The developmental discussion also assigns both incompatible concentrations to its experiment.",
+      "evidence": "The acute assay uses \"100.0 mg L⁻¹\", but the toxicity discussion describes Artemia testing at \"100 μg/L\". The developmental discussion says \"at the dose 100μg/L\" and immediately describes embryos exposed to \"100 μg/mL HTS_NFG\". Both 100 mg/L and 100 μg/mL equal 100,000 μg/L.",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "UV/storage-stability methods and discussion beginning \"The degradation caused by UV radiation\"",
+      "description": "Unchanged bulk absorbance, morphology and particle size establish physical/optical stability, but do not establish retained fungal viability or insecticidal activity. No irradiated unformulated-HTS comparison is described, so the claim that formulation enhances HTS UV resistance and shelf life is unsupported by the reported assay.",
+      "evidence": "Methods compare \"UV spectra and morphology\" after irradiation/storage with \"freshly prepared samples\", and also measure particle size. The discussion states \"no variation in absorbance was observed\" and concludes \"the NFG effectively enhances the UV resistance of HTS\" and potentially improves shelf life; no post-exposure biological activity measurement is reported.",
+      "confidence": 94,
+      "classification": "suspected_concern"
+    }
+  ]
+}

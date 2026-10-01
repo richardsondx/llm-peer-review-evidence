@@ -1,0 +1,39 @@
+{
+  "errors": [
+    {
+      "location": "Abstract, Results; animal experimental methods",
+      "description": "The abstract misstates HFD exposure as 20 weeks. The animal protocol specifies 12 weeks of treatment starting at 8 weeks of age, making 20 weeks the endpoint age rather than the feeding duration.",
+      "evidence": "Abstract: \"Mice were fed by a 60% kcal fat diet for 20 weeks\". Methods: mice were purchased at \"5 weeks\", randomized \"After 3 weeks\", and euthanized \"After a 12-week treatment\".",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Abstract, Results; animal experimental methods and mouse results",
+      "description": "The abstract attributes the mouse treatment results to GW4064, but the described mouse experiment used INT-747. GW4064 treatment of mice is not part of the reported protocol.",
+      "evidence": "Abstract: \"Treatment with the FXR agonist CDCA or GW4064 decreased body weight, renal lipid accumulation, as well as renal injury.\" The four mouse groups were control, HFD, HFD with 0.1% CDCA, and \"a 30 mg/kg INT-747 group\"; the mouse results likewise report \"Treatment with CDCA or INT-747\".",
+      "confidence": 99,
+      "classification": "established_error"
+    },
+    {
+      "location": "Mouse characteristics results; supplied textual label for Figure 5H",
+      "description": "Serum creatinine is reported with incompatible units. The results use micromoles per litre, whereas the supplied Figure 5H label uses millimoles per litre, a factor-of-1000 difference in the concentration scale.",
+      "evidence": "Results: \"serum creatinine (4.8 ± 1.3 vs. 1.11 μmol/L)\". Supplied textual label: \"Graph H: Serum Creatinine (mmol/L)\".",
+      "confidence": 99,
+      "classification": "established_error"
+    },
+    {
+      "location": "Abstract, Results; FXR interaction and AF1 deletion experiments; Figure 4 caption",
+      "description": "The claimed AF1-mediated binding and disruption of the β-catenin/TCF4 complex are not established by the described assays. The AF1 deletion experiment tests reporter suppression, while the reported co-immunoprecipitation measures FXR–β-catenin association; neither demonstrates AF1-dependent association or loss of TCF4 from that complex.",
+      "evidence": "Abstract: \"We showed that FXR could bind with β-catenin via the AF1 domain, and disrupt the assembly of the core β-catenin/TCF4 complex.\" The mutant result is that pDEL-FXR \"did not have any effect on β-catenin mediated TOPflash reporter activity\". The co-immunoprecipitation methods and Figure 4B–C caption specify detection of FXR and β-catenin, without a TCF4 complex measurement.",
+      "confidence": 93,
+      "classification": "suspected_concern"
+    },
+    {
+      "location": "Cell-culture results after Figure 2; opening discussion paragraph",
+      "description": "Changes in epithelial and myofibroblast markers in an NRK-52E monolayer are treated as confirmation of tubulo-interstitial fibrosis. These measurements show a fibrogenic cellular response, but do not establish fibrosis of a tubulo-interstitial tissue compartment.",
+      "evidence": "The reported in vitro endpoints are fibronectin, α-SMA, Snail and E-cadherin expression. The discussion calls these changes \"confirming that ox-LDL is able to trigger tubulo-interstitial fibrosis\" and states that FXR \"ameliorates the fibrosis in tubular epithelial cells in vitro\".",
+      "confidence": 88,
+      "classification": "suspected_concern"
+    }
+  ]
+}

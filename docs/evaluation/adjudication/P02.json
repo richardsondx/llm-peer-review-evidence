@@ -1,0 +1,15 @@
+{
+  "annotations": [
+    {
+      "annotation_index": 0,
+      "A_matches": [
+        3
+      ],
+      "B_matches": [
+        4
+      ],
+      "A_rationale": "Explicitly identifies negative LOQ values as invalid, matching the reference mechanism; the table-number discrepancy creates some location uncertainty.",
+      "B_rationale": "Explicitly identifies negative LOQ values as invalid physical thresholds, matching the reference mechanism; the table-number discrepancy creates some location uncertainty."
+    }
+  ]
+}

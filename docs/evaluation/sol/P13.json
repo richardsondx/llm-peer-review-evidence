@@ -1,0 +1,46 @@
+{
+  "errors": [
+    {
+      "location": "RF-EMR exposure effects on the BBB, Kuribayashi et al. summary; bibliography entry for Kuribayashi et al.",
+      "description": "The review describes the negative BBB finding as an in vitro experiment, although the supplied reference identifies exposure of immature and young rats. This misclassifies an animal exposure study as a cell or tissue experiment.",
+      "evidence": "The text says \"Kuribayashi et al did not witness BBB leakage during in vitro experiments.\" The reference title is \"Lack of effects of 1439 MHz electromagnetic near field exposure on the blood–brain barrier in immature and young rats.\"",
+      "confidence": 99,
+      "classification": "established_error"
+    },
+    {
+      "location": "RF-EMR exposure effects on learning and memory, Wang et al. summary; reference 54",
+      "description": "An acute exposure experiment is presented as evidence about chronic exposure. Acute and chronic exposure are different experimental conditions, so this changes the finding being synthesized.",
+      "evidence": "The text says Wang et al. demonstrated that \"chronic exposure to pulsed 2450 MHz RF-EMF may reduce learning ability and memory functions.\" Reference 54 is titled \"Acute exposure to pulsed 2450-MHz microwaves affects water-maze performance of rats.\"",
+      "confidence": 99,
+      "classification": "established_error"
+    },
+    {
+      "location": "Son et al., Fu et al., and Burman et al. summaries; Table 1, reference 156 row; references 56, 146, 147, and 156",
+      "description": "Several mouse studies are incorrectly reported as rat studies. In particular, the Son study uses 5xFAD mice, a model specification also lost in the rat description. These errors alter the experimental populations underlying the review.",
+      "evidence": "Son is described as \"research conducted on rats,\" but reference 56 specifies \"5xFAD mice.\" Fu is described as exposing \"male adult Wistar rats,\" but reference 146 specifies \"spatial recognition memory in mice.\" Burman is described as exposing \"C57BL/6NCrl and BALB/cAnNCrl rats,\" but reference 147 specifies \"two strains of laboratory mouse.\" Table 1 lists \"C57BL/6 rats\" for reference 156, whose title specifies \"the mouse hippocampus.\"",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "RF-EMR exposure effects on neurotransmitters, final paragraph",
+      "description": "Acetylcholine is incorrectly categorized as an inhibitory neurotransmitter without qualification. Its effect depends on receptor type and cellular context; nicotinic acetylcholine receptors mediate excitatory transmission. The categorical label misstates the neurophysiology being reviewed.",
+      "evidence": "The text refers to \"inhibitory neurotransmitters such as Acetylcholine.\"",
+      "confidence": 98,
+      "classification": "established_error"
+    },
+    {
+      "location": "RF-EMR exposure effects on learning and memory, public-environment safety statement; reference 53",
+      "description": "The categorical claim that public RF exposure is harmless exceeds the scope of its supplied supporting reference. A review of brain cancer and head tumors does not establish absence of the non-cancer neurological harms discussed here, nor does the manuscript specify an exposure threshold for the claim.",
+      "evidence": "The text states \"the RF-EMR exposure intensity in the public environment is not detrimental\" and cites reference 53, titled \"Systematic review of wireless phone use and brain cancer and other head tumors.\" The same section discusses sleep problems, headaches, blood-pressure changes, and memory effects.",
+      "confidence": 94,
+      "classification": "suspected_concern"
+    },
+    {
+      "location": "Brain-development discussion, paragraph beginning \"During the prenatal period\"",
+      "description": "The claim that RF exposure has been demonstrated to elevate brain-tumor risk and reduce hippocampal neuron numbers in children is stronger than the evidence described in the manuscript. Its concrete developmental examples concern rodents or cultured cells, and its earlier tumor discussion expressly reports an absence of evidence. This appears to conflate experimental findings with demonstrated human effects.",
+      "evidence": "The text says \"Recent studies have demonstrated that RF-EMR exposure can elevate the risk of brain tumors and negatively impact cognitive function in children, reducing the number of neurons in the hippocampus.\" Nearby examples describe prenatal rat exposure, embryonic stem cells, and animal offspring. Earlier, the review states \"no evidence links RF-EMF exposure to brain tumors\" and that \"solid evidence is still absent\" for neurodegenerative associations.",
+      "confidence": 91,
+      "classification": "suspected_concern"
+    }
+  ]
+}

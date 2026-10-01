@@ -1,0 +1,19 @@
+{
+  "case": "P26",
+  "judge_requested_model": "gpt-6.1-sol",
+  "reasoning_effort": "xhigh",
+  "interface": "app_subagent",
+  "agent_name": "/root/paired_judging/judge_p26",
+  "started_at": "2026-10-01 21:04:29 UTC",
+  "ended_at": "2026-10-01 21:06:16 UTC",
+  "completion_status": "completed",
+  "valid_json": true,
+  "exit_code": null,
+  "tool_calls": null,
+  "tool_compliance": "self_attested",
+  "tool_use_attestation": "Read only the assigned P26.txt and schema.json, including the full input and schema. The input SHA-256 matched. No browsing or unrelated reads occurred.",
+  "full_input_read": true,
+  "input_sha256_matches_manifest": true,
+  "input_sha256": "8bbaf80d0e54368330189f31d0bfe8b537ec71cc103709f3d2691647cfee6e17",
+  "output_sha256": "8e1970d467bac4ec0e59df7162c55670f92bd22a9b08a4d5fff6ef8f6e10bf4f"
+}

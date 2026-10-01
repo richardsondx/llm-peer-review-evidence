@@ -1,0 +1,25 @@
+{
+  "errors": [
+    {
+      "location": "§2.3 Artemia acute-toxicity method; §3, toxicity results and developmental-toxicity discussion",
+      "description": "The reported Artemia exposure concentration is internally inconsistent by a factor of 1,000, so the dose supporting the safety conclusion is unclear.",
+      "evidence": "The acute-toxicity method specifies 100.0 mg L⁻¹, while the toxicity-results text says the tested concentration was 100 μg/L; the developmental-toxicity discussion alternates between 100 μg/L and 100 μg/mL. 100 mg/L equals 100 μg/mL, but equals 100,000 μg/L.",
+      "confidence": 99,
+      "classification": "established_error"
+    },
+    {
+      "location": "§2.3, Step 3: High-pressure homogenization; pilot-scale procedure and subsequent HPH discussion",
+      "description": "The laboratory preparation does not consistently specify whether the HTS-loaded coarse suspension is homogenized, leaving the central particle-size-reduction step ambiguous.",
+      "evidence": "Step 1 contains MNS, water, and propylene glycol; glycerol and HTS are added in Step 2. Step 3 nevertheless says the 'mixture produced in step 1' is homogenized, while the later process description says the suspension containing HTS is charged into the HPH and the discussion calls it the HTS primary suspension.",
+      "confidence": 94,
+      "classification": "suspected_concern"
+    },
+    {
+      "location": "§2.3 UV-degradation method; §3 UV-stability discussion and conclusion",
+      "description": "The reported UV measurements establish physical or spectral stability of the formulation, but do not establish that the fungal active retains viability or insecticidal activity after UV exposure.",
+      "evidence": "The UV method reports UV spectra, morphology, and particle size after irradiation/storage. The discussion uses these unchanged measurements to conclude that the NFG provides UV protection to HTS and enhances its UV resistance, but reports no post-irradiation fungal viability or bioefficacy measurement.",
+      "confidence": 91,
+      "classification": "suspected_concern"
+    }
+  ]
+}

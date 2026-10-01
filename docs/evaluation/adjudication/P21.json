@@ -1,0 +1,15 @@
+{
+  "annotations": [
+    {
+      "annotation_index": 0,
+      "A_matches": [
+        0
+      ],
+      "B_matches": [
+        1
+      ],
+      "A_rationale": "The explicit unequal phases on two binary codewords give a precise counterexample to Equation 6, corresponding to the reference’s real-versus-modulo-2 arithmetic incompatibility.",
+      "B_rationale": "The flag explicitly identifies the real linear-system solution as incompatible with phases on binary codewords in Equations 4–6, and supplies a precise counterexample."
+    }
+  ]
+}

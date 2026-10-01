@@ -1,0 +1,19 @@
+{
+  "case": "P10",
+  "judge_requested_model": "gpt-6.1-sol",
+  "reasoning_effort": "xhigh",
+  "interface": "app_subagent",
+  "agent_name": "/root/paired_judging/judge_p10",
+  "started_at": "2026-10-01 20:54:14 UTC",
+  "ended_at": "2026-10-01 20:55:38 UTC",
+  "completion_status": "completed",
+  "valid_json": true,
+  "exit_code": null,
+  "tool_calls": null,
+  "tool_compliance": "self_attested",
+  "tool_use_attestation": "Read only the complete P10.txt and schema.json. Input SHA-256 matched f32ec053f2d85cd20e31464a29d56656c2002e15f5c8706e6793bb8c3d32c207. No browsing, unrelated reads, or output readback.",
+  "full_input_read": true,
+  "input_sha256_matches_manifest": true,
+  "input_sha256": "f32ec053f2d85cd20e31464a29d56656c2002e15f5c8706e6793bb8c3d32c207",
+  "output_sha256": "805e2291b8beb35eb122e6621b0fe66fae5fff73aed2c1cc39058682d7f0d810"
+}

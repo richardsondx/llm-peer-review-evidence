@@ -21,5 +21,5 @@ for model,label in [('luna','GPT-6-Luna'),('sol','GPT-6.1-Sol')]:
    h.append('</ul></td>')
   h.append('</tr>')
  h.append('''</tbody></table></div><p><a href="matrix.json">JSON</a> · <a href="matrix.md">Markdown</a> · <a href="corrections.md">Correction log</a></p></main><script>const rows=[...document.querySelectorAll('tbody tr')];document.querySelector('#search').addEventListener('input',e=>{let n=0,q=e.target.value.toLowerCase().trim();for(const r of rows){r.hidden=!r.textContent.toLowerCase().includes(q);if(!r.hidden)n++;}document.querySelector('#count').textContent=n+' of 27 studies';});</script></body></html>''')
- (ROOT/model/'matrix.advanced.html').write_text(''.join(h))
+ (ROOT/model/'literature.advanced.html').write_text(''.join(h).replace('href="matrix.html"','href="literature.html"').replace('href="matrix.advanced.html"','href="literature.advanced.html"'))
  print(label, len(data['rows']),'detailed rows rendered from current JSON')

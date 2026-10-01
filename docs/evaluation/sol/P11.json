@@ -1,0 +1,32 @@
+{
+  "errors": [
+    {
+      "location": "Section 2, equation (2.1) and the subsequent area-preservation statement",
+      "description": "The stated normalization preserves area 4π only when the compact surface has Euler characteristic 2; it is not the normalized Ricci flow for an arbitrary compact surface.",
+      "evidence": "The text introduces an arbitrary compact surface and states that its area remains 4π under ∂t g = 2(1−K)g. Differentiating area gives dArea/dt = 2Area−2∫K dV = 8π−4πχ(M) at Area = 4π, which need not vanish.",
+      "confidence": 99,
+      "classification": "established_error"
+    },
+    {
+      "location": "Remark 2.2",
+      "description": "The displayed small-area expansion is algebraically false.",
+      "evidence": "The claimed equality is √(4πA−κA²) = √(4πA−κA³/(4√π)) + o(A²). The left expression is 2√π A^(1/2)−κ A^(3/2)/(4√π)+O(A^(5/2)); the right square root has no A^(3/2) term. Their difference is therefore not o(A²).",
+      "confidence": 100,
+      "classification": "established_error"
+    },
+    {
+      "location": "Proposition 3.1, application of the maximum principle to the ODE solution",
+      "description": "The area-dependent ODE barrier is not a subsolution throughout the spatial domain, so the maximum principle does not establish the asserted bound with B(A).",
+      "evidence": "The proof fixes B = [A²+(4π−A)²]/[A(4π−A)] for one area and compares the resulting spatially constant f(t) with (2.5). Normal displacement changes enclosed area, so this coefficient varies with r. A subsolution requires (ln f)′ ≤ B(A(r))(1−f) everywhere; B(2π)=2, whereas B(A)>2 for A≠2π. The chosen ODE violates that inequality at the smaller coefficient.",
+      "confidence": 98,
+      "classification": "established_error"
+    },
+    {
+      "location": "Theorem 3.2, the step beginning “since the inequality (2.4) is tight for A → 0”",
+      "description": "Asymptotic tightness does not allow the lower bound in (2.4) to replace I_A² in another lower-bound inequality; the claimed ordering is actually false for sufficiently small A under the contradiction hypothesis.",
+      "evidence": "The proof asserts (4πA−κ(T)A²)/(4πA−A²) ≥ 1/(1+e^(−BT−C)). For fixed T>0 and κ(T)>1, its left side is 1−(κ(T)−1)A/(4π)+O(A²). With the stated C and B(A)∼4π/A, the right side is 1−O(Ae^(−4πT/A)). Thus the left side is smaller for sufficiently small A. Knowing both quantities are lower bounds for I_A² does not order them.",
+      "confidence": 100,
+      "classification": "established_error"
+    }
+  ]
+}

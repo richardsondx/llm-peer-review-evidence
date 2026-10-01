@@ -1,0 +1,10 @@
+{
+  "checked_at": "2026-10-01T21:08:26.126555+00:00",
+  "pages": 6,
+  "sha256": "862cfde254cdc51f65fce66b0535ffb05d89c774bb77e7959e4e9cc5b79b65c6",
+  "bytes": 19782,
+  "all_latest_pages_visually_inspected": true,
+  "layout": "No clipping, overlap, missing glyphs or table overflow observed",
+  "title_author_results_and_all_case_ids_present": true,
+  "scope": "Document rendering and text integrity; not scientific correctness"
+}

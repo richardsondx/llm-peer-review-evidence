@@ -1,0 +1,13 @@
+{
+  "annotations": [
+    {
+      "annotation_index": 0,
+      "A_matches": [
+        0
+      ],
+      "B_matches": [],
+      "A_rationale": "Although the reference does not specify the Proposition 2.3 error, A[0] explicitly identifies its failure to justify complete contractivity of q in Theorem 4.1, corresponding to the reference dependency concern. A[1] describes a separate sign error.",
+      "B_rationale": "B[0] concerns the sign of J squared in Theorem 3.3, not the failure of Proposition 2.3 or its application to q in Theorem 4.1."
+    }
+  ]
+}

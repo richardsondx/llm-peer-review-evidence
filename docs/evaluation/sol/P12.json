@@ -1,0 +1,11 @@
+{
+  "errors": [
+    {
+      "location": "Comparison with CTQScorer, Table 2 discussion",
+      "description": "The claimed lead over CTQScorer is confounded by different example databases and test-set versions. Comparing these COMET scores cannot isolate the selection method or establish that the proposed selector performs better than CTQScorer.",
+      "evidence": "The manuscript states, 'Our proposed methods secure all the highest scores on all 6 translation directions,' but also states that CTQScorer uses Europarl and ParaCrawl and is evaluated on FLORES-101, whereas the proposed methods use WikiMatrix and FLORES+. It acknowledges that these differences 'may lead to an unequal comparison.'",
+      "confidence": 88,
+      "classification": "suspected_concern"
+    }
+  ]
+}

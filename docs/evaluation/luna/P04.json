@@ -1,0 +1,11 @@
+{
+  "errors": [
+    {
+      "location": "Section 3.2, Equation (6)",
+      "description": "The displayed derivation equates the teacher-sample cross-entropy with an invalid log ratio and then with KL divergence. As written, the log ratio is undefined for ordinary probabilities, so this derivation does not support the stated optimization equivalence.",
+      "evidence": "Equation (6) states: \"-log P_π(a_j | s, a_{<j}) = log (P_teacher(a_j | s, a_{<j}) / log P_π(a_j | s, a_{<j}))\". Since log P_π is negative for probabilities strictly between 0 and 1, the ratio inside the outer logarithm is negative when P_teacher is positive, making the expression undefined over the reals. The cross-entropy term is instead related to KL divergence by cross-entropy = H(P_teacher) + KL(P_teacher || P_π), after taking expectation over teacher samples.",
+      "confidence": 100,
+      "classification": "established_error"
+    }
+  ]
+}

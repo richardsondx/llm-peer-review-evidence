@@ -1,0 +1,19 @@
+{
+  "case": "P09",
+  "judge_requested_model": "gpt-6.1-sol",
+  "reasoning_effort": "xhigh",
+  "interface": "app_subagent",
+  "agent_name": "/root/paired_judging/judge_p09",
+  "started_at": "2026-10-01 20:53:47 UTC",
+  "ended_at": "2026-10-01 20:55:01 UTC",
+  "completion_status": "completed",
+  "valid_json": true,
+  "exit_code": null,
+  "tool_calls": null,
+  "tool_compliance": "self_attested",
+  "tool_use_attestation": "Read only the complete assigned files: /Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/adjudication/inputs/P09.txt and /Users/richardson/Code/Research/llm-peer-review-evidence/docs/evaluation/adjudication/schema.json. The input SHA-256 matched the expected value. No browsing, unrelated reads, or output readback occurred.",
+  "full_input_read": true,
+  "input_sha256_matches_manifest": true,
+  "input_sha256": "f461f05d1457893287e2d24a4a30c3894a43bb9724faf3bffef70eb16d2ea73e",
+  "output_sha256": "1432da0488d38e3c27dacce220d261181b18d5ff6946acc7f7cd719e010e50d7"
+}

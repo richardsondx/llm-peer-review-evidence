@@ -1,0 +1,39 @@
+{
+  "checked_on": "2026-10-01",
+  "version": "0.2.0",
+  "matrices": {
+    "luna": {
+      "rows": 27,
+      "cells": 162,
+      "data_matches_saved_extraction": true
+    },
+    "sol": {
+      "rows": 27,
+      "cells": 162,
+      "data_matches_saved_extraction": true
+    }
+  },
+  "baseline": {
+    "rows": 27,
+    "cells": 162,
+    "original_populated_findings": 131,
+    "original_blanks": 31,
+    "original_wording_preserved": true,
+    "model_attribution": "author-described GPT-4; Keenable generator metadata unconfirmed"
+  },
+  "checks": [
+    "all local HTML link targets exist",
+    "all inline JavaScript parses",
+    "both simple and advanced views regenerated from current JSON"
+  ],
+  "comparison_scope": "all cells side by side, targeted source audit, no model accuracy score",
+  "custom_domain_status": "pending domain spelling and authenticated DNS access",
+  "google_scholar_status": "setup prepared; completion blocked by article selection",
+  "live_browser_checks": [
+    "Published landing page shows baseline, complete Luna and complete Sol",
+    "Comparison dimension and study filters show corrected Liang human-comment recall across three versions",
+    "Live Sol simple matrix has27-study heading and162 clickable cells",
+    "Previously missing Sol candidate24 opens full finding, primary locator and study context"
+  ],
+  "github_pages_status": "built"
+}

@@ -1,0 +1,13 @@
+{
+  "annotations": [
+    {
+      "annotation_index": 0,
+      "A_matches": [
+        1
+      ],
+      "B_matches": [],
+      "A_rationale": "Prediction 1 explicitly derives N^2 beamforming SNR versus N temporal-combining SNR and identifies the missing factor N in their claimed equivalence, matching the reference mechanism.",
+      "B_rationale": "No prediction identifies beamforming gain being counted as N instead of N^2; the unitary-normalization criticism concerns temporal matched filtering, and the other flags concern matrix dimensions and rate scaling."
+    }
+  ]
+}

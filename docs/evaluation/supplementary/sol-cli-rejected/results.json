@@ -1,0 +1,15 @@
+{
+  "summary": {
+    "requested_model": "GPT-6.1-Sol",
+    "reasoning_effort": "xhigh",
+    "papers_reviewed": 0,
+    "papers_planned": 27,
+    "scored_papers": 0,
+    "primary_annotation_denominator": 0,
+    "primary_annotation_matches": 0,
+    "total_flags": 0,
+    "status": "running",
+    "adjudication": "GPT-6.1-Sol automated semantic matching, paired A/B with model identity withheld. Not independently human validated. Same-family judge may introduce bias."
+  },
+  "rows": []
+}

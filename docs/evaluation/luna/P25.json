@@ -1,0 +1,11 @@
+{
+  "errors": [
+    {
+      "location": "Section 3.2, quadrangular-face iterative step, paragraph beginning ‘f = (x₁, x₂, x₃, x₄) is quadrangular’",
+      "description": "The stated construction for the optional edge e₄ does not add the corresponding adjacency to x₄. It instead repeats the x₂ adjacency, so an edge from the new bag to Bₓ₄ is not represented in H; this conflicts with the subsequent case analysis that treats e₄ as splitting the x₁–x₄–x₃ side and creates faces containing x₄. As written, the construction does not establish the required H-partition for this case.",
+      "evidence": "The text defines e₄ as ‘(vₖ₊₁, v₂), where vₖ₊₁ ∈ Bₓₖ₊₁ and v₂ ∈ Bₓ₃’ and says to ‘also connect xₖ₊₁ to x₂.’ Later in the same construction it says that when e₄ exists, it cuts C₁₄₃ into cycles C₁₄ and C₄₃ and adds faces f₁₄ = (x₁, xₖ₊₁, x₄) and f₄₃ = (x₄, x₃, xₖ₊₁), which requires the xₖ₊₁–x₄ adjacency.",
+      "confidence": 99,
+      "classification": "established_error"
+    }
+  ]
+}
