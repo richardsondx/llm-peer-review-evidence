@@ -1,0 +1,560 @@
+[
+  {
+    "id": "P01",
+    "title": "A New Radio to Overcome Critical Link Budgets",
+    "doi": "2402.10307v2",
+    "category": "Equation / proof",
+    "input_sha256": "d078b570a59f4bef19b218f5e7088f1fd0d9cf71653c08bb083bab90408d504e",
+    "characters": 39535,
+    "omitted_figures": 9,
+    "annotations": [
+      {
+        "title": "A New Radio to Overcome Critical Link Budgets",
+        "paper_category": "Computer Science",
+        "error_category": "Equation / proof",
+        "error_location": "Unknown",
+        "error_severity": "retract",
+        "error_annotation": "The error is that the beamforming gain for N antennas is incorrectly calculated as N, when it should actually be N^2, since coherent beamforming results in the received power increasing by the square of the number of antennas.",
+        "doi": "2402.10307v2"
+      }
+    ]
+  },
+  {
+    "id": "P02",
+    "title": "Assessing the effect of therapeutic level of oxytetracycline dihydrate on pharmacokinetics and biosafety in Oncorhynchus mykiss (Walbaum, 1792)",
+    "doi": "10.1038/s41598-024-73921-8",
+    "category": "Statistical reporting",
+    "input_sha256": "24e7725256b73ce6189afbb972f0fead9003c9eedffd1dcc4fee858a142bafbf",
+    "characters": 63783,
+    "omitted_figures": 15,
+    "annotations": [
+      {
+        "title": "Assessing the effect of therapeutic level of oxytetracycline dihydrate on pharmacokinetics and biosafety in Oncorhynchus mykiss (Walbaum, 1792)",
+        "paper_category": "Multidisciplinary",
+        "error_category": "Statistical reporting",
+        "error_location": "Table. 1",
+        "error_severity": "errata",
+        "error_annotation": "The error is that negative values are reported for pharmacokinetic parameters such as AUC, elimination rates, and LOQ in Table 1, which are nonsensical since these parameters should always be positive based on their definitions in pharmacokinetics and analytical chemistry.",
+        "doi": "10.1038/s41598-024-73921-8"
+      }
+    ]
+  },
+  {
+    "id": "P03",
+    "title": "Glycerol-silica/chitosan conjugated self-assembled nano-flower framework for Herstulla thompsoni delivery with effectiveness in natural settings: Optimization and pilot scale production",
+    "doi": "10.1016/j.ijbiomac.2024.137476",
+    "category": "Reagent identity",
+    "input_sha256": "b93be849f12bbe21cd998ba28d694b3e311ce2134200f2eb43d678627a93188c",
+    "characters": 70513,
+    "omitted_figures": 50,
+    "annotations": [
+      {
+        "title": "Glycerol-silica/chitosan conjugated self-assembled nano-flower framework for Herstulla thompsoni delivery with effectiveness in natural settings: Optimization and pilot scale production",
+        "paper_category": "Biology",
+        "error_category": "Reagent identity",
+        "error_location": "Title, Introduction",
+        "error_severity": "retract",
+        "error_annotation": "The name of the fungus \"Hirsutella thompsonii\" is misspelled in the title and introduction, which is a critical error because scientific names must be accurate for proper identification and credibility.",
+        "doi": "10.1016/j.ijbiomac.2024.137476"
+      }
+    ]
+  },
+  {
+    "id": "P04",
+    "title": "ITERTL: An Iterative Framework for Fine-tuning LLMs for RTL Code Generation",
+    "doi": "2407.12022v2",
+    "category": "Experiment setup",
+    "input_sha256": "ad1c2d3898fbaac61df88beecbf3de62460a1058a686f58408d00522a4763db2",
+    "characters": 27800,
+    "omitted_figures": 4,
+    "annotations": [
+      {
+        "title": "ITERTL: An Iterative Framework for Fine-tuning LLMs for RTL Code Generation",
+        "paper_category": "Computer Science",
+        "error_category": "Experiment setup",
+        "error_location": "Sec 4.1",
+        "error_severity": "errata",
+        "error_annotation": "The problem is that there are inaccuracies or mistakes regarding the description or implementation of [REDACTED-NAME] in the experimental setup, which could lead to misunderstandings or misrepresentation of how the experiment was conducted.",
+        "doi": "2407.12022v2"
+      }
+    ]
+  },
+  {
+    "id": "P05",
+    "title": "Farnesoid X receptor activation protects against renal fibrosis via modulation of β-catenin signaling",
+    "doi": "10.1016/j.molmet.2023.101841",
+    "category": "Data Inconsistency (text-text)",
+    "input_sha256": "c356f90e9b8c5014704566ba876255f281ae95c44b9be6f6441bd1c6c77ef1af",
+    "characters": 47091,
+    "omitted_figures": 49,
+    "annotations": [
+      {
+        "title": "Farnesoid X receptor activation protects against renal fibrosis via modulation of β-catenin signaling",
+        "paper_category": "Medicine",
+        "error_category": "Data Inconsistency (text-text)",
+        "error_location": "Abstract & Method 2.6",
+        "error_severity": "errata",
+        "error_annotation": "There is a discrepancy between the Abstract and Method 2.6 regarding the duration of high-fat diet treatment in mice: the Abstract states 20 weeks, while the Methods section initially stated 12 weeks, causing confusion about the experimental timeline and raising concerns about data consistency throughout the paper.",
+        "doi": "10.1016/j.molmet.2023.101841"
+      }
+    ]
+  },
+  {
+    "id": "P06",
+    "title": "A Relationship Between Nonphysical Quasi-probabilities and Nonlocality Objectivity",
+    "doi": "2407.19061v3",
+    "category": "Equation / proof",
+    "input_sha256": "f7a86482152f4d096bc1f0a1b0910374cb908c666d581b36a316b83f60ee7b58",
+    "characters": 13749,
+    "omitted_figures": 6,
+    "annotations": [
+      {
+        "title": "A Relationship Between Nonphysical Quasi-probabilities and Nonlocality Objectivity",
+        "paper_category": "Physics",
+        "error_category": "Equation / proof",
+        "error_location": "Equation 8",
+        "error_severity": "retract",
+        "error_annotation": "The error is that the calculation incorrectly claims different eigenvalues for β^{T}β in the right-identity case, when in fact the eigenvalues remain unchanged for both the left- and right-identity cases, invalidating the argument's main result.",
+        "doi": "2407.19061v3"
+      }
+    ]
+  },
+  {
+    "id": "P07",
+    "title": "Efficient Human Pose Estimation: Leveraging Advanced Techniques with MediaPipe",
+    "doi": "2406.15649v2",
+    "category": "Statistical reporting",
+    "input_sha256": "7cc738bd5c3cbf5a64f573ceb965d1b32d257b525883773f3a96024eae92f97f",
+    "characters": 20897,
+    "omitted_figures": 3,
+    "annotations": [
+      {
+        "title": "Efficient Human Pose Estimation: Leveraging Advanced Techniques with MediaPipe",
+        "paper_category": "Computer Science",
+        "error_category": "Statistical reporting",
+        "error_location": "Sec 3.3",
+        "error_severity": "retract",
+        "error_annotation": "The error is that the angle was calculated incorrectly in Section 3.3, leading to potential inaccuracies in the reported statistical results that rely on this value.",
+        "doi": "2406.15649v2"
+      }
+    ]
+  },
+  {
+    "id": "P08",
+    "title": "Illuminating the dark kinome: utilizing multiplex peptide activity arrays to functionally annotate understudied kinases",
+    "doi": "10.1186/s12964-024-01868-4",
+    "category": "Reagent identity",
+    "input_sha256": "1a9859c7e68ce053295bc8a5810d38340327cb939402a31303e648ec505d8faf",
+    "characters": 65442,
+    "omitted_figures": 11,
+    "annotations": [
+      {
+        "title": "Illuminating the dark kinome: utilizing multiplex peptide activity arrays to functionally annotate understudied kinases",
+        "paper_category": "Biology",
+        "error_category": "Reagent identity",
+        "error_location": "Overall",
+        "error_severity": "errata",
+        "error_annotation": "The error is that the recombinant protein fragments used for at least three kinases do not include their respective kinase domains, meaning the reagents do not have intrinsic kinase activity and the experimental results do not reflect actual kinase function for those proteins.",
+        "doi": "10.1186/s12964-024-01868-4"
+      }
+    ]
+  },
+  {
+    "id": "P09",
+    "title": "MSP-MVS: Multi-granularity Segmentation Prior Guided Multi-View Stereo",
+    "doi": "2407.19323v3",
+    "category": "Experiment setup",
+    "input_sha256": "79e8abeb5976fc4dad98cba91dfdee6802726a25d9f26c8dbce2ca4101eebda0",
+    "characters": 24408,
+    "omitted_figures": 0,
+    "annotations": [
+      {
+        "title": "MSP-MVS: Multi-granularity Segmentation Prior Guided Multi-View Stereo",
+        "paper_category": "Computer Science",
+        "error_category": "Experiment setup",
+        "error_location": "Overview",
+        "error_severity": "errata",
+        "error_annotation": "The problem is that there is a significant flaw in how the experiment was designed in the Multi-granularity section, which affects the reliability of the resulting data analysis and the validity of the study’s conclusions.",
+        "doi": "2407.19323v3"
+      }
+    ]
+  },
+  {
+    "id": "P10",
+    "title": "Qsyn: A Developer-Friendly Quantum Circuit Synthesis Framework for NISQ Era and Beyond",
+    "doi": "2405.07197v2",
+    "category": "Data Inconsistency (text-text)",
+    "input_sha256": "aaf2bb8f16cb4d9e1c43c5bffa79cfad73eaf668567811dde7b4bfe3658f6c60",
+    "characters": 6024,
+    "omitted_figures": 0,
+    "annotations": [
+      {
+        "title": "Qsyn: A Developer-Friendly Quantum Circuit Synthesis Framework for NISQ Era and Beyond",
+        "paper_category": "Physics",
+        "error_category": "Data Inconsistency (text-text)",
+        "error_location": "Table 2",
+        "error_severity": "errata",
+        "error_annotation": "The values or entries in Table 2 are inconsistent or incorrect compared to reliable sources or other parts of the document, indicating a need for data verification and correction.",
+        "doi": "2405.07197v2"
+      }
+    ]
+  },
+  {
+    "id": "P11",
+    "title": "A Simple Ricci Flow Proof of the Uniformization Theorem",
+    "doi": "2404.01980v6",
+    "category": "Equation / proof",
+    "input_sha256": "87765c104fec2ffbab46add7372f6240c98d5257584ffcc250ca19311eaece16",
+    "characters": 8508,
+    "omitted_figures": 0,
+    "annotations": [
+      {
+        "title": "A Simple Ricci Flow Proof of the Uniformization Theorem",
+        "paper_category": "Mathematics",
+        "error_category": "Equation / proof",
+        "error_location": "Theorem 3.3",
+        "error_severity": "retract",
+        "error_annotation": "The proof incorrectly assumes that the value of A at t=0 and t=T are identical, but without a justification or condition ensuring this, the main inequality in the argument does not necessarily hold.",
+        "doi": "2404.01980v6"
+      }
+    ]
+  },
+  {
+    "id": "P12",
+    "title": "Going Beyond Word Matching: Syntax Improves In-context Example Selection for Machine Translation",
+    "doi": "2403.19285v2",
+    "category": "Statistical reporting",
+    "input_sha256": "cb75b9925cfff2aae58e3759c39924123480440b26b30d5211337d62a4347572",
+    "characters": 22557,
+    "omitted_figures": 5,
+    "annotations": [
+      {
+        "title": "Going Beyond Word Matching: Syntax Improves In-context Example Selection for Machine Translation",
+        "paper_category": "Computer Science",
+        "error_category": "Statistical reporting",
+        "error_location": "Sec 5",
+        "error_severity": "retract",
+        "error_annotation": "The problem is that Section 5 compares baselines that are not directly comparable, which could lead to misleading or confusing interpretations of the results.",
+        "doi": "2403.19285v2"
+      }
+    ]
+  },
+  {
+    "id": "P13",
+    "title": "Unveiling the biological effects of radio-frequency and extremely-low frequency electromagnetic fields on the central nervous system performance",
+    "doi": "10.34172/bi.2023.30064",
+    "category": "Reagent identity",
+    "input_sha256": "52aae136e509cf92ce5352e66196a28a51edd76ae6e0ebcbd640d96eba668688",
+    "characters": 75423,
+    "omitted_figures": 6,
+    "annotations": [
+      {
+        "title": "Unveiling the biological effects of radio-frequency and extremely-low frequency electromagnetic fields on the central nervous system performance",
+        "paper_category": "Medicine",
+        "error_category": "Reagent identity",
+        "error_location": "Overall",
+        "error_severity": "errata",
+        "error_annotation": "The error is that the manuscript incorrectly refers to \"C57BL/6 rats,\" but C57BL/6 is a strain of mice, not rats; thus, there is a misidentification of the animal model used.",
+        "doi": "10.34172/bi.2023.30064"
+      }
+    ]
+  },
+  {
+    "id": "P14",
+    "title": "A Simple, Nearly-Optimal Algorithm for Differentially Private All-Pairs Shortest Distances",
+    "doi": "2407.06913v2",
+    "category": "Equation / proof",
+    "input_sha256": "f4b7170c48fffd1267a24ca4561641db1a7e9e3b91e3d02108b7a63d26396591",
+    "characters": 69933,
+    "omitted_figures": 1,
+    "annotations": [
+      {
+        "title": "A Simple, Nearly-Optimal Algorithm for Differentially Private All-Pairs Shortest Distances",
+        "paper_category": "Computer Science",
+        "error_category": "Equation / proof",
+        "error_location": "Sec 3, Sec4",
+        "error_severity": "retract",
+        "error_annotation": "The error is the incorrect assumption in Sections 3 and 4 that the topology of the shortest path trees is public, which may not be true; additionally, in Section 3, Lemma 2.4 is applied inappropriately under this false assumption.",
+        "doi": "2407.06913v2"
+      }
+    ]
+  },
+  {
+    "id": "P15",
+    "title": "HDRTransDC: High Dynamic Range Image Reconstruction with Transformer Deformation Convolution",
+    "doi": "2403.06831v2",
+    "category": "Statistical reporting",
+    "input_sha256": "2dab4c43fe39914185b60b936f6652eb1c57ba297185d48ff9c195660bd982fa",
+    "characters": 33450,
+    "omitted_figures": 23,
+    "annotations": [
+      {
+        "title": "HDRTransDC: High Dynamic Range Image Reconstruction with Transformer Deformation Convolution",
+        "paper_category": "Computer Science",
+        "error_category": "Statistical reporting",
+        "error_location": "Sec 4.2, 4.3",
+        "error_severity": "retract",
+        "error_annotation": "The error is related to potentially incorrect metric calculations in Sections 4.2 and 4.3, meaning the statistical results reported in these sections may be inaccurate or misleading and require further validation.",
+        "doi": "2403.06831v2"
+      }
+    ]
+  },
+  {
+    "id": "P16",
+    "title": "A Strongly Subcubic Combinatorial Algorithm for Triangle Detection with Applications",
+    "doi": "2403.01085v2",
+    "category": "Equation / proof",
+    "input_sha256": "69f30abd3b14e6c7fbddc67804925daaf0c3755b0b4bc88fa7cff4abf5ac57b0",
+    "characters": 36669,
+    "omitted_figures": 4,
+    "annotations": [
+      {
+        "title": "A Strongly Subcubic Combinatorial Algorithm for Triangle Detection with Applications",
+        "paper_category": "Computer Science",
+        "error_category": "Equation / proof",
+        "error_location": "Overall in paper",
+        "error_severity": "retract",
+        "error_annotation": "The triangle detection algorithm is incorrect because the reasoning or analysis provided for Case 2.1 in Subsection 2.1 is flawed, which can lead to incorrect detection results in certain cases.",
+        "doi": "2403.01085v2"
+      },
+      {
+        "title": "A Strongly Subcubic Combinatorial Algorithm for Triangle Detection with Applications",
+        "paper_category": "Computer Science",
+        "error_category": "Equation / proof",
+        "error_location": "Sec 2",
+        "error_severity": "retract",
+        "error_annotation": "The analysis in Case 2.1 is faulty because it incorrectly assumes that the triangle detection algorithm will always succeed under certain conditions, but there exist cases where the algorithm fails, making the proof invalid.",
+        "doi": "2403.01085v2"
+      }
+    ]
+  },
+  {
+    "id": "P17",
+    "title": "A form of refined Roth's theorem and its application to the $abc$-conjecture",
+    "doi": "2407.18406v2",
+    "category": "Equation / proof",
+    "input_sha256": "07807f28115c4a28e2fd2539f9b95753538737c342e8b4f7f8c9cbdacb60291c",
+    "characters": 21345,
+    "omitted_figures": 0,
+    "annotations": [
+      {
+        "title": "A form of refined Roth's theorem and its application to the $abc$-conjecture",
+        "paper_category": "Mathematics",
+        "error_category": "Equation / proof",
+        "error_location": "Theorem 1.6",
+        "error_severity": "retract",
+        "error_annotation": "Theorem 1.6 contains an error because one or more of the equations or logical steps used in the proof are incorrect, possibly due to an invalid assumption or a misapplied result that invalidates the theorem's conclusion.",
+        "doi": "2407.18406v2"
+      }
+    ]
+  },
+  {
+    "id": "P18",
+    "title": "A missing theorem on dual spaces",
+    "doi": "2405.01133v3",
+    "category": "Equation / proof",
+    "input_sha256": "e0441fe0a9b0ca089a51b97606c59daa33e35dd19f9f8050a1250f218650bab8",
+    "characters": 40800,
+    "omitted_figures": 0,
+    "annotations": [
+      {
+        "title": "A missing theorem on dual spaces",
+        "paper_category": "Mathematics",
+        "error_category": "Equation / proof",
+        "error_location": "Lemma 3,4",
+        "error_severity": "retract",
+        "error_annotation": "The issue is that an error in Proposition 2.3 undermines the validity of Lemmas 3 and 4, and Theorem 4.1 depends on results from Proposition 2.3; therefore, Lemmas 3 and 4 are only valid if the conclusions of Proposition 2.3 hold for the map q used in Theorem 4.1.",
+        "doi": "2405.01133v3"
+      }
+    ]
+  },
+  {
+    "id": "P19",
+    "title": "Algebraic description of complex conjugation on cohomology of a smooth projective hypersurface",
+    "doi": "2402.14546v2",
+    "category": "Equation / proof",
+    "input_sha256": "d498dcc974791cdd61569f7ddb37dc001095bd71225d72b77be03c93b2917556",
+    "characters": 27987,
+    "omitted_figures": 0,
+    "annotations": [
+      {
+        "title": "Algebraic description of complex conjugation on cohomology of a smooth projective hypersurface",
+        "paper_category": "Mathematics",
+        "error_category": "Equation / proof",
+        "error_location": "Theorem 2.3",
+        "error_severity": "retract",
+        "error_annotation": "The statement and proof of Theorem 2.3 is not correct. What was described in the paper is an order 2 operation which swaps the Hodge components, which gives the complex conjugation only when the Hodge component has dimensions 1. But our description does not give the complex conjugation in the general case where the Hodge component has a bigger dimension",
+        "doi": "2402.14546v2"
+      }
+    ]
+  },
+  {
+    "id": "P20",
+    "title": "CR functions at CR singularities: approximation, extension, and hulls",
+    "doi": "2406.06431v2",
+    "category": "Equation / proof",
+    "input_sha256": "a25edd2bd5958fdb17e9444b0a91c1a67c09feef1c205f63cbac604447b0fea6",
+    "characters": 82761,
+    "omitted_figures": 0,
+    "annotations": [
+      {
+        "title": "CR functions at CR singularities: approximation, extension, and hulls",
+        "paper_category": "Mathematics",
+        "error_category": "Equation / proof",
+        "error_location": "Theorem 4.2",
+        "error_severity": "errata",
+        "error_annotation": "There is a logical gap in the proof of Theorem 4.2, meaning that one or more steps necessary to arrive at the conclusion are missing or insufficiently justified, making the argument incomplete.",
+        "doi": "2406.06431v2"
+      }
+    ]
+  },
+  {
+    "id": "P21",
+    "title": "Efficient Fault-Tolerant Single Qubit Gate Approximation And Universal Quantum Computation Without Using The Solovay-Kitaev Theorem",
+    "doi": "2406.04846v2",
+    "category": "Equation / proof",
+    "input_sha256": "2afe8e3fae6c1fbd66cda9bdf59f926020a00c13a70560fa8ac7e8cf334ba9b9",
+    "characters": 12428,
+    "omitted_figures": 2,
+    "annotations": [
+      {
+        "title": "Efficient Fault-Tolerant Single Qubit Gate Approximation And Universal Quantum Computation Without Using The Solovay-Kitaev Theorem",
+        "paper_category": "Physics",
+        "error_category": "Equation / proof",
+        "error_location": "Equation 6",
+        "error_severity": "retract",
+        "error_annotation": "The error is that Equation 6, derived using real arithmetic, is incorrectly applied to a context that uses modulo 2 arithmetic, making the result incompatible with the actual operations on the state ket.",
+        "doi": "2406.04846v2"
+      }
+    ]
+  },
+  {
+    "id": "P22",
+    "title": "Every Polish group has a non-trivial topological group automorphism",
+    "doi": "2408.16162v2",
+    "category": "Equation / proof",
+    "input_sha256": "09d01d941e8a2d0457a3e1a36e0f3287c8475f2074283d137704e36fc3111620",
+    "characters": 16155,
+    "omitted_figures": 0,
+    "annotations": [
+      {
+        "title": "Every Polish group has a non-trivial topological group automorphism",
+        "paper_category": "Mathematics",
+        "error_category": "Equation / proof",
+        "error_location": "Theorem 1.1",
+        "error_severity": "retract",
+        "error_annotation": "The error is that extending a non-trivial automorphism of L by fixing elements of a maximal independent subset Y of U can inadvertently redefine the automorphism on elements of L that are generated by Y, making the extension invalid.",
+        "doi": "2408.16162v2"
+      }
+    ]
+  },
+  {
+    "id": "P23",
+    "title": "Explicit expression and fast algorithms for the inverse of some matrices arising from implicit time integration",
+    "doi": "2408.04316v2",
+    "category": "Equation / proof",
+    "input_sha256": "c2d5df4a4dd18db29dad1511c2677816db2159a887a01375eb57c6f3c12dabf0",
+    "characters": 32654,
+    "omitted_figures": 4,
+    "annotations": [
+      {
+        "title": "Explicit expression and fast algorithms for the inverse of some matrices arising from implicit time integration",
+        "paper_category": "Mathematics",
+        "error_category": "Equation / proof",
+        "error_location": "Theorem 2.2",
+        "error_severity": "retract",
+        "error_annotation": "There is a mistake in the logical steps or calculations in the proof of Theorem 2.2, resulting in formula (2.10) being incorrect; as a result, any numerical results or conclusions that depend on this formula may also be invalid or misleading.",
+        "doi": "2408.04316v2"
+      }
+    ]
+  },
+  {
+    "id": "P24",
+    "title": "Fields of definition of dynamical systems on $\\mathbb{P}^{1}$. Improvements on a result of Silverman",
+    "doi": "2405.03612v2",
+    "category": "Equation / proof",
+    "input_sha256": "f4a4b565538d388e45c0bf2a51b78e425b4361c267a7ab4f7686de2752349197",
+    "characters": 25893,
+    "omitted_figures": 6,
+    "annotations": [
+      {
+        "title": "Fields of definition of dynamical systems on $\\mathbb{P}^{1}$. Improvements on a result of Silverman",
+        "paper_category": "Mathematics",
+        "error_category": "Equation / proof",
+        "error_location": "Page 5",
+        "error_severity": "retract",
+        "error_annotation": "The error is that the proof incorrectly claims that having equal ramification degrees implies equal orders of vanishing at 0 and ∞, but equal ramification degrees alone do not guarantee equal orders of vanishing, so the conclusion does not follow.",
+        "doi": "2405.03612v2"
+      }
+    ]
+  },
+  {
+    "id": "P25",
+    "title": "From Tripods to Bipods: Reducing the Queue Number of Planar Graphs Costs Just One Leg",
+    "doi": "2401.16191v2",
+    "category": "Equation / proof",
+    "input_sha256": "39b136f4928f4bcb35b4eb3637c74ff6ab3720f1e5f8c01f37bbf564dd487ef7",
+    "characters": 72368,
+    "omitted_figures": 21,
+    "annotations": [
+      {
+        "title": "From Tripods to Bipods: Reducing the Queue Number of Planar Graphs Costs Just One Leg",
+        "paper_category": "Mathematics",
+        "error_category": "Equation / proof",
+        "error_location": "Theorems 1.2, 1.3",
+        "error_severity": "retract",
+        "error_annotation": "The error is that the decomposition technique claimed as original in Theorems 1.2 and 1.3 was previously established by other authors, and furthermore, Lemma 4.2 is incorrect, rendering the current proofs insufficient and requiring new technical details.",
+        "doi": "2401.16191v2"
+      },
+      {
+        "title": "From Tripods to Bipods: Reducing the Queue Number of Planar Graphs Costs Just One Leg",
+        "paper_category": "Mathematics",
+        "error_category": "Equation / proof",
+        "error_location": "Lemma 4.2",
+        "error_severity": "retract",
+        "error_annotation": "Lemma 4.2 is incorrect, so the proof relying on it is invalid and requires new technical details to correct the decomposition argument.",
+        "doi": "2401.16191v2"
+      }
+    ]
+  },
+  {
+    "id": "P26",
+    "title": "How to surpass no-go limits in Gaussian quantum error correction and entangled Gaussian state distillation?",
+    "doi": "2404.18586v2",
+    "category": "Equation / proof",
+    "input_sha256": "e67f9bb7a90af2e9df9e7bf8e505568e36baffae8de8408792e87fdb5ebbe8a8",
+    "characters": 38092,
+    "omitted_figures": 4,
+    "annotations": [
+      {
+        "title": "How to surpass no-go limits in Gaussian quantum error correction and entangled Gaussian state distillation?",
+        "paper_category": "Physics",
+        "error_category": "Equation / proof",
+        "error_location": "Lemma 3,4",
+        "error_severity": "retract",
+        "error_annotation": "The error is that the statements or proofs of Lemma 3 and Lemma 4 contain inaccuracies, likely due to incorrect assumptions, logical gaps, or invalid mathematical steps, which compromise the validity of their conclusions.",
+        "doi": "2404.18586v2"
+      }
+    ]
+  },
+  {
+    "id": "P27",
+    "title": "Large Bricks and Join-irreducible torsionfree classes",
+    "doi": "2405.05635v2",
+    "category": "Equation / proof",
+    "input_sha256": "0082bee1a2c876f146117c6b9aa6ff96a1b865c0247f563e7c7942265dc494de",
+    "characters": 16706,
+    "omitted_figures": 0,
+    "annotations": [
+      {
+        "title": "Large Bricks and Join-irreducible torsionfree classes",
+        "paper_category": "Mathematics",
+        "error_category": "Equation / proof",
+        "error_location": "Proposition 3.9",
+        "error_severity": "retract",
+        "error_annotation": "There is a logical gap in the proof of Proposition 3.9, meaning that a necessary step or justification is missing, so the conclusion does not properly follow from the premises given.",
+        "doi": "2405.05635v2"
+      }
+    ]
+  }
+]

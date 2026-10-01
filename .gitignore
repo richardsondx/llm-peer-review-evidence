@@ -3,3 +3,5 @@ __pycache__/
 source_cache/
 sources/
 *.pdf
+docs/evaluation/inputs/
+docs/evaluation/*/*.events.jsonl

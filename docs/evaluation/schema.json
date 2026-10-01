@@ -1,0 +1,46 @@
+{
+  "type": "object",
+  "properties": {
+    "errors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "location": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "evidence": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "classification": {
+            "type": "string",
+            "enum": [
+              "established_error",
+              "suspected_concern"
+            ]
+          }
+        },
+        "required": [
+          "location",
+          "description",
+          "evidence",
+          "confidence",
+          "classification"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "errors"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,36 @@
+{
+  "frozen_at": "2026-10-01T17:14:53.259117+00:00",
+  "source_repository": "https://github.com/guijinSON/SPOT",
+  "source_revision": "cb0018d4bc5f18f6c43d83a27ffde1287addc748",
+  "annotation_source": "https://huggingface.co/datasets/amphora/SPOT-MetaData",
+  "design": "Exploratory 27-paper text-only pilot; one fresh review per paper per model. Not a replication of the 27-study literature audit or the official multimodal SPOT evaluation.",
+  "selection": "Round-robin over five named non-image annotation categories, alphabetical title order within each category, unique papers, stop at 27. No selection based on reviewer outputs.",
+  "models": [
+    {
+      "id": "gpt-6-luna",
+      "reasoning_effort": "xhigh"
+    },
+    {
+      "id": "gpt-6.1-sol",
+      "reasoning_effort": "xhigh"
+    }
+  ],
+  "harness": "Authenticated Codex CLI, ignore user config, ephemeral fresh context, read-only empty working directory, same prompt and output schema, no tools permitted by prompt; event logs audited for tool use.",
+  "primary_measure": "Annotated-error coverage: substantive mechanism plus compatible location. Automated exploratory adjudication with explicit rationale; not human-validated. Ambiguous annotations reported separately. Unmatched flags are not automatically false positives or hallucinations.",
+  "unmeasured": [
+    "human agreement",
+    "human baseline",
+    "score bias",
+    "true false-positive rate",
+    "calibration against independently verified truth"
+  ],
+  "limitations": [
+    "Public benchmark may be in model training data.",
+    "All selected manuscripts have annotated errors; no negative controls.",
+    "Text-only figure omission may hide evidence, including tables rendered as images.",
+    "Sample is enriched for equation/proof errors and not representative of all peer review.",
+    "Annotations vary in specificity and validity; matching an annotation does not establish that its scientific claim is correct.",
+    "Single run per model per paper; no run-to-run reliability estimate.",
+    "Model IDs are requested Codex runtime identifiers, not independently attested API snapshots."
+  ]
+}
